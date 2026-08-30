@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JSON Formatter - Free Online Tool | GetToolly</title>
+
+  <meta name="description"
+    content="Format, validate and minify JSON online for free with GetToolly JSON Formatter.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Free JSON Formatter</h1>
+
+          <p>
+            Format, validate and minify JSON directly in your browser.
+          </p>
+
+          <br>
+
+          <textarea
+            id="jsonInput"
+            rows="15"
+            placeholder='Paste JSON here, for example: {"name":"John","age":30}'
+            style="
+              width:100%;
+              padding:15px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              font-size:15px;
+              font-family:monospace;
+              resize:vertical;
+            "
+          ></textarea>
+
+          <br><br>
+
+          <div
+            style="
+              display:flex;
+              flex-wrap:wrap;
+              gap:10px;
+            "
+          >
+
+            <button
+              class="button"
+              onclick="formatJSON()"
+              style="border:0;cursor:pointer;"
+            >
+              Format JSON
+            </button>
+
+            <button
+              class="button"
+              onclick="minifyJSON()"
+              style="border:0;cursor:pointer;"
+            >
+              Minify JSON
+            </button>
+
+            <button
+              onclick="clearJSON()"
+              style="
+                padding:12px 20px;
+                border:1px solid #ddd;
+                border-radius:10px;
+                background:white;
+                cursor:pointer;
+                font-weight:bold;
+              "
+            >
+              Clear
+            </button>
+
+          </div>
+
+          <div
+            id="status"
+            style="
+              margin-top:20px;
+              padding:15px;
+              border-radius:10px;
+              background:#f5f7fa;
+              font-weight:bold;
+            "
+          >
+            Paste JSON and choose an action.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const input =
+      document.getElementById("jsonInput");
+
+    const status =
+      document.getElementById("status");
+
+
+    function formatJSON() {
+
+      const value =
+        input.value.trim();
+
+
+      if (!value) {
+
+        status.textContent =
+          "Please enter JSON first.";
+
+        return;
+
+      }
+
+
+      try {
+
+        const parsed =
+          JSON.parse(value);
+
+        input.value =
+          JSON.stringify(
+            parsed,
+            null,
+            2
+          );
+
+        status.textContent =
+          "✓ Valid JSON. Successfully formatted.";
+
+      } catch (error) {
+
+        status.textContent =
+          "✕ Invalid JSON: " +
+          error.message;
+
+      }
+
+    }
+
+
+    function minifyJSON() {
+
+      const value =
+        input.value.trim();
+
+
+      if (!value) {
+
+        status.textContent =
+          "Please enter JSON first.";
+
+        return;
+
+      }
+
+
+      try {
+
+        const parsed =
+          JSON.parse(value);
+
+        input.value =
+          JSON.stringify(parsed);
+
+        status.textContent =
+          "✓ Valid JSON. Successfully minified.";
+
+      } catch (error) {
+
+        status.textContent =
+          "✕ Invalid JSON: " +
+          error.message;
+
+      }
+
+    }
+
+
+    function clearJSON() {
+
+      input.value = "";
+
+      status.textContent =
+        "Paste JSON and choose an action.";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
