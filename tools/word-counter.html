@@ -2,31 +2,152 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Word Counter - Free Online Tool | GetToolly</title>
+  <title>Word Counter - Free Online Word & Character Counter | GetToolly</title>
 
   <meta name="description"
-    content="Count words, characters, sentences and lines with the free GetToolly Word Counter.">
+    content="Count words, characters, sentences and lines with GetToolly's free online word counter. Fast, accurate and easy to use with no signup required.">
 
-  <link rel="stylesheet" href="../style.css">
+  <meta name="keywords"
+    content="word counter, word count, character counter, character count, sentence counter, online word counter, free word counter">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/tools/word-counter.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .counter-box {
+      max-width: 850px;
+      margin: 30px auto;
+    }
+
+    .counter-textarea {
+      width: 100%;
+      min-height: 280px;
+      box-sizing: border-box;
+      padding: 18px;
+      border: 1px solid #d9dee7;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+      background: #fff;
+    }
+
+    .counter-textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .stat-card {
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .clear-button {
+      margin-top: 15px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #172033;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .clear-button:hover {
+      opacity: 0.85;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 700px) {
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="../index.html" class="logo">
+      <a href="../index.html"
+        class="logo">
         GetToolly
       </a>
 
       <nav class="navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#tools">Tools</a>
-        <a href="../privacy.html">Privacy</a>
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
       </nav>
 
     </div>
@@ -34,74 +155,276 @@
   </header>
 
 
+
+  <!-- MAIN -->
+
   <main>
 
     <section class="tools-section">
 
       <div class="container">
 
-        <div class="tool-card">
 
-          <a href="../index.html#tools">
-            ← Back to Tools
-          </a>
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
 
-          <br><br>
 
-          <h1>Free Word Counter</h1>
+        <h1>
+          Free Online Word Counter
+        </h1>
 
-          <p>
-            Count words, characters, sentences and lines instantly.
-            Your text is processed directly in your browser.
-          </p>
 
-          <br>
+        <p>
+          Count words, characters, sentences and lines
+          instantly with this free online word counter.
+        </p>
+
+
+
+        <!-- COUNTER -->
+
+        <div class="counter-box">
 
           <textarea
-            id="text"
-            rows="12"
-            placeholder="Type or paste your text here..."
-            style="
-              width:100%;
-              padding:15px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              font-size:16px;
-              resize:vertical;
-            "
+            id="textInput"
+            class="counter-textarea"
+            placeholder="Start typing or paste your text here..."
+            aria-label="Text to count"
           ></textarea>
 
-          <br><br>
 
-          <div
-            style="
-              display:grid;
-              grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-              gap:12px;
-            "
-          >
+          <div class="stats-grid">
 
-            <div class="tool-card">
-              <strong>Words</strong>
-              <h2 id="words">0</h2>
+
+            <div class="stat-card">
+
+              <span
+                id="wordCount"
+                class="stat-number"
+              >
+                0
+              </span>
+
+              <span class="stat-label">
+                Words
+              </span>
+
             </div>
 
-            <div class="tool-card">
-              <strong>Characters</strong>
-              <h2 id="characters">0</h2>
+
+            <div class="stat-card">
+
+              <span
+                id="characterCount"
+                class="stat-number"
+              >
+                0
+              </span>
+
+              <span class="stat-label">
+                Characters
+              </span>
+
             </div>
 
-            <div class="tool-card">
-              <strong>Sentences</strong>
-              <h2 id="sentences">0</h2>
+
+            <div class="stat-card">
+
+              <span
+                id="sentenceCount"
+                class="stat-number"
+              >
+                0
+              </span>
+
+              <span class="stat-label">
+                Sentences
+              </span>
+
             </div>
 
-            <div class="tool-card">
-              <strong>Lines</strong>
-              <h2 id="lines">0</h2>
+
+            <div class="stat-card">
+
+              <span
+                id="lineCount"
+                class="stat-number"
+              >
+                0
+              </span>
+
+              <span class="stat-label">
+                Lines
+              </span>
+
             </div>
+
 
           </div>
+
+
+          <button
+            id="clearButton"
+            class="clear-button"
+            type="button"
+          >
+            Clear Text
+          </button>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content-section">
+
+
+          <h2>
+            What Is a Word Counter?
+          </h2>
+
+          <p>
+            A word counter is an online tool that calculates
+            the number of words in a piece of text. It can be
+            useful for students, writers, bloggers, researchers,
+            content creators and professionals.
+          </p>
+
+          <p>
+            GetToolly's free word counter also counts characters,
+            sentences and lines, giving you a quick overview
+            of your text.
+          </p>
+
+
+
+          <h2>
+            How to Use the Word Counter
+          </h2>
+
+          <p>
+            Type or paste your text into the text box above.
+            The counters update automatically as you write.
+          </p>
+
+          <p>
+            You do not need to create an account or install
+            any software. The tool works directly in your browser.
+          </p>
+
+
+
+          <h2>
+            Why Count Words?
+          </h2>
+
+          <p>
+            Word counts are useful when writing essays,
+            articles, blog posts, social media content,
+            applications and other documents with length
+            requirements.
+          </p>
+
+
+
+          <h2>
+            Word Counter Example
+          </h2>
+
+          <p>
+            For example, if you enter:
+          </p>
+
+          <p>
+            <strong>
+              "GetToolly provides simple online tools for everyone."
+            </strong>
+          </p>
+
+          <p>
+            The tool automatically calculates the number
+            of words and characters in the text.
+          </p>
+
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is this word counter free?
+            </h3>
+
+            <p>
+              Yes. GetToolly's word counter is completely
+              free to use and does not require registration.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does the tool count characters?
+            </h3>
+
+            <p>
+              Yes. It displays the total number of characters
+              in your text.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does it count sentences?
+            </h3>
+
+            <p>
+              Yes. The tool estimates sentences by detecting
+              common sentence-ending punctuation marks.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I use it on my phone?
+            </h3>
+
+            <p>
+              Yes. The word counter is designed to work
+              on desktop and mobile browsers.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is my text uploaded to a server?
+            </h3>
+
+            <p>
+              No. The counting is performed directly in
+              your browser, so the text does not need to
+              be sent to a server.
+            </p>
+
+          </div>
+
 
         </div>
 
@@ -112,6 +435,9 @@
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div class="container">
@@ -120,12 +446,27 @@
         GetToolly
       </div>
 
+      <p>
+        Free online tools for everyone.
+      </p>
+
+
       <div class="footer-links">
 
-        <a href="../index.html">Home</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms</a>
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
+        </a>
+
       </div>
+
 
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
@@ -136,79 +477,126 @@
   </footer>
 
 
+
+  <!-- WORD COUNTER SCRIPT -->
+
   <script>
 
-    const textBox =
-      document.getElementById("text");
+    const textInput =
+      document.getElementById("textInput");
 
-    const words =
-      document.getElementById("words");
+    const wordCount =
+      document.getElementById("wordCount");
 
-    const characters =
-      document.getElementById("characters");
+    const characterCount =
+      document.getElementById("characterCount");
 
-    const sentences =
-      document.getElementById("sentences");
+    const sentenceCount =
+      document.getElementById("sentenceCount");
 
-    const lines =
-      document.getElementById("lines");
+    const lineCount =
+      document.getElementById("lineCount");
+
+    const clearButton =
+      document.getElementById("clearButton");
 
 
-    textBox.addEventListener("input", function () {
+    function updateCounter() {
 
-      const text = textBox.value;
+      const text =
+        textInput.value;
 
 
       /* Characters */
 
-      characters.textContent =
+      characterCount.textContent =
         text.length;
 
 
       /* Words */
 
-      const trimmed =
+      const trimmedText =
         text.trim();
 
-      if (trimmed === "") {
 
-        words.textContent = "0";
+      if (trimmedText === "") {
+
+        wordCount.textContent = "0";
 
       } else {
 
-        words.textContent =
-          trimmed.split(/\s+/).length;
+        const words =
+          trimmedText.split(/\s+/);
+
+        wordCount.textContent =
+          words.length;
 
       }
 
 
       /* Sentences */
 
-      const sentenceMatches =
-        text.match(/[.!?]+(?=\s|$)/g);
+      if (trimmedText === "") {
 
-      sentences.textContent =
-        sentenceMatches
-          ? sentenceMatches.length
-          : 0;
+        sentenceCount.textContent = "0";
+
+      } else {
+
+        const sentences =
+          trimmedText
+            .split(/[.!?]+/)
+            .filter(function(sentence) {
+
+              return sentence.trim().length > 0;
+
+            });
+
+        sentenceCount.textContent =
+          sentences.length;
+
+      }
 
 
       /* Lines */
 
       if (text === "") {
 
-        lines.textContent = "0";
+        lineCount.textContent = "0";
 
       } else {
 
-        lines.textContent =
-          text.split("\n").length;
+        lineCount.textContent =
+          text.split(/\r?\n/).length;
 
       }
 
-    });
+    }
+
+
+    textInput.addEventListener(
+      "input",
+      updateCounter
+    );
+
+
+    clearButton.addEventListener(
+      "click",
+      function() {
+
+        textInput.value = "";
+
+        updateCounter();
+
+        textInput.focus();
+
+      }
+    );
+
+
+    updateCounter();
 
   </script>
+
 
 </body>
 
