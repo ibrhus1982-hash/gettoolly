@@ -2,31 +2,194 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Random Number Generator - Free Online Tool | GetToolly</title>
 
   <meta name="description"
-    content="Generate random numbers instantly with the free GetToolly Random Number Generator.">
+    content="Generate random numbers instantly with GetToolly's free random number generator. Choose a minimum, maximum, quantity and whether to allow duplicates.">
 
-  <link rel="stylesheet" href="../style.css">
+  <meta name="keywords"
+    content="random number generator, random number picker, random numbers, generate random numbers, random number generator online">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/tools/random-number.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .random-box {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #f5f7fa;
+      border-radius: 16px;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      border: 1px solid #d9dee7;
+      border-radius: 8px;
+      background: white;
+      font-size: 16px;
+    }
+
+    .options {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .options label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .generate-button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      border: 0;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .result-number {
+      font-size: 38px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .result-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .number-item {
+      padding: 9px 13px;
+      background: #f5f7fa;
+      border-radius: 7px;
+      font-weight: 600;
+    }
+
+    .copy-button {
+      margin-top: 15px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #172033;
+      color: white;
+      cursor: pointer;
+    }
+
+    .status {
+      margin-top: 15px;
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .example-box {
+      padding: 18px;
+      margin: 20px 0;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 650px) {
+
+      .input-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="../index.html" class="logo">
+      <a href="../index.html"
+        class="logo">
         GetToolly
       </a>
 
       <nav class="navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#tools">Tools</a>
-        <a href="../privacy.html">Privacy</a>
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
       </nav>
 
     </div>
@@ -34,116 +197,299 @@
   </header>
 
 
+
+  <!-- MAIN -->
+
   <main>
 
     <section class="tools-section">
 
       <div class="container">
 
-        <div class="tool-card">
 
-          <a href="../index.html#tools">
-            ← Back to Tools
-          </a>
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
 
-          <br><br>
 
-          <h1>Random Number Generator</h1>
+        <h1>
+          Free Random Number Generator
+        </h1>
 
-          <p>
-            Generate one or more random numbers between any minimum
-            and maximum values.
-          </p>
 
-          <br>
+        <p>
+          Generate random numbers between any minimum
+          and maximum value. Create one number or multiple
+          numbers at once.
+        </p>
 
-          <label for="min">
-            Minimum
-          </label>
 
-          <input
-            id="min"
-            type="number"
-            value="1"
-            style="
-              width:100%;
-              padding:14px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              font-size:16px;
-              margin-top:8px;
-            "
-          >
 
-          <br><br>
+        <!-- RANDOM NUMBER TOOL -->
 
-          <label for="max">
-            Maximum
-          </label>
+        <div class="random-box">
 
-          <input
-            id="max"
-            type="number"
-            value="100"
-            style="
-              width:100%;
-              padding:14px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              font-size:16px;
-              margin-top:8px;
-            "
-          >
 
-          <br><br>
+          <div class="input-grid">
 
-          <label for="count">
-            Number of Results
-          </label>
 
-          <input
-            id="count"
-            type="number"
-            value="1"
-            min="1"
-            max="100"
-            style="
-              width:100%;
-              padding:14px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              font-size:16px;
-              margin-top:8px;
-            "
-          >
+            <div class="field">
 
-          <br><br>
+              <label for="minimum">
+                Minimum
+              </label>
+
+              <input
+                id="minimum"
+                type="number"
+                value="1"
+                step="1"
+                inputmode="numeric"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="maximum">
+                Maximum
+              </label>
+
+              <input
+                id="maximum"
+                type="number"
+                value="100"
+                step="1"
+                inputmode="numeric"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="quantity">
+                Number of Results
+              </label>
+
+              <input
+                id="quantity"
+                type="number"
+                value="1"
+                min="1"
+                max="1000"
+                step="1"
+                inputmode="numeric"
+              >
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="options">
+
+            <label>
+
+              <input
+                id="allowDuplicates"
+                type="checkbox"
+                checked
+              >
+
+              Allow duplicate numbers
+
+            </label>
+
+          </div>
+
+
 
           <button
-            class="button"
-            onclick="generateNumbers()"
-            style="
-              border:0;
-              cursor:pointer;
-            "
+            id="generateButton"
+            class="generate-button"
+            type="button"
           >
-            Generate Numbers
+            Generate Random Number
           </button>
+
+
 
           <div
             id="result"
-            style="
-              margin-top:20px;
-              padding:20px;
-              background:#f5f7fa;
-              border-radius:10px;
-              font-size:22px;
-              font-weight:bold;
-              word-break:break-word;
-            "
+            class="result-box"
+            aria-live="polite"
           >
-            Your random number will appear here.
+
+            <div class="result-number">
+              —
+            </div>
+
+            <div class="status">
+              Enter your range and generate a random number.
+            </div>
+
           </div>
+
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content-section">
+
+
+          <h2>
+            What Is a Random Number Generator?
+          </h2>
+
+          <p>
+            A random number generator creates numbers selected
+            from a specified range. It can be useful for games,
+            drawings, testing, simulations, classroom activities
+            and everyday decisions.
+          </p>
+
+
+
+          <h2>
+            How to Use the Random Number Generator
+          </h2>
+
+          <p>
+            Enter the minimum and maximum values you want to use.
+            Choose how many numbers you want and click
+            "Generate Random Number."
+          </p>
+
+          <p>
+            If duplicate numbers are not allowed, each generated
+            number will be unique within the requested range.
+          </p>
+
+
+
+          <h2>
+            Random Number Example
+          </h2>
+
+          <div class="example-box">
+
+            <p>
+              Minimum: <strong>1</strong>
+            </p>
+
+            <p>
+              Maximum: <strong>100</strong>
+            </p>
+
+            <p>
+              Results: <strong>5</strong>
+            </p>
+
+            <p>
+              The tool can generate five random integers
+              between 1 and 100.
+            </p>
+
+          </div>
+
+
+
+          <h2>
+            What Does "Allow Duplicates" Mean?
+          </h2>
+
+          <p>
+            When duplicates are allowed, the same number can
+            appear more than once in the generated results.
+          </p>
+
+          <p>
+            When duplicates are disabled, every generated number
+            must be different from the others.
+          </p>
+
+
+
+          <h2>
+            Common Uses for Random Numbers
+          </h2>
+
+          <p>
+            Random numbers can be used for selecting winners,
+            creating game numbers, generating test data,
+            choosing classroom activities and making simple
+            random selections.
+          </p>
+
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is this random number generator free?
+            </h3>
+
+            <p>
+              Yes. GetToolly's random number generator is free
+              to use and does not require an account.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I generate multiple random numbers?
+            </h3>
+
+            <p>
+              Yes. You can generate up to 1,000 numbers at once.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can random numbers repeat?
+            </h3>
+
+            <p>
+              Yes. Enable "Allow duplicate numbers" if repeated
+              numbers are acceptable. Disable it when you need
+              unique results.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does the random number generator work on mobile?
+            </h3>
+
+            <p>
+              Yes. The tool works on modern smartphones,
+              tablets and desktop browsers.
+            </p>
+
+          </div>
+
 
         </div>
 
@@ -154,6 +500,9 @@
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div class="container">
@@ -162,11 +511,27 @@
         GetToolly
       </div>
 
+      <p>
+        Free online tools for everyone.
+      </p>
+
+
       <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms</a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
+        </a>
+
       </div>
+
 
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
@@ -177,57 +542,114 @@
   </footer>
 
 
+
+  <!-- RANDOM NUMBER SCRIPT -->
+
   <script>
 
-    function randomInteger(min, max) {
+    const minimumInput =
+      document.getElementById("minimum");
 
-      return Math.floor(
-        Math.random() *
-        (max - min + 1)
-      ) + min;
+    const maximumInput =
+      document.getElementById("maximum");
+
+    const quantityInput =
+      document.getElementById("quantity");
+
+    const allowDuplicates =
+      document.getElementById("allowDuplicates");
+
+    const generateButton =
+      document.getElementById("generateButton");
+
+    const result =
+      document.getElementById("result");
+
+
+    function secureRandomInt(
+      minimum,
+      maximum
+    ) {
+
+      const range =
+        maximum - minimum + 1;
+
+
+      if (range <= 0) {
+
+        throw new Error(
+          "Invalid range."
+        );
+
+      }
+
+
+      const maxUint =
+        4294967296;
+
+
+      const limit =
+        Math.floor(
+          maxUint / range
+        ) * range;
+
+
+      const array =
+        new Uint32Array(1);
+
+
+      let randomValue;
+
+
+      do {
+
+        crypto.getRandomValues(
+          array
+        );
+
+        randomValue =
+          array[0];
+
+      } while (
+        randomValue >= limit
+      );
+
+
+      return (
+        minimum +
+        (randomValue % range)
+      );
 
     }
 
 
     function generateNumbers() {
 
-      const min =
+      const minimum =
         Number(
-          document.getElementById("min").value
+          minimumInput.value
         );
 
-      const max =
+      const maximum =
         Number(
-          document.getElementById("max").value
+          maximumInput.value
         );
 
-      const count =
+      const quantity =
         Number(
-          document.getElementById("count").value
+          quantityInput.value
         );
-
-      const result =
-        document.getElementById("result");
 
 
       if (
-        !Number.isFinite(min) ||
-        !Number.isFinite(max) ||
-        !Number.isFinite(count)
+        !Number.isInteger(minimum) ||
+        !Number.isInteger(maximum) ||
+        !Number.isInteger(quantity)
       ) {
 
-        result.textContent =
-          "Please enter valid numbers.";
-
-        return;
-
-      }
-
-
-      if (min > max) {
-
-        result.textContent =
-          "Minimum cannot be greater than maximum.";
+        showError(
+          "Please enter whole numbers."
+        );
 
         return;
 
@@ -235,12 +657,44 @@
 
 
       if (
-        count < 1 ||
-        count > 100
+        minimum > maximum
       ) {
 
-        result.textContent =
-          "Number of results must be between 1 and 100.";
+        showError(
+          "Minimum cannot be greater than maximum."
+        );
+
+        return;
+
+      }
+
+
+      if (
+        quantity < 1 ||
+        quantity > 1000
+      ) {
+
+        showError(
+          "Number of results must be between 1 and 1,000."
+        );
+
+        return;
+
+      }
+
+
+      const available =
+        maximum - minimum + 1;
+
+
+      if (
+        !allowDuplicates.checked &&
+        quantity > available
+      ) {
+
+        showError(
+          "There are not enough unique numbers in this range."
+        );
 
         return;
 
@@ -250,25 +704,247 @@
       const numbers = [];
 
 
-      for (
-        let i = 0;
-        i < count;
-        i++
+      if (
+        allowDuplicates.checked
       ) {
 
-        numbers.push(
-          randomInteger(min, max)
-        );
+        for (
+          let i = 0;
+          i < quantity;
+          i++
+        ) {
+
+          numbers.push(
+            secureRandomInt(
+              minimum,
+              maximum
+            )
+          );
+
+        }
+
+      }
+      else {
+
+        const used =
+          new Set();
+
+
+        while (
+          numbers.length < quantity
+        ) {
+
+          const number =
+            secureRandomInt(
+              minimum,
+              maximum
+            );
+
+
+          if (
+            !used.has(number)
+          ) {
+
+            used.add(number);
+
+            numbers.push(number);
+
+          }
+
+        }
 
       }
 
 
-      result.textContent =
-        numbers.join(", ");
+      displayResults(
+        numbers
+      );
 
     }
 
+
+    function displayResults(
+      numbers
+    ) {
+
+      if (
+        numbers.length === 1
+      ) {
+
+        result.innerHTML =
+
+          '<div class="result-number">' +
+          numbers[0].toLocaleString() +
+          '</div>' +
+
+          '<div class="status">' +
+          'Random number generated successfully.' +
+          '</div>' +
+
+          '<button class="copy-button" onclick="copyResults()">' +
+          'Copy Result' +
+          '</button>';
+
+      }
+      else {
+
+        let html =
+          '<div class="result-list">';
+
+
+        numbers.forEach(
+          function(number) {
+
+            html +=
+              '<span class="number-item">' +
+              number.toLocaleString() +
+              '</span>';
+
+          }
+        );
+
+
+        html +=
+          '</div>' +
+
+          '<div class="status">' +
+          numbers.length +
+          ' random numbers generated.' +
+          '</div>' +
+
+          '<button class="copy-button" onclick="copyResults()">' +
+          'Copy Results' +
+          '</button>';
+
+
+        result.innerHTML =
+          html;
+
+      }
+
+    }
+
+
+    function showError(
+      message
+    ) {
+
+      result.innerHTML =
+
+        '<div class="result-number">' +
+        '⚠' +
+        '</div>' +
+
+        '<div class="status">' +
+        message +
+        '</div>';
+
+    }
+
+
+    async function copyResults() {
+
+      const items =
+        document.querySelectorAll(
+          ".number-item"
+        );
+
+
+      let text = "";
+
+
+      if (
+        items.length > 0
+      ) {
+
+        text =
+          Array.from(items)
+            .map(
+              item =>
+                item.textContent
+            )
+            .join(", ");
+
+      }
+      else {
+
+        const number =
+          document.querySelector(
+            ".result-number"
+          );
+
+        if (
+          number
+        ) {
+
+          text =
+            number.textContent;
+
+        }
+
+      }
+
+
+      if (
+        !text ||
+        text === "—"
+      ) {
+
+        return;
+
+      }
+
+
+      try {
+
+        await navigator.clipboard.writeText(
+          text
+        );
+
+        alert(
+          "Results copied to clipboard."
+        );
+
+      }
+      catch (error) {
+
+        const temporary =
+          document.createElement(
+            "textarea"
+          );
+
+        temporary.value =
+          text;
+
+        document.body.appendChild(
+          temporary
+        );
+
+        temporary.select();
+
+        document.execCommand(
+          "copy"
+        );
+
+        temporary.remove();
+
+        alert(
+          "Results copied to clipboard."
+        );
+
+      }
+
+    }
+
+
+    generateButton.addEventListener(
+      "click",
+      generateNumbers
+    );
+
+
   </script>
+
 
 </body>
 
