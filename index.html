@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +33,6 @@
       color: #172033;
       line-height: 1.6;
     }
-
-    /* HEADER */
 
     header {
       background: #ffffff;
@@ -86,8 +85,6 @@
       color: #2563eb;
     }
 
-    /* HERO */
-
     .hero {
       text-align: center;
       padding: 72px 20px 45px;
@@ -111,8 +108,6 @@
       color: #64748b;
       margin-bottom: 30px;
     }
-
-    /* SEARCH */
 
     .search-container {
       max-width: 700px;
@@ -146,8 +141,6 @@
       box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
     }
 
-    /* CATEGORIES */
-
     .categories {
       max-width: 1000px;
       margin: 32px auto 0;
@@ -176,8 +169,6 @@
       border-color: #2563eb;
     }
 
-    /* MAIN */
-
     .container {
       max-width: 1120px;
       margin: auto;
@@ -199,8 +190,6 @@
       color: #64748b;
       font-size: 16px;
     }
-
-    /* TOOL GRID */
 
     .tools-grid {
       display: grid;
@@ -260,8 +249,6 @@
       color: #1d4ed8;
     }
 
-    /* ALL TOOLS */
-
     .all-tools {
       margin-top: 75px;
     }
@@ -272,8 +259,6 @@
       padding: 40px;
       display: none;
     }
-
-    /* FOOTER */
 
     footer {
       background: #ffffff;
@@ -298,8 +283,6 @@
       font-size: 13px;
       margin-top: 14px;
     }
-
-    /* MOBILE */
 
     @media (max-width: 900px) {
       .tools-grid {
@@ -349,8 +332,6 @@
 
 <body>
 
-  <!-- HEADER -->
-
   <header>
     <div class="navbar">
 
@@ -369,8 +350,6 @@
     </div>
   </header>
 
-
-  <!-- HERO -->
 
   <section class="hero">
 
@@ -392,9 +371,6 @@
       >
 
     </div>
-
-
-    <!-- CATEGORIES -->
 
     <div class="categories">
 
@@ -423,11 +399,7 @@
   </section>
 
 
-  <!-- MAIN -->
-
   <main class="container">
-
-    <!-- POPULAR TOOLS -->
 
     <section id="tools">
 
@@ -458,7 +430,7 @@
             Perform quick and simple calculations.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/calculator.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -479,7 +451,7 @@
             Calculate percentages quickly and easily.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/percentage-calculator.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -500,7 +472,7 @@
             Count words and characters in your text.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/word-counter.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -521,7 +493,7 @@
             Create strong and secure passwords.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/password-generator.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -531,8 +503,6 @@
 
     </section>
 
-
-    <!-- ALL TOOLS -->
 
     <section class="all-tools">
 
@@ -563,7 +533,7 @@
             Calculate your exact age.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/age-calculator.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -585,7 +555,7 @@
           </p>
 
           <a href="#" class="tool-link">
-            Use Tool →
+            Coming Soon →
           </a>
 
         </article>
@@ -605,7 +575,7 @@
             Convert text to uppercase or lowercase.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/case-converter.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -627,7 +597,7 @@
           </p>
 
           <a href="#" class="tool-link">
-            Use Tool →
+            Coming Soon →
           </a>
 
         </article>
@@ -647,7 +617,7 @@
             Convert common units quickly.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/unit-converter.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -669,7 +639,7 @@
           </p>
 
           <a href="#" class="tool-link">
-            Use Tool →
+            Coming Soon →
           </a>
 
         </article>
@@ -690,7 +660,7 @@
           </p>
 
           <a href="#" class="tool-link">
-            Use Tool →
+            Coming Soon →
           </a>
 
         </article>
@@ -710,7 +680,7 @@
             Generate random numbers and results.
           </p>
 
-          <a href="#" class="tool-link">
+          <a href="tools/random-number.html" class="tool-link">
             Use Tool →
           </a>
 
@@ -724,8 +694,6 @@
 
     </section>
 
-
-    <!-- ABOUT -->
 
     <section id="about"
       style="text-align:center; max-width:750px; margin:90px auto 20px;">
@@ -742,14 +710,12 @@
   </main>
 
 
-  <!-- FOOTER -->
-
   <footer id="contact">
 
     <div>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <p>
@@ -758,8 +724,6 @@
 
   </footer>
 
-
-  <!-- SEARCH & FILTER -->
 
   <script>
 
@@ -775,9 +739,7 @@
     const noResults =
       document.getElementById("noResults");
 
-
     let selectedCategory = "all";
-
 
     function filterTools() {
 
@@ -785,7 +747,6 @@
         searchInput.value.toLowerCase().trim();
 
       let visibleTools = 0;
-
 
       toolCards.forEach(function(card) {
 
@@ -795,14 +756,12 @@
         const category =
           card.dataset.category;
 
-
         const matchesSearch =
           name.includes(searchText);
 
         const matchesCategory =
           selectedCategory === "all" ||
           category === selectedCategory;
-
 
         if (matchesSearch && matchesCategory) {
 
@@ -818,7 +777,6 @@
 
       });
 
-
       if (visibleTools === 0) {
 
         noResults.style.display = "block";
@@ -831,12 +789,10 @@
 
     }
 
-
     searchInput.addEventListener(
       "input",
       filterTools
     );
-
 
     categoryButtons.forEach(function(button) {
 
@@ -861,3 +817,4 @@
 
 </body>
 </html>
+```
