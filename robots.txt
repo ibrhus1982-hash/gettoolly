@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gettoolly.vercel.app/sitemap.xml
