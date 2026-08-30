@@ -1,1017 +1,863 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2G11Y8NJZ3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2G11Y8NJZ3');
-</script>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>GetToolly - Free Online Tools</title>
 
   <meta name="description"
-    content="GetToolly offers simple, fast and free online tools for calculations, text, conversions, passwords and everyday digital tasks.">
+    content="GetToolly offers simple and free online tools for calculators, text, generators, converters and everyday tasks.">
 
-  <meta name="robots" content="index, follow">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2G11Y8NJZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  <link rel="canonical"
-    href="https://gettoolly.vercel.app/">
-
-  <link rel="stylesheet"
-    href="style.css">
+    gtag('config', 'G-2G11Y8NJZ3');
+  </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1120px;
+      margin: auto;
+      height: 72px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #172033;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .logo-mark {
+      color: #2563eb;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
 
     /* HERO */
 
     .hero {
-      padding: 80px 20px 45px;
       text-align: center;
+      padding: 72px 20px 45px;
       background: linear-gradient(
         180deg,
-        #eef5ff 0%,
+        #eff6ff 0%,
         #f8fafc 100%
       );
     }
 
-    .hero-badge {
-      display: inline-block;
-      padding: 7px 13px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid #dbe7fb;
-      color: #2563eb;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
     .hero h1 {
-      max-width: 800px;
-      margin: 0 auto 18px;
-      font-size: clamp(38px, 7vw, 62px);
-      line-height: 1.08;
-      letter-spacing: -2px;
+      font-size: 46px;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+      color: #111827;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: 0 auto 30px;
+      font-size: 19px;
       color: #64748b;
-      font-size: 17px;
+      margin-bottom: 30px;
     }
-
 
     /* SEARCH */
 
     .search-container {
-      max-width: 650px;
-      margin: 0 auto;
+      max-width: 700px;
+      margin: auto;
       position: relative;
-    }
-
-    .search-input {
-      width: 100%;
-      height: 58px;
-      padding: 0 22px 0 52px;
-      border: 1px solid #dbe2ec;
-      border-radius: 15px;
-      background: #ffffff;
-      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
-      font-size: 16px;
-      outline: none;
-    }
-
-    .search-input:focus {
-      border-color: #2563eb;
-      box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.1),
-        0 10px 35px rgba(15, 23, 42, 0.08);
     }
 
     .search-icon {
       position: absolute;
-      left: 19px;
-      top: 17px;
-      font-size: 21px;
-      pointer-events: none;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
     }
 
+    #searchInput {
+      width: 100%;
+      height: 62px;
+      border: 1px solid #dbe3ef;
+      border-radius: 15px;
+      background: #ffffff;
+      padding: 0 20px 0 55px;
+      font-size: 17px;
+      color: #172033;
+      outline: none;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+    }
+
+    #searchInput:focus {
+      border-color: #93c5fd;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      max-width: 1000px;
+      margin: 32px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      border: 1px solid #dbe3ef;
+      background: #ffffff;
+      color: #475569;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
 
     /* MAIN */
 
-    .home-section {
-      padding: 55px 0;
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 65px 20px 80px;
     }
 
     .section-heading {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .section-heading h2 {
+      font-size: 32px;
+      letter-spacing: -0.5px;
       margin-bottom: 8px;
-      font-size: 30px;
     }
 
     .section-heading p {
-      margin: 0;
       color: #64748b;
+      font-size: 16px;
     }
 
-
-    /* POPULAR */
-
-    .popular-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .popular-card {
-      padding: 22px;
-      background: #ffffff;
-      border: 1px solid #e5eaf1;
-      border-radius: 15px;
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
-
-    .popular-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    .popular-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .popular-card h3 {
-      margin: 0 0 6px;
-      font-size: 17px;
-    }
-
-    .popular-card p {
-      margin: 0;
-      color: #64748b;
-      font-size: 13px;
-    }
-
-
-    /* CATEGORY */
-
-    .category {
-      margin-top: 45px;
-    }
-
-    .category h2 {
-      font-size: 22px;
-      margin-bottom: 18px;
-    }
-
-
-    /* TOOLS */
+    /* TOOL GRID */
 
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .tool-card {
-      position: relative;
-      padding: 23px;
       background: #ffffff;
-      border: 1px solid #e5eaf1;
+      border: 1px solid #e2e8f0;
       border-radius: 15px;
-      text-decoration: none;
+      padding: 25px;
+      min-height: 205px;
+      display: flex;
+      flex-direction: column;
       transition: 0.2s ease;
     }
 
     .tool-card:hover {
       transform: translateY(-4px);
-      border-color: #c8d8f5;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+      border-color: #bfdbfe;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
     }
 
     .tool-icon {
-      width: 45px;
-      height: 45px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      background: #eef5ff;
-      font-size: 22px;
+      font-size: 25px;
+      margin-bottom: 18px;
     }
 
     .tool-card h3 {
-      margin: 0 0 7px;
       font-size: 18px;
+      margin-bottom: 7px;
+      color: #111827;
     }
 
     .tool-card p {
-      margin: 0;
       color: #64748b;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.5;
+      margin-bottom: 18px;
     }
 
-
-    /* INFO */
-
-    .info-box {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 35px;
-      background: #ffffff;
-      border: 1px solid #e5eaf1;
-      border-radius: 18px;
-      line-height: 1.8;
+    .tool-link {
+      margin-top: auto;
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    .info-box h2 {
-      margin-top: 0;
+    .tool-link:hover {
+      color: #1d4ed8;
     }
 
+    /* ALL TOOLS */
 
-    /* NO RESULTS */
+    .all-tools {
+      margin-top: 75px;
+    }
 
     .no-results {
-      display: none;
       text-align: center;
-      padding: 30px;
       color: #64748b;
+      padding: 40px;
+      display: none;
     }
 
+    /* FOOTER */
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #2563eb;
+    }
+
+    footer p {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 14px;
+    }
 
     /* MOBILE */
 
-    @media (max-width: 850px) {
-
-      .popular-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
+    @media (max-width: 900px) {
       .tools-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-    }
-
-
-    @media (max-width: 600px) {
-
-      .hero {
-        padding: 60px 12px 35px;
       }
 
       .hero h1 {
         font-size: 40px;
-        letter-spacing: -1.5px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .navbar {
+        height: auto;
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 55px 18px 35px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
       }
 
       .hero p {
-        font-size: 15px;
+        font-size: 17px;
       }
 
-      .search-input {
-        height: 54px;
-      }
-
-      .popular-grid,
       .tools-grid {
         grid-template-columns: 1fr;
       }
 
-      .home-section {
-        padding: 40px 0;
+      .container {
+        padding-top: 45px;
       }
-
-      .section-heading h2 {
-        font-size: 27px;
-      }
-
-      .info-box {
-        padding: 24px;
-      }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
+  <!-- HEADER -->
 
-<!-- HEADER -->
+  <header>
+    <div class="navbar">
 
-<header class="header">
-
-  <div class="container nav">
-
-    <a href="index.html" class="logo">
-      GetToolly
-    </a>
-
-    <nav class="navigation">
-
-      <a href="index.html">
-        Home
+      <a href="index.html" class="logo">
+        <span class="logo-mark">◆</span>
+        <span>GetToolly</span>
       </a>
 
-      <a href="#tools">
-        Tools
-      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
-    </nav>
-
-  </div>
-
-</header>
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="hero-badge">
-      ✦ Free & Easy Online Tools
     </div>
+  </header>
 
-    <h1>
-      Simple Tools.<br>
-      Useful Results.
-    </h1>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>Free tools for everyday tasks</h1>
 
     <p>
-      Free online tools for calculations, text,
-      conversions, generators and everyday tasks.
+      Simple, fast and useful online tools — all in one place.
     </p>
-
 
     <div class="search-container">
 
-      <span class="search-icon">
-        🔍
-      </span>
+      <span class="search-icon">🔍</span>
 
       <input
-        id="toolSearch"
-        class="search-input"
-        type="search"
-        placeholder="Search for a tool..."
-        aria-label="Search tools"
+        type="text"
+        id="searchInput"
+        placeholder="What can we help you with?"
         autocomplete="off"
       >
 
     </div>
 
-  </div>
 
-</section>
+    <!-- CATEGORIES -->
 
+    <div class="categories">
 
+      <button class="category-btn active" data-category="all">
+        All
+      </button>
 
-<!-- POPULAR TOOLS -->
+      <button class="category-btn" data-category="calculator">
+        Calculators
+      </button>
 
-<section class="home-section">
+      <button class="category-btn" data-category="text">
+        Text
+      </button>
 
-  <div class="container">
+      <button class="category-btn" data-category="generator">
+        Generators
+      </button>
 
-    <div class="section-heading">
-
-      <h2>
-        Popular Tools
-      </h2>
-
-      <p>
-        Quick access to some of our most useful tools.
-      </p>
-
-    </div>
-
-
-    <div class="popular-grid">
-
-
-      <a
-        href="tools/calculator.html"
-        class="popular-card"
-        data-tool="calculator"
-      >
-
-        <div class="popular-icon">
-          🧮
-        </div>
-
-        <h3>
-          Calculator
-        </h3>
-
-        <p>
-          Quick everyday calculations.
-        </p>
-
-      </a>
-
-
-      <a
-        href="tools/percentage-calculator.html"
-        class="popular-card"
-        data-tool="percentage"
-      >
-
-        <div class="popular-icon">
-          %
-        </div>
-
-        <h3>
-          Percentage Calculator
-        </h3>
-
-        <p>
-          Calculate percentages easily.
-        </p>
-
-      </a>
-
-
-      <a
-        href="tools/word-counter.html"
-        class="popular-card"
-        data-tool="word"
-      >
-
-        <div class="popular-icon">
-          🔤
-        </div>
-
-        <h3>
-          Word Counter
-        </h3>
-
-        <p>
-          Count words and characters.
-        </p>
-
-      </a>
-
-
-      <a
-        href="tools/password-generator.html"
-        class="popular-card"
-        data-tool="password"
-      >
-
-        <div class="popular-icon">
-          🔐
-        </div>
-
-        <h3>
-          Password Generator
-        </h3>
-
-        <p>
-          Generate strong passwords.
-        </p>
-
-      </a>
-
+      <button class="category-btn" data-category="converter">
+        Converters
+      </button>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
+  <!-- MAIN -->
 
-<!-- ALL TOOLS -->
+  <main class="container">
 
-<section
-  id="tools"
-  class="home-section"
->
+    <!-- POPULAR TOOLS -->
 
-  <div class="container">
+    <section id="tools">
 
+      <div class="section-heading">
 
-    <div class="section-heading">
+        <h2>Popular Tools</h2>
 
-      <h2>
-        All Tools
-      </h2>
-
-      <p>
-        Choose a tool and get started.
-      </p>
-
-    </div>
-
-
-
-    <!-- CALCULATORS -->
-
-    <div class="category">
-
-      <h2>
-        🧮 Calculators
-      </h2>
-
-
-      <div class="tools-grid">
-
-
-        <a
-          href="tools/calculator.html"
-          class="tool-card"
-          data-tool="calculator basic math"
-        >
-
-          <div class="tool-icon">
-            🧮
-          </div>
-
-          <h3>
-            Calculator
-          </h3>
-
-          <p>
-            Perform basic mathematical calculations quickly.
-          </p>
-
-        </a>
-
-
-        <a
-          href="tools/percentage-calculator.html"
-          class="tool-card"
-          data-tool="percentage calculator percent"
-        >
-
-          <div class="tool-icon">
-            %
-          </div>
-
-          <h3>
-            Percentage Calculator
-          </h3>
-
-          <p>
-            Calculate percentages, increases and decreases.
-          </p>
-
-        </a>
-
-
-        <a
-          href="tools/age-calculator.html"
-          class="tool-card"
-          data-tool="age calculator birthday date"
-        >
-
-          <div class="tool-icon">
-            🎂
-          </div>
-
-          <h3>
-            Age Calculator
-          </h3>
-
-          <p>
-            Calculate your exact age from your date of birth.
-          </p>
-
-        </a>
-
+        <p>
+          Quick access to some of our most useful tools.
+        </p>
 
       </div>
 
-    </div>
 
+      <div class="tools-grid" id="popularTools">
 
+        <!-- Calculator -->
 
-    <!-- TEXT TOOLS -->
+        <article class="tool-card"
+          data-name="calculator"
+          data-category="calculator">
 
-    <div class="category">
+          <div class="tool-icon">🧮</div>
 
-      <h2>
-        🔤 Text Tools
-      </h2>
-
-
-      <div class="tools-grid">
-
-
-        <a
-          href="tools/word-counter.html"
-          class="tool-card"
-          data-tool="word counter text characters"
-        >
-
-          <div class="tool-icon">
-            🔤
-          </div>
-
-          <h3>
-            Word Counter
-          </h3>
+          <h3>Calculator</h3>
 
           <p>
-            Count words, characters and text statistics.
+            Perform quick and simple calculations.
           </p>
 
-        </a>
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
 
 
-        <a
-          href="tools/case-converter.html"
-          class="tool-card"
-          data-tool="case converter uppercase lowercase text"
-        >
+        <!-- Percentage Calculator -->
 
-          <div class="tool-icon">
-            Aa
-          </div>
+        <article class="tool-card"
+          data-name="percentage calculator"
+          data-category="calculator">
 
-          <h3>
-            Case Converter
-          </h3>
+          <div class="tool-icon">%</div>
+
+          <h3>Percentage Calculator</h3>
 
           <p>
-            Convert text between different letter cases.
+            Calculate percentages quickly and easily.
           </p>
 
-        </a>
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
 
 
-        <a
-          href="tools/lorem-ipsum.html"
-          class="tool-card"
-          data-tool="lorem ipsum generator placeholder text"
-        >
+        <!-- Word Counter -->
 
-          <div class="tool-icon">
-            ✍️
-          </div>
+        <article class="tool-card"
+          data-name="word counter"
+          data-category="text">
 
-          <h3>
-            Lorem Ipsum Generator
-          </h3>
+          <div class="tool-icon">Aa</div>
+
+          <h3>Word Counter</h3>
 
           <p>
-            Generate placeholder text for your projects.
+            Count words and characters in your text.
           </p>
 
-        </a>
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
 
+        </article>
+
+
+        <!-- Password Generator -->
+
+        <article class="tool-card"
+          data-name="password generator"
+          data-category="generator">
+
+          <div class="tool-icon">🔐</div>
+
+          <h3>Password Generator</h3>
+
+          <p>
+            Create strong and secure passwords.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
 
       </div>
 
-    </div>
+    </section>
 
 
+    <!-- ALL TOOLS -->
 
-    <!-- GENERATORS -->
+    <section class="all-tools">
 
-    <div class="category">
+      <div class="section-heading">
 
-      <h2>
-        ⚡ Generators
-      </h2>
+        <h2>All Tools</h2>
 
-
-      <div class="tools-grid">
-
-
-        <a
-          href="tools/password-generator.html"
-          class="tool-card"
-          data-tool="password generator secure random"
-        >
-
-          <div class="tool-icon">
-            🔐
-          </div>
-
-          <h3>
-            Password Generator
-          </h3>
-
-          <p>
-            Create strong random passwords.
-          </p>
-
-        </a>
-
-
-        <a
-          href="tools/random-number.html"
-          class="tool-card"
-          data-tool="random number generator number"
-        >
-
-          <div class="tool-icon">
-            🎲
-          </div>
-
-          <h3>
-            Random Number Generator
-          </h3>
-
-          <p>
-            Generate random numbers within a chosen range.
-          </p>
-
-        </a>
-
+        <p>
+          Explore all of our free online tools.
+        </p>
 
       </div>
 
-    </div>
 
+      <div class="tools-grid" id="allTools">
 
+        <!-- Age Calculator -->
 
-    <!-- OTHER TOOLS -->
+        <article class="tool-card"
+          data-name="age calculator"
+          data-category="calculator">
 
-    <div class="category">
+          <div class="tool-icon">🎂</div>
 
-      <h2>
-        🔄 Converters & Developer Tools
-      </h2>
-
-
-      <div class="tools-grid">
-
-
-        <a
-          href="tools/unit-converter.html"
-          class="tool-card"
-          data-tool="unit converter conversion units"
-        >
-
-          <div class="tool-icon">
-            🔄
-          </div>
-
-          <h3>
-            Unit Converter
-          </h3>
+          <h3>Age Calculator</h3>
 
           <p>
-            Convert common units quickly and easily.
+            Calculate your exact age.
           </p>
 
-        </a>
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
 
 
-        <a
-          href="tools/json-formatter.html"
-          class="tool-card"
-          data-tool="json formatter developer code"
-        >
+        <!-- Tip Calculator -->
 
-          <div class="tool-icon">
-            {" "}
-          </div>
+        <article class="tool-card"
+          data-name="tip calculator"
+          data-category="calculator">
 
-          <h3>
-            JSON Formatter
-          </h3>
+          <div class="tool-icon">💰</div>
+
+          <h3>Tip Calculator</h3>
 
           <p>
-            Format JSON data for easier reading.
+            Calculate tips and split bills.
           </p>
 
-        </a>
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
 
+        </article>
+
+
+        <!-- Case Converter -->
+
+        <article class="tool-card"
+          data-name="case converter"
+          data-category="text">
+
+          <div class="tool-icon">Aa</div>
+
+          <h3>Case Converter</h3>
+
+          <p>
+            Convert text to uppercase or lowercase.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
+
+
+        <!-- Text Generator -->
+
+        <article class="tool-card"
+          data-name="text generator"
+          data-category="generator">
+
+          <div class="tool-icon">✍️</div>
+
+          <h3>Text Generator</h3>
+
+          <p>
+            Generate useful text instantly.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
+
+
+        <!-- Unit Converter -->
+
+        <article class="tool-card"
+          data-name="unit converter"
+          data-category="converter">
+
+          <div class="tool-icon">📏</div>
+
+          <h3>Unit Converter</h3>
+
+          <p>
+            Convert common units quickly.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
+
+
+        <!-- Temperature Converter -->
+
+        <article class="tool-card"
+          data-name="temperature converter"
+          data-category="converter">
+
+          <div class="tool-icon">🌡️</div>
+
+          <h3>Temperature Converter</h3>
+
+          <p>
+            Convert Celsius, Fahrenheit and Kelvin.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
+
+
+        <!-- Time Calculator -->
+
+        <article class="tool-card"
+          data-name="time calculator"
+          data-category="calculator">
+
+          <div class="tool-icon">⏱️</div>
+
+          <h3>Time Calculator</h3>
+
+          <p>
+            Calculate time and durations.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
+
+
+        <!-- Random Generator -->
+
+        <article class="tool-card"
+          data-name="random generator"
+          data-category="generator">
+
+          <div class="tool-icon">🎲</div>
+
+          <h3>Random Generator</h3>
+
+          <p>
+            Generate random numbers and results.
+          </p>
+
+          <a href="#" class="tool-link">
+            Use Tool →
+          </a>
+
+        </article>
 
       </div>
 
-    </div>
+      <div class="no-results" id="noResults">
+        No tools found. Try another search.
+      </div>
+
+    </section>
 
 
-    <div
-      id="noResults"
-      class="no-results"
-    >
-      No tools found. Try another search.
-    </div>
+    <!-- ABOUT -->
 
+    <section id="about"
+      style="text-align:center; max-width:750px; margin:90px auto 20px;">
 
-  </div>
+      <h2>About GetToolly</h2>
 
-</section>
-
-
-
-<!-- ABOUT -->
-
-<section class="home-section">
-
-  <div class="container">
-
-    <div class="info-box">
-
-      <h2>
-        Why GetToolly?
-      </h2>
-
-      <p>
-        GetToolly is designed to make everyday digital
-        tasks easier. Our tools are simple, fast and
-        available directly in your browser.
+      <p style="color:#64748b; margin-top:12px;">
+        GetToolly provides simple and useful free online tools
+        designed to make everyday digital tasks faster and easier.
       </p>
 
-      <p>
-        You can use our calculators, text utilities,
-        generators and conversion tools without
-        unnecessary complexity.
-      </p>
+    </section>
 
-      <p>
-        We are continuously improving GetToolly and
-        adding useful tools based on common needs.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
+  </main>
 
 
+  <!-- FOOTER -->
 
-<!-- FOOTER -->
+  <footer id="contact">
 
-<footer class="footer">
-
-  <div class="container">
-
-    <div class="footer-logo">
-      GetToolly
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact</a>
     </div>
 
     <p>
-      Free online tools for everyone.
-    </p>
-
-
-    <div class="footer-links">
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="privacy.html">
-        Privacy Policy
-      </a>
-
-      <a href="terms.html">
-        Terms of Use
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
-
-    </div>
-
-
-    <p class="copyright">
       © 2026 GetToolly. All rights reserved.
     </p>
 
-  </div>
-
-</footer>
+  </footer>
 
 
+  <!-- SEARCH & FILTER -->
 
-<!-- SEARCH SCRIPT -->
+  <script>
 
-<script>
+    const searchInput =
+      document.getElementById("searchInput");
 
-const searchInput =
-  document.getElementById("toolSearch");
+    const categoryButtons =
+      document.querySelectorAll(".category-btn");
 
-const toolCards =
-  document.querySelectorAll(
-    ".tool-card, .popular-card"
-  );
+    const toolCards =
+      document.querySelectorAll(".tool-card");
 
-const categories =
-  document.querySelectorAll(".category");
-
-const noResults =
-  document.getElementById("noResults");
+    const noResults =
+      document.getElementById("noResults");
 
 
-searchInput.addEventListener("input", function () {
-
-  const query =
-    this.value
-      .toLowerCase()
-      .trim();
-
-  let found = false;
+    let selectedCategory = "all";
 
 
-  toolCards.forEach(function (card) {
+    function filterTools() {
 
-    const text =
-      (
-        card.innerText +
-        " " +
-        card.dataset.tool
-      ).toLowerCase();
+      const searchText =
+        searchInput.value.toLowerCase().trim();
+
+      let visibleTools = 0;
 
 
-    if (
-      query === "" ||
-      text.includes(query)
-    ) {
+      toolCards.forEach(function(card) {
 
-      card.style.display = "";
+        const name =
+          card.dataset.name.toLowerCase();
 
-      found = true;
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-  });
+        const category =
+          card.dataset.category;
 
 
-  categories.forEach(function (category) {
+        const matchesSearch =
+          name.includes(searchText);
 
-    const visibleCards =
-      category.querySelectorAll(
-        ".tool-card:not([style*='display: none'])"
-      );
+        const matchesCategory =
+          selectedCategory === "all" ||
+          category === selectedCategory;
 
 
-    if (
-      query !== "" &&
-      visibleCards.length === 0
-    ) {
+        if (matchesSearch && matchesCategory) {
 
-      category.style.display = "none";
+          card.style.display = "flex";
 
-    } else {
+          visibleTools++;
 
-      category.style.display = "";
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      if (visibleTools === 0) {
+
+        noResults.style.display = "block";
+
+      } else {
+
+        noResults.style.display = "none";
+
+      }
 
     }
 
-  });
+
+    searchInput.addEventListener(
+      "input",
+      filterTools
+    );
 
 
-  if (
-    query !== "" &&
-    !found
-  ) {
+    categoryButtons.forEach(function(button) {
 
-    noResults.style.display = "block";
+      button.addEventListener("click", function() {
 
-  } else {
+        categoryButtons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
 
-    noResults.style.display = "none";
+        this.classList.add("active");
 
-  }
+        selectedCategory =
+          this.dataset.category;
 
-});
+        filterTools();
 
+      });
 
-</script>
+    });
 
+  </script>
 
 </body>
-
 </html>
