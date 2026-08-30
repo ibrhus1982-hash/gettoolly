@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Word Counter - Free Online Tool | GetToolly</title>
+
+  <meta name="description"
+    content="Count words, characters, sentences and lines with the free GetToolly Word Counter.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Free Word Counter</h1>
+
+          <p>
+            Count words, characters, sentences and lines instantly.
+            Your text is processed directly in your browser.
+          </p>
+
+          <br>
+
+          <textarea
+            id="text"
+            rows="12"
+            placeholder="Type or paste your text here..."
+            style="
+              width:100%;
+              padding:15px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              font-size:16px;
+              resize:vertical;
+            "
+          ></textarea>
+
+          <br><br>
+
+          <div
+            style="
+              display:grid;
+              grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+              gap:12px;
+            "
+          >
+
+            <div class="tool-card">
+              <strong>Words</strong>
+              <h2 id="words">0</h2>
+            </div>
+
+            <div class="tool-card">
+              <strong>Characters</strong>
+              <h2 id="characters">0</h2>
+            </div>
+
+            <div class="tool-card">
+              <strong>Sentences</strong>
+              <h2 id="sentences">0</h2>
+            </div>
+
+            <div class="tool-card">
+              <strong>Lines</strong>
+              <h2 id="lines">0</h2>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const textBox =
+      document.getElementById("text");
+
+    const words =
+      document.getElementById("words");
+
+    const characters =
+      document.getElementById("characters");
+
+    const sentences =
+      document.getElementById("sentences");
+
+    const lines =
+      document.getElementById("lines");
+
+
+    textBox.addEventListener("input", function () {
+
+      const text = textBox.value;
+
+
+      /* Characters */
+
+      characters.textContent =
+        text.length;
+
+
+      /* Words */
+
+      const trimmed =
+        text.trim();
+
+      if (trimmed === "") {
+
+        words.textContent = "0";
+
+      } else {
+
+        words.textContent =
+          trimmed.split(/\s+/).length;
+
+      }
+
+
+      /* Sentences */
+
+      const sentenceMatches =
+        text.match(/[.!?]+(?=\s|$)/g);
+
+      sentences.textContent =
+        sentenceMatches
+          ? sentenceMatches.length
+          : 0;
+
+
+      /* Lines */
+
+      if (text === "") {
+
+        lines.textContent = "0";
+
+      } else {
+
+        lines.textContent =
+          text.split("\n").length;
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
