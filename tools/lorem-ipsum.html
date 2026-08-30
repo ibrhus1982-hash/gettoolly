@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lorem Ipsum Generator - Free Online Tool | GetToolly</title>
+
+  <meta name="description"
+    content="Generate Lorem Ipsum placeholder text for websites, designs and projects with GetToolly.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Lorem Ipsum Generator</h1>
+
+          <p>
+            Generate placeholder text for websites, designs,
+            presentations and other projects.
+          </p>
+
+          <br>
+
+          <label for="paragraphs">
+            Number of Paragraphs
+          </label>
+
+          <input
+            id="paragraphs"
+            type="number"
+            min="1"
+            max="20"
+            value="3"
+            style="
+              width:100%;
+              padding:14px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              font-size:16px;
+              margin-top:8px;
+            "
+          >
+
+          <br><br>
+
+          <button
+            class="button"
+            onclick="generateLorem()"
+            style="
+              border:0;
+              cursor:pointer;
+            "
+          >
+            Generate Text
+          </button>
+
+          <button
+            onclick="copyLorem()"
+            style="
+              padding:12px 20px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              background:white;
+              cursor:pointer;
+              font-weight:bold;
+              margin-left:8px;
+            "
+          >
+            Copy Text
+          </button>
+
+          <br><br>
+
+          <div
+            id="output"
+            style="
+              padding:20px;
+              background:#f5f7fa;
+              border-radius:10px;
+              white-space:pre-line;
+              line-height:1.8;
+            "
+          >
+            Your Lorem Ipsum text will appear here.
+          </div>
+
+          <div
+            id="message"
+            style="
+              margin-top:10px;
+              font-weight:bold;
+            "
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const loremSentences = [
+
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+
+      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+      "Curabitur pretium tincidunt lacus.",
+
+      "Nulla gravida orci a odio.",
+
+      "Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
+
+      "Integer in mauris eu nibh euismod gravida.",
+
+      "Duis ac tellus et risus vulputate vehicula.",
+
+      "Donec lobortis risus a elit.",
+
+      "Etiam tempor.",
+
+      "Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.",
+
+      "Maecenas fermentum consequat mi.",
+
+      "Donec fermentum.",
+
+      "Pellentesque malesuada nulla a mi.",
+
+      "Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.",
+
+      "Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.",
+
+      "Cras mollis scelerisque nunc.",
+
+      "Nullam arcu."
+
+    ];
+
+
+    function generateParagraph() {
+
+      const sentences = [];
+
+      const numberOfSentences =
+        Math.floor(
+          Math.random() * 4
+        ) + 4;
+
+
+      for (
+        let i = 0;
+        i < numberOfSentences;
+        i++
+      ) {
+
+        const randomIndex =
+          Math.floor(
+            Math.random() *
+            loremSentences.length
+          );
+
+        sentences.push(
+          loremSentences[randomIndex]
+        );
+
+      }
+
+
+      return sentences.join(" ");
+
+    }
+
+
+    function generateLorem() {
+
+      const input =
+        Number(
+          document.getElementById("paragraphs").value
+        );
+
+      const output =
+        document.getElementById("output");
+
+
+      if (
+        !Number.isFinite(input) ||
+        input < 1 ||
+        input > 20
+      ) {
+
+        output.textContent =
+          "Please enter a number between 1 and 20.";
+
+        return;
+
+      }
+
+
+      const paragraphs = [];
+
+
+      for (
+        let i = 0;
+        i < input;
+        i++
+      ) {
+
+        paragraphs.push(
+          generateParagraph()
+        );
+
+      }
+
+
+      output.textContent =
+        paragraphs.join("\n\n");
+
+    }
+
+
+    function copyLorem() {
+
+      const output =
+        document.getElementById("output");
+
+      const message =
+        document.getElementById("message");
+
+
+      if (
+        !output.textContent ||
+        output.textContent ===
+        "Your Lorem Ipsum text will appear here."
+      ) {
+
+        message.textContent =
+          "Generate text first.";
+
+        return;
+
+      }
+
+
+      navigator.clipboard.writeText(
+        output.textContent
+      );
+
+
+      message.textContent =
+        "Copied!";
+
+
+      setTimeout(function() {
+
+        message.textContent = "";
+
+      }, 2000);
+
+    }
+
+
+    generateLorem();
+
+  </script>
+
+</body>
+
+</html>
