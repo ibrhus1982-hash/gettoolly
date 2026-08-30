@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Age Calculator - Free Online Tool | GetToolly</title>
+
+  <meta name="description"
+    content="Calculate your exact age in years, months and days with the free GetToolly Age Calculator.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Free Age Calculator</h1>
+
+          <p>
+            Enter your date of birth to calculate your age.
+          </p>
+
+          <br>
+
+          <label for="birthDate">
+            Date of Birth
+          </label>
+
+          <input
+            id="birthDate"
+            type="date"
+            style="
+              width:100%;
+              padding:14px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              font-size:16px;
+              margin-top:8px;
+            "
+          >
+
+          <br><br>
+
+          <button
+            class="button"
+            onclick="calculateAge()"
+            style="border:0;cursor:pointer;"
+          >
+            Calculate Age
+          </button>
+
+          <div
+            id="result"
+            style="
+              margin-top:20px;
+              padding:20px;
+              background:#f5f7fa;
+              border-radius:10px;
+              font-size:18px;
+              font-weight:bold;
+            "
+          >
+            Your age will appear here.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+
+        <a href="../index.html">Home</a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function calculateAge() {
+
+      const input =
+        document.getElementById("birthDate");
+
+      const result =
+        document.getElementById("result");
+
+
+      if (!input.value) {
+
+        result.textContent =
+          "Please enter your date of birth.";
+
+        return;
+
+      }
+
+
+      const birth =
+        new Date(input.value + "T00:00:00");
+
+
+      const today =
+        new Date();
+
+
+      if (birth > today) {
+
+        result.textContent =
+          "Date of birth cannot be in the future.";
+
+        return;
+
+      }
+
+
+      let years =
+        today.getFullYear() -
+        birth.getFullYear();
+
+
+      let months =
+        today.getMonth() -
+        birth.getMonth();
+
+
+      let days =
+        today.getDate() -
+        birth.getDate();
+
+
+      if (days < 0) {
+
+        months--;
+
+        const previousMonth =
+          new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            0
+          );
+
+        days +=
+          previousMonth.getDate();
+
+      }
+
+
+      if (months < 0) {
+
+        years--;
+
+        months += 12;
+
+      }
+
+
+      result.innerHTML =
+        "You are " +
+        years +
+        " years, " +
+        months +
+        " months and " +
+        days +
+        " days old.";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
