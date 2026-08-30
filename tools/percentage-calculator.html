@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Percentage Calculator - Free Online Tool | GetToolly</title>
+
+  <meta name="description"
+    content="Use the free GetToolly Percentage Calculator to calculate percentages quickly and easily.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Free Percentage Calculator</h1>
+
+          <p>
+            Calculate percentages quickly and easily.
+          </p>
+
+          <br>
+
+          <h2>What is X% of Y?</h2>
+
+          <input
+            id="percent"
+            type="number"
+            placeholder="Percentage (X)"
+            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;"
+          >
+
+          <input
+            id="number"
+            type="number"
+            placeholder="Number (Y)"
+            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:10px;"
+          >
+
+          <br><br>
+
+          <button
+            class="button"
+            onclick="calculatePercentage()"
+            style="border:0;cursor:pointer;"
+          >
+            Calculate
+          </button>
+
+          <div
+            id="result1"
+            style="margin-top:20px;padding:18px;background:#f5f7fa;border-radius:10px;font-size:20px;font-weight:bold;"
+          >
+            Result will appear here
+          </div>
+
+          <br><br>
+
+          <h2>What percentage is X of Y?</h2>
+
+          <input
+            id="part"
+            type="number"
+            placeholder="Part (X)"
+            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;"
+          >
+
+          <input
+            id="whole"
+            type="number"
+            placeholder="Whole (Y)"
+            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:10px;"
+          >
+
+          <br><br>
+
+          <button
+            class="button"
+            onclick="calculateWhatPercent()"
+            style="border:0;cursor:pointer;"
+          >
+            Calculate
+          </button>
+
+          <div
+            id="result2"
+            style="margin-top:20px;padding:18px;background:#f5f7fa;border-radius:10px;font-size:20px;font-weight:bold;"
+          >
+            Result will appear here
+          </div>
+
+          <br><br>
+
+          <h2>Percentage Increase or Decrease</h2>
+
+          <input
+            id="oldValue"
+            type="number"
+            placeholder="Original value"
+            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;"
+          >
+
+          <input
+            id="newValue"
+            type="number"
+            placeholder="New value"
+            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:10px;"
+          >
+
+          <br><br>
+
+          <button
+            class="button"
+            onclick="calculateChange()"
+            style="border:0;cursor:pointer;"
+          >
+            Calculate Change
+          </button>
+
+          <div
+            id="result3"
+            style="margin-top:20px;padding:18px;background:#f5f7fa;border-radius:10px;font-size:20px;font-weight:bold;"
+          >
+            Result will appear here
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function calculatePercentage() {
+
+      const percentage =
+        Number(
+          document.getElementById("percent").value
+        );
+
+      const number =
+        Number(
+          document.getElementById("number").value
+        );
+
+      const result =
+        document.getElementById("result1");
+
+
+      if (
+        !Number.isFinite(percentage) ||
+        !Number.isFinite(number)
+      ) {
+
+        result.textContent =
+          "Please enter valid numbers.";
+
+        return;
+
+      }
+
+
+      const answer =
+        (percentage / 100) * number;
+
+
+      result.textContent =
+        percentage + "% of " +
+        number + " = " +
+        answer;
+
+    }
+
+
+    function calculateWhatPercent() {
+
+      const part =
+        Number(
+          document.getElementById("part").value
+        );
+
+      const whole =
+        Number(
+          document.getElementById("whole").value
+        );
+
+      const result =
+        document.getElementById("result2");
+
+
+      if (
+        !Number.isFinite(part) ||
+        !Number.isFinite(whole) ||
+        whole === 0
+      ) {
+
+        result.textContent =
+          "Please enter valid numbers.";
+
+        return;
+
+      }
+
+
+      const answer =
+        (part / whole) * 100;
+
+
+      result.textContent =
+        part + " is " +
+        answer.toFixed(2) +
+        "% of " +
+        whole;
+
+    }
+
+
+    function calculateChange() {
+
+      const oldValue =
+        Number(
+          document.getElementById("oldValue").value
+        );
+
+      const newValue =
+        Number(
+          document.getElementById("newValue").value
+        );
+
+      const result =
+        document.getElementById("result3");
+
+
+      if (
+        !Number.isFinite(oldValue) ||
+        !Number.isFinite(newValue) ||
+        oldValue === 0
+      ) {
+
+        result.textContent =
+          "Please enter valid numbers.";
+
+        return;
+
+      }
+
+
+      const change =
+        ((newValue - oldValue) / oldValue) * 100;
+
+
+      if (change > 0) {
+
+        result.textContent =
+          "Increase: " +
+          change.toFixed(2) +
+          "%";
+
+      } else if (change < 0) {
+
+        result.textContent =
+          "Decrease: " +
+          Math.abs(change).toFixed(2) +
+          "%";
+
+      } else {
+
+        result.textContent =
+          "No change: 0%";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
