@@ -2,24 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact - GetToolly</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | GetToolly</title>
 
   <meta name="description"
-    content="Contact GetToolly for questions, feedback, suggestions or bug reports.">
+    content="Contact GetToolly for questions, feedback, bug reports or suggestions about our free online tools.">
 
-  <link rel="stylesheet" href="style.css">
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/contact.html">
+
+  <link rel="stylesheet"
+    href="style.css">
+
+  <style>
+
+    .contact-box {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #f5f7fa;
+      border-radius: 16px;
+    }
+
+    .contact-box label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      margin-bottom: 18px;
+      border: 1px solid #d9dee7;
+      border-radius: 8px;
+      background: white;
+      font-size: 16px;
+    }
+
+    .contact-box textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .contact-box button {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .contact-note {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      line-height: 1.7;
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="index.html" class="logo">
+      <a href="index.html"
+        class="logo">
         GetToolly
       </a>
 
@@ -48,62 +117,145 @@
   </header>
 
 
+
   <main>
 
     <section class="tools-section">
 
       <div class="container">
 
-        <div class="tool-card">
+        <h1>
+          Contact Us
+        </h1>
 
-          <h1>Contact GetToolly</h1>
+        <p>
+          Have a question, suggestion or found a problem
+          with one of our tools? We would love to hear from you.
+        </p>
 
-          <p>
-            Have a question, suggestion, or found a problem with one
-            of our tools? We would love to hear from you.
-          </p>
 
-          <br>
 
-          <h2>Email</h2>
+        <div class="contact-box">
 
-          <p>
-            You can contact us by email:
-          </p>
+          <form
+            action="https://formsubmit.co/ibrhus1982@gmail.com"
+            method="POST"
+          >
 
-          <p>
+            <input
+              type="hidden"
+              name="_subject"
+              value="New GetToolly Contact Message"
+            >
+
+            <input
+              type="hidden"
+              name="_captcha"
+              value="true"
+            >
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+
+            <label for="name">
+              Name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+            >
+
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            >
+
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+
+
+            <button
+              type="submit"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+
+          <div class="contact-note">
+
             <strong>
-              hello@gettoolly.com
+              Important:
             </strong>
-          </p>
 
-          <br>
+            <p>
+              Please replace
+              <strong>YOUR_EMAIL_HERE</strong>
+              in the form code with the email address
+              where you want to receive contact messages.
+            </p>
 
-          <h2>Suggestions</h2>
-
-          <p>
-            We are constantly adding new free tools.
-            If there is a tool you would like to see on GetToolly,
-            feel free to send us your suggestion.
-          </p>
-
-          <br>
-
-          <h2>Bug Reports</h2>
-
-          <p>
-            If you find an error or a tool that does not work correctly,
-            please tell us which tool you were using and describe the
-            problem.
-          </p>
+          </div>
 
         </div>
+
+
+
+        <h2>
+          What Can You Contact Us About?
+        </h2>
+
+        <p>
+          You can contact us about technical problems,
+          suggestions for new tools, website feedback,
+          incorrect information or general questions
+          about GetToolly.
+        </p>
+
+
+
+        <h2>
+          Suggestions and Feedback
+        </h2>
+
+        <p>
+          We are continuously improving GetToolly.
+          Your feedback can help us create better and
+          more useful free online tools.
+        </p>
 
       </div>
 
     </section>
 
   </main>
+
 
 
   <footer class="footer">
@@ -114,11 +266,11 @@
         GetToolly
       </div>
 
-      <div class="footer-links">
+      <p>
+        Free online tools for everyone.
+      </p>
 
-        <a href="index.html">
-          Home
-        </a>
+      <div class="footer-links">
 
         <a href="privacy.html">
           Privacy Policy
@@ -126,6 +278,10 @@
 
         <a href="terms.html">
           Terms of Use
+        </a>
+
+        <a href="contact.html">
+          Contact
         </a>
 
       </div>
@@ -137,6 +293,7 @@
     </div>
 
   </footer>
+
 
 </body>
 
