@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Calculator - GetToolly</title>
+
+  <meta name="description"
+    content="Use the free GetToolly online calculator for quick and easy calculations.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Free Online Calculator</h1>
+
+          <p>
+            Perform quick calculations directly in your browser.
+          </p>
+
+          <br>
+
+          <input
+            type="text"
+            id="display"
+            placeholder="Enter a calculation, e.g. 25 * 4 + 10"
+            style="width:100%;padding:15px;border:1px solid #ddd;border-radius:10px;font-size:18px;"
+          >
+
+          <br><br>
+
+          <button
+            class="button"
+            onclick="calculate()"
+            style="border:0;cursor:pointer;"
+          >
+            Calculate
+          </button>
+
+          <div
+            id="result"
+            style="margin-top:20px;padding:20px;background:#f5f7fa;border-radius:10px;font-size:20px;font-weight:bold;"
+          >
+            Result will appear here
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function calculate() {
+
+      const input =
+        document.getElementById("display").value;
+
+      const result =
+        document.getElementById("result");
+
+      /*
+        Allow only numbers and basic
+        mathematical operators.
+      */
+
+      if (!/^[0-9+\-*/().%\s]+$/.test(input)) {
+
+        result.textContent =
+          "Invalid calculation.";
+
+        return;
+      }
+
+      try {
+
+        const answer =
+          Function('"use strict"; return (' + input + ')')();
+
+        result.textContent =
+          "Result: " + answer;
+
+      } catch (error) {
+
+        result.textContent =
+          "Please enter a valid calculation.";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
