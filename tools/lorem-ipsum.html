@@ -2,31 +2,165 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Lorem Ipsum Generator - Free Online Tool | GetToolly</title>
+  <title>Lorem Ipsum Generator - Free Placeholder Text | GetToolly</title>
 
   <meta name="description"
-    content="Generate Lorem Ipsum placeholder text for websites, designs and projects with GetToolly.">
+    content="Generate Lorem Ipsum placeholder text online for free. Create paragraphs, sentences or words instantly with GetToolly.">
 
-  <link rel="stylesheet" href="../style.css">
+  <meta name="keywords"
+    content="Lorem Ipsum generator, Lorem Ipsum, placeholder text generator, dummy text generator, random text generator">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/tools/lorem-ipsum.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .lorem-box {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #f5f7fa;
+      border-radius: 16px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .field select,
+    .field input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      border: 1px solid #d9dee7;
+      border-radius: 8px;
+      background: white;
+      font-size: 16px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button-row button {
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .button-row button.secondary {
+      background: #172033;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 20px;
+      min-height: 300px;
+      background: white;
+      border-radius: 10px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .stats {
+      margin-top: 12px;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .example-box {
+      padding: 18px;
+      margin: 20px 0;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 650px) {
+
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="../index.html" class="logo">
+      <a href="../index.html"
+        class="logo">
         GetToolly
       </a>
 
+
       <nav class="navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#tools">Tools</a>
-        <a href="../privacy.html">Privacy</a>
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
       </nav>
 
     </div>
@@ -34,99 +168,294 @@
   </header>
 
 
+
+  <!-- MAIN -->
+
   <main>
 
     <section class="tools-section">
 
       <div class="container">
 
-        <div class="tool-card">
 
-          <a href="../index.html#tools">
-            ← Back to Tools
-          </a>
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
 
-          <br><br>
 
-          <h1>Lorem Ipsum Generator</h1>
+        <h1>
+          Free Lorem Ipsum Generator
+        </h1>
 
-          <p>
-            Generate placeholder text for websites, designs,
-            presentations and other projects.
-          </p>
 
-          <br>
+        <p>
+          Generate placeholder text for websites,
+          apps, designs and documents instantly.
+        </p>
 
-          <label for="paragraphs">
-            Number of Paragraphs
-          </label>
 
-          <input
-            id="paragraphs"
-            type="number"
-            min="1"
-            max="20"
-            value="3"
-            style="
-              width:100%;
-              padding:14px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              font-size:16px;
-              margin-top:8px;
-            "
-          >
 
-          <br><br>
+        <!-- LOREM TOOL -->
 
-          <button
-            class="button"
-            onclick="generateLorem()"
-            style="
-              border:0;
-              cursor:pointer;
-            "
-          >
-            Generate Text
-          </button>
+        <div class="lorem-box">
 
-          <button
-            onclick="copyLorem()"
-            style="
-              padding:12px 20px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              background:white;
-              cursor:pointer;
-              font-weight:bold;
-              margin-left:8px;
-            "
-          >
-            Copy Text
-          </button>
 
-          <br><br>
+          <div class="controls">
+
+
+            <div class="field">
+
+              <label for="amount">
+                Amount
+              </label>
+
+              <input
+                id="amount"
+                type="number"
+                min="1"
+                max="100"
+                value="3"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="type">
+                Generate
+              </label>
+
+              <select id="type">
+
+                <option value="paragraphs">
+                  Paragraphs
+                </option>
+
+                <option value="sentences">
+                  Sentences
+                </option>
+
+                <option value="words">
+                  Words
+                </option>
+
+              </select>
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="button-row">
+
+            <button
+              type="button"
+              onclick="generateLorem()"
+            >
+              Generate Text
+            </button>
+
+
+            <button
+              type="button"
+              class="secondary"
+              onclick="copyLorem()"
+            >
+              Copy Text
+            </button>
+
+
+            <button
+              type="button"
+              class="secondary"
+              onclick="clearLorem()"
+            >
+              Clear
+            </button>
+
+          </div>
+
+
 
           <div
             id="output"
-            style="
-              padding:20px;
-              background:#f5f7fa;
-              border-radius:10px;
-              white-space:pre-line;
-              line-height:1.8;
-            "
+            class="output"
+            aria-live="polite"
           >
-            Your Lorem Ipsum text will appear here.
+            Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua.
           </div>
 
+
           <div
-            id="message"
-            style="
-              margin-top:10px;
-              font-weight:bold;
-            "
-          ></div>
+            id="stats"
+            class="stats"
+          >
+            Ready to generate placeholder text.
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content-section">
+
+
+          <h2>
+            What Is Lorem Ipsum?
+          </h2>
+
+          <p>
+            Lorem Ipsum is placeholder text commonly used in
+            graphic design, web design, publishing and software
+            development. It helps designers see how text will
+            look before the final content is available.
+          </p>
+
+
+
+          <h2>
+            What Is a Lorem Ipsum Generator?
+          </h2>
+
+          <p>
+            A Lorem Ipsum generator creates sample placeholder
+            text automatically. Instead of manually copying
+            paragraphs, you can generate the amount of text
+            you need in seconds.
+          </p>
+
+
+
+          <h2>
+            How to Use This Generator
+          </h2>
+
+          <p>
+            Choose the amount of text you want and select
+            whether you want paragraphs, sentences or individual
+            words. Then click "Generate Text."
+          </p>
+
+          <p>
+            Use the "Copy Text" button to copy the generated
+            content to your clipboard.
+          </p>
+
+
+
+          <h2>
+            Common Uses for Lorem Ipsum
+          </h2>
+
+          <div class="example-box">
+
+            <p>
+              <strong>Web Design:</strong>
+              Preview website layouts before final copy is ready.
+            </p>
+
+            <p>
+              <strong>Graphic Design:</strong>
+              Test typography, spacing and page composition.
+            </p>
+
+            <p>
+              <strong>App Development:</strong>
+              Create temporary content while building interfaces.
+            </p>
+
+            <p>
+              <strong>Publishing:</strong>
+              Preview documents and page layouts.
+            </p>
+
+          </div>
+
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is this Lorem Ipsum generator free?
+            </h3>
+
+            <p>
+              Yes. GetToolly's Lorem Ipsum generator is free
+              to use and does not require registration.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I generate multiple paragraphs?
+            </h3>
+
+            <p>
+              Yes. Enter the number of paragraphs you need
+              and click Generate Text.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I generate Lorem Ipsum words?
+            </h3>
+
+            <p>
+              Yes. Select Words from the Generate menu and
+              choose the amount you want.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I copy the generated text?
+            </h3>
+
+            <p>
+              Yes. Click Copy Text to copy the generated
+              Lorem Ipsum to your clipboard.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does it work on mobile devices?
+            </h3>
+
+            <p>
+              Yes. The generator works on modern smartphones,
+              tablets and desktop browsers.
+            </p>
+
+          </div>
+
 
         </div>
 
@@ -137,6 +466,9 @@
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div class="container">
@@ -145,11 +477,27 @@
         GetToolly
       </div>
 
+      <p>
+        Free online tools for everyone.
+      </p>
+
+
       <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms</a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
+        </a>
+
       </div>
+
 
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
@@ -160,77 +508,164 @@
   </footer>
 
 
+
+  <!-- LOREM IPSUM SCRIPT -->
+
   <script>
 
-    const loremSentences = [
+    const loremWords = [
 
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-
-      "Curabitur pretium tincidunt lacus.",
-
-      "Nulla gravida orci a odio.",
-
-      "Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.",
-
-      "Integer in mauris eu nibh euismod gravida.",
-
-      "Duis ac tellus et risus vulputate vehicula.",
-
-      "Donec lobortis risus a elit.",
-
-      "Etiam tempor.",
-
-      "Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.",
-
-      "Maecenas fermentum consequat mi.",
-
-      "Donec fermentum.",
-
-      "Pellentesque malesuada nulla a mi.",
-
-      "Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.",
-
-      "Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.",
-
-      "Cras mollis scelerisque nunc.",
-
-      "Nullam arcu."
+      "lorem",
+      "ipsum",
+      "dolor",
+      "sit",
+      "amet",
+      "consectetur",
+      "adipiscing",
+      "elit",
+      "sed",
+      "do",
+      "eiusmod",
+      "tempor",
+      "incididunt",
+      "ut",
+      "labore",
+      "et",
+      "dolore",
+      "magna",
+      "aliqua",
+      "enim",
+      "ad",
+      "minim",
+      "veniam",
+      "quis",
+      "nostrud",
+      "exercitation",
+      "ullamco",
+      "laboris",
+      "nisi",
+      "aliquip",
+      "ex",
+      "ea",
+      "commodo",
+      "consequat",
+      "duis",
+      "aute",
+      "irure",
+      "reprehenderit",
+      "voluptate",
+      "velit",
+      "esse",
+      "cillum",
+      "fugiat",
+      "nulla",
+      "pariatur",
+      "excepteur",
+      "sint",
+      "occaecat",
+      "cupidatat",
+      "non",
+      "proident",
+      "sunt",
+      "culpa",
+      "qui",
+      "officia",
+      "deserunt",
+      "mollit",
+      "anim",
+      "id",
+      "est",
+      "laborum"
 
     ];
 
 
-    function generateParagraph() {
+    const output =
+      document.getElementById("output");
+
+    const stats =
+      document.getElementById("stats");
+
+    const amount =
+      document.getElementById("amount");
+
+    const type =
+      document.getElementById("type");
+
+
+    function randomWord() {
+
+      return loremWords[
+        Math.floor(
+          Math.random() *
+          loremWords.length
+        )
+      ];
+
+    }
+
+
+    function createSentence(
+      wordCount
+    ) {
+
+      const words = [];
+
+      for (
+        let i = 0;
+        i < wordCount;
+        i++
+      ) {
+
+        words.push(
+          randomWord()
+        );
+
+      }
+
+
+      let sentence =
+        words.join(" ");
+
+
+      sentence =
+        sentence.charAt(0).toUpperCase() +
+        sentence.slice(1) +
+        ".";
+
+
+      return sentence;
+
+    }
+
+
+    function createParagraph() {
+
+      const sentenceCount =
+        Math.floor(
+          Math.random() * 5
+        ) + 4;
+
 
       const sentences = [];
-
-      const numberOfSentences =
-        Math.floor(
-          Math.random() * 4
-        ) + 4;
 
 
       for (
         let i = 0;
-        i < numberOfSentences;
+        i < sentenceCount;
         i++
       ) {
 
-        const randomIndex =
+        const wordCount =
           Math.floor(
-            Math.random() *
-            loremSentences.length
-          );
+            Math.random() * 10
+          ) + 8;
+
 
         sentences.push(
-          loremSentences[randomIndex]
+          createSentence(
+            wordCount
+          )
         );
 
       }
@@ -241,90 +676,227 @@
     }
 
 
-    function generateLorem() {
+    function generateWords(
+      count
+    ) {
 
-      const input =
-        Number(
-          document.getElementById("paragraphs").value
-        );
-
-      const output =
-        document.getElementById("output");
-
-
-      if (
-        !Number.isFinite(input) ||
-        input < 1 ||
-        input > 20
-      ) {
-
-        output.textContent =
-          "Please enter a number between 1 and 20.";
-
-        return;
-
-      }
-
-
-      const paragraphs = [];
+      const words = [];
 
 
       for (
         let i = 0;
-        i < input;
+        i < count;
         i++
       ) {
 
-        paragraphs.push(
-          generateParagraph()
+        words.push(
+          randomWord()
         );
+
+      }
+
+
+      return words.join(" ");
+
+    }
+
+
+    function generateLorem() {
+
+      let count =
+        parseInt(
+          amount.value,
+          10
+        );
+
+
+      if (
+        !Number.isInteger(count) ||
+        count < 1
+      ) {
+
+        count = 1;
+
+      }
+
+
+      if (
+        count > 100
+      ) {
+
+        count = 100;
+
+      }
+
+
+      amount.value =
+        count;
+
+
+      let text = "";
+
+
+      if (
+        type.value === "paragraphs"
+      ) {
+
+        const paragraphs = [];
+
+
+        for (
+          let i = 0;
+          i < count;
+          i++
+        ) {
+
+          paragraphs.push(
+            createParagraph()
+          );
+
+        }
+
+
+        text =
+          paragraphs.join("\n\n");
+
+      }
+
+
+      else if (
+        type.value === "sentences"
+      ) {
+
+        const sentences = [];
+
+
+        for (
+          let i = 0;
+          i < count;
+          i++
+        ) {
+
+          const wordCount =
+            Math.floor(
+              Math.random() * 10
+            ) + 8;
+
+
+          sentences.push(
+            createSentence(
+              wordCount
+            )
+          );
+
+        }
+
+
+        text =
+          sentences.join(" ");
+
+      }
+
+
+      else {
+
+        text =
+          generateWords(
+            count
+          );
 
       }
 
 
       output.textContent =
-        paragraphs.join("\n\n");
+        text;
+
+
+      const wordCount =
+        text
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean)
+          .length;
+
+
+      const characterCount =
+        text.length;
+
+
+      stats.textContent =
+        wordCount +
+        " words • " +
+        characterCount +
+        " characters";
 
     }
 
 
-    function copyLorem() {
+    async function copyLorem() {
 
-      const output =
-        document.getElementById("output");
-
-      const message =
-        document.getElementById("message");
+      const text =
+        output.textContent.trim();
 
 
-      if (
-        !output.textContent ||
-        output.textContent ===
-        "Your Lorem Ipsum text will appear here."
-      ) {
+      if (!text) {
 
-        message.textContent =
-          "Generate text first.";
+        stats.textContent =
+          "There is no text to copy.";
 
         return;
 
       }
 
 
-      navigator.clipboard.writeText(
-        output.textContent
-      );
+      try {
+
+        await navigator.clipboard.writeText(
+          text
+        );
 
 
-      message.textContent =
-        "Copied!";
+        stats.textContent =
+          "Text copied to clipboard.";
+
+      }
+
+      catch (error) {
+
+        const temporary =
+          document.createElement(
+            "textarea"
+          );
+
+        temporary.value =
+          text;
+
+        document.body.appendChild(
+          temporary
+        );
+
+        temporary.select();
+
+        document.execCommand(
+          "copy"
+        );
+
+        temporary.remove();
 
 
-      setTimeout(function() {
+        stats.textContent =
+          "Text copied to clipboard.";
 
-        message.textContent = "";
+      }
 
-      }, 2000);
+    }
+
+
+    function clearLorem() {
+
+      output.textContent =
+        "";
+
+      stats.textContent =
+        "Ready to generate placeholder text.";
 
     }
 
@@ -332,6 +904,7 @@
     generateLorem();
 
   </script>
+
 
 </body>
 
