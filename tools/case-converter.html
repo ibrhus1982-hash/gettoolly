@@ -10,7 +10,7 @@
   <title>Case Converter - Uppercase, Lowercase & Title Case | GetToolly</title>
 
   <meta name="description"
-    content="Convert text to uppercase, lowercase, title case and sentence case with GetToolly's free online case converter. Fast, simple and free.">
+    content="Convert text to uppercase, lowercase, title case, sentence case and more with GetToolly's free online case converter.">
 
   <meta name="keywords"
     content="case converter, uppercase converter, lowercase converter, title case converter, sentence case, text converter">
@@ -29,50 +29,52 @@
     .converter-box {
       max-width: 900px;
       margin: 30px auto;
+      padding: 25px;
+      background: #f5f7fa;
+      border-radius: 16px;
     }
 
-    .converter-textarea {
+    .converter-box textarea {
       width: 100%;
       min-height: 280px;
       box-sizing: border-box;
-      padding: 18px;
+      padding: 15px;
       border: 1px solid #d9dee7;
-      border-radius: 12px;
+      border-radius: 10px;
+      background: white;
       font-size: 16px;
       line-height: 1.6;
       resize: vertical;
-      outline: none;
-      background: #fff;
     }
 
-    .converter-textarea:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
-    }
-
-    .converter-buttons {
+    .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 15px;
     }
 
-    .converter-buttons button {
+    .button-row button {
       padding: 11px 16px;
       border: 0;
       border-radius: 8px;
-      background: #172033;
+      background: #2563eb;
       color: white;
       cursor: pointer;
       font-size: 14px;
+      font-weight: 600;
     }
 
-    .converter-buttons button:hover {
-      opacity: 0.85;
+    .button-row button.secondary {
+      background: #172033;
     }
 
-    .converter-buttons .primary {
-      background: #2563eb;
+    .stats {
+      margin-top: 15px;
+      padding: 14px;
+      background: white;
+      border-radius: 10px;
+      color: #667085;
     }
 
     .content-section {
@@ -106,17 +108,13 @@
 <body>
 
 
-  <!-- HEADER -->
-
   <header class="header">
 
     <div class="container nav">
 
-      <a href="../index.html"
-        class="logo">
+      <a href="../index.html" class="logo">
         GetToolly
       </a>
-
 
       <nav class="navigation">
 
@@ -140,8 +138,6 @@
 
 
 
-  <!-- MAIN -->
-
   <main>
 
     <section class="tools-section">
@@ -155,83 +151,87 @@
 
 
         <h1>
-          Free Online Case Converter
+          Free Case Converter
         </h1>
 
 
         <p>
           Convert your text to uppercase, lowercase,
-          title case or sentence case instantly.
+          title case, sentence case and more.
         </p>
 
 
-
-        <!-- CONVERTER -->
 
         <div class="converter-box">
 
 
           <textarea
             id="textInput"
-            class="converter-textarea"
             placeholder="Type or paste your text here..."
-            aria-label="Text to convert"
+            spellcheck="false"
           ></textarea>
 
 
-          <div class="converter-buttons">
+          <div class="button-row">
 
-
-            <button
-              class="primary"
-              onclick="convertUppercase()"
-            >
+            <button onclick="toUpperCaseText()">
               UPPERCASE
             </button>
 
-
-            <button
-              onclick="convertLowercase()"
-            >
+            <button onclick="toLowerCaseText()">
               lowercase
             </button>
 
-
-            <button
-              onclick="convertTitleCase()"
-            >
+            <button onclick="toTitleCase()">
               Title Case
             </button>
 
-
-            <button
-              onclick="convertSentenceCase()"
-            >
+            <button onclick="toSentenceCase()">
               Sentence case
             </button>
 
+            <button
+              class="secondary"
+              onclick="toAlternatingCase()"
+            >
+              aLtErNaTiNg
+            </button>
 
             <button
+              class="secondary"
+              onclick="toToggleCase()"
+            >
+              tOGGLE cASE
+            </button>
+
+            <button
+              class="secondary"
               onclick="copyText()"
             >
               Copy
             </button>
 
-
             <button
+              class="secondary"
               onclick="clearText()"
             >
               Clear
             </button>
 
-
           </div>
+
+
+          <div
+            id="stats"
+            class="stats"
+          >
+            Characters: 0 • Words: 0
+          </div>
+
 
         </div>
 
 
-
-        <!-- CONTENT -->
 
         <div class="content-section">
 
@@ -241,15 +241,10 @@
           </h2>
 
           <p>
-            A case converter is an online text tool that
-            changes the capitalization of words and sentences.
-            It can save time when editing documents, articles,
-            emails, social media posts and other written content.
-          </p>
-
-          <p>
-            GetToolly's free case converter supports uppercase,
-            lowercase, title case and sentence case.
+            A case converter is an online tool that changes
+            the capitalization of text. It can quickly transform
+            text into uppercase, lowercase, title case or
+            sentence case.
           </p>
 
 
@@ -258,32 +253,31 @@
             Available Text Cases
           </h2>
 
-
           <div class="example-box">
 
             <p>
-              <strong>Original:</strong>
-              hello world this is a text example
-            </p>
-
-            <p>
               <strong>UPPERCASE:</strong>
-              HELLO WORLD THIS IS A TEXT EXAMPLE
+              HELLO WORLD
             </p>
 
             <p>
               <strong>lowercase:</strong>
-              hello world this is a text example
+              hello world
             </p>
 
             <p>
               <strong>Title Case:</strong>
-              Hello World This Is A Text Example
+              Hello World
             </p>
 
             <p>
               <strong>Sentence case:</strong>
-              Hello world this is a text example.
+              Hello world. This is an example.
+            </p>
+
+            <p>
+              <strong>aLtErNaTiNg:</strong>
+              HeLlO wOrLd
             </p>
 
           </div>
@@ -295,26 +289,21 @@
           </h2>
 
           <p>
-            Paste or type your text into the text box.
-            Then choose the capitalization format you want.
-            The selected conversion is applied instantly.
-          </p>
-
-          <p>
-            You can copy the converted text with the Copy button
-            and paste it into another application.
+            Type or paste your text into the text box.
+            Then select the capitalization style you want.
+            The text will be changed instantly.
           </p>
 
 
 
           <h2>
-            Who Can Use a Case Converter?
+            Why Use a Case Converter?
           </h2>
 
           <p>
-            This tool can be useful for students, writers,
-            bloggers, developers, marketers, social media
-            managers and anyone who works with text.
+            A case converter can save time when editing
+            documents, social media posts, website content,
+            titles, emails and other text.
           </p>
 
 
@@ -327,12 +316,12 @@
           <div class="faq-item">
 
             <h3>
-              Is this case converter free?
+              Is the case converter free?
             </h3>
 
             <p>
-              Yes. GetToolly's case converter is free to use
-              and does not require registration.
+              Yes. GetToolly's case converter is free and
+              does not require registration.
             </p>
 
           </div>
@@ -341,12 +330,12 @@
           <div class="faq-item">
 
             <h3>
-              What does uppercase mean?
+              Can I convert text to uppercase?
             </h3>
 
             <p>
-              Uppercase converts letters to capital letters,
-              such as HELLO WORLD.
+              Yes. Click the UPPERCASE button to convert
+              all letters to uppercase.
             </p>
 
           </div>
@@ -355,12 +344,12 @@
           <div class="faq-item">
 
             <h3>
-              What does lowercase mean?
+              Can I convert text to lowercase?
             </h3>
 
             <p>
-              Lowercase converts letters to small letters,
-              such as hello world.
+              Yes. Click the lowercase button to convert
+              all letters to lowercase.
             </p>
 
           </div>
@@ -369,12 +358,12 @@
           <div class="faq-item">
 
             <h3>
-              What is Title Case?
+              Can I copy the converted text?
             </h3>
 
             <p>
-              Title Case capitalizes the main words in a phrase
-              or title, making text suitable for headings.
+              Yes. Click Copy to copy the converted text
+              to your clipboard.
             </p>
 
           </div>
@@ -383,12 +372,12 @@
           <div class="faq-item">
 
             <h3>
-              Does the tool store my text?
+              Does it work on mobile?
             </h3>
 
             <p>
-              The conversion happens directly in your browser.
-              The tool does not need to send your text to a server.
+              Yes. The tool works on modern phones,
+              tablets and desktop browsers.
             </p>
 
           </div>
@@ -404,8 +393,6 @@
 
 
 
-  <!-- FOOTER -->
-
   <footer class="footer">
 
     <div class="container">
@@ -417,7 +404,6 @@
       <p>
         Free online tools for everyone.
       </p>
-
 
       <div class="footer-links">
 
@@ -435,7 +421,6 @@
 
       </div>
 
-
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
       </p>
@@ -446,95 +431,212 @@
 
 
 
-  <!-- CONVERTER SCRIPT -->
-
   <script>
 
     const textInput =
       document.getElementById("textInput");
 
+    const stats =
+      document.getElementById("stats");
 
-    function convertUppercase() {
+
+    function updateStats() {
+
+      const text =
+        textInput.value;
+
+      const characters =
+        text.length;
+
+      const words =
+        text.trim() === ""
+          ? 0
+          : text.trim().split(/\s+/).length;
+
+      stats.textContent =
+        "Characters: " +
+        characters +
+        " • Words: " +
+        words;
+
+    }
+
+
+    function toUpperCaseText() {
 
       textInput.value =
         textInput.value.toUpperCase();
 
+      updateStats();
+
     }
 
 
-    function convertLowercase() {
+    function toLowerCaseText() {
 
       textInput.value =
         textInput.value.toLowerCase();
 
+      updateStats();
+
     }
 
 
-    function convertTitleCase() {
-
-      const text =
-        textInput.value.toLowerCase();
-
+    function toTitleCase() {
 
       textInput.value =
-        text.replace(
-          /\b\w/g,
-          function(letter) {
-            return letter.toUpperCase();
-          }
-        );
+        textInput.value
+          .toLowerCase()
+          .replace(
+            /\b\w/g,
+            function(letter) {
+              return letter.toUpperCase();
+            }
+          );
+
+      updateStats();
 
     }
 
 
-    function convertSentenceCase() {
+    function toSentenceCase() {
 
       const text =
-        textInput.value.toLowerCase();
-
+        textInput.value
+          .toLowerCase();
 
       textInput.value =
         text.replace(
           /(^\s*\w|[.!?]\s+\w)/g,
-          function(letter) {
-            return letter.toUpperCase();
+          function(match) {
+            return match.toUpperCase();
           }
         );
+
+      updateStats();
 
     }
 
 
-    function copyText() {
+    function toAlternatingCase() {
 
-      if (
-        textInput.value.trim() === ""
-      ) {
+      let index = 0;
+
+      textInput.value =
+        textInput.value
+          .toLowerCase()
+          .split("")
+          .map(function(character) {
+
+            if (
+              /[a-z]/i.test(character)
+            ) {
+
+              const converted =
+                index % 2 === 0
+                  ? character.toUpperCase()
+                  : character.toLowerCase();
+
+              index++;
+
+              return converted;
+
+            }
+
+            return character;
+
+          })
+          .join("");
+
+      updateStats();
+
+    }
+
+
+    function toToggleCase() {
+
+      textInput.value =
+        textInput.value
+          .split("")
+          .map(function(character) {
+
+            if (
+              character ===
+              character.toUpperCase()
+            ) {
+
+              return character.toLowerCase();
+
+            }
+
+            return character.toUpperCase();
+
+          })
+          .join("");
+
+      updateStats();
+
+    }
+
+
+    async function copyText() {
+
+      const text =
+        textInput.value;
+
+      if (!text) {
+
+        stats.textContent =
+          "There is no text to copy.";
 
         return;
 
       }
 
 
-      navigator.clipboard.writeText(
-        textInput.value
-      ).then(function() {
+      try {
 
-        alert(
-          "Text copied to clipboard!"
+        await navigator.clipboard.writeText(
+          text
         );
 
-      });
+        stats.textContent =
+          "Text copied to clipboard.";
+
+      }
+      catch (error) {
+
+        textInput.select();
+
+        document.execCommand(
+          "copy"
+        );
+
+        stats.textContent =
+          "Text copied to clipboard.";
+
+      }
 
     }
 
 
     function clearText() {
 
-      textInput.value = "";
+      textInput.value =
+        "";
+
+      updateStats();
 
       textInput.focus();
 
     }
+
+
+    textInput.addEventListener(
+      "input",
+      updateStats
+    );
+
 
   </script>
 
