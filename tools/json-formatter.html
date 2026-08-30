@@ -2,31 +2,171 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>JSON Formatter - Free Online Tool | GetToolly</title>
+  <title>JSON Formatter & Validator - Free Online JSON Tool | GetToolly</title>
 
   <meta name="description"
-    content="Format, validate and minify JSON online for free with GetToolly JSON Formatter.">
+    content="Format, validate, beautify and minify JSON online with GetToolly's free JSON Formatter. Check JSON syntax and copy the result instantly.">
 
-  <link rel="stylesheet" href="../style.css">
+  <meta name="keywords"
+    content="JSON formatter, JSON validator, JSON beautifier, JSON minifier, format JSON online, validate JSON">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/tools/json-formatter.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .json-tool {
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .json-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .json-panel {
+      background: #f5f7fa;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .json-panel h2 {
+      margin-top: 0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 350px;
+      box-sizing: border-box;
+      padding: 15px;
+      border: 1px solid #d9dee7;
+      border-radius: 10px;
+      resize: vertical;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      background: white;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .button-row button {
+      padding: 11px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .button-row button.secondary {
+      background: #172033;
+    }
+
+    .status {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background: white;
+      font-weight: 600;
+      min-height: 20px;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .example-box {
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example-box pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 800px) {
+
+      .json-grid {
+        grid-template-columns: 1fr;
+      }
+
+      textarea {
+        min-height: 280px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="../index.html" class="logo">
+      <a href="../index.html"
+        class="logo">
         GetToolly
       </a>
 
+
       <nav class="navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#tools">Tools</a>
-        <a href="../privacy.html">Privacy</a>
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
       </nav>
 
     </div>
@@ -34,97 +174,309 @@
   </header>
 
 
+
+  <!-- MAIN -->
+
   <main>
 
     <section class="tools-section">
 
       <div class="container">
 
-        <div class="tool-card">
 
-          <a href="../index.html#tools">
-            ← Back to Tools
-          </a>
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
 
-          <br><br>
 
-          <h1>Free JSON Formatter</h1>
+        <h1>
+          Free JSON Formatter & Validator
+        </h1>
+
+
+        <p>
+          Format, validate, beautify and minify JSON
+          directly in your browser.
+        </p>
+
+
+
+        <!-- JSON TOOL -->
+
+        <div class="json-tool">
+
+
+          <div class="json-grid">
+
+
+            <!-- INPUT -->
+
+            <div class="json-panel">
+
+              <h2>
+                JSON Input
+              </h2>
+
+
+              <textarea
+                id="jsonInput"
+                spellcheck="false"
+                placeholder='Paste your JSON here...
+
+Example:
+{"name":"John","age":30}'
+              ></textarea>
+
+
+              <div class="button-row">
+
+                <button
+                  type="button"
+                  onclick="formatJSON()"
+                >
+                  Format JSON
+                </button>
+
+
+                <button
+                  type="button"
+                  class="secondary"
+                  onclick="minifyJSON()"
+                >
+                  Minify JSON
+                </button>
+
+
+                <button
+                  type="button"
+                  class="secondary"
+                  onclick="validateJSON()"
+                >
+                  Validate
+                </button>
+
+
+                <button
+                  type="button"
+                  class="secondary"
+                  onclick="clearJSON()"
+                >
+                  Clear
+                </button>
+
+              </div>
+
+
+              <div
+                id="status"
+                class="status"
+                aria-live="polite"
+              >
+                Ready.
+
+              </div>
+
+            </div>
+
+
+
+            <!-- OUTPUT -->
+
+            <div class="json-panel">
+
+              <h2>
+                Result
+              </h2>
+
+
+              <textarea
+                id="jsonOutput"
+                spellcheck="false"
+                readonly
+                placeholder="Your formatted JSON will appear here."
+              ></textarea>
+
+
+              <div class="button-row">
+
+                <button
+                  type="button"
+                  onclick="copyJSON()"
+                >
+                  Copy Result
+                </button>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content-section">
+
+
+          <h2>
+            What Is JSON?
+          </h2>
 
           <p>
-            Format, validate and minify JSON directly in your browser.
+            JSON stands for JavaScript Object Notation.
+            It is a lightweight text format commonly used
+            to store and exchange structured data between
+            applications and web services.
           </p>
 
-          <br>
 
-          <textarea
-            id="jsonInput"
-            rows="15"
-            placeholder='Paste JSON here, for example: {"name":"John","age":30}'
-            style="
-              width:100%;
-              padding:15px;
-              border:1px solid #ddd;
-              border-radius:10px;
-              font-size:15px;
-              font-family:monospace;
-              resize:vertical;
-            "
-          ></textarea>
 
-          <br><br>
+          <h2>
+            What Does a JSON Formatter Do?
+          </h2>
 
-          <div
-            style="
-              display:flex;
-              flex-wrap:wrap;
-              gap:10px;
-            "
-          >
+          <p>
+            A JSON formatter takes compact or difficult-to-read
+            JSON and adds indentation and line breaks so the
+            structure is easier to understand.
+          </p>
 
-            <button
-              class="button"
-              onclick="formatJSON()"
-              style="border:0;cursor:pointer;"
-            >
-              Format JSON
-            </button>
 
-            <button
-              class="button"
-              onclick="minifyJSON()"
-              style="border:0;cursor:pointer;"
-            >
-              Minify JSON
-            </button>
 
-            <button
-              onclick="clearJSON()"
-              style="
-                padding:12px 20px;
-                border:1px solid #ddd;
-                border-radius:10px;
-                background:white;
-                cursor:pointer;
-                font-weight:bold;
-              "
-            >
-              Clear
-            </button>
+          <h2>
+            What Does JSON Validation Mean?
+          </h2>
+
+          <p>
+            JSON validation checks whether the provided text
+            follows the syntax rules required for valid JSON.
+            If the JSON contains a syntax error, this tool
+            reports that the input is not valid.
+          </p>
+
+
+
+          <h2>
+            Format vs. Minify JSON
+          </h2>
+
+          <div class="example-box">
+
+            <p>
+              <strong>Formatted JSON:</strong>
+            </p>
+
+<pre>{
+  "name": "John",
+  "age": 30
+}</pre>
+
+
+            <p>
+              <strong>Minified JSON:</strong>
+            </p>
+
+<pre>{"name":"John","age":30}</pre>
 
           </div>
 
-          <div
-            id="status"
-            style="
-              margin-top:20px;
-              padding:15px;
-              border-radius:10px;
-              background:#f5f7fa;
-              font-weight:bold;
-            "
-          >
-            Paste JSON and choose an action.
+
+
+          <h2>
+            How to Use the JSON Formatter
+          </h2>
+
+          <p>
+            Paste your JSON into the input box and choose
+            "Format JSON" to make it easier to read.
+            Choose "Minify JSON" to remove unnecessary
+            spaces and line breaks.
+          </p>
+
+          <p>
+            You can also click "Validate" to check whether
+            the JSON syntax is valid.
+          </p>
+
+
+
+          <h2>
+            Is My JSON Data Uploaded?
+          </h2>
+
+          <p>
+            This tool processes the JSON directly in your
+            browser. The page does not need to upload your
+            JSON to a remote server for formatting or validation.
+          </p>
+
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is the JSON formatter free?
+            </h3>
+
+            <p>
+              Yes. GetToolly's JSON Formatter is free to use
+              and does not require an account.
+            </p>
+
           </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can this tool validate JSON?
+            </h3>
+
+            <p>
+              Yes. Click the Validate button to check whether
+              your JSON is syntactically valid.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I minify JSON?
+            </h3>
+
+            <p>
+              Yes. The Minify JSON button removes unnecessary
+              whitespace from valid JSON.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does the JSON formatter work on mobile?
+            </h3>
+
+            <p>
+              Yes. The tool works in modern mobile and
+              desktop browsers.
+            </p>
+
+          </div>
+
 
         </div>
 
@@ -135,6 +487,9 @@
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div class="container">
@@ -143,11 +498,27 @@
         GetToolly
       </div>
 
+      <p>
+        Free online tools for everyone.
+      </p>
+
+
       <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms</a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
+        </a>
+
       </div>
+
 
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
@@ -158,50 +529,73 @@
   </footer>
 
 
+
+  <!-- JSON SCRIPT -->
+
   <script>
 
-    const input =
+    const jsonInput =
       document.getElementById("jsonInput");
+
+    const jsonOutput =
+      document.getElementById("jsonOutput");
 
     const status =
       document.getElementById("status");
 
 
-    function formatJSON() {
+    function getJSON() {
 
-      const value =
-        input.value.trim();
+      if (
+        jsonInput.value.trim() === ""
+      ) {
 
-
-      if (!value) {
-
-        status.textContent =
-          "Please enter JSON first.";
-
-        return;
+        throw new Error(
+          "Please enter some JSON."
+        );
 
       }
 
 
+      return JSON.parse(
+        jsonInput.value
+      );
+
+    }
+
+
+    function formatJSON() {
+
       try {
 
-        const parsed =
-          JSON.parse(value);
+        const data =
+          getJSON();
 
-        input.value =
+
+        const formatted =
           JSON.stringify(
-            parsed,
+            data,
             null,
             2
           );
 
-        status.textContent =
-          "✓ Valid JSON. Successfully formatted.";
 
-      } catch (error) {
+        jsonOutput.value =
+          formatted;
+
 
         status.textContent =
-          "✕ Invalid JSON: " +
+          "Valid JSON — formatted successfully.";
+
+      }
+
+      catch (error) {
+
+        jsonOutput.value =
+          "";
+
+        status.textContent =
+          "Invalid JSON: " +
           error.message;
 
       }
@@ -211,14 +605,72 @@
 
     function minifyJSON() {
 
-      const value =
-        input.value.trim();
+      try {
+
+        const data =
+          getJSON();
 
 
-      if (!value) {
+        const minified =
+          JSON.stringify(
+            data
+          );
+
+
+        jsonOutput.value =
+          minified;
+
 
         status.textContent =
-          "Please enter JSON first.";
+          "Valid JSON — minified successfully.";
+
+      }
+
+      catch (error) {
+
+        jsonOutput.value =
+          "";
+
+        status.textContent =
+          "Invalid JSON: " +
+          error.message;
+
+      }
+
+    }
+
+
+    function validateJSON() {
+
+      try {
+
+        getJSON();
+
+
+        status.textContent =
+          "✓ Valid JSON.";
+
+      }
+
+      catch (error) {
+
+        status.textContent =
+          "✗ Invalid JSON: " +
+          error.message;
+
+      }
+
+    }
+
+
+    async function copyJSON() {
+
+      if (
+        jsonOutput.value.trim() === ""
+      ) {
+
+        status.textContent =
+          "There is no result to copy.";
 
         return;
 
@@ -227,20 +679,27 @@
 
       try {
 
-        const parsed =
-          JSON.parse(value);
+        await navigator.clipboard.writeText(
+          jsonOutput.value
+        );
 
-        input.value =
-          JSON.stringify(parsed);
-
-        status.textContent =
-          "✓ Valid JSON. Successfully minified.";
-
-      } catch (error) {
 
         status.textContent =
-          "✕ Invalid JSON: " +
-          error.message;
+          "Result copied to clipboard.";
+
+      }
+
+      catch (error) {
+
+        jsonOutput.select();
+
+        document.execCommand(
+          "copy"
+        );
+
+
+        status.textContent =
+          "Result copied to clipboard.";
 
       }
 
@@ -249,14 +708,39 @@
 
     function clearJSON() {
 
-      input.value = "";
+      jsonInput.value =
+        "";
+
+      jsonOutput.value =
+        "";
 
       status.textContent =
-        "Paste JSON and choose an action.";
+        "Ready.";
 
     }
 
+
+    jsonInput.addEventListener(
+      "input",
+      function() {
+
+        if (
+          jsonInput.value.trim() === ""
+        ) {
+
+          jsonOutput.value =
+            "";
+
+          status.textContent =
+            "Ready.";
+
+        }
+
+      }
+    );
+
   </script>
+
 
 </body>
 
