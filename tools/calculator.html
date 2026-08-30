@@ -2,26 +2,116 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Free Calculator - GetToolly</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Online Calculator - Free Basic Calculator | GetToolly</title>
 
   <meta name="description"
-    content="Use the free GetToolly online calculator for quick and easy calculations.">
+    content="Use GetToolly's free online calculator to perform addition, subtraction, multiplication and division quickly and easily. No signup required.">
 
-  <link rel="stylesheet" href="../style.css">
+  <meta name="keywords"
+    content="online calculator, free calculator, basic calculator, math calculator, simple calculator">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/tools/calculator.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .calculator-box {
+      max-width: 420px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #f5f7fa;
+      border-radius: 16px;
+    }
+
+    .calculator-display {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: white;
+      font-size: 28px;
+      text-align: right;
+    }
+
+    .calculator-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .calculator-buttons button {
+      padding: 18px 10px;
+      border: 0;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .calculator-buttons button:hover {
+      opacity: 0.8;
+    }
+
+    .calculator-buttons .operator {
+      background: #172033;
+      color: white;
+    }
+
+    .calculator-buttons .equals {
+      background: #2563eb;
+      color: white;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header class="header">
 
     <div class="container nav">
 
-      <a href="../index.html" class="logo">
+      <a href="../index.html"
+        class="logo">
         GetToolly
       </a>
+
 
       <nav class="navigation">
 
@@ -44,50 +134,268 @@
   </header>
 
 
+
+  <!-- MAIN -->
+
   <main>
 
     <section class="tools-section">
 
       <div class="container">
 
-        <div class="tool-card">
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
 
-          <a href="../index.html#tools">
-            ← Back to Tools
-          </a>
 
-          <br><br>
+        <h1>
+          Free Online Calculator
+        </h1>
 
-          <h1>Free Online Calculator</h1>
 
-          <p>
-            Perform quick calculations directly in your browser.
-          </p>
+        <p>
+          Use this simple online calculator to perform
+          basic mathematical calculations quickly and easily.
+        </p>
 
-          <br>
+
+
+        <!-- CALCULATOR -->
+
+        <div class="calculator-box">
 
           <input
-            type="text"
             id="display"
-            placeholder="Enter a calculation, e.g. 25 * 4 + 10"
-            style="width:100%;padding:15px;border:1px solid #ddd;border-radius:10px;font-size:18px;"
+            class="calculator-display"
+            type="text"
+            value="0"
+            readonly
+            aria-label="Calculator display"
           >
 
-          <br><br>
 
-          <button
-            class="button"
-            onclick="calculate()"
-            style="border:0;cursor:pointer;"
-          >
-            Calculate
-          </button>
+          <div class="calculator-buttons">
 
-          <div
-            id="result"
-            style="margin-top:20px;padding:20px;background:#f5f7fa;border-radius:10px;font-size:20px;font-weight:bold;"
-          >
-            Result will appear here
+            <button onclick="clearCalculator()">
+              C
+            </button>
+
+            <button onclick="deleteLast()">
+              DEL
+            </button>
+
+            <button
+              class="operator"
+              onclick="addOperator('%')"
+            >
+              %
+            </button>
+
+            <button
+              class="operator"
+              onclick="addOperator('/')"
+            >
+              ÷
+            </button>
+
+
+            <button onclick="addNumber('7')">
+              7
+            </button>
+
+            <button onclick="addNumber('8')">
+              8
+            </button>
+
+            <button onclick="addNumber('9')">
+              9
+            </button>
+
+            <button
+              class="operator"
+              onclick="addOperator('*')"
+            >
+              ×
+            </button>
+
+
+            <button onclick="addNumber('4')">
+              4
+            </button>
+
+            <button onclick="addNumber('5')">
+              5
+            </button>
+
+            <button onclick="addNumber('6')">
+              6
+            </button>
+
+            <button
+              class="operator"
+              onclick="addOperator('-')"
+            >
+              −
+            </button>
+
+
+            <button onclick="addNumber('1')">
+              1
+            </button>
+
+            <button onclick="addNumber('2')">
+              2
+            </button>
+
+            <button onclick="addNumber('3')">
+              3
+            </button>
+
+            <button
+              class="operator"
+              onclick="addOperator('+')"
+            >
+              +
+            </button>
+
+
+            <button onclick="addNumber('0')">
+              0
+            </button>
+
+            <button onclick="addDecimal()">
+              .
+            </button>
+
+            <button
+              class="equals"
+              onclick="calculate()"
+              style="grid-column: span 2;"
+            >
+              =
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ABOUT -->
+
+        <div class="content-section">
+
+          <h2>
+            What Is an Online Calculator?
+          </h2>
+
+          <p>
+            An online calculator is a convenient tool that
+            allows you to perform mathematical operations
+            directly in your web browser.
+          </p>
+
+          <p>
+            GetToolly's calculator supports common operations
+            such as addition, subtraction, multiplication,
+            division and percentages.
+          </p>
+
+
+          <h2>
+            How to Use This Calculator
+          </h2>
+
+          <p>
+            Enter numbers using the buttons above and select
+            the mathematical operation you need. Press the
+            equals button to see the result.
+          </p>
+
+
+          <h2>
+            Basic Calculator Examples
+          </h2>
+
+          <p>
+            <strong>Addition:</strong>
+            25 + 15 = 40
+          </p>
+
+          <p>
+            <strong>Subtraction:</strong>
+            50 − 20 = 30
+          </p>
+
+          <p>
+            <strong>Multiplication:</strong>
+            8 × 7 = 56
+          </p>
+
+          <p>
+            <strong>Division:</strong>
+            100 ÷ 4 = 25
+          </p>
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is this calculator free?
+            </h3>
+
+            <p>
+              Yes. The GetToolly calculator is completely
+              free to use and does not require registration.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I use the calculator on my phone?
+            </h3>
+
+            <p>
+              Yes. The calculator works in modern mobile
+              browsers as well as desktop browsers.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I calculate percentages?
+            </h3>
+
+            <p>
+              Yes. You can use the percentage button for
+              basic percentage calculations.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Do I need to install an app?
+            </h3>
+
+            <p>
+              No. The calculator works directly in your
+              browser without installing any software.
+            </p>
+
           </div>
 
         </div>
@@ -99,6 +407,9 @@
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div class="container">
@@ -107,21 +418,27 @@
         GetToolly
       </div>
 
-      <div class="footer-links">
+      <p>
+        Free online tools for everyone.
+      </p>
 
-        <a href="../index.html">
-          Home
-        </a>
+
+      <div class="footer-links">
 
         <a href="../privacy.html">
           Privacy Policy
         </a>
 
         <a href="../terms.html">
-          Terms
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
         </a>
 
       </div>
+
 
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
@@ -132,47 +449,241 @@
   </footer>
 
 
+
+  <!-- CALCULATOR SCRIPT -->
+
   <script>
 
-    function calculate() {
+    const display =
+      document.getElementById("display");
 
-      const input =
-        document.getElementById("display").value;
 
-      const result =
-        document.getElementById("result");
+    let currentValue = "";
 
-      /*
-        Allow only numbers and basic
-        mathematical operators.
-      */
 
-      if (!/^[0-9+\-*/().%\s]+$/.test(input)) {
+    function addNumber(number) {
 
-        result.textContent =
-          "Invalid calculation.";
+      if (
+        currentValue === "0"
+      ) {
+        currentValue = "";
+      }
 
+      currentValue += number;
+
+      display.value =
+        currentValue;
+
+    }
+
+
+    function addOperator(operator) {
+
+      if (
+        currentValue === ""
+      ) {
         return;
       }
 
+
+      const lastCharacter =
+        currentValue.slice(-1);
+
+
+      if (
+        ["+", "-", "*", "/", "%"]
+        .includes(lastCharacter)
+      ) {
+
+        currentValue =
+          currentValue.slice(0, -1);
+
+      }
+
+
+      currentValue += operator;
+
+      display.value =
+        currentValue;
+
+    }
+
+
+    function addDecimal() {
+
+      const parts =
+        currentValue.split(
+          /[+\-*/%]/
+        );
+
+
+      const lastNumber =
+        parts[parts.length - 1];
+
+
+      if (
+        lastNumber.includes(".")
+      ) {
+        return;
+      }
+
+
+      if (
+        lastNumber === ""
+      ) {
+
+        currentValue += "0";
+
+      }
+
+
+      currentValue += ".";
+
+      display.value =
+        currentValue;
+
+    }
+
+
+    function clearCalculator() {
+
+      currentValue = "";
+
+      display.value = "0";
+
+    }
+
+
+    function deleteLast() {
+
+      currentValue =
+        currentValue.slice(0, -1);
+
+
+      display.value =
+        currentValue || "0";
+
+    }
+
+
+    function calculate() {
+
+      if (
+        currentValue === ""
+      ) {
+        return;
+      }
+
+
       try {
 
-        const answer =
-          Function('"use strict"; return (' + input + ')')();
+        const expression =
+          currentValue
+            .replace(/%/g, "/100");
 
-        result.textContent =
-          "Result: " + answer;
+
+        const result =
+          Function(
+            "return " +
+            expression
+          )();
+
+
+        if (
+          !Number.isFinite(result)
+        ) {
+
+          display.value =
+            "Error";
+
+          currentValue = "";
+
+          return;
+
+        }
+
+
+        currentValue =
+          String(
+            Number(
+              result.toFixed(10)
+            )
+          );
+
+
+        display.value =
+          currentValue;
 
       } catch (error) {
 
-        result.textContent =
-          "Please enter a valid calculation.";
+        display.value =
+          "Error";
+
+        currentValue = "";
 
       }
 
     }
 
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        const key =
+          event.key;
+
+
+        if (
+          /[0-9]/.test(key)
+        ) {
+
+          addNumber(key);
+
+        }
+        else if (
+          ["+", "-", "*", "/", "%"]
+          .includes(key)
+        ) {
+
+          addOperator(key);
+
+        }
+        else if (
+          key === "."
+        ) {
+
+          addDecimal();
+
+        }
+        else if (
+          key === "Enter" ||
+          key === "="
+        ) {
+
+          calculate();
+
+        }
+        else if (
+          key === "Backspace"
+        ) {
+
+          deleteLast();
+
+        }
+        else if (
+          key === "Escape"
+        ) {
+
+          clearCalculator();
+
+        }
+
+      }
+    );
+
   </script>
+
 
 </body>
 
