@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text Generator - Free Online Text Generator | GetToolly</title>
+
+  <meta name="description" content="Generate useful text instantly with GetToolly's free online text generator. Create paragraphs, sentences and custom text quickly.">
+
+  <meta name="keywords" content="text generator, random text generator, paragraph generator, sentence generator, free text generator">
+
+  <link rel="canonical" href="https://gettoolly.vercel.app/tools/text-generator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .navbar {
+      max-width: 900px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: #172033;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h1 {
+      font-size: 42px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #64748b;
+      font-size: 18px;
+    }
+
+    .generator {
+      max-width: 650px;
+      margin: auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+
+    select,
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 13px 15px;
+      font-size: 16px;
+      outline: none;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    select,
+    input {
+      height: 52px;
+    }
+
+    textarea {
+      min-height: 230px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    select:focus,
+    input:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      height: 52px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .generate-btn {
+      border: none;
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .generate-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .copy-btn {
+      border: 1px solid #2563eb;
+      background: #ffffff;
+      color: #2563eb;
+    }
+
+    .copy-btn:hover {
+      background: #eff6ff;
+    }
+
+    .info {
+      max-width: 700px;
+      margin: 50px auto 0;
+      color: #475569;
+    }
+
+    .info h2 {
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        padding: 18px 20px;
+        gap: 15px;
+      }
+
+      .intro h1 {
+        font-size: 34px;
+      }
+
+      .generator {
+        padding: 22px;
+      }
+
+      .button-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="../index.html" class="logo">
+      <span>◆</span> GetToolly
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#tools">Tools</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="intro">
+    <h1>Text Generator</h1>
+
+    <p>
+      Generate useful text instantly with our free online text generator.
+    </p>
+  </div>
+
+  <section class="generator">
+
+    <div class="field">
+
+      <label for="type">
+        Text Type
+      </label>
+
+      <select id="type">
+        <option value="paragraph">Paragraphs</option>
+        <option value="sentences">Sentences</option>
+        <option value="lorem">Lorem Ipsum</option>
+      </select>
+
+    </div>
+
+    <div class="field">
+
+      <label for="amount">
+        Number of Text Blocks
+      </label>
+
+      <input
+        type="number"
+        id="amount"
+        value="3"
+        min="1"
+        max="20"
+      >
+
+    </div>
+
+    <div class="field">
+
+      <label for="output">
+        Generated Text
+      </label>
+
+      <textarea
+        id="output"
+        placeholder="Your generated text will appear here..."
+        readonly
+      ></textarea>
+
+    </div>
+
+    <div class="button-row">
+
+      <button
+        class="generate-btn"
+        onclick="generateText()">
+        Generate Text
+      </button>
+
+      <button
+        class="copy-btn"
+        onclick="copyText()">
+        Copy Text
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="info">
+
+    <h2>About the Text Generator</h2>
+
+    <p>
+      GetToolly's free text generator helps you quickly create
+      sample paragraphs, sentences and Lorem Ipsum text for
+      websites, designs, documents and other projects.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms of Service</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <p>
+    © 2026 GetToolly. All rights reserved.
+  </p>
+
+</footer>
+
+<script>
+
+  const paragraphs = [
+    "Technology continues to change the way people work, communicate and learn. Simple digital tools can help users complete everyday tasks faster and with less effort.",
+    "Good organization can make everyday work easier. By using practical tools and clear information, people can save time and focus on the tasks that matter most.",
+    "The internet provides access to many useful resources. Free online tools can make common activities simpler, whether someone is working, studying or managing a personal project.",
+    "Learning new skills becomes easier when information is presented clearly. Useful digital resources can help people practice, experiment and improve their abilities over time.",
+    "Modern websites are designed to provide fast and convenient access to information. A simple interface can help visitors find what they need without unnecessary steps."
+  ];
+
+  const sentences = [
+    "Online tools can make everyday tasks easier.",
+    "Simple solutions often save valuable time.",
+    "People use technology for work and learning.",
+    "Clear information helps users make better decisions.",
+    "Digital tools are useful for many different tasks.",
+    "A good website should be simple and easy to navigate.",
+    "Practice is an important part of learning new skills.",
+    "Technology continues to evolve every year.",
+    "Useful resources can improve productivity.",
+    "Organization helps people complete tasks more efficiently."
+  ];
+
+  const lorem = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+    "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula.",
+    "Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    "Aenean lacinia bibendum nulla sed consectetur.",
+    "Cras mattis consectetur purus sit amet fermentum."
+  ];
+
+  function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  function generateText() {
+
+    const type =
+      document.getElementById("type").value;
+
+    let amount =
+      Number(document.getElementById("amount").value);
+
+    if (!amount || amount < 1) {
+      amount = 1;
+    }
+
+    if (amount > 20) {
+      amount = 20;
+    }
+
+    let result = [];
+
+    for (let i = 0; i < amount; i++) {
+
+      if (type === "paragraph") {
+
+        result.push(randomItem(paragraphs));
+
+      } else if (type === "sentences") {
+
+        result.push(randomItem(sentences));
+
+      } else {
+
+        result.push(randomItem(lorem));
+
+      }
+
+    }
+
+    document.getElementById("output").value =
+      result.join("\n\n");
+  }
+
+  function copyText() {
+
+    const output =
+      document.getElementById("output");
+
+    if (!output.value) {
+      generateText();
+    }
+
+    output.select();
+    output.setSelectionRange(0, 99999);
+
+    navigator.clipboard.writeText(output.value)
+      .then(function() {
+
+        const button =
+          document.querySelector(".copy-btn");
+
+        const original =
+          button.textContent;
+
+        button.textContent = "Copied!";
+
+        setTimeout(function() {
+          button.textContent = original;
+        }, 1500);
+
+      })
+      .catch(function() {
+
+        document.execCommand("copy");
+
+      });
+  }
+
+  generateText();
+
+</script>
+
+</body>
+</html>
+
