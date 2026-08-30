@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Temperature Converter - Free Celsius Fahrenheit Kelvin Converter | GetToolly</title>
+
+  <meta name="description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin instantly with GetToolly's free online temperature converter.">
+
+  <meta name="keywords" content="temperature converter, Celsius to Fahrenheit, Fahrenheit to Celsius, Celsius to Kelvin, temperature conversion">
+
+  <link rel="canonical" href="https://gettoolly.vercel.app/tools/temperature-converter.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .navbar {
+      max-width: 900px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: #172033;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h1 {
+      font-size: 42px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #64748b;
+      font-size: 18px;
+    }
+
+    .converter {
+      max-width: 650px;
+      margin: auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 52px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 0 15px;
+      font-size: 16px;
+      outline: none;
+      background: #ffffff;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+
+    .convert-btn {
+      width: 100%;
+      height: 52px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .convert-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 22px;
+      border-radius: 14px;
+      background: #eff6ff;
+      text-align: center;
+    }
+
+    .result-label {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .result-value {
+      color: #111827;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .quick-results {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .quick-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 15px 10px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .quick-card strong {
+      display: block;
+      color: #111827;
+      font-size: 17px;
+      margin-top: 4px;
+    }
+
+    .quick-card span {
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .info {
+      max-width: 700px;
+      margin: 50px auto 0;
+      color: #475569;
+    }
+
+    .info h2 {
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .info p {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        padding: 18px 20px;
+        gap: 15px;
+      }
+
+      .intro h1 {
+        font-size: 34px;
+      }
+
+      .converter {
+        padding: 22px;
+      }
+
+      .quick-results {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="../index.html" class="logo">
+      <span>◆</span> GetToolly
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#tools">Tools</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="intro">
+
+    <h1>Temperature Converter</h1>
+
+    <p>
+      Convert Celsius, Fahrenheit and Kelvin quickly and accurately.
+    </p>
+
+  </div>
+
+  <section class="converter">
+
+    <div class="field">
+
+      <label for="temperature">
+        Temperature
+      </label>
+
+      <input
+        type="number"
+        id="temperature"
+        placeholder="Enter temperature"
+        step="any"
+        oninput="convertTemperature()"
+      >
+
+    </div>
+
+    <div class="field">
+
+      <label for="fromUnit">
+        From
+      </label>
+
+      <select id="fromUnit" onchange="convertTemperature()">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+      </select>
+
+    </div>
+
+    <div class="field">
+
+      <label for="toUnit">
+        To
+      </label>
+
+      <select id="toUnit" onchange="convertTemperature()">
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="C">Celsius (°C)</option>
+        <option value="K">Kelvin (K)</option>
+      </select>
+
+    </div>
+
+    <button class="convert-btn" onclick="convertTemperature()">
+      Convert Temperature
+    </button>
+
+    <div class="result">
+
+      <div class="result-label">
+        Result
+      </div>
+
+      <div class="result-value" id="result">
+        —
+      </div>
+
+    </div>
+
+    <div class="quick-results">
+
+      <div class="quick-card">
+        <span>Celsius</span>
+        <strong id="celsiusResult">—</strong>
+      </div>
+
+      <div class="quick-card">
+        <span>Fahrenheit</span>
+        <strong id="fahrenheitResult">—</strong>
+      </div>
+
+      <div class="quick-card">
+        <span>Kelvin</span>
+        <strong id="kelvinResult">—</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="info">
+
+    <h2>How to use the Temperature Converter</h2>
+
+    <p>
+      Enter a temperature, choose the original unit and select
+      the unit you want to convert to. The converter will instantly
+      calculate the result.
+    </p>
+
+    <h2>Temperature Conversion Formulas</h2>
+
+    <p>
+      Celsius to Fahrenheit: °F = (°C × 9/5) + 32
+    </p>
+
+    <p>
+      Fahrenheit to Celsius: °C = (°F − 32) × 5/9
+    </p>
+
+    <p>
+      Celsius to Kelvin: K = °C + 273.15
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms of Service</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <p>
+    © 2026 GetToolly. All rights reserved.
+  </p>
+
+</footer>
+
+<script>
+
+  function toCelsius(value, unit) {
+
+    if (unit === "C") {
+      return value;
+    }
+
+    if (unit === "F") {
+      return (value - 32) * 5 / 9;
+    }
+
+    if (unit === "K") {
+      return value - 273.15;
+    }
+
+  }
+
+
+  function fromCelsius(celsius, unit) {
+
+    if (unit === "C") {
+      return celsius;
+    }
+
+    if (unit === "F") {
+      return (celsius * 9 / 5) + 32;
+    }
+
+    if (unit === "K") {
+      return celsius + 273.15;
+    }
+
+  }
+
+
+  function formatNumber(number) {
+
+    return Number(number.toFixed(6)).toString();
+
+  }
+
+
+  function convertTemperature() {
+
+    const input =
+      document.getElementById("temperature").value;
+
+    const from =
+      document.getElementById("fromUnit").value;
+
+    const to =
+      document.getElementById("toUnit").value;
+
+    if (input === "") {
+
+      document.getElementById("result").textContent = "—";
+      document.getElementById("celsiusResult").textContent = "—";
+      document.getElementById("fahrenheitResult").textContent = "—";
+      document.getElementById("kelvinResult").textContent = "—";
+
+      return;
+    }
+
+    const value = Number(input);
+
+    const celsius =
+      toCelsius(value, from);
+
+    const converted =
+      fromCelsius(celsius, to);
+
+    document.getElementById("result").textContent =
+      formatNumber(converted) + " " +
+      (to === "C" ? "°C" : to === "F" ? "°F" : "K");
+
+    document.getElementById("celsiusResult").textContent =
+      formatNumber(celsius) + " °C";
+
+    document.getElementById("fahrenheitResult").textContent =
+      formatNumber(fromCelsius(celsius, "F")) + " °F";
+
+    document.getElementById("kelvinResult").textContent =
+      formatNumber(fromCelsius(celsius, "K")) + " K";
+
+  }
+
+</script>
+
+</body>
+</html>
+
