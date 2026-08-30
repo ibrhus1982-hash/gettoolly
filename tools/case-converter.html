@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Case Converter - Free Online Tool | GetToolly</title>
+
+  <meta name="description"
+    content="Convert text to uppercase, lowercase, title case and sentence case with the free GetToolly Case Converter.">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html" class="logo">
+        GetToolly
+      </a>
+
+      <nav class="navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <div class="tool-card">
+
+          <a href="../index.html#tools">
+            ← Back to Tools
+          </a>
+
+          <br><br>
+
+          <h1>Free Case Converter</h1>
+
+          <p>
+            Convert your text to uppercase, lowercase, title case
+            or sentence case instantly.
+          </p>
+
+          <br>
+
+          <textarea
+            id="text"
+            rows="12"
+            placeholder="Type or paste your text here..."
+            style="
+              width:100%;
+              padding:15px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              font-size:16px;
+              resize:vertical;
+            "
+          ></textarea>
+
+          <br><br>
+
+          <div
+            style="
+              display:grid;
+              grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+              gap:12px;
+            "
+          >
+
+            <button
+              class="button"
+              onclick="convertUppercase()"
+              style="border:0;cursor:pointer;"
+            >
+              UPPERCASE
+            </button>
+
+            <button
+              class="button"
+              onclick="convertLowercase()"
+              style="border:0;cursor:pointer;"
+            >
+              lowercase
+            </button>
+
+            <button
+              class="button"
+              onclick="convertTitle()"
+              style="border:0;cursor:pointer;"
+            >
+              Title Case
+            </button>
+
+            <button
+              class="button"
+              onclick="convertSentence()"
+              style="border:0;cursor:pointer;"
+            >
+              Sentence case
+            </button>
+
+          </div>
+
+          <br>
+
+          <button
+            onclick="copyText()"
+            style="
+              padding:12px 20px;
+              border:1px solid #ddd;
+              border-radius:10px;
+              background:white;
+              cursor:pointer;
+              font-weight:bold;
+            "
+          >
+            Copy Text
+          </button>
+
+          <span id="message" style="margin-left:10px;"></span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <div class="footer-links">
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const text =
+      document.getElementById("text");
+
+    const message =
+      document.getElementById("message");
+
+
+    function convertUppercase() {
+
+      text.value =
+        text.value.toUpperCase();
+
+    }
+
+
+    function convertLowercase() {
+
+      text.value =
+        text.value.toLowerCase();
+
+    }
+
+
+    function convertTitle() {
+
+      text.value =
+        text.value
+          .toLowerCase()
+          .replace(/\b\w/g, function(letter) {
+            return letter.toUpperCase();
+          });
+
+    }
+
+
+    function convertSentence() {
+
+      let value =
+        text.value.toLowerCase();
+
+      text.value =
+        value.replace(
+          /(^\s*\w|[.!?]\s+\w)/g,
+          function(match) {
+            return match.toUpperCase();
+          }
+        );
+
+    }
+
+
+    function copyText() {
+
+      if (text.value.trim() === "") {
+
+        message.textContent =
+          "Nothing to copy.";
+
+        return;
+
+      }
+
+      navigator.clipboard.writeText(
+        text.value
+      );
+
+      message.textContent =
+        "Copied!";
+
+      setTimeout(function() {
+
+        message.textContent = "";
+
+      }, 2000);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
