@@ -1,0 +1,535 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tip Calculator - Free Online Tip Calculator | GetToolly</title>
+
+  <meta name="description"
+    content="Calculate tips quickly and easily with GetToolly's free online tip calculator. Split bills and calculate the total amount instantly.">
+
+  <meta name="keywords"
+    content="tip calculator, gratuity calculator, restaurant tip calculator, bill splitter, free tip calculator">
+
+  <link rel="canonical" href="https://gettoolly.vercel.app/tools/tip-calculator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .navbar {
+      max-width: 900px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: #172033;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h1 {
+      font-size: 42px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #64748b;
+      font-size: 18px;
+    }
+
+    .calculator {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 52px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 0 15px;
+      font-size: 16px;
+      outline: none;
+      background: #ffffff;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+
+    .tip-buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tip-btn {
+      height: 45px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #475569;
+    }
+
+    .tip-btn:hover,
+    .tip-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+
+    .custom-tip {
+      margin-top: 12px;
+    }
+
+    .result {
+      margin-top: 28px;
+      background: #eff6ff;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 8px 0;
+      color: #475569;
+    }
+
+    .result-row strong {
+      color: #111827;
+    }
+
+    .total {
+      border-top: 1px solid #bfdbfe;
+      margin-top: 10px;
+      padding-top: 15px;
+      font-size: 19px;
+      color: #111827;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      height: 52px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .calculate-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .info {
+      max-width: 700px;
+      margin: 50px auto 0;
+      color: #475569;
+    }
+
+    .info h2 {
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        padding: 18px 20px;
+        gap: 15px;
+      }
+
+      .intro h1 {
+        font-size: 34px;
+      }
+
+      .calculator {
+        padding: 22px;
+      }
+
+      .tip-buttons {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+
+    <a href="../index.html" class="logo">
+      <span>◆</span> GetToolly
+    </a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#tools">Tools</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main class="page">
+
+  <div class="intro">
+
+    <h1>Tip Calculator</h1>
+
+    <p>
+      Calculate tips and split your bill quickly and easily.
+    </p>
+
+  </div>
+
+
+  <section class="calculator">
+
+    <div class="field">
+
+      <label for="bill">
+        Bill Amount
+      </label>
+
+      <input
+        type="number"
+        id="bill"
+        placeholder="Enter bill amount"
+        min="0"
+        step="0.01"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Tip Percentage
+      </label>
+
+      <div class="tip-buttons">
+
+        <button class="tip-btn" data-tip="5">5%</button>
+        <button class="tip-btn" data-tip="10">10%</button>
+        <button class="tip-btn active" data-tip="15">15%</button>
+        <button class="tip-btn" data-tip="20">20%</button>
+        <button class="tip-btn" data-tip="25">25%</button>
+
+      </div>
+
+      <input
+        class="custom-tip"
+        type="number"
+        id="customTip"
+        placeholder="Or enter custom tip %"
+        min="0"
+        step="0.1"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="people">
+        Number of People
+      </label>
+
+      <input
+        type="number"
+        id="people"
+        value="1"
+        min="1"
+        step="1"
+      >
+
+    </div>
+
+
+    <button class="calculate-btn" onclick="calculateTip()">
+      Calculate Tip
+    </button>
+
+
+    <div class="result">
+
+      <div class="result-row">
+        <span>Tip Amount</span>
+        <strong id="tipAmount">0.00</strong>
+      </div>
+
+      <div class="result-row">
+        <span>Total Bill</span>
+        <strong id="totalBill">0.00</strong>
+      </div>
+
+      <div class="result-row">
+        <span>Tip Per Person</span>
+        <strong id="tipPerPerson">0.00</strong>
+      </div>
+
+      <div class="result-row total">
+        <span>Total Per Person</span>
+        <strong id="totalPerPerson">0.00</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="info">
+
+    <h2>How to use the Tip Calculator</h2>
+
+    <p>
+      Enter your bill amount, choose a tip percentage,
+      and enter the number of people sharing the bill.
+      GetToolly will instantly calculate the tip,
+      total bill, and amount each person should pay.
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms of Service</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <p>
+    © 2026 GetToolly. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  let selectedTip = 15;
+
+
+  const tipButtons =
+    document.querySelectorAll(".tip-btn");
+
+
+  tipButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+      tipButtons.forEach(function(btn) {
+        btn.classList.remove("active");
+      });
+
+      this.classList.add("active");
+
+      selectedTip =
+        Number(this.dataset.tip);
+
+      document.getElementById("customTip").value = "";
+
+      calculateTip();
+
+    });
+
+  });
+
+
+  document.getElementById("customTip")
+    .addEventListener("input", function() {
+
+      if (this.value !== "") {
+
+        tipButtons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+        selectedTip =
+          Number(this.value);
+
+        calculateTip();
+
+      }
+
+    });
+
+
+  document.getElementById("bill")
+    .addEventListener("input", calculateTip);
+
+
+  document.getElementById("people")
+    .addEventListener("input", calculateTip);
+
+
+  function calculateTip() {
+
+    const bill =
+      Number(document.getElementById("bill").value);
+
+    const people =
+      Number(document.getElementById("people").value) || 1;
+
+    const customTip =
+      document.getElementById("customTip").value;
+
+
+    let tipPercent =
+      customTip !== ""
+        ? Number(customTip)
+        : selectedTip;
+
+
+    if (bill <= 0) {
+
+      document.getElementById("tipAmount").textContent = "0.00";
+      document.getElementById("totalBill").textContent = "0.00";
+      document.getElementById("tipPerPerson").textContent = "0.00";
+      document.getElementById("totalPerPerson").textContent = "0.00";
+
+      return;
+    }
+
+
+    const tipAmount =
+      bill * (tipPercent / 100);
+
+    const total =
+      bill + tipAmount;
+
+    const tipPerPerson =
+      tipAmount / people;
+
+    const totalPerPerson =
+      total / people;
+
+
+    document.getElementById("tipAmount")
+      .textContent = tipAmount.toFixed(2);
+
+    document.getElementById("totalBill")
+      .textContent = total.toFixed(2);
+
+    document.getElementById("tipPerPerson")
+      .textContent = tipPerPerson.toFixed(2);
+
+    document.getElementById("totalPerPerson")
+      .textContent = totalPerPerson.toFixed(2);
+
+  }
+
+
+  calculateTip();
+
+</script>
+
+</body>
+</html>
+```
