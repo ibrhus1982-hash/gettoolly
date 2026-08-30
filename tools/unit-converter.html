@@ -2,35 +2,166 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Unit Converter - Free Online Tool | GetToolly</title>
+  <title>Unit Converter - Length, Weight, Temperature & Volume | GetToolly</title>
 
   <meta name="description"
-    content="Convert length, weight and temperature units quickly with the free GetToolly Unit Converter.">
+    content="Convert length, weight, temperature and volume units instantly with GetToolly's free online unit converter. Fast, simple and easy to use.">
 
-  <link rel="stylesheet" href="../style.css">
+  <meta name="keywords"
+    content="unit converter, length converter, weight converter, temperature converter, volume converter, online unit conversion">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://gettoolly.vercel.app/tools/unit-converter.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .converter-box {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #f5f7fa;
+      border-radius: 16px;
+    }
+
+    .type-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .type-buttons button {
+      padding: 11px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #172033;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .type-buttons button.active {
+      background: #2563eb;
+    }
+
+    .converter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      border: 1px solid #d9dee7;
+      border-radius: 8px;
+      background: white;
+      font-size: 16px;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 18px;
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .example-box {
+      padding: 18px;
+      margin: 20px 0;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 650px) {
+
+      .converter-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- HEADER -->
+
   <header class="header">
+
     <div class="container nav">
 
-      <a href="../index.html" class="logo">
+      <a href="../index.html"
+        class="logo">
         GetToolly
       </a>
 
+
       <nav class="navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#tools">Tools</a>
-        <a href="../privacy.html">Privacy</a>
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
       </nav>
 
     </div>
+
   </header>
 
+
+
+  <!-- MAIN -->
 
   <main>
 
@@ -38,87 +169,286 @@
 
       <div class="container">
 
-        <div class="tool-card">
 
-          <a href="../index.html#tools">
-            ← Back to Tools
-          </a>
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
 
-          <br><br>
 
-          <h1>Free Unit Converter</h1>
+        <h1>
+          Free Online Unit Converter
+        </h1>
 
-          <p>
-            Convert common length, weight and temperature units.
-          </p>
 
-          <br>
+        <p>
+          Convert length, weight, temperature and volume
+          units quickly and accurately.
+        </p>
 
-          <label for="category">
-            Category
-          </label>
 
-          <select id="category" onchange="updateUnits()"
-            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:8px;">
-            <option value="length">Length</option>
-            <option value="weight">Weight</option>
-            <option value="temperature">Temperature</option>
-          </select>
 
-          <br><br>
+        <!-- CONVERTER -->
 
-          <input
-            id="value"
-            type="number"
-            placeholder="Enter value"
-            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;"
-          >
+        <div class="converter-box">
 
-          <br><br>
 
-          <label>
-            From
-          </label>
+          <div class="type-buttons">
 
-          <select
-            id="from"
-            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:8px;"
-          ></select>
 
-          <br><br>
+            <button
+              id="lengthButton"
+              class="active"
+              onclick="setType('length')"
+            >
+              Length
+            </button>
 
-          <label>
-            To
-          </label>
 
-          <select
-            id="to"
-            style="width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:8px;"
-          ></select>
+            <button
+              id="weightButton"
+              onclick="setType('weight')"
+            >
+              Weight
+            </button>
 
-          <br><br>
 
-          <button
-            class="button"
-            onclick="convert()"
-            style="border:0;cursor:pointer;"
-          >
-            Convert
-          </button>
+            <button
+              id="temperatureButton"
+              onclick="setType('temperature')"
+            >
+              Temperature
+            </button>
+
+
+            <button
+              id="volumeButton"
+              onclick="setType('volume')"
+            >
+              Volume
+            </button>
+
+
+          </div>
+
+
+
+          <div class="converter-grid">
+
+
+            <div class="field">
+
+              <label for="value">
+                Value
+              </label>
+
+              <input
+                id="value"
+                type="number"
+                value="1"
+                step="any"
+                inputmode="decimal"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="fromUnit">
+                From
+              </label>
+
+              <select id="fromUnit"></select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="toUnit">
+                To
+              </label>
+
+              <select id="toUnit"></select>
+
+            </div>
+
+
+          </div>
+
+
 
           <div
             id="result"
-            style="
-              margin-top:20px;
-              padding:20px;
-              background:#f5f7fa;
-              border-radius:10px;
-              font-size:20px;
-              font-weight:bold;
-            "
+            class="result-box"
+            aria-live="polite"
           >
-            Result will appear here.
+            1 meter = 100 centimeters
           </div>
+
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content-section">
+
+
+          <h2>
+            What Is a Unit Converter?
+          </h2>
+
+          <p>
+            A unit converter is a tool that changes a measurement
+            from one unit to another. Unit conversion is useful
+            in everyday life, education, science, engineering,
+            cooking, travel and many other situations.
+          </p>
+
+
+
+          <h2>
+            Units Supported by This Converter
+          </h2>
+
+          <p>
+            GetToolly's converter currently supports common
+            length, weight, temperature and volume units.
+          </p>
+
+          <div class="example-box">
+
+            <p>
+              <strong>Length:</strong>
+              meters, kilometers, centimeters, millimeters,
+              miles, yards, feet and inches.
+            </p>
+
+            <p>
+              <strong>Weight:</strong>
+              kilograms, grams, milligrams, pounds and ounces.
+            </p>
+
+            <p>
+              <strong>Temperature:</strong>
+              Celsius, Fahrenheit and Kelvin.
+            </p>
+
+            <p>
+              <strong>Volume:</strong>
+              liters, milliliters, gallons, quarts,
+              pints and cups.
+            </p>
+
+          </div>
+
+
+
+          <h2>
+            How to Use the Unit Converter
+          </h2>
+
+          <p>
+            First select the type of measurement you want
+            to convert. Enter a value, choose the original
+            unit and then select the unit you want to convert to.
+          </p>
+
+          <p>
+            The result is calculated automatically as you
+            change the value or units.
+          </p>
+
+
+
+          <h2>
+            Unit Conversion Examples
+          </h2>
+
+          <div class="example-box">
+
+            <p>
+              1 kilometer = 1,000 meters
+            </p>
+
+            <p>
+              1 kilogram = 1,000 grams
+            </p>
+
+            <p>
+              0°C = 32°F
+            </p>
+
+            <p>
+              1 liter = 1,000 milliliters
+            </p>
+
+          </div>
+
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is this unit converter free?
+            </h3>
+
+            <p>
+              Yes. GetToolly's unit converter is free to use
+              and does not require registration.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I convert kilometers to miles?
+            </h3>
+
+            <p>
+              Yes. Select Length, choose kilometers as the
+              original unit and miles as the target unit.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I convert Celsius to Fahrenheit?
+            </h3>
+
+            <p>
+              Yes. The temperature converter supports Celsius,
+              Fahrenheit and Kelvin.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does the converter work on mobile phones?
+            </h3>
+
+            <p>
+              Yes. The converter is designed to work on
+              modern mobile and desktop browsers.
+            </p>
+
+          </div>
+
 
         </div>
 
@@ -129,6 +459,9 @@
   </main>
 
 
+
+  <!-- FOOTER -->
+
   <footer class="footer">
 
     <div class="container">
@@ -137,11 +470,27 @@
         GetToolly
       </div>
 
+      <p>
+        Free online tools for everyone.
+      </p>
+
+
       <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="../privacy.html">Privacy Policy</a>
-        <a href="../terms.html">Terms</a>
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
+        </a>
+
       </div>
+
 
       <p class="copyright">
         © 2026 GetToolly. All rights reserved.
@@ -152,87 +501,276 @@
   </footer>
 
 
+
+  <!-- CONVERTER SCRIPT -->
+
   <script>
+
+    const valueInput =
+      document.getElementById("value");
+
+    const fromUnit =
+      document.getElementById("fromUnit");
+
+    const toUnit =
+      document.getElementById("toUnit");
+
+    const result =
+      document.getElementById("result");
+
 
     const units = {
 
       length: {
-        meter: 1,
-        kilometer: 1000,
-        centimeter: 0.01,
-        millimeter: 0.001,
-        mile: 1609.344,
-        yard: 0.9144,
-        foot: 0.3048,
-        inch: 0.0254
+
+        meter: {
+          name: "Meters",
+          factor: 1
+        },
+
+        kilometer: {
+          name: "Kilometers",
+          factor: 1000
+        },
+
+        centimeter: {
+          name: "Centimeters",
+          factor: 0.01
+        },
+
+        millimeter: {
+          name: "Millimeters",
+          factor: 0.001
+        },
+
+        mile: {
+          name: "Miles",
+          factor: 1609.344
+        },
+
+        yard: {
+          name: "Yards",
+          factor: 0.9144
+        },
+
+        foot: {
+          name: "Feet",
+          factor: 0.3048
+        },
+
+        inch: {
+          name: "Inches",
+          factor: 0.0254
+        }
+
       },
 
+
       weight: {
-        kilogram: 1,
-        gram: 0.001,
-        milligram: 0.000001,
-        pound: 0.45359237,
-        ounce: 0.0283495231
+
+        kilogram: {
+          name: "Kilograms",
+          factor: 1
+        },
+
+        gram: {
+          name: "Grams",
+          factor: 0.001
+        },
+
+        milligram: {
+          name: "Milligrams",
+          factor: 0.000001
+        },
+
+        pound: {
+          name: "Pounds",
+          factor: 0.45359237
+        },
+
+        ounce: {
+          name: "Ounces",
+          factor: 0.028349523125
+        }
+
+      },
+
+
+      temperature: {
+
+        celsius: {
+          name: "Celsius"
+        },
+
+        fahrenheit: {
+          name: "Fahrenheit"
+        },
+
+        kelvin: {
+          name: "Kelvin"
+        }
+
+      },
+
+
+      volume: {
+
+        liter: {
+          name: "Liters",
+          factor: 1
+        },
+
+        milliliter: {
+          name: "Milliliters",
+          factor: 0.001
+        },
+
+        gallon: {
+          name: "US Gallons",
+          factor: 3.785411784
+        },
+
+        quart: {
+          name: "US Quarts",
+          factor: 0.946352946
+        },
+
+        pint: {
+          name: "US Pints",
+          factor: 0.473176473
+        },
+
+        cup: {
+          name: "US Cups",
+          factor: 0.2365882365
+        }
+
       }
 
     };
 
 
-    function updateUnits() {
-
-      const category =
-        document.getElementById("category").value;
-
-      const from =
-        document.getElementById("from");
-
-      const to =
-        document.getElementById("to");
+    let currentType =
+      "length";
 
 
-      from.innerHTML = "";
-      to.innerHTML = "";
+    function setType(type) {
+
+      currentType =
+        type;
 
 
-      if (category === "temperature") {
+      document
+        .querySelectorAll(".type-buttons button")
+        .forEach(function(button) {
 
-        const temperatureUnits = [
-          "celsius",
-          "fahrenheit",
-          "kelvin"
-        ];
-
-
-        temperatureUnits.forEach(function(unit) {
-
-          from.add(
-            new Option(unit, unit)
-          );
-
-          to.add(
-            new Option(unit, unit)
-          );
+          button.classList.remove("active");
 
         });
 
-        return;
 
-      }
+      document
+        .getElementById(
+          type + "Button"
+        )
+        .classList.add("active");
+
+
+      populateUnits();
+
+      convert();
+
+    }
+
+
+    function populateUnits() {
+
+      fromUnit.innerHTML = "";
+
+      toUnit.innerHTML = "";
 
 
       Object.keys(
-        units[category]
-      ).forEach(function(unit) {
+        units[currentType]
+      ).forEach(function(key) {
 
-        from.add(
-          new Option(unit, unit)
+        const option1 =
+          document.createElement("option");
+
+        option1.value =
+          key;
+
+        option1.textContent =
+          units[currentType][key].name;
+
+        fromUnit.appendChild(
+          option1
         );
 
-        to.add(
-          new Option(unit, unit)
+
+        const option2 =
+          document.createElement("option");
+
+        option2.value =
+          key;
+
+        option2.textContent =
+          units[currentType][key].name;
+
+        toUnit.appendChild(
+          option2
         );
 
       });
+
+
+      if (
+        currentType === "length"
+      ) {
+
+        fromUnit.value =
+          "meter";
+
+        toUnit.value =
+          "centimeter";
+
+      }
+
+      if (
+        currentType === "weight"
+      ) {
+
+        fromUnit.value =
+          "kilogram";
+
+        toUnit.value =
+          "gram";
+
+      }
+
+      if (
+        currentType === "temperature"
+      ) {
+
+        fromUnit.value =
+          "celsius";
+
+        toUnit.value =
+          "fahrenheit";
+
+      }
+
+      if (
+        currentType === "volume"
+      ) {
+
+        fromUnit.value =
+          "liter";
+
+        toUnit.value =
+          "milliliter";
+
+      }
 
     }
 
@@ -246,16 +784,24 @@
       let celsius;
 
 
-      if (from === "celsius") {
-
-        celsius = value;
-
-      } else if (from === "fahrenheit") {
+      if (
+        from === "celsius"
+      ) {
 
         celsius =
-          (value - 32) * 5 / 9;
+          value;
 
-      } else {
+      }
+      else if (
+        from === "fahrenheit"
+      ) {
+
+        celsius =
+          (value - 32) *
+          5 / 9;
+
+      }
+      else {
 
         celsius =
           value - 273.15;
@@ -263,17 +809,22 @@
       }
 
 
-      if (to === "celsius") {
+      if (
+        to === "celsius"
+      ) {
 
         return celsius;
 
       }
 
 
-      if (to === "fahrenheit") {
+      if (
+        to === "fahrenheit"
+      ) {
 
         return (
-          celsius * 9 / 5
+          celsius *
+          9 / 5
         ) + 32;
 
       }
@@ -284,73 +835,108 @@
     }
 
 
+    function formatNumber(number) {
+
+      return Number(
+        number.toFixed(10)
+      ).toLocaleString(
+        "en-US"
+      );
+
+    }
+
+
     function convert() {
 
       const value =
         Number(
-          document.getElementById("value").value
+          valueInput.value
         );
 
-      const category =
-        document.getElementById("category").value;
 
-      const from =
-        document.getElementById("from").value;
-
-      const to =
-        document.getElementById("to").value;
-
-      const result =
-        document.getElementById("result");
-
-
-      if (!Number.isFinite(value)) {
+      if (
+        !Number.isFinite(value)
+      ) {
 
         result.textContent =
-          "Please enter a valid number.";
+          "Enter a valid number.";
 
         return;
 
       }
 
 
-      let answer;
+      const from =
+        fromUnit.value;
+
+      const to =
+        toUnit.value;
 
 
-      if (category === "temperature") {
+      let converted;
 
-        answer =
+
+      if (
+        currentType === "temperature"
+      ) {
+
+        converted =
           convertTemperature(
             value,
             from,
             to
           );
 
-      } else {
+      }
+      else {
 
-        answer =
+        const baseValue =
           value *
-          units[category][from] /
-          units[category][to];
+          units[currentType][from].factor;
+
+        converted =
+          baseValue /
+          units[currentType][to].factor;
 
       }
 
 
       result.textContent =
-        value +
+        formatNumber(value) +
         " " +
-        from +
+        units[currentType][from].name +
         " = " +
-        answer.toFixed(6) +
+        formatNumber(converted) +
         " " +
-        to;
+        units[currentType][to].name;
 
     }
 
 
-    updateUnits();
+    valueInput.addEventListener(
+      "input",
+      convert
+    );
+
+
+    fromUnit.addEventListener(
+      "change",
+      convert
+    );
+
+
+    toUnit.addEventListener(
+      "change",
+      convert
+    );
+
+
+    populateUnits();
+
+    convert();
 
   </script>
+
 
 </body>
 
