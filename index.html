@@ -8,15 +8,108 @@
   <title>GetToolly - Free Online Tools</title>
 
   <meta name="description"
-    content="GetToolly provides free online tools including calculators, text tools, converters, password generators and more.">
+    content="GetToolly offers free online tools for calculations, text editing, conversions, passwords, JSON and more. Fast, simple and free.">
 
   <meta name="keywords"
-    content="free online tools, calculator, word counter, case converter, password generator, percentage calculator, age calculator, unit converter, JSON formatter, random number generator, lorem ipsum">
+    content="free online tools, online calculator, word counter, password generator, percentage calculator, age calculator, unit converter, JSON formatter, random number generator, lorem ipsum">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://gettoolly.vercel.app/">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* Search */
+
+    .search-box {
+      max-width: 650px;
+      margin: 30px auto 0;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 17px 20px;
+      border: 1px solid #d9dee7;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+    }
+
+    .search-box input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+    }
+
+
+    /* Categories */
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0 35px;
+    }
+
+    .category-button {
+      padding: 9px 16px;
+      border: 1px solid #d9dee7;
+      background: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #4b5563;
+      transition: 0.2s;
+    }
+
+    .category-button:hover,
+    .category-button.active {
+      background: #172033;
+      color: #fff;
+      border-color: #172033;
+    }
+
+
+    /* Popular badge */
+
+    .popular-badge {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+
+    /* No results */
+
+    #noResults {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: #667085;
+    }
+
+
+    /* Tool card improvements */
+
+    .tool-card {
+      cursor: pointer;
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- HEADER -->
 
   <header class="header">
 
@@ -51,323 +144,450 @@
   </header>
 
 
-  <main>
 
-    <!-- HERO -->
+  <!-- HERO -->
 
-    <section class="hero">
+  <section class="hero">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="badge">
-          100% Free • Fast • No Signup
-        </div>
+      <div class="badge">
+        100% Free • Fast • No Signup
+      </div>
 
-        <h1>
-          Useful Tools.<br>
-          Simple. Fast. Free.
-        </h1>
 
-        <p>
-          GetToolly provides simple and powerful online tools
-          for everyday tasks. No registration required.
-        </p>
+      <h1>
+        Free Online Tools<br>
+        For Everyday Tasks
+      </h1>
 
-        <a href="#tools" class="button">
-          Explore Tools
+
+      <p>
+        Simple, fast and useful tools for calculations,
+        text, conversions, passwords and more.
+      </p>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="🔎 Search for a tool..."
+          autocomplete="off"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- TOOLS -->
+
+  <section id="tools" class="tools-section">
+
+    <div class="container">
+
+
+      <h2>
+        Free Online Tools
+      </h2>
+
+
+      <p class="section-description">
+        Choose a tool or search for what you need.
+      </p>
+
+
+      <!-- CATEGORIES -->
+
+      <div class="categories">
+
+        <button
+          class="category-button active"
+          data-category="all"
+        >
+          All
+        </button>
+
+        <button
+          class="category-button"
+          data-category="calculator"
+        >
+          Calculators
+        </button>
+
+        <button
+          class="category-button"
+          data-category="text"
+        >
+          Text Tools
+        </button>
+
+        <button
+          class="category-button"
+          data-category="converter"
+        >
+          Converters
+        </button>
+
+        <button
+          class="category-button"
+          data-category="developer"
+        >
+          Developer Tools
+        </button>
+
+        <button
+          class="category-button"
+          data-category="generator"
+        >
+          Generators
+        </button>
+
+      </div>
+
+
+
+      <div class="tools-grid" id="toolsGrid">
+
+
+        <!-- CALCULATOR -->
+
+        <a
+          href="tools/calculator.html"
+          class="tool-card"
+          data-name="calculator"
+          data-category="calculator"
+        >
+
+          <span class="popular-badge">
+            ⭐ Popular
+          </span>
+
+          <div class="tool-icon">
+            🧮
+          </div>
+
+          <h3>
+            Calculator
+          </h3>
+
+          <p>
+            Perform quick and simple calculations.
+          </p>
+
         </a>
 
+
+
+        <!-- WORD COUNTER -->
+
+        <a
+          href="tools/word-counter.html"
+          class="tool-card"
+          data-name="word counter"
+          data-category="text"
+        >
+
+          <span class="popular-badge">
+            ⭐ Popular
+          </span>
+
+          <div class="tool-icon">
+            📝
+          </div>
+
+          <h3>
+            Word Counter
+          </h3>
+
+          <p>
+            Count words, characters, sentences and lines.
+          </p>
+
+        </a>
+
+
+
+        <!-- CASE CONVERTER -->
+
+        <a
+          href="tools/case-converter.html"
+          class="tool-card"
+          data-name="case converter text converter"
+          data-category="text"
+        >
+
+          <div class="tool-icon">
+            🔤
+          </div>
+
+          <h3>
+            Case Converter
+          </h3>
+
+          <p>
+            Convert text to uppercase, lowercase and title case.
+          </p>
+
+        </a>
+
+
+
+        <!-- PASSWORD -->
+
+        <a
+          href="tools/password-generator.html"
+          class="tool-card"
+          data-name="password generator secure password"
+          data-category="generator"
+        >
+
+          <span class="popular-badge">
+            ⭐ Popular
+          </span>
+
+          <div class="tool-icon">
+            🔐
+          </div>
+
+          <h3>
+            Password Generator
+          </h3>
+
+          <p>
+            Generate strong random passwords instantly.
+          </p>
+
+        </a>
+
+
+
+        <!-- PERCENTAGE -->
+
+        <a
+          href="tools/percentage-calculator.html"
+          class="tool-card"
+          data-name="percentage calculator percent"
+          data-category="calculator"
+        >
+
+          <span class="popular-badge">
+            ⭐ Popular
+          </span>
+
+          <div class="tool-icon">
+            %
+          </div>
+
+          <h3>
+            Percentage Calculator
+          </h3>
+
+          <p>
+            Calculate percentages quickly and easily.
+          </p>
+
+        </a>
+
+
+
+        <!-- AGE -->
+
+        <a
+          href="tools/age-calculator.html"
+          class="tool-card"
+          data-name="age calculator birthday"
+          data-category="calculator"
+        >
+
+          <div class="tool-icon">
+            🎂
+          </div>
+
+          <h3>
+            Age Calculator
+          </h3>
+
+          <p>
+            Calculate your exact age from your date of birth.
+          </p>
+
+        </a>
+
+
+
+        <!-- UNIT -->
+
+        <a
+          href="tools/unit-converter.html"
+          class="tool-card"
+          data-name="unit converter length weight temperature"
+          data-category="converter"
+        >
+
+          <span class="popular-badge">
+            ⭐ Popular
+          </span>
+
+          <div class="tool-icon">
+            📏
+          </div>
+
+          <h3>
+            Unit Converter
+          </h3>
+
+          <p>
+            Convert length, weight and temperature units.
+          </p>
+
+        </a>
+
+
+
+        <!-- JSON -->
+
+        <a
+          href="tools/json-formatter.html"
+          class="tool-card"
+          data-name="json formatter validator developer"
+          data-category="developer"
+        >
+
+          <div class="tool-icon">
+            { }
+          </div>
+
+          <h3>
+            JSON Formatter
+          </h3>
+
+          <p>
+            Format, validate and minify JSON data.
+          </p>
+
+        </a>
+
+
+
+        <!-- RANDOM -->
+
+        <a
+          href="tools/random-number.html"
+          class="tool-card"
+          data-name="random number generator"
+          data-category="generator"
+        >
+
+          <div class="tool-icon">
+            🎲
+          </div>
+
+          <h3>
+            Random Number Generator
+          </h3>
+
+          <p>
+            Generate random numbers between any range.
+          </p>
+
+        </a>
+
+
+
+        <!-- LOREM -->
+
+        <a
+          href="tools/lorem-ipsum.html"
+          class="tool-card"
+          data-name="lorem ipsum generator placeholder text"
+          data-category="generator"
+        >
+
+          <div class="tool-icon">
+            📄
+          </div>
+
+          <h3>
+            Lorem Ipsum Generator
+          </h3>
+
+          <p>
+            Generate placeholder text for your projects.
+          </p>
+
+        </a>
+
+
       </div>
 
-    </section>
 
+      <div id="noResults">
 
-    <!-- TOOLS -->
+        <h3>
+          No tools found
+        </h3>
 
-    <section id="tools" class="tools-section">
-
-      <div class="container">
-
-        <h2>
-          Free Online Tools
-        </h2>
-
-        <p class="section-description">
-          Choose a tool and get your task done in seconds.
+        <p>
+          Try another search term.
         </p>
 
+      </div>
 
-        <div class="tools-grid">
 
+    </div>
 
-          <!-- 1 -->
+  </section>
 
-          <a
-            href="tools/calculator.html"
-            class="tool-card"
-          >
 
-            <div class="tool-icon">
-              🧮
-            </div>
 
-            <h3>
-              Calculator
-            </h3>
+  <!-- WHY GETTOOLLY -->
 
-            <p>
-              Perform quick and simple calculations.
-            </p>
+  <section class="tools-section">
 
-          </a>
+    <div class="container">
 
+      <div class="tool-card">
 
-          <!-- 2 -->
+        <h2>
+          Why Use GetToolly?
+        </h2>
 
-          <a
-            href="tools/word-counter.html"
-            class="tool-card"
-          >
+        <br>
 
-            <div class="tool-icon">
-              📝
-            </div>
+        <p>
+          GetToolly is a collection of free online tools
+          designed to make everyday tasks faster and easier.
+        </p>
 
-            <h3>
-              Word Counter
-            </h3>
+        <br>
 
-            <p>
-              Count words, characters, sentences and lines.
-            </p>
+        <p>
+          Our tools work directly in your browser and
+          most tools require no registration.
+        </p>
 
-          </a>
+        <br>
 
-
-          <!-- 3 -->
-
-          <a
-            href="tools/case-converter.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              🔤
-            </div>
-
-            <h3>
-              Case Converter
-            </h3>
-
-            <p>
-              Convert text to uppercase, lowercase and title case.
-            </p>
-
-          </a>
-
-
-          <!-- 4 -->
-
-          <a
-            href="tools/password-generator.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              🔐
-            </div>
-
-            <h3>
-              Password Generator
-            </h3>
-
-            <p>
-              Generate strong random passwords instantly.
-            </p>
-
-          </a>
-
-
-          <!-- 5 -->
-
-          <a
-            href="tools/percentage-calculator.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              %
-            </div>
-
-            <h3>
-              Percentage Calculator
-            </h3>
-
-            <p>
-              Calculate percentages quickly and easily.
-            </p>
-
-          </a>
-
-
-          <!-- 6 -->
-
-          <a
-            href="tools/age-calculator.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              🎂
-            </div>
-
-            <h3>
-              Age Calculator
-            </h3>
-
-            <p>
-              Calculate your exact age from your date of birth.
-            </p>
-
-          </a>
-
-
-          <!-- 7 -->
-
-          <a
-            href="tools/unit-converter.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              📏
-            </div>
-
-            <h3>
-              Unit Converter
-            </h3>
-
-            <p>
-              Convert length, weight and temperature units.
-            </p>
-
-          </a>
-
-
-          <!-- 8 -->
-
-          <a
-            href="tools/json-formatter.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              { }
-            </div>
-
-            <h3>
-              JSON Formatter
-            </h3>
-
-            <p>
-              Format, validate and minify JSON data.
-            </p>
-
-          </a>
-
-
-          <!-- 9 -->
-
-          <a
-            href="tools/random-number.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              🎲
-            </div>
-
-            <h3>
-              Random Number Generator
-            </h3>
-
-            <p>
-              Generate random numbers between any range.
-            </p>
-
-          </a>
-
-
-          <!-- 10 -->
-
-          <a
-            href="tools/lorem-ipsum.html"
-            class="tool-card"
-          >
-
-            <div class="tool-icon">
-              📄
-            </div>
-
-            <h3>
-              Lorem Ipsum Generator
-            </h3>
-
-            <p>
-              Generate placeholder text for your projects.
-            </p>
-
-          </a>
-
-
-        </div>
+        <p>
+          New tools will be added regularly to help
+          students, professionals, developers, writers
+          and everyday users.
+        </p>
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- ABOUT -->
-
-    <section class="tools-section">
-
-      <div class="container">
-
-        <div class="tool-card">
-
-          <h2>
-            Why Use GetToolly?
-          </h2>
-
-          <br>
-
-          <p>
-            GetToolly is a collection of free online tools
-            designed to make everyday tasks faster and easier.
-          </p>
-
-          <br>
-
-          <p>
-            Our tools work directly in your browser and
-            most of them require no registration or account.
-          </p>
-
-          <br>
-
-          <p>
-            We are continuously adding new tools to help
-            students, professionals, developers, writers and
-            everyday users.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
 
 
   <!-- FOOTER -->
@@ -409,6 +629,124 @@
     </div>
 
   </footer>
+
+
+
+  <!-- SEARCH & FILTER SCRIPT -->
+
+  <script>
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const toolCards =
+      document.querySelectorAll(".tool-card[data-name]");
+
+    const categoryButtons =
+      document.querySelectorAll(".category-button");
+
+    const noResults =
+      document.getElementById("noResults");
+
+
+    let selectedCategory = "all";
+
+
+    function filterTools() {
+
+      const search =
+        searchInput.value
+          .toLowerCase()
+          .trim();
+
+
+      let visibleTools = 0;
+
+
+      toolCards.forEach(function(card) {
+
+        const name =
+          card.dataset.name.toLowerCase();
+
+        const category =
+          card.dataset.category;
+
+
+        const matchesSearch =
+          name.includes(search);
+
+
+        const matchesCategory =
+          selectedCategory === "all" ||
+          category === selectedCategory;
+
+
+        if (
+          matchesSearch &&
+          matchesCategory
+        ) {
+
+          card.style.display = "";
+
+          visibleTools++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      if (visibleTools === 0) {
+
+        noResults.style.display = "block";
+
+      } else {
+
+        noResults.style.display = "none";
+
+      }
+
+    }
+
+
+    searchInput.addEventListener(
+      "input",
+      filterTools
+    );
+
+
+    categoryButtons.forEach(function(button) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          categoryButtons.forEach(
+            function(btn) {
+              btn.classList.remove("active");
+            }
+          );
+
+
+          button.classList.add("active");
+
+
+          selectedCategory =
+            button.dataset.category;
+
+
+          filterTools();
+
+        }
+      );
+
+    });
+
+  </script>
+
 
 </body>
 
