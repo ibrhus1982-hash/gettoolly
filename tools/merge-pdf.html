@@ -7,14 +7,18 @@
 
   <title>Merge PDF - Combine PDF Files Online | GetToolly</title>
 
-  <meta name="description" content="Merge multiple PDF files into one PDF online for free. Fast, simple, and secure PDF merging directly in your browser.">
+  <meta name="description" content="Merge multiple PDF files into one PDF online for free. Combine PDF documents quickly and securely directly in your browser with GetToolly.">
+
   <meta name="keywords" content="merge PDF, combine PDF, merge PDF files, PDF merger, combine PDF online">
+
+  <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://www.gettoolly.com/tools/merge-pdf.html">
 
   <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -26,10 +30,68 @@
       color: #222;
     }
 
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 20px;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: bold;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #444;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
     .container {
       max-width: 900px;
-      margin: 50px auto;
+      margin: 35px auto;
       padding: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #555;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .back-link:hover {
+      color: #000;
     }
 
     .tool-box {
@@ -51,6 +113,10 @@
       margin-bottom: 30px;
       line-height: 1.6;
     }
+
+    /* =========================
+       UPLOAD
+    ========================= */
 
     .upload-area {
       display: block;
@@ -94,6 +160,10 @@
     input[type="file"] {
       display: none !important;
     }
+
+    /* =========================
+       FILE LIST
+    ========================= */
 
     .file-list {
       margin-top: 25px;
@@ -141,6 +211,7 @@
       color: #777;
       font-size: 13px;
       white-space: nowrap;
+      margin-top: 3px;
     }
 
     .remove-btn {
@@ -151,11 +222,16 @@
       border-radius: 7px;
       cursor: pointer;
       font-size: 13px;
+      flex-shrink: 0;
     }
 
     .remove-btn:hover {
       background: #c0392b;
     }
+
+    /* =========================
+       BUTTONS
+    ========================= */
 
     .buttons {
       display: flex;
@@ -197,12 +273,20 @@
       background: #dfe4ea;
     }
 
+    /* =========================
+       STATUS
+    ========================= */
+
     .status {
       text-align: center;
       margin-top: 20px;
       font-size: 15px;
       min-height: 22px;
     }
+
+    /* =========================
+       DOWNLOAD
+    ========================= */
 
     .download-area {
       display: none;
@@ -228,6 +312,10 @@
       background: #18763e;
     }
 
+    /* =========================
+       PRIVACY
+    ========================= */
+
     .privacy {
       margin-top: 30px;
       padding: 15px;
@@ -239,18 +327,70 @@
       line-height: 1.6;
     }
 
+    /* =========================
+       ABOUT SECTION
+    ========================= */
+
     .info-section {
-      margin-top: 35px;
-      line-height: 1.7;
+      margin-top: 40px;
+      line-height: 1.8;
       color: #444;
     }
 
     .info-section h2 {
       color: #222;
+      margin-top: 30px;
       margin-bottom: 10px;
+      font-size: 23px;
     }
 
+    .info-section h2:first-child {
+      margin-top: 0;
+    }
+
+    .info-section p {
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #000;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 600px) {
+
+      .navbar {
+        padding: 14px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
       .container {
         margin: 20px auto;
         padding: 12px;
@@ -271,13 +411,64 @@
       .file-size {
         display: none;
       }
+
+      .remove-btn {
+        padding: 7px 9px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+  <div class="nav-container">
+
+    <a href="https://www.gettoolly.com/index.html" class="brand">
+      GetToolly
+    </a>
+
+    <div class="nav-links">
+
+      <a href="https://www.gettoolly.com/index.html">
+        Home
+      </a>
+
+      <a href="https://www.gettoolly.com/index.html#tools">
+        Tools
+      </a>
+
+      <a href="https://www.gettoolly.com/privacy.html">
+        Privacy
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
 <div class="container">
+
+  <a
+    href="https://www.gettoolly.com/index.html#tools"
+    class="back-link"
+  >
+    ← Back to Tools
+  </a>
+
 
   <div class="tool-box">
 
@@ -288,9 +479,14 @@
       Your files are processed directly in your browser.
     </p>
 
+
+    <!-- UPLOAD -->
+
     <label class="upload-area" for="pdfInput">
 
-      <div class="upload-icon">📄</div>
+      <div class="upload-icon">
+        📄
+      </div>
 
       <div class="upload-text">
         Click to select PDF files
@@ -302,6 +498,7 @@
 
     </label>
 
+
     <input
       type="file"
       id="pdfInput"
@@ -309,7 +506,13 @@
       multiple
     >
 
+
+    <!-- FILE LIST -->
+
     <div id="fileList" class="file-list"></div>
+
+
+    <!-- BUTTONS -->
 
     <div class="buttons">
 
@@ -330,11 +533,19 @@
 
     </div>
 
+
+    <!-- STATUS -->
+
     <div id="status" class="status"></div>
+
+
+    <!-- DOWNLOAD -->
 
     <div id="downloadArea" class="download-area">
 
-      <strong>Your merged PDF is ready!</strong>
+      <strong>
+        Your merged PDF is ready!
+      </strong>
 
       <br>
 
@@ -349,25 +560,71 @@
 
     </div>
 
+
+    <!-- PRIVACY -->
+
     <div class="privacy">
+
       🔒 Your PDF files are processed locally in your browser.
       They are not uploaded to our server.
+
     </div>
+
+
+    <!-- ABOUT -->
 
     <div class="info-section">
 
-      <h2>Merge PDF Files Online</h2>
+      <h2>About Merge PDF</h2>
 
       <p>
-        GetToolly's Merge PDF tool lets you combine multiple PDF documents
-        into a single PDF file. Select your files, arrange them in the
-        desired order, and click "Merge PDF Files".
+        GetToolly's Merge PDF tool allows you to combine multiple PDF
+        files into one PDF document quickly and easily.
       </p>
 
       <p>
-        The tool works directly in your browser, making it fast and
-        convenient for combining documents without uploading them to a
-        server.
+        You can select two or more PDF files and combine them into a
+        single document without installing additional software.
+      </p>
+
+
+      <h2>How to Merge PDF Files</h2>
+
+      <p>
+        Select two or more PDF files using the upload area above.
+        Your selected files will appear in the list.
+      </p>
+
+      <p>
+        The files are merged in the same order shown in the list.
+        Click "Merge PDF Files" to create your combined document.
+      </p>
+
+      <p>
+        When the process is complete, click "Download Merged PDF"
+        to save the new PDF file.
+      </p>
+
+
+      <h2>Why Use GetToolly Merge PDF?</h2>
+
+      <p>
+        GetToolly Merge PDF is designed to be simple, fast, and easy
+        to use. It works directly in your web browser and does not
+        require you to install desktop software.
+      </p>
+
+      <p>
+        Your selected PDF files are processed locally in your browser,
+        which means they are not uploaded to our server.
+      </p>
+
+
+      <h2>Is Merge PDF Free?</h2>
+
+      <p>
+        Yes. GetToolly's Merge PDF tool is free to use and does not
+        require registration.
       </p>
 
     </div>
@@ -375,6 +632,26 @@
   </div>
 
 </div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  © 2026 GetToolly ·
+
+  <a href="https://www.gettoolly.com/privacy.html">
+    Privacy Policy
+  </a>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
@@ -388,6 +665,11 @@
 
   let selectedFiles = [];
   let downloadUrl = null;
+
+
+  /* =========================
+     SELECT FILES
+  ========================= */
 
   pdfInput.addEventListener("change", function () {
 
@@ -412,6 +694,10 @@
 
   });
 
+
+  /* =========================
+     DISPLAY FILES
+  ========================= */
 
   function renderFileList() {
 
@@ -463,6 +749,10 @@
   }
 
 
+  /* =========================
+     REMOVE FILE
+  ========================= */
+
   function removeFile(index) {
 
     selectedFiles.splice(index, 1);
@@ -471,6 +761,10 @@
 
   }
 
+
+  /* =========================
+     MERGE PDF
+  ========================= */
 
   mergeBtn.addEventListener("click", async function () {
 
@@ -484,55 +778,89 @@
 
     downloadArea.style.display = "none";
 
+
     try {
 
-      const mergedPdf = await PDFLib.PDFDocument.create();
+      const mergedPdf =
+        await PDFLib.PDFDocument.create();
 
-      for (let i = 0; i < selectedFiles.length; i++) {
+
+      for (
+        let i = 0;
+        i < selectedFiles.length;
+        i++
+      ) {
 
         const file = selectedFiles[i];
 
         status.textContent =
           `Processing file ${i + 1} of ${selectedFiles.length}...`;
 
-        const arrayBuffer = await file.arrayBuffer();
 
-        const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+        const arrayBuffer =
+          await file.arrayBuffer();
 
-        const pages = await mergedPdf.copyPages(
-          pdf,
-          pdf.getPageIndices()
-        );
+
+        const pdf =
+          await PDFLib.PDFDocument.load(arrayBuffer);
+
+
+        const pages =
+          await mergedPdf.copyPages(
+            pdf,
+            pdf.getPageIndices()
+          );
+
 
         pages.forEach(page => {
+
           mergedPdf.addPage(page);
+
         });
 
       }
 
-      status.textContent = "Creating merged PDF...";
 
-      const pdfBytes = await mergedPdf.save();
+      status.textContent =
+        "Creating merged PDF...";
 
-      const blob = new Blob(
-        [pdfBytes],
-        { type: "application/pdf" }
-      );
+
+      const pdfBytes =
+        await mergedPdf.save();
+
+
+      const blob =
+        new Blob(
+          [pdfBytes],
+          { type: "application/pdf" }
+        );
+
 
       if (downloadUrl) {
+
         URL.revokeObjectURL(downloadUrl);
+
       }
 
-      downloadUrl = URL.createObjectURL(blob);
 
-      downloadBtn.href = downloadUrl;
+      downloadUrl =
+        URL.createObjectURL(blob);
 
-      downloadArea.style.display = "block";
+
+      downloadBtn.href =
+        downloadUrl;
+
+
+      downloadArea.style.display =
+        "block";
+
 
       status.textContent =
         "PDF files merged successfully.";
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
       console.error(error);
 
@@ -541,10 +869,16 @@
 
     }
 
-    mergeBtn.disabled = selectedFiles.length < 2;
+
+    mergeBtn.disabled =
+      selectedFiles.length < 2;
 
   });
 
+
+  /* =========================
+     RESET
+  ========================= */
 
   resetBtn.addEventListener("click", function () {
 
@@ -555,6 +889,7 @@
     status.textContent = "";
 
     downloadArea.style.display = "none";
+
 
     if (downloadUrl) {
 
@@ -567,24 +902,41 @@
   });
 
 
+  /* =========================
+     FILE SIZE
+  ========================= */
+
   function formatFileSize(bytes) {
 
     if (bytes < 1024) {
+
       return bytes + " B";
+
     }
 
     if (bytes < 1024 * 1024) {
-      return (bytes / 1024).toFixed(1) + " KB";
+
+      return (
+        bytes / 1024
+      ).toFixed(1) + " KB";
+
     }
 
-    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+    return (
+      bytes / (1024 * 1024)
+    ).toFixed(1) + " MB";
 
   }
 
 
+  /* =========================
+     SECURITY
+  ========================= */
+
   function escapeHtml(text) {
 
-    const div = document.createElement("div");
+    const div =
+      document.createElement("div");
 
     div.textContent = text;
 
