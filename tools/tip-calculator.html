@@ -1,19 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tip Calculator - Free Online Tip Calculator | GetToolly</title>
+  <title>Tip Calculator Online - Calculate Tips & Split Bills | GetToolly</title>
 
-  <meta name="description"
-    content="Calculate tips quickly and easily with GetToolly's free online tip calculator. Split bills and calculate the total amount instantly.">
+  <meta name="description" content="Free online tip calculator to calculate restaurant tips, total bills, and the amount each person pays. Choose a tip percentage or enter a custom tip.">
 
-  <meta name="keywords"
-    content="tip calculator, gratuity calculator, restaurant tip calculator, bill splitter, free tip calculator">
+  <meta name="keywords" content="tip calculator, tip calculator online, restaurant tip calculator, gratuity calculator, bill splitter, split bill calculator, calculate tip, tip percentage calculator">
 
-  <link rel="canonical" href="https://gettoolly.vercel.app/tools/tip-calculator.html">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://www.gettoolly.com/tools/tip-calculator.html">
+
+  <meta property="og:title" content="Tip Calculator Online - Calculate Tips & Split Bills">
+  <meta property="og:description" content="Calculate restaurant tips, total bills and the amount each person should pay with GetToolly's free tip calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gettoolly.com/tools/tip-calculator.html">
 
   <style>
     * {
@@ -161,6 +165,23 @@
       margin-top: 12px;
     }
 
+    .calculate-btn {
+      width: 100%;
+      height: 52px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .calculate-btn:hover {
+      background: #1d4ed8;
+    }
+
     .result {
       margin-top: 28px;
       background: #eff6ff;
@@ -188,23 +209,6 @@
       color: #111827;
     }
 
-    .calculate-btn {
-      width: 100%;
-      height: 52px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 10px;
-      background: #2563eb;
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .calculate-btn:hover {
-      background: #1d4ed8;
-    }
-
     .info {
       max-width: 700px;
       margin: 50px auto 0;
@@ -213,7 +217,50 @@
 
     .info h2 {
       color: #111827;
-      margin-bottom: 12px;
+      margin: 35px 0 12px;
+    }
+
+    .info h2:first-child {
+      margin-top: 0;
+    }
+
+    .info h3 {
+      color: #111827;
+      margin: 25px 0 8px;
+    }
+
+    .info p {
+      margin-bottom: 15px;
+    }
+
+    .info ul {
+      margin: 10px 0 20px 22px;
+    }
+
+    .info li {
+      margin-bottom: 8px;
+    }
+
+    .example {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px;
+      margin: 15px 0 25px;
+    }
+
+    .faq {
+      margin-top: 15px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 5px;
     }
 
     footer {
@@ -229,6 +276,10 @@
       color: #64748b;
       text-decoration: none;
       margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: #2563eb;
     }
 
     @media (max-width: 600px) {
@@ -258,18 +309,17 @@
 <header>
   <div class="navbar">
 
-    <a href="../index.html" class="logo">
+    <a href="../index.html" class="logo" aria-label="GetToolly Home">
       <span>◆</span> GetToolly
     </a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="../index.html">Home</a>
       <a href="../index.html#tools">Tools</a>
     </nav>
 
   </div>
 </header>
-
 
 <main class="page">
 
@@ -278,13 +328,12 @@
     <h1>Tip Calculator</h1>
 
     <p>
-      Calculate tips and split your bill quickly and easily.
+      Calculate tips, total bills, and each person's share quickly and easily.
     </p>
 
   </div>
 
-
-  <section class="calculator">
+  <section class="calculator" aria-label="Tip calculator">
 
     <div class="field">
 
@@ -298,10 +347,11 @@
         placeholder="Enter bill amount"
         min="0"
         step="0.01"
+        inputmode="decimal"
+        aria-label="Bill amount"
       >
 
     </div>
-
 
     <div class="field">
 
@@ -309,13 +359,13 @@
         Tip Percentage
       </label>
 
-      <div class="tip-buttons">
+      <div class="tip-buttons" aria-label="Tip percentage options">
 
-        <button class="tip-btn" data-tip="5">5%</button>
-        <button class="tip-btn" data-tip="10">10%</button>
-        <button class="tip-btn active" data-tip="15">15%</button>
-        <button class="tip-btn" data-tip="20">20%</button>
-        <button class="tip-btn" data-tip="25">25%</button>
+        <button type="button" class="tip-btn" data-tip="5">5%</button>
+        <button type="button" class="tip-btn" data-tip="10">10%</button>
+        <button type="button" class="tip-btn active" data-tip="15">15%</button>
+        <button type="button" class="tip-btn" data-tip="20">20%</button>
+        <button type="button" class="tip-btn" data-tip="25">25%</button>
 
       </div>
 
@@ -326,10 +376,11 @@
         placeholder="Or enter custom tip %"
         min="0"
         step="0.1"
+        inputmode="decimal"
+        aria-label="Custom tip percentage"
       >
 
     </div>
-
 
     <div class="field">
 
@@ -343,17 +394,20 @@
         value="1"
         min="1"
         step="1"
+        inputmode="numeric"
+        aria-label="Number of people"
       >
 
     </div>
 
-
-    <button class="calculate-btn" onclick="calculateTip()">
+    <button
+      class="calculate-btn"
+      type="button"
+      onclick="calculateTip()">
       Calculate Tip
     </button>
 
-
-    <div class="result">
+    <div class="result" aria-live="polite">
 
       <div class="result-row">
         <span>Tip Amount</span>
@@ -379,22 +433,171 @@
 
   </section>
 
-
   <section class="info">
 
-    <h2>How to use the Tip Calculator</h2>
+    <h2>What Is a Tip Calculator?</h2>
 
     <p>
-      Enter your bill amount, choose a tip percentage,
-      and enter the number of people sharing the bill.
-      GetToolly will instantly calculate the tip,
-      total bill, and amount each person should pay.
+      A tip calculator is an online tool that helps you calculate a
+      gratuity amount based on the total bill and a chosen tip percentage.
+      It can also divide the tip and total bill between multiple people.
     </p>
+
+    <h2>How to Use the Tip Calculator</h2>
+
+    <p>
+      Enter the bill amount, choose a tip percentage, and enter the number
+      of people sharing the bill. The calculator automatically calculates
+      the tip amount, total bill, tip per person, and total amount per person.
+    </p>
+
+    <ul>
+      <li>Enter the total bill amount.</li>
+      <li>Choose a tip percentage such as 10%, 15%, 20%, or 25%.</li>
+      <li>Enter a custom tip percentage if needed.</li>
+      <li>Enter the number of people sharing the bill.</li>
+      <li>View the tip and total amount instantly.</li>
+    </ul>
+
+    <h2>Tip Calculation Formula</h2>
+
+    <p>
+      The basic tip calculation is simple:
+    </p>
+
+    <div class="example">
+
+      <p>
+        <strong>Tip Amount = Bill Amount × Tip Percentage ÷ 100</strong>
+      </p>
+
+      <p>
+        <strong>Total Bill = Bill Amount + Tip Amount</strong>
+      </p>
+
+    </div>
+
+    <h2>Tip Calculator Example</h2>
+
+    <div class="example">
+
+      <p>
+        Suppose your restaurant bill is <strong>$100</strong> and you want
+        to leave a <strong>20% tip</strong>.
+      </p>
+
+      <p>
+        Tip: $100 × 20% = <strong>$20</strong>
+      </p>
+
+      <p>
+        Total bill: $100 + $20 = <strong>$120</strong>
+      </p>
+
+      <p>
+        If four people share the bill, each person pays
+        <strong>$30</strong>.
+      </p>
+
+    </div>
+
+    <h2>Common Tip Percentages</h2>
+
+    <p>
+      The appropriate tip percentage depends on the country, service,
+      restaurant and personal preference. Common percentages used for
+      calculations include:
+    </p>
+
+    <ul>
+      <li><strong>5%</strong> — a small tip.</li>
+      <li><strong>10%</strong> — a moderate tip.</li>
+      <li><strong>15%</strong> — a commonly used percentage.</li>
+      <li><strong>20%</strong> — a generous tip in many situations.</li>
+      <li><strong>25%</strong> — a higher tip for excellent service.</li>
+    </ul>
+
+    <p>
+      Tipping customs vary by location, so consider local practices
+      when deciding how much to leave.
+    </p>
+
+    <h2>Splitting a Restaurant Bill</h2>
+
+    <p>
+      When several people share a restaurant bill, the tip can be divided
+      among them along with the total bill. Enter the number of people
+      into the calculator to see the tip per person and total amount
+      per person.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <strong>How do I calculate a 15% tip?</strong>
+        <p>
+          Multiply the bill amount by 0.15. For example, a $100 bill
+          with a 15% tip results in a $15 tip and a $115 total.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How do I calculate a 20% tip?</strong>
+        <p>
+          Multiply the bill amount by 0.20. For example, a $100 bill
+          with a 20% tip results in a $20 tip and a $120 total.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How do I split a bill between multiple people?</strong>
+        <p>
+          Enter the bill amount and the number of people. The calculator
+          divides the tip and total bill evenly between the specified
+          number of people.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I enter a custom tip percentage?</strong>
+        <p>
+          Yes. Use the custom tip field to enter any percentage you want.
+          The calculator will use your custom percentage instead of the
+          preset options.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Does the tip calculator work with decimal amounts?</strong>
+        <p>
+          Yes. You can enter bill amounts with decimal values such as
+          45.50 or 125.75.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Is the GetToolly Tip Calculator free?</strong>
+        <p>
+          Yes. The calculator is free to use and does not require an
+          account, registration or software installation.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I use the tip calculator on my phone?</strong>
+        <p>
+          Yes. The tool is designed to work on smartphones, tablets
+          and desktop computers.
+        </p>
+      </div>
+
+    </div>
 
   </section>
 
 </main>
-
 
 <footer>
 
@@ -410,15 +613,12 @@
 
 </footer>
 
-
 <script>
 
   let selectedTip = 15;
 
-
   const tipButtons =
     document.querySelectorAll(".tip-btn");
-
 
   tipButtons.forEach(function(button) {
 
@@ -441,7 +641,6 @@
 
   });
 
-
   document.getElementById("customTip")
     .addEventListener("input", function() {
 
@@ -460,34 +659,29 @@
 
     });
 
-
   document.getElementById("bill")
     .addEventListener("input", calculateTip);
 
-
   document.getElementById("people")
     .addEventListener("input", calculateTip);
-
 
   function calculateTip() {
 
     const bill =
       Number(document.getElementById("bill").value);
 
-    const people =
+    let people =
       Number(document.getElementById("people").value) || 1;
 
     const customTip =
       document.getElementById("customTip").value;
-
 
     let tipPercent =
       customTip !== ""
         ? Number(customTip)
         : selectedTip;
 
-
-    if (bill <= 0) {
+    if (!Number.isFinite(bill) || bill <= 0) {
 
       document.getElementById("tipAmount").textContent = "0.00";
       document.getElementById("totalBill").textContent = "0.00";
@@ -497,6 +691,15 @@
       return;
     }
 
+    if (!Number.isFinite(tipPercent) || tipPercent < 0) {
+      tipPercent = 0;
+    }
+
+    if (!Number.isFinite(people) || people < 1) {
+      people = 1;
+    }
+
+    people = Math.floor(people);
 
     const tipAmount =
       bill * (tipPercent / 100);
@@ -509,7 +712,6 @@
 
     const totalPerPerson =
       total / people;
-
 
     document.getElementById("tipAmount")
       .textContent = tipAmount.toFixed(2);
@@ -525,11 +727,9 @@
 
   }
 
-
   calculateTip();
 
 </script>
 
 </body>
 </html>
-
