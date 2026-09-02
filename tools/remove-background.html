@@ -1,1092 +1,860 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Remove Background - Free Online Tool | GetToolly</title>
-
-<meta
-  name="description"
-  content="Remove image backgrounds online for free with GetToolly."
->
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f7fb;
-  color: #1f2937;
-}
-
-/* HEADER */
-
-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 18px 20px;
-}
-
-.header-inner {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: #2563eb;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #374151;
-}
-
-nav a:hover {
-  color: #2563eb;
-}
-
-
-/* MAIN */
-
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 55px 20px 80px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.hero h1 {
-  margin: 0 0 12px;
-  font-size: 38px;
-  color: #111827;
-}
-
-.hero p {
-  margin: 0;
-  color: #6b7280;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-
-/* TOOL */
-
-.tool-box {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 30px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-}
-
-
-/* UPLOAD */
-
-.upload-area {
-  border: 2px dashed #cbd5e1;
-  border-radius: 14px;
-  padding: 45px 20px;
-  text-align: center;
-  background: #f8fafc;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.upload-area:hover {
-  border-color: #2563eb;
-  background: #f1f5ff;
-}
-
-.upload-icon {
-  font-size: 48px;
-  margin-bottom: 12px;
-}
-
-.upload-area h2 {
-  margin: 0 0 8px;
-  font-size: 22px;
-  color: #111827;
-}
-
-.upload-area p {
-  margin: 0 0 20px;
-  color: #6b7280;
-}
-
-
-/* FILE INPUT */
-
-#fileInput {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-/* BUTTON */
-
-.choose-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #2563eb;
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  font-size: 15px;
-  text-decoration: none;
-  outline: none;
-}
-
-.choose-button:hover {
-  background: #1d4ed8;
-}
-
-.choose-button:focus {
-  outline: none;
-}
-
-.supported {
-  margin-top: 14px;
-  color: #9ca3af;
-  font-size: 13px;
-}
-
-
-/* PREVIEW */
-
-.preview {
-  display: none;
-  margin-top: 30px;
-}
-
-.preview h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #111827;
-}
-
-.preview-box {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  background: #f8fafc;
-}
-
-.preview-box img {
-  max-width: 100%;
-  max-height: 500px;
-  display: block;
-  margin: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.file-name {
-  margin-top: 15px;
-  color: #6b7280;
-  font-size: 14px;
-  word-break: break-word;
-}
-
-
-/* ACTIONS */
-
-.actions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-button {
-  font-family: inherit;
-}
-
-
-/* PROCESS BUTTON */
-
-.process-button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  background: #16a34a;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: none;
-}
-
-.process-button:hover {
-  background: #15803d;
-}
-
-.process-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-
-/* RESET BUTTON */
-
-.reset-button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  background: #64748b;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.reset-button:hover {
-  background: #475569;
-}
-
-
-/* STATUS */
-
-.status {
-  display: none;
-  text-align: center;
-  margin-top: 25px;
-  padding: 18px;
-  background: #eff6ff;
-  border-radius: 10px;
-  color: #1d4ed8;
-}
-
-.spinner {
-  width: 35px;
-  height: 35px;
-  border: 4px solid #dbeafe;
-  border-top-color: #2563eb;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 12px;
-}
-
-@keyframes spin {
-
-  to {
-    transform: rotate(360deg);
-  }
-
-}
-
-
-/* ERROR */
-
-.error {
-  display: none;
-  margin-top: 20px;
-  padding: 14px;
-  background: #fef2f2;
-  color: #b91c1c;
-  border-radius: 8px;
-  text-align: center;
-}
-
-
-/* TRANSPARENT RESULT */
-
-.transparent {
-  background-image:
-    linear-gradient(45deg, #ddd 25%, transparent 25%),
-    linear-gradient(-45deg, #ddd 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #ddd 75%),
-    linear-gradient(-45deg, transparent 75%, #ddd 75%);
-
-  background-size: 24px 24px;
-
-  background-position:
-    0 0,
-    0 12px,
-    12px -12px,
-    -12px 0;
-
-  background-color: #ffffff;
-}
-
-
-/* INFO */
-
-.info {
-  margin-top: 30px;
-  background: white;
-  border-radius: 14px;
-  padding: 25px;
-  line-height: 1.7;
-}
-
-.info h2 {
-  margin-top: 0;
-}
-
-.info p {
-  color: #6b7280;
-}
-
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-  padding: 25px;
-  background: white;
-  border-top: 1px solid #e5e7eb;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .hero h1 {
-    font-size: 30px;
-  }
-
-  .tool-box {
-    padding: 20px;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Remove Background - Free Online Tool | GetToolly</title>
+  <meta name="description" content="Remove image backgrounds automatically and for free with GetToolly. Download transparent PNG images in high quality.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .tool-box {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    .upload-area {
+      border: 2px dashed #cbd5e1;
+      border-radius: 15px;
+      padding: 45px 20px;
+      text-align: center;
+      background: #f8fafc;
+      transition: 0.2s;
+    }
+
+    .upload-area:hover {
+      border-color: #2563eb;
+      background: #f1f5ff;
+    }
+
+    .upload-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .upload-area h2 {
+      margin: 8px 0;
+      font-size: 22px;
+    }
+
+    .upload-area p {
+      color: #6b7280;
+      margin-bottom: 22px;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    .button {
+      display: inline-block;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .choose-button {
+      background: #2563eb;
+      color: white;
+    }
+
+    .choose-button:hover {
+      background: #1d4ed8;
+    }
+
+    .remove-button {
+      background: #111827;
+      color: white;
+      margin-top: 18px;
+    }
+
+    .remove-button:hover {
+      background: #000000;
+    }
+
+    .download-button {
+      background: #16a34a;
+      color: white;
+      margin-top: 15px;
+    }
+
+    .download-button:hover {
+      background: #15803d;
+    }
+
+    .reset-button {
+      background: #e5e7eb;
+      color: #111827;
+      margin-top: 15px;
+      margin-left: 8px;
+    }
+
+    .reset-button:hover {
+      background: #d1d5db;
+    }
+
+    .preview-section {
+      margin-top: 30px;
+      display: none;
+    }
+
+    .preview-section h2 {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .preview-box {
+      min-height: 280px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+
+      /* Transparent checkerboard */
+      background-image:
+        linear-gradient(45deg, #eeeeee 25%, transparent 25%),
+        linear-gradient(-45deg, #eeeeee 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #eeeeee 75%),
+        linear-gradient(-45deg, transparent 75%, #eeeeee 75%);
+      background-size: 24px 24px;
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+    }
+
+    .preview-box img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .original-box {
+      background: #f8fafc;
+      background-image: none;
+    }
+
+    .file-info {
+      text-align: center;
+      color: #6b7280;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .action-area {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .status {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    .progress-container {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: #2563eb;
+      transition: width 0.3s;
+    }
+
+    .error {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #fef2f2;
+      color: #b91c1c;
+      text-align: center;
+    }
+
+    .tips {
+      margin-top: 35px;
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .tips h2 {
+      margin-top: 0;
+    }
+
+    .tips li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .tool-box {
+        padding: 20px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+
+      .preview-box {
+        min-height: 220px;
+      }
+    }
+  </style>
 
 </head>
 
-
 <body>
 
-
 <header>
-
   <div class="header-inner">
+    <a href="../index.html" class="logo">GetToolly</a>
 
-    <a href="../index.html" class="logo">
-      GetToolly
-    </a>
-
-    <nav>
-
-      <a href="../index.html">
-        Home
-      </a>
-
-      <a href="../index.html#tools">
-        Tools
-      </a>
-
-      <a href="../index.html#about">
-        About
-      </a>
-
-      <a href="../index.html#contact">
-        Contact
-      </a>
-
-    </nav>
+```
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../index.html#tools">Tools</a>
+  <a href="../index.html#about">About</a>
+  <a href="../index.html#contact">Contact</a>
+</nav>
+```
 
   </div>
-
 </header>
 
+<main class="container">
 
-<main>
-
-
-<section class="hero">
-
-  <h1>
-    Remove Background
-  </h1>
-
-  <p>
-    Remove backgrounds from your images automatically
-    and download transparent PNG images.
-  </p>
-
-</section>
-
-
-
-<section class="tool-box">
-
-
-  <!-- UPLOAD -->
-
-  <div class="upload-area">
-
-    <div class="upload-icon">
-      🖼️
-    </div>
-
-    <h2>
-      Upload an Image
-    </h2>
-
+  <section class="hero">
+    <h1>Remove Background</h1>
     <p>
-      Choose a JPG, PNG or WebP image.
+      Remove image backgrounds automatically and create transparent PNG images.
+      Fast, private and free.
     </p>
+  </section>
 
+  <section class="tool-box">
 
-    <input
-      type="file"
-      id="fileInput"
-      accept="image/jpeg,image/png,image/webp"
-    >
+```
+<div class="upload-area">
 
+  <div class="upload-icon">🖼️</div>
 
-    <label
-      for="fileInput"
-      class="choose-button"
-    >
-      Choose Image
-    </label>
-
-
-    <div class="supported">
-      JPG • PNG • WebP
-    </div>
-
-  </div>
-
-
-
-  <!-- ERROR -->
-
-  <div
-    class="error"
-    id="error"
-  ></div>
-
-
-
-  <!-- PROCESSING -->
-
-  <div
-    class="status"
-    id="status"
-  >
-
-    <div class="spinner"></div>
-
-    <div id="statusText">
-      Processing...
-    </div>
-
-  </div>
-
-
-
-  <!-- ORIGINAL IMAGE -->
-
-  <div
-    class="preview"
-    id="preview"
-  >
-
-    <h2>
-      Selected Image
-    </h2>
-
-
-    <div class="preview-box">
-
-      <img
-        id="previewImage"
-        alt="Selected image"
-      >
-
-
-      <div
-        class="file-name"
-        id="fileName"
-      ></div>
-
-
-      <div class="actions">
-
-        <button
-          type="button"
-          class="process-button"
-          id="processButton"
-        >
-          Remove Background
-        </button>
-
-
-        <button
-          type="button"
-          class="reset-button"
-          id="resetButton"
-        >
-          Choose Another
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- RESULT -->
-
-  <div
-    class="preview"
-    id="result"
-  >
-
-    <h2>
-      Background Removed
-    </h2>
-
-
-    <div class="preview-box transparent">
-
-      <img
-        id="resultImage"
-        alt="Background removed image"
-      >
-
-
-      <div class="actions">
-
-        <a
-          id="downloadButton"
-          class="process-button"
-          download="gettoolly-background-removed.png"
-        >
-          Download PNG
-        </a>
-
-
-        <button
-          type="button"
-          class="reset-button"
-          id="resultResetButton"
-        >
-          Process Another Image
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-</section>
-
-
-
-<section class="info">
-
-  <h2>
-    Free Online Background Remover
-  </h2>
+  <h2>Select an Image</h2>
 
   <p>
-    Remove backgrounds from your images automatically
-    with GetToolly.
+    Upload JPG, PNG or WebP images
   </p>
 
-  <p>
-    Upload a JPG, PNG or WebP image and create a
-    transparent PNG image.
-  </p>
+  <input
+    type="file"
+    id="fileInput"
+    accept="image/jpeg,image/png,image/webp"
+  >
 
-</section>
+  <button
+    type="button"
+    class="button choose-button"
+    id="chooseButton"
+  >
+    Choose Image
+  </button>
 
+</div>
+
+<div id="fileInfo" class="file-info"></div>
+
+<div id="originalSection" class="preview-section">
+
+  <h2>Original Image</h2>
+
+  <div class="preview-box original-box">
+    <img id="originalImage" alt="Original image">
+  </div>
+
+  <div class="action-area">
+
+    <button
+      type="button"
+      class="button remove-button"
+      id="removeButton"
+    >
+      ✨ Remove Background
+    </button>
+
+  </div>
+
+</div>
+
+<div id="status" class="status">
+  Preparing...
+</div>
+
+<div id="progressContainer" class="progress-container">
+  <div class="progress-bar">
+    <div id="progressFill" class="progress-fill"></div>
+  </div>
+</div>
+
+<div id="error" class="error"></div>
+
+<div id="resultSection" class="preview-section">
+
+  <h2>Result</h2>
+
+  <div class="preview-box">
+    <img id="resultImage" alt="Background removed result">
+  </div>
+
+  <div class="action-area">
+
+    <button
+      type="button"
+      class="button download-button"
+      id="downloadButton"
+    >
+      ⬇ Download PNG
+    </button>
+
+    <button
+      type="button"
+      class="button reset-button"
+      id="resetButton"
+    >
+      Choose Another Image
+    </button>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <section class="tips">
+
+```
+<h2>Tips for Better Results</h2>
+
+<ul>
+  <li>Use a clear image with the subject separated from the background.</li>
+  <li>High-resolution images usually produce better edges.</li>
+  <li>Images with clear contrast between the subject and background work best.</li>
+  <li>For hair, fur and small details, the high-quality model may take longer.</li>
+  <li>Your image is processed directly in your browser.</li>
+</ul>
+```
+
+  </section>
 
 </main>
 
-
 <footer>
-
   © 2026 GetToolly. All rights reserved.
-
 </footer>
-
-
 
 <script>
 
-const fileInput =
-  document.getElementById("fileInput");
+  const fileInput = document.getElementById("fileInput");
+  const chooseButton = document.getElementById("chooseButton");
 
-const preview =
-  document.getElementById("preview");
+  const originalSection = document.getElementById("originalSection");
+  const originalImage = document.getElementById("originalImage");
 
-const previewImage =
-  document.getElementById("previewImage");
+  const resultSection = document.getElementById("resultSection");
+  const resultImage = document.getElementById("resultImage");
 
-const fileName =
-  document.getElementById("fileName");
+  const removeButton = document.getElementById("removeButton");
+  const downloadButton = document.getElementById("downloadButton");
+  const resetButton = document.getElementById("resetButton");
 
-const processButton =
-  document.getElementById("processButton");
+  const fileInfo = document.getElementById("fileInfo");
+  const status = document.getElementById("status");
+  const errorBox = document.getElementById("error");
 
-const resetButton =
-  document.getElementById("resetButton");
+  const progressContainer =
+    document.getElementById("progressContainer");
 
-const result =
-  document.getElementById("result");
+  const progressFill =
+    document.getElementById("progressFill");
 
-const resultImage =
-  document.getElementById("resultImage");
-
-const downloadButton =
-  document.getElementById("downloadButton");
-
-const resultResetButton =
-  document.getElementById("resultResetButton");
-
-const status =
-  document.getElementById("status");
-
-const statusText =
-  document.getElementById("statusText");
-
-const errorBox =
-  document.getElementById("error");
+  let selectedFile = null;
+  let originalUrl = null;
+  let resultUrl = null;
 
 
-let selectedFile = null;
+  /* Open file picker */
 
-let previewURL = null;
+  chooseButton.addEventListener("click", function () {
+    fileInput.click();
+  });
 
-let resultURL = null;
 
+  /* File selected */
 
+  fileInput.addEventListener("change", function () {
 
-/* =========================
-   IMAGE SELECTION
-========================= */
-
-fileInput.addEventListener(
-  "change",
-  function () {
-
-    const file = this.files[0];
+    const file = fileInput.files[0];
 
     if (!file) {
       return;
     }
 
+    if (!file.type.startsWith("image/")) {
 
-    if (
-      ![
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-      ].includes(file.type)
-    ) {
-
-      showError(
-        "Please select a JPG, PNG or WebP image."
-      );
+      showError("Please select a valid image.");
 
       return;
     }
-
 
     selectedFile = file;
 
-
-    if (previewURL) {
-
-      URL.revokeObjectURL(
-        previewURL
-      );
-
-    }
-
-
-    previewURL =
-      URL.createObjectURL(file);
-
-
-    previewImage.src =
-      previewURL;
-
-
-    fileName.textContent =
-      file.name +
-      " • " +
-      formatFileSize(file.size);
-
-
-    preview.style.display =
-      "block";
-
-
-    result.style.display =
-      "none";
-
-
-    status.style.display =
-      "none";
-
-
     hideError();
 
-  }
-);
+    resultSection.style.display = "none";
+
+    if (resultUrl) {
+      URL.revokeObjectURL(resultUrl);
+      resultUrl = null;
+    }
+
+    if (originalUrl) {
+      URL.revokeObjectURL(originalUrl);
+    }
+
+    originalUrl = URL.createObjectURL(file);
+
+    originalImage.src = originalUrl;
+
+    originalSection.style.display = "block";
+
+    fileInfo.textContent =
+      file.name +
+      " • " +
+      formatBytes(file.size);
+
+  });
 
 
+  /* Remove background */
 
-/* =========================
-   REMOVE BACKGROUND
-========================= */
-
-processButton.addEventListener(
-  "click",
-  async function () {
+  removeButton.addEventListener("click", async function () {
 
     if (!selectedFile) {
 
-      showError(
-        "Please choose an image first."
-      );
+      showError("Please choose an image first.");
 
       return;
-
     }
 
+    removeButton.disabled = true;
+
+    removeButton.style.opacity = "0.6";
 
     hideError();
 
+    status.style.display = "block";
 
-    status.style.display =
-      "block";
+    progressContainer.style.display = "block";
 
+    progressFill.style.width = "2%";
 
-    processButton.disabled =
-      true;
-
-
-    statusText.textContent =
-      "Loading AI model...";
-
+    status.textContent =
+      "Loading high-quality background removal model...";
 
     try {
 
       /*
-       * Load the AI library only now.
-       * This keeps image upload independent
-       * from the AI library.
-       */
+        Load the library only when needed.
+        This keeps the initial page fast.
+      */
 
-      const module =
-        await import(
-          "https://esm.sh/@imgly/background-removal@1.7.0"
-        );
-
+      const module = await import(
+        "https://esm.sh/@imgly/background-removal@1.7.0"
+      );
 
       const removeBackground =
         module.removeBackground ||
         module.default;
 
-
       if (!removeBackground) {
-
         throw new Error(
           "Background removal library could not be loaded."
         );
-
       }
 
 
-      statusText.textContent =
-        "Removing background...";
+      status.textContent =
+        "Analyzing your image...";
+
+      progressFill.style.width = "15%";
 
 
-      const output =
-        await removeBackground(
-          selectedFile,
-          {
+      /*
+        HIGH QUALITY MODEL
 
-            model: "isnet_quint8",
+        isnet = highest quality model available
+        in this browser library.
 
-            device: "cpu",
+        gpu = use WebGPU when available
+        cpu = fallback automatically when needed
+      */
 
-            proxyToWorker: false,
+      const result = await removeBackground(
+        selectedFile,
+        {
 
-            progress:
-              function (
-                key,
-                current,
-                total
-              ) {
+          model: "isnet",
 
-                if (
-                  total &&
-                  total > 0
-                ) {
+          device: "gpu",
 
-                  const percent =
-                    Math.round(
-                      (current / total) * 100
-                    );
+          proxyToWorker: false,
 
-                  statusText.textContent =
-                    "Processing... " +
-                    percent +
-                    "%";
+          output: {
+            format: "image/png",
+            quality: 1,
+            type: "foreground"
+          },
 
-                }
+          progress: function (
+            key,
+            current,
+            total
+          ) {
 
+            if (total > 0) {
+
+              let percent =
+                Math.round(
+                  (current / total) * 100
+                );
+
+              /*
+                Reserve first 15% for initialization.
+              */
+
+              percent =
+                15 +
+                Math.round(percent * 0.85);
+
+              if (percent > 99) {
+                percent = 99;
               }
 
+              progressFill.style.width =
+                percent + "%";
+            }
+
+            if (
+              key &&
+              String(key)
+                .toLowerCase()
+                .includes("model")
+            ) {
+
+              status.textContent =
+                "Downloading high-quality model...";
+
+            } else {
+
+              status.textContent =
+                "Removing background...";
+            }
+
           }
-        );
+
+        }
+      );
 
 
-      if (resultURL) {
+      progressFill.style.width = "100%";
 
-        URL.revokeObjectURL(
-          resultURL
-        );
-
-      }
+      status.textContent =
+        "Background removed successfully!";
 
 
-      resultURL =
-        URL.createObjectURL(output);
+      resultUrl =
+        URL.createObjectURL(result);
+
+      resultImage.src = resultUrl;
+
+      resultSection.style.display = "block";
 
 
-      resultImage.src =
-        resultURL;
+      /*
+        Scroll automatically to result
+      */
+
+      setTimeout(function () {
+
+        resultSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }, 300);
 
 
-      downloadButton.href =
-        resultURL;
-
-
-      result.style.display =
-        "block";
-
-
-      status.style.display =
-        "none";
-
-
-      processButton.disabled =
-        false;
-
-    }
-
-
-    catch (error) {
+    } catch (error) {
 
       console.error(
         "Background removal error:",
         error
       );
 
+      showError(
+        "Unable to remove the background. " +
+        "Please try another image or refresh the page."
+      );
+
+      status.style.display = "none";
+
+      progressContainer.style.display = "none";
+
+    }
+
+
+    removeButton.disabled = false;
+
+    removeButton.style.opacity = "1";
+
+  });
+
+
+  /* Download */
+
+  downloadButton.addEventListener(
+    "click",
+    function () {
+
+      if (!resultUrl) {
+        return;
+      }
+
+      const link =
+        document.createElement("a");
+
+      link.href = resultUrl;
+
+      link.download =
+        "gettoolly-background-removed.png";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+    }
+  );
+
+
+  /* Reset */
+
+  resetButton.addEventListener(
+    "click",
+    function () {
+
+      if (originalUrl) {
+        URL.revokeObjectURL(originalUrl);
+        originalUrl = null;
+      }
+
+      if (resultUrl) {
+        URL.revokeObjectURL(resultUrl);
+        resultUrl = null;
+      }
+
+      selectedFile = null;
+
+      fileInput.value = "";
+
+      originalImage.src = "";
+
+      resultImage.src = "";
+
+      fileInfo.textContent = "";
+
+      originalSection.style.display =
+        "none";
+
+      resultSection.style.display =
+        "none";
 
       status.style.display =
         "none";
 
+      progressContainer.style.display =
+        "none";
 
-      processButton.disabled =
-        false;
+      progressFill.style.width = "0%";
 
+      hideError();
 
-      showError(
-        "Background removal could not be completed. Please try again."
-      );
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
     }
-
-  }
-);
-
-
-
-/* =========================
-   RESET
-========================= */
-
-function resetTool() {
-
-  selectedFile = null;
-
-
-  fileInput.value =
-    "";
-
-
-  if (previewURL) {
-
-    URL.revokeObjectURL(
-      previewURL
-    );
-
-    previewURL = null;
-
-  }
-
-
-  if (resultURL) {
-
-    URL.revokeObjectURL(
-      resultURL
-    );
-
-    resultURL = null;
-
-  }
-
-
-  previewImage.src =
-    "";
-
-
-  resultImage.src =
-    "";
-
-
-  downloadButton.removeAttribute(
-    "href"
   );
 
 
-  preview.style.display =
-    "none";
+  function formatBytes(bytes) {
 
+    if (bytes === 0) {
+      return "0 Bytes";
+    }
 
-  result.style.display =
-    "none";
+    const sizes = [
+      "Bytes",
+      "KB",
+      "MB",
+      "GB"
+    ];
 
-
-  status.style.display =
-    "none";
-
-
-  processButton.disabled =
-    false;
-
-
-  hideError();
-
-}
-
-
-resetButton.addEventListener(
-  "click",
-  resetTool
-);
-
-
-resultResetButton.addEventListener(
-  "click",
-  resetTool
-);
-
-
-
-/* =========================
-   ERROR
-========================= */
-
-function showError(message) {
-
-  errorBox.textContent =
-    message;
-
-  errorBox.style.display =
-    "block";
-
-}
-
-
-function hideError() {
-
-  errorBox.style.display =
-    "none";
-
-}
-
-
-
-/* =========================
-   FILE SIZE
-========================= */
-
-function formatFileSize(bytes) {
-
-  if (bytes < 1024) {
-
-    return bytes + " B";
-
-  }
-
-
-  if (bytes < 1024 * 1024) {
+    const i =
+      Math.floor(
+        Math.log(bytes) /
+        Math.log(1024)
+      );
 
     return (
-      (bytes / 1024).toFixed(1) +
-      " KB"
+      parseFloat(
+        (bytes /
+          Math.pow(1024, i))
+          .toFixed(2)
+      ) +
+      " " +
+      sizes[i]
     );
 
   }
 
 
-  return (
-    (bytes / (1024 * 1024)).toFixed(1) +
-    " MB"
-  );
+  function showError(message) {
 
-}
+    errorBox.textContent = message;
+
+    errorBox.style.display = "block";
+
+  }
+
+
+  function hideError() {
+
+    errorBox.textContent = "";
+
+    errorBox.style.display = "none";
+
+  }
 
 </script>
 
-
 </body>
 </html>
-
