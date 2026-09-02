@@ -1,0 +1,1251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image Resizer - Resize Images Online | GetToolly</title>
+
+<meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image width and height directly in your browser without uploading your files.">
+
+<meta name="keywords" content="image resizer, resize image, resize JPG, resize PNG, resize WebP, change image size">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://www.gettoolly.com/tools/image-resizer.html">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f8fb;
+    color: #222;
+}
+
+/* Navigation */
+
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 20px;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Container */
+
+.container {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+/* Back */
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #444;
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.header p {
+    color: #666;
+    font-size: 17px;
+}
+
+/* Tool box */
+
+.tool-box {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Upload */
+
+.upload-area {
+    display: block;
+    width: 100%;
+    border: 2px dashed #bbb;
+    border-radius: 12px;
+    padding: 45px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.upload-area:hover {
+    border-color: #555;
+    background: #fafafa;
+}
+
+.upload-area input {
+    display: none;
+}
+
+.upload-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.upload-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.supported {
+    color: #777;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Preview */
+
+.preview {
+    display: none;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 8px;
+}
+
+.file-info {
+    margin-top: 15px;
+    color: #555;
+}
+
+/* Controls */
+
+.controls {
+    display: none;
+    margin-top: 30px;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.control-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.checkbox-row input {
+    width: 18px;
+    height: 18px;
+}
+
+.resize-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #222;
+    color: #fff;
+}
+
+.resize-btn:hover {
+    opacity: 0.9;
+}
+
+.resize-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Result */
+
+.result {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f1f7f1;
+    border-radius: 10px;
+}
+
+.result h2 {
+    margin-top: 0;
+}
+
+.result-info {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    opacity: 0.9;
+}
+
+.reset-btn {
+    margin-left: 10px;
+    padding: 13px 22px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Privacy */
+
+.privacy {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* About */
+
+.info-section {
+    margin-top: 40px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.info-section h2 {
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.info-section h2:first-child {
+    margin-top: 0;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 14px;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .tool-box {
+        padding: 20px;
+    }
+
+    .download-btn,
+    .reset-btn {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a
+            href="https://www.gettoolly.com/index.html"
+            class="brand">
+            GetToolly
+        </a>
+
+        <div class="nav-links">
+
+            <a href="https://www.gettoolly.com/index.html">
+                Home
+            </a>
+
+            <a href="https://www.gettoolly.com/index.html#tools">
+                Tools
+            </a>
+
+            <a href="https://www.gettoolly.com/privacy.html">
+                Privacy
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <a
+        class="back"
+        href="https://www.gettoolly.com/index.html#tools">
+        ← Back to Tools
+    </a>
+
+
+    <div class="header">
+
+        <h1>
+            Image Resizer
+        </h1>
+
+        <p>
+            Resize JPG, PNG and WebP images online for free.
+        </p>
+
+    </div>
+
+
+    <div class="tool-box">
+
+
+        <!-- Upload -->
+
+        <label
+            class="upload-area">
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/jpeg,image/png,image/webp"
+            >
+
+            <div class="upload-icon">
+                🖼️
+            </div>
+
+            <div class="upload-text">
+                Click to select an image
+            </div>
+
+            <div class="supported">
+                JPG, PNG or WebP
+            </div>
+
+        </label>
+
+
+        <!-- Preview -->
+
+        <div
+            class="preview"
+            id="preview">
+
+            <img
+                id="previewImage"
+                alt="Selected image preview"
+            >
+
+            <div
+                class="file-info"
+                id="fileInfo">
+            </div>
+
+        </div>
+
+
+        <!-- Controls -->
+
+        <div
+            class="controls"
+            id="controls">
+
+
+            <div class="control-group">
+
+                <label for="width">
+                    Width (pixels)
+                </label>
+
+                <input
+                    type="number"
+                    id="width"
+                    min="1"
+                    placeholder="Width"
+                >
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label for="height">
+                    Height (pixels)
+                </label>
+
+                <input
+                    type="number"
+                    id="height"
+                    min="1"
+                    placeholder="Height"
+                >
+
+            </div>
+
+
+            <div class="checkbox-row">
+
+                <input
+                    type="checkbox"
+                    id="keepRatio"
+                    checked
+                >
+
+                <label for="keepRatio">
+                    Keep aspect ratio
+                </label>
+
+            </div>
+
+
+            <button
+                class="resize-btn"
+                id="resizeBtn">
+
+                Resize Image
+
+            </button>
+
+        </div>
+
+
+        <!-- Result -->
+
+        <div
+            class="result"
+            id="result">
+
+            <h2>
+                Resize Complete
+            </h2>
+
+            <div
+                class="result-info"
+                id="resultInfo">
+            </div>
+
+            <a
+                id="downloadBtn"
+                class="download-btn"
+                href="#"
+                download="gettoolly-resized-image.png">
+
+                Download Resized Image
+
+            </a>
+
+            <button
+                class="reset-btn"
+                id="resetBtn">
+
+                Resize Another
+
+            </button>
+
+        </div>
+
+
+        <!-- Privacy -->
+
+        <div class="privacy">
+
+            🔒 <strong>
+                Your image stays on your device.
+            </strong>
+
+            <br>
+
+            This tool processes your image directly
+            in your browser. No image is uploaded
+            to our server.
+
+        </div>
+
+
+        <!-- About -->
+
+        <div class="info-section">
+
+            <h2>
+                About Image Resizer
+            </h2>
+
+            <p>
+                GetToolly's Image Resizer is a free online tool
+                that allows you to change the width and height
+                of JPG, PNG and WebP images quickly and easily.
+            </p>
+
+            <p>
+                The image is processed directly in your browser,
+                so you can resize your image without uploading
+                it to a server.
+            </p>
+
+
+            <h2>
+                How to Resize an Image
+            </h2>
+
+            <p>
+                Click the upload area and select an image from
+                your device.
+            </p>
+
+            <p>
+                Enter the desired width and height in pixels.
+                You can keep the aspect ratio enabled to prevent
+                the image from becoming distorted.
+            </p>
+
+            <p>
+                Click "Resize Image" to create the resized image.
+                When processing is complete, click "Download
+                Resized Image" to save it.
+            </p>
+
+
+            <h2>
+                Why Use GetToolly Image Resizer?
+            </h2>
+
+            <p>
+                GetToolly Image Resizer is designed to be simple,
+                fast and easy to use. No registration or additional
+                software is required.
+            </p>
+
+            <p>
+                It works directly in your web browser and supports
+                common image formats including JPG, PNG and WebP.
+            </p>
+
+
+            <h2>
+                Is Image Resizer Free?
+            </h2>
+
+            <p>
+                Yes. GetToolly Image Resizer is free to use and
+                does not require an account.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        © 2026 GetToolly. All rights reserved.
+
+        ·
+
+        <a href="https://www.gettoolly.com/privacy.html">
+            Privacy Policy
+        </a>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+const fileInput =
+    document.getElementById("fileInput");
+
+const preview =
+    document.getElementById("preview");
+
+const previewImage =
+    document.getElementById("previewImage");
+
+const fileInfo =
+    document.getElementById("fileInfo");
+
+const controls =
+    document.getElementById("controls");
+
+const widthInput =
+    document.getElementById("width");
+
+const heightInput =
+    document.getElementById("height");
+
+const keepRatio =
+    document.getElementById("keepRatio");
+
+const resizeBtn =
+    document.getElementById("resizeBtn");
+
+const result =
+    document.getElementById("result");
+
+const resultInfo =
+    document.getElementById("resultInfo");
+
+const downloadBtn =
+    document.getElementById("downloadBtn");
+
+const resetBtn =
+    document.getElementById("resetBtn");
+
+
+let selectedFile = null;
+
+let originalUrl = null;
+
+let resizedUrl = null;
+
+let originalWidth = 0;
+
+let originalHeight = 0;
+
+
+/* Select image */
+
+fileInput.addEventListener(
+    "change",
+    handleFile
+);
+
+
+function handleFile() {
+
+    const file =
+        fileInput.files[0];
+
+    if (!file) {
+        return;
+    }
+
+
+    if (!file.type.startsWith("image/")) {
+
+        alert(
+            "Please select a valid image file."
+        );
+
+        return;
+    }
+
+
+    selectedFile = file;
+
+
+    if (originalUrl) {
+
+        URL.revokeObjectURL(
+            originalUrl
+        );
+
+    }
+
+
+    originalUrl =
+        URL.createObjectURL(file);
+
+
+    previewImage.src =
+        originalUrl;
+
+
+    previewImage.onload =
+        function() {
+
+            originalWidth =
+                previewImage.naturalWidth;
+
+            originalHeight =
+                previewImage.naturalHeight;
+
+
+            widthInput.value =
+                originalWidth;
+
+            heightInput.value =
+                originalHeight;
+
+
+            fileInfo.textContent =
+                "Original size: " +
+                originalWidth +
+                " × " +
+                originalHeight +
+                " pixels · " +
+                formatBytes(file.size);
+
+        };
+
+
+    preview.style.display =
+        "block";
+
+    controls.style.display =
+        "block";
+
+    result.style.display =
+        "none";
+
+}
+
+
+/* Keep aspect ratio */
+
+widthInput.addEventListener(
+    "input",
+    function() {
+
+        if (
+            keepRatio.checked &&
+            originalWidth &&
+            originalHeight
+        ) {
+
+            const newWidth =
+                Number(widthInput.value);
+
+            if (newWidth > 0) {
+
+                heightInput.value =
+                    Math.round(
+                        newWidth *
+                        originalHeight /
+                        originalWidth
+                    );
+
+            }
+
+        }
+
+    }
+);
+
+
+heightInput.addEventListener(
+    "input",
+    function() {
+
+        if (
+            keepRatio.checked &&
+            originalWidth &&
+            originalHeight
+        ) {
+
+            const newHeight =
+                Number(heightInput.value);
+
+            if (newHeight > 0) {
+
+                widthInput.value =
+                    Math.round(
+                        newHeight *
+                        originalWidth /
+                        originalHeight
+                    );
+
+            }
+
+        }
+
+    }
+);
+
+
+/* Resize */
+
+resizeBtn.addEventListener(
+    "click",
+    resizeImage
+);
+
+
+function resizeImage() {
+
+    if (!selectedFile) {
+
+        alert(
+            "Please select an image first."
+        );
+
+        return;
+    }
+
+
+    const newWidth =
+        Number(widthInput.value);
+
+    const newHeight =
+        Number(heightInput.value);
+
+
+    if (
+        !newWidth ||
+        !newHeight ||
+        newWidth < 1 ||
+        newHeight < 1
+    ) {
+
+        alert(
+            "Please enter valid width and height."
+        );
+
+        return;
+    }
+
+
+    resizeBtn.disabled =
+        true;
+
+    resizeBtn.textContent =
+        "Resizing...";
+
+
+    const img =
+        new Image();
+
+
+    img.onload =
+        function() {
+
+            const canvas =
+                document.createElement(
+                    "canvas"
+                );
+
+
+            canvas.width =
+                newWidth;
+
+            canvas.height =
+                newHeight;
+
+
+            const ctx =
+                canvas.getContext(
+                    "2d"
+                );
+
+
+            /*
+             Preserve transparency for PNG
+             and WebP.
+            */
+
+            ctx.drawImage(
+                img,
+                0,
+                0,
+                newWidth,
+                newHeight
+            );
+
+
+            let outputType =
+                selectedFile.type;
+
+
+            if (
+                outputType !== "image/jpeg" &&
+                outputType !== "image/png" &&
+                outputType !== "image/webp"
+            ) {
+
+                outputType =
+                    "image/png";
+
+            }
+
+
+            canvas.toBlob(
+
+                function(blob) {
+
+                    if (!blob) {
+
+                        alert(
+                            "Resize failed. Please try another image."
+                        );
+
+                        resizeBtn.disabled =
+                            false;
+
+                        resizeBtn.textContent =
+                            "Resize Image";
+
+                        return;
+                    }
+
+
+                    if (resizedUrl) {
+
+                        URL.revokeObjectURL(
+                            resizedUrl
+                        );
+
+                    }
+
+
+                    resizedUrl =
+                        URL.createObjectURL(
+                            blob
+                        );
+
+
+                    let extension;
+
+
+                    if (
+                        outputType ===
+                        "image/jpeg"
+                    ) {
+
+                        extension =
+                            "jpg";
+
+                    }
+                    else if (
+                        outputType ===
+                        "image/webp"
+                    ) {
+
+                        extension =
+                            "webp";
+
+                    }
+                    else {
+
+                        extension =
+                            "png";
+
+                    }
+
+
+                    downloadBtn.href =
+                        resizedUrl;
+
+
+                    downloadBtn.download =
+                        "gettoolly-resized-image." +
+                        extension;
+
+
+                    resultInfo.innerHTML =
+
+                        "<strong>Original dimensions:</strong> " +
+                        originalWidth +
+                        " × " +
+                        originalHeight +
+                        " pixels" +
+
+                        "<br>" +
+
+                        "<strong>New dimensions:</strong> " +
+                        newWidth +
+                        " × " +
+                        newHeight +
+                        " pixels" +
+
+                        "<br>" +
+
+                        "<strong>File size:</strong> " +
+                        formatBytes(
+                            blob.size
+                        );
+
+
+                    result.style.display =
+                        "block";
+
+
+                    resizeBtn.disabled =
+                        false;
+
+                    resizeBtn.textContent =
+                        "Resize Image";
+
+                },
+
+                outputType,
+
+                0.92
+
+            );
+
+
+            URL.revokeObjectURL(
+                img.src
+            );
+
+        };
+
+
+    img.onerror =
+        function() {
+
+            alert(
+                "The image could not be processed. Please try another image."
+            );
+
+            resizeBtn.disabled =
+                false;
+
+            resizeBtn.textContent =
+                "Resize Image";
+
+        };
+
+
+    img.src =
+        originalUrl;
+
+}
+
+
+/* Reset */
+
+resetBtn.addEventListener(
+    "click",
+    resetTool
+);
+
+
+function resetTool() {
+
+    if (originalUrl) {
+
+        URL.revokeObjectURL(
+            originalUrl
+        );
+
+        originalUrl = null;
+
+    }
+
+
+    if (resizedUrl) {
+
+        URL.revokeObjectURL(
+            resizedUrl
+        );
+
+        resizedUrl = null;
+
+    }
+
+
+    selectedFile = null;
+
+    originalWidth = 0;
+
+    originalHeight = 0;
+
+
+    fileInput.value = "";
+
+    widthInput.value = "";
+
+    heightInput.value = "";
+
+
+    preview.style.display =
+        "none";
+
+    controls.style.display =
+        "none";
+
+    result.style.display =
+        "none";
+
+
+    resizeBtn.disabled =
+        false;
+
+    resizeBtn.textContent =
+        "Resize Image";
+
+}
+
+
+/* File size */
+
+function formatBytes(bytes) {
+
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
+
+
+    const units = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    const i =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+
+        parseFloat(
+
+            (
+                bytes /
+                Math.pow(
+                    1024,
+                    i
+                )
+
+            ).toFixed(2)
+
+        )
+
+        +
+
+        " " +
+
+        units[i]
+
+    );
+
+}
+
+</script>
+
+</body>
+</html>
+
