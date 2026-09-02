@@ -2,857 +2,1495 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Remove Background - Free Online Tool | GetToolly</title>
-  <meta name="description" content="Remove image backgrounds automatically and for free with GetToolly. Download transparent PNG images in high quality.">
+<title>Remove Background - Free AI Background Remover | GetToolly</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta name="description" content="Remove image backgrounds online for free with GetToolly AI Background Remover. Create transparent PNG images directly in your browser.">
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-    }
+<style>
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 18px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      color: #2563eb;
-      text-decoration: none;
-    }
+header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 600;
-    }
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    nav a:hover {
-      color: #2563eb;
-    }
+.logo {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    color: #2563eb;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 45px auto;
-      padding: 0 20px;
-    }
+nav a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    margin-left: 20px;
+}
 
-    .hero {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+nav a:hover {
+    color: #2563eb;
+}
+
+.container {
+    max-width: 950px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 0 0 12px;
+}
+
+.hero p {
+    color: #6b7280;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.tool-box {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 35px rgba(0,0,0,.07);
+}
+
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.upload-icon {
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+
+.upload-area h2 {
+    margin: 8px 0;
+}
+
+.upload-area p {
+    color: #6b7280;
+    margin-bottom: 22px;
+}
+
+#fileInput {
+    display: none;
+}
+
+.button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.choose-button {
+    background: #2563eb;
+    color: white;
+}
+
+.choose-button:hover {
+    background: #1d4ed8;
+}
+
+.remove-button {
+    background: #111827;
+    color: white;
+    margin-top: 18px;
+}
+
+.remove-button:hover {
+    background: #000;
+}
+
+.remove-button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.download-button {
+    background: #16a34a;
+    color: white;
+}
+
+.download-button:hover {
+    background: #15803d;
+}
+
+.reset-button {
+    background: #e5e7eb;
+    color: #111827;
+    margin-left: 8px;
+}
+
+.preview-section {
+    display: none;
+    margin-top: 30px;
+}
+
+.preview-section h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.preview-box {
+    min-height: 300px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.original-box {
+    background: #f8fafc;
+}
+
+.transparent-box {
+
+    background-color: white;
+
+    background-image:
+        linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
+        linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
+        linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+
+    background-size: 24px 24px;
+
+    background-position:
+        0 0,
+        0 12px,
+        12px -12px,
+        -12px 0;
+}
+
+.preview-box img {
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.file-info {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.action-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.status {
+    display: none;
+    margin-top: 22px;
+    padding: 16px;
+    text-align: center;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.progress-container {
+    display: none;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    transition: width .3s;
+}
+
+.error {
+    display: none;
+    margin-top: 18px;
+    padding: 15px;
+    background: #fef2f2;
+    color: #b91c1c;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.info-box {
+    margin-top: 25px;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 12px;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tips {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.tips h2 {
+    margin-top: 0;
+}
+
+.tips li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+@media(max-width:700px) {
 
     .hero h1 {
-      font-size: 40px;
-      margin-bottom: 12px;
-      color: #111827;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #6b7280;
-      line-height: 1.6;
+        font-size: 31px;
     }
 
     .tool-box {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        padding: 18px;
     }
 
-    .upload-area {
-      border: 2px dashed #cbd5e1;
-      border-radius: 15px;
-      padding: 45px 20px;
-      text-align: center;
-      background: #f8fafc;
-      transition: 0.2s;
-    }
-
-    .upload-area:hover {
-      border-color: #2563eb;
-      background: #f1f5ff;
-    }
-
-    .upload-icon {
-      font-size: 48px;
-      margin-bottom: 12px;
-    }
-
-    .upload-area h2 {
-      margin: 8px 0;
-      font-size: 22px;
-    }
-
-    .upload-area p {
-      color: #6b7280;
-      margin-bottom: 22px;
-    }
-
-    #fileInput {
-      display: none;
-    }
-
-    .button {
-      display: inline-block;
-      border: none;
-      border-radius: 10px;
-      padding: 13px 22px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .choose-button {
-      background: #2563eb;
-      color: white;
-    }
-
-    .choose-button:hover {
-      background: #1d4ed8;
-    }
-
-    .remove-button {
-      background: #111827;
-      color: white;
-      margin-top: 18px;
-    }
-
-    .remove-button:hover {
-      background: #000000;
-    }
-
-    .download-button {
-      background: #16a34a;
-      color: white;
-      margin-top: 15px;
-    }
-
-    .download-button:hover {
-      background: #15803d;
-    }
-
-    .reset-button {
-      background: #e5e7eb;
-      color: #111827;
-      margin-top: 15px;
-      margin-left: 8px;
-    }
-
-    .reset-button:hover {
-      background: #d1d5db;
-    }
-
-    .preview-section {
-      margin-top: 30px;
-      display: none;
-    }
-
-    .preview-section h2 {
-      text-align: center;
-      margin-bottom: 18px;
+    nav a {
+        margin-left: 8px;
+        font-size: 13px;
     }
 
     .preview-box {
-      min-height: 280px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ffffff;
-
-      /* Transparent checkerboard */
-      background-image:
-        linear-gradient(45deg, #eeeeee 25%, transparent 25%),
-        linear-gradient(-45deg, #eeeeee 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #eeeeee 75%),
-        linear-gradient(-45deg, transparent 75%, #eeeeee 75%);
-      background-size: 24px 24px;
-      background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
-    }
-
-    .preview-box img {
-      max-width: 100%;
-      max-height: 500px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .original-box {
-      background: #f8fafc;
-      background-image: none;
-    }
-
-    .file-info {
-      text-align: center;
-      color: #6b7280;
-      margin-top: 12px;
-      font-size: 14px;
-    }
-
-    .action-area {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .status {
-      display: none;
-      text-align: center;
-      margin-top: 20px;
-      padding: 14px;
-      border-radius: 10px;
-      background: #eff6ff;
-      color: #1d4ed8;
-      font-weight: 600;
-    }
-
-    .progress-container {
-      display: none;
-      margin-top: 15px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #e5e7eb;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: #2563eb;
-      transition: width 0.3s;
-    }
-
-    .error {
-      display: none;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 10px;
-      background: #fef2f2;
-      color: #b91c1c;
-      text-align: center;
-    }
-
-    .tips {
-      margin-top: 35px;
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .tips h2 {
-      margin-top: 0;
-    }
-
-    .tips li {
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 31px;
-      }
-
-      .tool-box {
-        padding: 20px;
-      }
-
-      nav a {
-        margin-left: 10px;
-        font-size: 14px;
-      }
-
-      .preview-box {
         min-height: 220px;
-      }
     }
-  </style>
+
+    .reset-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+</style>
 
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-    <a href="../index.html" class="logo">GetToolly</a>
 
-```
+<div class="header-inner">
+
+<a href="../index.html" class="logo">
+GetToolly
+</a>
+
 <nav>
-  <a href="../index.html">Home</a>
-  <a href="../index.html#tools">Tools</a>
-  <a href="../index.html#about">About</a>
-  <a href="../index.html#contact">Contact</a>
+<a href="../index.html">Home</a>
+<a href="../index.html#tools">Tools</a>
+<a href="../index.html#about">About</a>
+<a href="../index.html#contact">Contact</a>
 </nav>
-```
 
-  </div>
+</div>
+
 </header>
 
 <main class="container">
 
-  <section class="hero">
-    <h1>Remove Background</h1>
-    <p>
-      Remove image backgrounds automatically and create transparent PNG images.
-      Fast, private and free.
-    </p>
-  </section>
+<section class="hero">
 
-  <section class="tool-box">
+<h1>AI Background Remover</h1>
 
-```
+<p>
+Remove image backgrounds automatically with powerful AI.
+Create transparent PNG images directly in your browser.
+</p>
+
+</section>
+
+<section class="tool-box">
+
 <div class="upload-area">
 
-  <div class="upload-icon">🖼️</div>
+<div class="upload-icon">
+🖼️
+</div>
 
-  <h2>Select an Image</h2>
+<h2>Select Your Image</h2>
 
-  <p>
-    Upload JPG, PNG or WebP images
-  </p>
+<p>
+JPG, PNG or WebP
+</p>
 
-  <input
-    type="file"
-    id="fileInput"
-    accept="image/jpeg,image/png,image/webp"
-  >
+<input
+type="file"
+id="fileInput"
+accept="image/jpeg,image/png,image/webp"
 
-  <button
-    type="button"
-    class="button choose-button"
-    id="chooseButton"
-  >
-    Choose Image
-  </button>
+>
+
+<button
+type="button"
+class="button choose-button"
+id="chooseButton"
+
+>
+
+Choose Image </button>
 
 </div>
 
-<div id="fileInfo" class="file-info"></div>
+<div
+id="fileInfo"
+class="file-info"
+></div>
 
-<div id="originalSection" class="preview-section">
+<div
+id="originalSection"
+class="preview-section"
+>
 
-  <h2>Original Image</h2>
+<h2>Original Image</h2>
 
-  <div class="preview-box original-box">
-    <img id="originalImage" alt="Original image">
-  </div>
+<div class="preview-box original-box">
 
-  <div class="action-area">
+<img
+id="originalImage"
+alt="Original image"
 
-    <button
-      type="button"
-      class="button remove-button"
-      id="removeButton"
-    >
-      ✨ Remove Background
-    </button>
-
-  </div>
+>
 
 </div>
 
-<div id="status" class="status">
-  Preparing...
-</div>
+<div class="action-area">
 
-<div id="progressContainer" class="progress-container">
-  <div class="progress-bar">
-    <div id="progressFill" class="progress-fill"></div>
-  </div>
-</div>
+<button
+type="button"
+class="button remove-button"
+id="removeButton"
 
-<div id="error" class="error"></div>
+>
 
-<div id="resultSection" class="preview-section">
-
-  <h2>Result</h2>
-
-  <div class="preview-box">
-    <img id="resultImage" alt="Background removed result">
-  </div>
-
-  <div class="action-area">
-
-    <button
-      type="button"
-      class="button download-button"
-      id="downloadButton"
-    >
-      ⬇ Download PNG
-    </button>
-
-    <button
-      type="button"
-      class="button reset-button"
-      id="resetButton"
-    >
-      Choose Another Image
-    </button>
-
-  </div>
+✨ Remove Background </button>
 
 </div>
-```
 
-  </section>
+</div>
 
-  <section class="tips">
+<div
+id="status"
+class="status"
+>
+Preparing AI engine...
+</div>
 
-```
-<h2>Tips for Better Results</h2>
+<div
+id="progressContainer"
+class="progress-container"
+>
+
+<div class="progress-bar">
+
+<div
+id="progressFill"
+class="progress-fill"
+></div>
+
+</div>
+
+</div>
+
+<div
+id="error"
+class="error"
+></div>
+
+<div
+id="resultSection"
+class="preview-section"
+>
+
+<h2>Transparent Result</h2>
+
+<div
+class="preview-box transparent-box"
+>
+
+<img
+id="resultImage"
+alt="Background removed image"
+
+>
+
+</div>
+
+<div class="action-area">
+
+<button
+type="button"
+class="button download-button"
+id="downloadButton"
+
+>
+
+⬇ Download PNG </button>
+
+<button
+type="button"
+class="button reset-button"
+id="resetButton"
+
+>
+
+Choose Another Image </button>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<strong>🔒 Privacy:</strong>
+Your image is processed directly in your browser.
+The image is not uploaded to our server.
+
+</div>
+
+</section>
+
+<section class="tips">
+
+<h2>Tips for Best Results</h2>
 
 <ul>
-  <li>Use a clear image with the subject separated from the background.</li>
-  <li>High-resolution images usually produce better edges.</li>
-  <li>Images with clear contrast between the subject and background work best.</li>
-  <li>For hair, fur and small details, the high-quality model may take longer.</li>
-  <li>Your image is processed directly in your browser.</li>
-</ul>
-```
 
-  </section>
+<li>
+Use a high-resolution image whenever possible.
+</li>
+
+<li>
+Images with a clear subject usually produce the best results.
+</li>
+
+<li>
+The AI is designed to handle people, products, animals and complex objects.
+</li>
+
+<li>
+Hair, fur and fine edges may require more processing time.
+</li>
+
+<li>
+The first processing may take longer because the AI model needs to load.
+</li>
+
+</ul>
+
+</section>
 
 </main>
 
 <footer>
-  © 2026 GetToolly. All rights reserved.
+
+© 2026 GetToolly. All rights reserved.
+
 </footer>
 
-<script>
+<script type="module">
 
-  const fileInput = document.getElementById("fileInput");
-  const chooseButton = document.getElementById("chooseButton");
+import {
+    pipeline,
+    RawImage
+} from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.2";
 
-  const originalSection = document.getElementById("originalSection");
-  const originalImage = document.getElementById("originalImage");
 
-  const resultSection = document.getElementById("resultSection");
-  const resultImage = document.getElementById("resultImage");
+const fileInput =
+document.getElementById("fileInput");
 
-  const removeButton = document.getElementById("removeButton");
-  const downloadButton = document.getElementById("downloadButton");
-  const resetButton = document.getElementById("resetButton");
+const chooseButton =
+document.getElementById("chooseButton");
 
-  const fileInfo = document.getElementById("fileInfo");
-  const status = document.getElementById("status");
-  const errorBox = document.getElementById("error");
+const originalSection =
+document.getElementById("originalSection");
 
-  const progressContainer =
-    document.getElementById("progressContainer");
+const originalImage =
+document.getElementById("originalImage");
 
-  const progressFill =
-    document.getElementById("progressFill");
+const resultSection =
+document.getElementById("resultSection");
 
-  let selectedFile = null;
-  let originalUrl = null;
-  let resultUrl = null;
+const resultImage =
+document.getElementById("resultImage");
 
+const removeButton =
+document.getElementById("removeButton");
 
-  /* Open file picker */
+const downloadButton =
+document.getElementById("downloadButton");
 
-  chooseButton.addEventListener("click", function () {
-    fileInput.click();
-  });
+const resetButton =
+document.getElementById("resetButton");
 
+const fileInfo =
+document.getElementById("fileInfo");
 
-  /* File selected */
+const status =
+document.getElementById("status");
 
-  fileInput.addEventListener("change", function () {
+const errorBox =
+document.getElementById("error");
 
-    const file = fileInput.files[0];
+const progressContainer =
+document.getElementById("progressContainer");
 
-    if (!file) {
-      return;
-    }
+const progressFill =
+document.getElementById("progressFill");
 
-    if (!file.type.startsWith("image/")) {
 
-      showError("Please select a valid image.");
+let selectedFile = null;
 
-      return;
-    }
+let originalUrl = null;
 
-    selectedFile = file;
+let resultUrl = null;
 
-    hideError();
+let segmenter = null;
 
-    resultSection.style.display = "none";
+let modelLoading = false;
 
-    if (resultUrl) {
-      URL.revokeObjectURL(resultUrl);
-      resultUrl = null;
-    }
 
-    if (originalUrl) {
-      URL.revokeObjectURL(originalUrl);
-    }
+/*
+========================================
+OPEN FILE PICKER
+========================================
+*/
 
-    originalUrl = URL.createObjectURL(file);
+chooseButton.addEventListener(
+"click",
+() => {
 
-    originalImage.src = originalUrl;
+fileInput.click();
 
-    originalSection.style.display = "block";
+});
 
-    fileInfo.textContent =
-      file.name +
-      " • " +
-      formatBytes(file.size);
 
-  });
+/*
+========================================
+IMAGE SELECTED
+========================================
+*/
 
+fileInput.addEventListener(
+"change",
+() => {
 
-  /* Remove background */
+const file =
+fileInput.files[0];
 
-  removeButton.addEventListener("click", async function () {
+if (!file) return;
 
-    if (!selectedFile) {
 
-      showError("Please choose an image first.");
+if (!file.type.startsWith("image/")) {
 
-      return;
-    }
+showError(
+"Please select a valid image."
+);
 
-    removeButton.disabled = true;
+return;
 
-    removeButton.style.opacity = "0.6";
+}
 
-    hideError();
 
-    status.style.display = "block";
+selectedFile = file;
 
-    progressContainer.style.display = "block";
+hideError();
 
-    progressFill.style.width = "2%";
 
-    status.textContent =
-      "Loading high-quality background removal model...";
+if (originalUrl) {
 
-    try {
+URL.revokeObjectURL(
+originalUrl
+);
 
-      /*
-        Load the library only when needed.
-        This keeps the initial page fast.
-      */
+}
 
-      const module = await import(
-        "https://esm.sh/@imgly/background-removal@1.7.0"
-      );
+if (resultUrl) {
 
-      const removeBackground =
-        module.removeBackground ||
-        module.default;
+URL.revokeObjectURL(
+resultUrl
+);
 
-      if (!removeBackground) {
-        throw new Error(
-          "Background removal library could not be loaded."
-        );
-      }
+resultUrl = null;
 
+}
 
-      status.textContent =
-        "Analyzing your image...";
 
-      progressFill.style.width = "15%";
+originalUrl =
+URL.createObjectURL(file);
 
+originalImage.src =
+originalUrl;
 
-      /*
-        HIGH QUALITY MODEL
 
-        isnet = highest quality model available
-        in this browser library.
+originalSection.style.display =
+"block";
 
-        gpu = use WebGPU when available
-        cpu = fallback automatically when needed
-      */
+resultSection.style.display =
+"none";
 
-      const result = await removeBackground(
-        selectedFile,
-        {
 
-          model: "isnet",
+fileInfo.textContent =
+file.name +
+" • " +
+formatBytes(file.size);
 
-          device: "gpu",
+});
 
-          proxyToWorker: false,
 
-          output: {
-            format: "image/png",
-            quality: 1,
-            type: "foreground"
-          },
+/*
+========================================
+LOAD BIREfNET
+========================================
+*/
 
-          progress: function (
-            key,
-            current,
-            total
-          ) {
+async function loadModel() {
 
-            if (total > 0) {
+if (segmenter) {
 
-              let percent =
-                Math.round(
-                  (current / total) * 100
-                );
+return segmenter;
 
-              /*
-                Reserve first 15% for initialization.
-              */
+}
 
-              percent =
-                15 +
-                Math.round(percent * 0.85);
 
-              if (percent > 99) {
-                percent = 99;
-              }
+if (modelLoading) {
 
-              progressFill.style.width =
-                percent + "%";
-            }
+while (modelLoading) {
 
-            if (
-              key &&
-              String(key)
-                .toLowerCase()
-                .includes("model")
-            ) {
+await new Promise(
+resolve => setTimeout(resolve, 300)
+);
 
-              status.textContent =
-                "Downloading high-quality model...";
+}
 
-            } else {
+return segmenter;
 
-              status.textContent =
-                "Removing background...";
-            }
+}
 
-          }
 
-        }
-      );
+modelLoading = true;
 
 
-      progressFill.style.width = "100%";
+try {
 
-      status.textContent =
-        "Background removed successfully!";
+status.style.display =
+"block";
 
+progressContainer.style.display =
+"block";
 
-      resultUrl =
-        URL.createObjectURL(result);
+status.textContent =
+"Loading AI model...";
 
-      resultImage.src = resultUrl;
+progressFill.style.width =
+"5%";
 
-      resultSection.style.display = "block";
 
+/*
+BiRefNet Lite 1024
 
-      /*
-        Scroll automatically to result
-      */
+Designed for image segmentation
+and background removal.
+*/
 
-      setTimeout(function () {
+let device =
+"webgpu";
 
-        resultSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
 
-      }, 300);
+if (!navigator.gpu) {
 
+device = "wasm";
 
-    } catch (error) {
+status.textContent =
+"WebGPU unavailable. Using CPU mode...";
 
-      console.error(
-        "Background removal error:",
-        error
-      );
+}
 
-      showError(
-        "Unable to remove the background. " +
-        "Please try another image or refresh the page."
-      );
 
-      status.style.display = "none";
+/*
+Create segmentation pipeline.
+*/
 
-      progressContainer.style.display = "none";
+segmenter =
+await pipeline(
+"image-segmentation",
+"jiabins0303/birefnet-lite-1024-webgpu",
+{
+device: device,
+dtype: "fp32"
+}
+);
 
-    }
 
+progressFill.style.width =
+"30%";
 
-    removeButton.disabled = false;
 
-    removeButton.style.opacity = "1";
+return segmenter;
 
-  });
 
+} catch (error) {
 
-  /* Download */
+console.error(error);
 
-  downloadButton.addEventListener(
-    "click",
-    function () {
 
-      if (!resultUrl) {
-        return;
-      }
+/*
+Fallback to standard BiRefNet Lite
+if WebGPU version cannot load.
+*/
 
-      const link =
-        document.createElement("a");
+try {
 
-      link.href = resultUrl;
+status.textContent =
+"Trying compatibility mode...";
 
-      link.download =
-        "gettoolly-background-removed.png";
+segmenter =
+await pipeline(
+"image-segmentation",
+"onnx-community/BiRefNet_lite-ONNX",
+{
+device: "wasm",
+dtype: "q8"
+}
+);
 
-      document.body.appendChild(link);
+return segmenter;
 
-      link.click();
 
-      document.body.removeChild(link);
+} catch (fallbackError) {
 
-    }
-  );
+console.error(fallbackError);
 
+throw fallbackError;
 
-  /* Reset */
+}
 
-  resetButton.addEventListener(
-    "click",
-    function () {
+} finally {
 
-      if (originalUrl) {
-        URL.revokeObjectURL(originalUrl);
-        originalUrl = null;
-      }
+modelLoading = false;
 
-      if (resultUrl) {
-        URL.revokeObjectURL(resultUrl);
-        resultUrl = null;
-      }
+}
 
-      selectedFile = null;
+}
 
-      fileInput.value = "";
 
-      originalImage.src = "";
+/*
+========================================
+REMOVE BACKGROUND
+========================================
+*/
 
-      resultImage.src = "";
+removeButton.addEventListener(
+"click",
+async () => {
 
-      fileInfo.textContent = "";
+if (!selectedFile) {
 
-      originalSection.style.display =
-        "none";
+showError(
+"Please choose an image first."
+);
 
-      resultSection.style.display =
-        "none";
+return;
 
-      status.style.display =
-        "none";
+}
 
-      progressContainer.style.display =
-        "none";
 
-      progressFill.style.width = "0%";
+removeButton.disabled =
+true;
 
-      hideError();
+hideError();
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
 
-    }
-  );
+status.style.display =
+"block";
 
+progressContainer.style.display =
+"block";
 
-  function formatBytes(bytes) {
+progressFill.style.width =
+"2%";
 
-    if (bytes === 0) {
-      return "0 Bytes";
-    }
+status.textContent =
+"Preparing your image...";
 
-    const sizes = [
-      "Bytes",
-      "KB",
-      "MB",
-      "GB"
-    ];
 
-    const i =
-      Math.floor(
-        Math.log(bytes) /
-        Math.log(1024)
-      );
+try {
 
-    return (
-      parseFloat(
-        (bytes /
-          Math.pow(1024, i))
-          .toFixed(2)
-      ) +
-      " " +
-      sizes[i]
-    );
 
-  }
+/*
+Load AI model
+*/
 
+const model =
+await loadModel();
 
-  function showError(message) {
 
-    errorBox.textContent = message;
+progressFill.style.width =
+"35%";
 
-    errorBox.style.display = "block";
+status.textContent =
+"AI is analyzing the image...";
 
-  }
 
+/*
+Create image URL
+*/
 
-  function hideError() {
+const imageUrl =
+URL.createObjectURL(
+selectedFile
+);
 
-    errorBox.textContent = "";
 
-    errorBox.style.display = "none";
+/*
+Run segmentation
+*/
 
-  }
+const output =
+await model(imageUrl);
+
+
+URL.revokeObjectURL(
+imageUrl
+);
+
+
+progressFill.style.width =
+"70%";
+
+status.textContent =
+"Creating transparent image...";
+
+
+/*
+Find the segmentation mask.
+*/
+
+let mask = null;
+
+
+if (Array.isArray(output)) {
+
+if (output[0]) {
+
+mask =
+output[0].mask ||
+output[0];
+
+}
+
+} else {
+
+mask =
+output.mask ||
+output;
+
+}
+
+
+if (!mask) {
+
+throw new Error(
+"No segmentation mask returned."
+);
+
+}
+
+
+/*
+Load original image
+*/
+
+const img =
+await loadImage(
+originalUrl
+);
+
+
+/*
+Create canvas at original resolution.
+*/
+
+const canvas =
+document.createElement("canvas");
+
+canvas.width =
+img.naturalWidth;
+
+canvas.height =
+img.naturalHeight;
+
+
+const ctx =
+canvas.getContext(
+"2d",
+{
+willReadFrequently: true
+}
+);
+
+
+ctx.drawImage(
+img,
+0,
+0
+);
+
+
+/*
+Get original pixels.
+*/
+
+const imageData =
+ctx.getImageData(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+
+/*
+Convert mask to image.
+
+RawImage supports conversion
+from model output.
+*/
+
+let maskImage;
+
+
+try {
+
+maskImage =
+await RawImage.fromURL(
+mask
+);
+
+} catch {
+
+maskImage =
+mask;
+
+}
+
+
+/*
+Create temporary mask canvas.
+*/
+
+const maskCanvas =
+document.createElement(
+"canvas"
+);
+
+maskCanvas.width =
+canvas.width;
+
+maskCanvas.height =
+canvas.height;
+
+
+const maskCtx =
+maskCanvas.getContext(
+"2d",
+{
+willReadFrequently: true
+}
+);
+
+
+/*
+Draw / resize mask.
+*/
+
+if (
+maskImage &&
+maskImage.toCanvas
+) {
+
+const tempCanvas =
+maskImage.toCanvas();
+
+maskCtx.drawImage(
+tempCanvas,
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+} else if (
+mask instanceof HTMLCanvasElement
+) {
+
+maskCtx.drawImage(
+mask,
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+} else if (
+mask instanceof ImageBitmap
+) {
+
+maskCtx.drawImage(
+mask,
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+} else {
+
+throw new Error(
+"Unable to process AI mask."
+);
+
+}
+
+
+/*
+Read mask pixels.
+*/
+
+const maskData =
+maskCtx.getImageData(
+0,
+0,
+canvas.width,
+canvas.height
+).data;
+
+
+/*
+Apply mask to alpha channel.
+
+Use the mask luminance.
+*/
+
+for (
+let i = 0, p = 0;
+i < imageData.data.length;
+i += 4, p += 4
+) {
+
+const r =
+maskData[p];
+
+const g =
+maskData[p + 1];
+
+const b =
+maskData[p + 2];
+
+const a =
+maskData[p + 3];
+
+
+/*
+Use strongest available
+mask information.
+*/
+
+let alpha;
+
+if (a > 0) {
+
+alpha = a;
+
+} else {
+
+alpha =
+Math.round(
+(r + g + b) / 3
+);
+
+}
+
+
+/*
+Slight edge smoothing.
+
+This helps reduce harsh
+jagged edges.
+*/
+
+alpha =
+Math.max(
+0,
+Math.min(
+255,
+alpha
+)
+);
+
+
+imageData.data[i + 3] =
+alpha;
+
+}
+
+
+/*
+Put processed pixels back.
+*/
+
+ctx.putImageData(
+imageData,
+0,
+0
+);
+
+
+progressFill.style.width =
+"90%";
+
+status.textContent =
+"Finalizing high-quality PNG...";
+
+
+/*
+Export PNG.
+*/
+
+canvas.toBlob(
+(blob) => {
+
+if (!blob) {
+
+throw new Error(
+"PNG creation failed."
+);
+
+}
+
+
+if (resultUrl) {
+
+URL.revokeObjectURL(
+resultUrl
+);
+
+}
+
+
+resultUrl =
+URL.createObjectURL(
+blob
+);
+
+resultImage.src =
+resultUrl;
+
+
+resultSection.style.display =
+"block";
+
+
+progressFill.style.width =
+"100%";
+
+status.textContent =
+"✓ Background removed successfully!";
+
+
+setTimeout(
+() => {
+
+resultSection.scrollIntoView({
+behavior: "smooth",
+block: "start"
+});
+
+},
+300
+);
+
+},
+"image/png"
+);
+
+
+} catch (error) {
+
+console.error(
+"Remove background error:",
+error
+);
+
+
+status.style.display =
+"none";
+
+progressContainer.style.display =
+"none";
+
+
+showError(
+"Unable to remove the background. " +
+"Please try another image or refresh the page."
+);
+
+}
+
+
+removeButton.disabled =
+false;
+
+});
+
+
+/*
+========================================
+DOWNLOAD
+========================================
+*/
+
+downloadButton.addEventListener(
+"click",
+() => {
+
+if (!resultUrl) return;
+
+
+const link =
+document.createElement("a");
+
+link.href =
+resultUrl;
+
+link.download =
+"gettoolly-background-removed.png";
+
+
+document.body.appendChild(
+link
+);
+
+link.click();
+
+document.body.removeChild(
+link
+);
+
+});
+
+
+/*
+========================================
+RESET
+========================================
+*/
+
+resetButton.addEventListener(
+"click",
+() => {
+
+if (originalUrl) {
+
+URL.revokeObjectURL(
+originalUrl
+);
+
+originalUrl = null;
+
+}
+
+
+if (resultUrl) {
+
+URL.revokeObjectURL(
+resultUrl
+);
+
+resultUrl = null;
+
+}
+
+
+selectedFile = null;
+
+fileInput.value = "";
+
+originalImage.src = "";
+
+resultImage.src = "";
+
+fileInfo.textContent = "";
+
+originalSection.style.display =
+"none";
+
+resultSection.style.display =
+"none";
+
+status.style.display =
+"none";
+
+progressContainer.style.display =
+"none";
+
+progressFill.style.width =
+"0%";
+
+hideError();
+
+
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+
+});
+
+
+/*
+========================================
+HELPER FUNCTIONS
+========================================
+*/
+
+function loadImage(src) {
+
+return new Promise(
+(resolve, reject) => {
+
+const img =
+new Image();
+
+img.onload =
+() => resolve(img);
+
+img.onerror =
+reject;
+
+img.src =
+src;
+
+});
+
+}
+
+
+function formatBytes(bytes) {
+
+if (bytes === 0) {
+return "0 Bytes";
+}
+
+const sizes = [
+"Bytes",
+"KB",
+"MB",
+"GB"
+];
+
+const i =
+Math.floor(
+Math.log(bytes) /
+Math.log(1024)
+);
+
+return (
+parseFloat(
+(
+bytes /
+Math.pow(1024, i)
+).toFixed(2)
+)
++
+" "
++
+sizes[i]
+);
+
+}
+
+
+function showError(message) {
+
+errorBox.textContent =
+message;
+
+errorBox.style.display =
+"block";
+
+}
+
+
+function hideError() {
+
+errorBox.textContent =
+"";
+
+errorBox.style.display =
+"none";
+
+}
 
 </script>
 
