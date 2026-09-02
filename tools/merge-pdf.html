@@ -1,0 +1,599 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Merge PDF - Combine PDF Files Online | GetToolly</title>
+
+  <meta name="description" content="Merge multiple PDF files into one PDF online for free. Fast, simple, and secure PDF merging directly in your browser.">
+  <meta name="keywords" content="merge PDF, combine PDF, merge PDF files, PDF merger, combine PDF online">
+
+  <link rel="canonical" href="https://www.gettoolly.com/tools/merge-pdf.html">
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .tool-box {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .upload-area {
+      display: block;
+      width: 100%;
+      border: 2px dashed #bbb;
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+      background: #fafafa;
+      transition: 0.2s;
+    }
+
+    .upload-area:hover {
+      border-color: #777;
+      background: #f3f5f8;
+    }
+
+    .upload-area:focus,
+    .upload-area:active {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .upload-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .upload-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .upload-subtext {
+      color: #777;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      display: none !important;
+    }
+
+    .file-list {
+      margin-top: 25px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: #f5f7fa;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .file-number {
+      width: 32px;
+      height: 32px;
+      background: #222;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .file-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    .file-size {
+      color: #777;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .remove-btn {
+      border: none;
+      background: #e74c3c;
+      color: white;
+      padding: 7px 12px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .remove-btn:hover {
+      background: #c0392b;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 13px 20px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .merge-btn {
+      flex: 1;
+      background: #222;
+      color: white;
+    }
+
+    .merge-btn:hover {
+      background: #444;
+    }
+
+    .merge-btn:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    .reset-btn {
+      background: #e9edf2;
+      color: #222;
+    }
+
+    .reset-btn:hover {
+      background: #dfe4ea;
+    }
+
+    .status {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      min-height: 22px;
+    }
+
+    .download-area {
+      display: none;
+      margin-top: 25px;
+      text-align: center;
+      padding: 20px;
+      background: #f1f8f4;
+      border-radius: 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 22px;
+      background: #1f8f4d;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background: #18763e;
+    }
+
+    .privacy {
+      margin-top: 30px;
+      padding: 15px;
+      background: #f5f7fa;
+      border-radius: 10px;
+      text-align: center;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .info-section {
+      margin-top: 35px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .info-section h2 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px auto;
+        padding: 12px;
+      }
+
+      .tool-box {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .file-item {
+        align-items: flex-start;
+      }
+
+      .file-size {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="tool-box">
+
+    <h1>Merge PDF</h1>
+
+    <p class="intro">
+      Combine multiple PDF files into one document quickly and easily.
+      Your files are processed directly in your browser.
+    </p>
+
+    <label class="upload-area" for="pdfInput">
+
+      <div class="upload-icon">📄</div>
+
+      <div class="upload-text">
+        Click to select PDF files
+      </div>
+
+      <div class="upload-subtext">
+        You can select multiple PDF files
+      </div>
+
+    </label>
+
+    <input
+      type="file"
+      id="pdfInput"
+      accept="application/pdf,.pdf"
+      multiple
+    >
+
+    <div id="fileList" class="file-list"></div>
+
+    <div class="buttons">
+
+      <button
+        id="mergeBtn"
+        class="merge-btn"
+        disabled
+      >
+        Merge PDF Files
+      </button>
+
+      <button
+        id="resetBtn"
+        class="reset-btn"
+      >
+        Reset
+      </button>
+
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div id="downloadArea" class="download-area">
+
+      <strong>Your merged PDF is ready!</strong>
+
+      <br>
+
+      <a
+        id="downloadBtn"
+        class="download-btn"
+        href="#"
+        download="merged-pdf.pdf"
+      >
+        Download Merged PDF
+      </a>
+
+    </div>
+
+    <div class="privacy">
+      🔒 Your PDF files are processed locally in your browser.
+      They are not uploaded to our server.
+    </div>
+
+    <div class="info-section">
+
+      <h2>Merge PDF Files Online</h2>
+
+      <p>
+        GetToolly's Merge PDF tool lets you combine multiple PDF documents
+        into a single PDF file. Select your files, arrange them in the
+        desired order, and click "Merge PDF Files".
+      </p>
+
+      <p>
+        The tool works directly in your browser, making it fast and
+        convenient for combining documents without uploading them to a
+        server.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+  const pdfInput = document.getElementById("pdfInput");
+  const fileList = document.getElementById("fileList");
+  const mergeBtn = document.getElementById("mergeBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const status = document.getElementById("status");
+  const downloadArea = document.getElementById("downloadArea");
+  const downloadBtn = document.getElementById("downloadBtn");
+
+  let selectedFiles = [];
+  let downloadUrl = null;
+
+  pdfInput.addEventListener("change", function () {
+
+    const newFiles = Array.from(pdfInput.files);
+
+    newFiles.forEach(file => {
+
+      if (
+        file.type === "application/pdf" ||
+        file.name.toLowerCase().endsWith(".pdf")
+      ) {
+
+        selectedFiles.push(file);
+
+      }
+
+    });
+
+    renderFileList();
+
+    pdfInput.value = "";
+
+  });
+
+
+  function renderFileList() {
+
+    fileList.innerHTML = "";
+
+    selectedFiles.forEach((file, index) => {
+
+      const item = document.createElement("div");
+
+      item.className = "file-item";
+
+      item.innerHTML = `
+
+        <div class="file-info">
+
+          <div class="file-number">
+            ${index + 1}
+          </div>
+
+          <div>
+
+            <div class="file-name">
+              ${escapeHtml(file.name)}
+            </div>
+
+            <div class="file-size">
+              ${formatFileSize(file.size)}
+            </div>
+
+          </div>
+
+        </div>
+
+        <button
+          class="remove-btn"
+          onclick="removeFile(${index})"
+        >
+          Remove
+        </button>
+
+      `;
+
+      fileList.appendChild(item);
+
+    });
+
+    mergeBtn.disabled = selectedFiles.length < 2;
+
+  }
+
+
+  function removeFile(index) {
+
+    selectedFiles.splice(index, 1);
+
+    renderFileList();
+
+  }
+
+
+  mergeBtn.addEventListener("click", async function () {
+
+    if (selectedFiles.length < 2) {
+      return;
+    }
+
+    mergeBtn.disabled = true;
+
+    status.textContent = "Merging PDF files...";
+
+    downloadArea.style.display = "none";
+
+    try {
+
+      const mergedPdf = await PDFLib.PDFDocument.create();
+
+      for (let i = 0; i < selectedFiles.length; i++) {
+
+        const file = selectedFiles[i];
+
+        status.textContent =
+          `Processing file ${i + 1} of ${selectedFiles.length}...`;
+
+        const arrayBuffer = await file.arrayBuffer();
+
+        const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+
+        const pages = await mergedPdf.copyPages(
+          pdf,
+          pdf.getPageIndices()
+        );
+
+        pages.forEach(page => {
+          mergedPdf.addPage(page);
+        });
+
+      }
+
+      status.textContent = "Creating merged PDF...";
+
+      const pdfBytes = await mergedPdf.save();
+
+      const blob = new Blob(
+        [pdfBytes],
+        { type: "application/pdf" }
+      );
+
+      if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+      }
+
+      downloadUrl = URL.createObjectURL(blob);
+
+      downloadBtn.href = downloadUrl;
+
+      downloadArea.style.display = "block";
+
+      status.textContent =
+        "PDF files merged successfully.";
+
+    } catch (error) {
+
+      console.error(error);
+
+      status.textContent =
+        "Unable to merge the PDF files. Please make sure the files are valid PDF documents.";
+
+    }
+
+    mergeBtn.disabled = selectedFiles.length < 2;
+
+  });
+
+
+  resetBtn.addEventListener("click", function () {
+
+    selectedFiles = [];
+
+    renderFileList();
+
+    status.textContent = "";
+
+    downloadArea.style.display = "none";
+
+    if (downloadUrl) {
+
+      URL.revokeObjectURL(downloadUrl);
+
+      downloadUrl = null;
+
+    }
+
+  });
+
+
+  function formatFileSize(bytes) {
+
+    if (bytes < 1024) {
+      return bytes + " B";
+    }
+
+    if (bytes < 1024 * 1024) {
+      return (bytes / 1024).toFixed(1) + " KB";
+    }
+
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+
+  }
+
+
+  function escapeHtml(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+  }
+
+</script>
+
+</body>
+</html>
+```
