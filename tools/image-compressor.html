@@ -9,6 +9,8 @@
 
 <meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size directly in your browser without uploading your files.">
 
+<meta name="keywords" content="image compressor, compress image, compress JPG, compress PNG, compress WebP, reduce image size">
+
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://www.gettoolly.com/tools/image-compressor.html">
@@ -26,11 +28,77 @@ body {
     color: #222;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 20px;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
     max-width: 900px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    margin: 35px auto;
+    padding: 20px;
 }
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.back:hover {
+    color: #000;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 .header {
     text-align: center;
@@ -47,6 +115,10 @@ body {
     font-size: 17px;
 }
 
+/* =========================
+   TOOL BOX
+========================= */
+
 .tool-box {
     background: white;
     border-radius: 14px;
@@ -54,7 +126,9 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-/* Upload area */
+/* =========================
+   UPLOAD AREA
+========================= */
 
 .upload-area {
     display: block;
@@ -104,7 +178,9 @@ body {
     pointer-events: none;
 }
 
-/* Preview */
+/* =========================
+   PREVIEW
+========================= */
 
 .preview {
     display: none;
@@ -123,7 +199,9 @@ body {
     color: #555;
 }
 
-/* Controls */
+/* =========================
+   CONTROLS
+========================= */
 
 .controls {
     display: none;
@@ -159,7 +237,9 @@ select {
     margin-top: 5px;
 }
 
-/* Compress button */
+/* =========================
+   COMPRESS BUTTON
+========================= */
 
 .compress-btn {
     width: 100%;
@@ -182,7 +262,9 @@ select {
     cursor: not-allowed;
 }
 
-/* Result */
+/* =========================
+   RESULT
+========================= */
 
 .result {
     display: none;
@@ -228,7 +310,9 @@ select {
     background: #f5f5f5;
 }
 
-/* Privacy */
+/* =========================
+   PRIVACY
+========================= */
 
 .privacy {
     margin-top: 25px;
@@ -241,20 +325,34 @@ select {
     line-height: 1.6;
 }
 
-/* Back link */
+/* =========================
+   ABOUT SECTION
+========================= */
 
-.back {
-    display: inline-block;
-    margin-bottom: 20px;
+.info-section {
+    margin-top: 40px;
+    line-height: 1.8;
     color: #444;
-    text-decoration: none;
 }
 
-.back:hover {
-    text-decoration: underline;
+.info-section h2 {
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 23px;
 }
 
-/* Footer */
+.info-section h2:first-child {
+    margin-top: 0;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -263,9 +361,38 @@ footer {
     font-size: 14px;
 }
 
-/* Mobile */
+footer a {
+    color: #555;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
+
+    .navbar {
+        padding: 14px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+    }
 
     .header h1 {
         font-size: 28px;
@@ -289,177 +416,337 @@ footer {
 
 <body>
 
-<div class="container">
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<a class="back" href="../index.html">← Back to GetToolly</a>
+<nav class="navbar">
 
-<div class="header">
+    <div class="nav-container">
 
-    <h1>Image Compressor</h1>
+        <a
+            href="https://www.gettoolly.com/index.html"
+            class="brand">
+            GetToolly
+        </a>
 
-    <p>
-        Compress JPG, PNG and WebP images online for free.
-    </p>
+        <div class="nav-links">
 
-</div>
+            <a href="https://www.gettoolly.com/index.html">
+                Home
+            </a>
 
-<div class="tool-box">
+            <a href="https://www.gettoolly.com/index.html#tools">
+                Tools
+            </a>
 
-    <label class="upload-area" id="uploadArea">
+            <a href="https://www.gettoolly.com/privacy.html">
+                Privacy
+            </a>
 
-        <input
-            type="file"
-            id="fileInput"
-            accept="image/jpeg,image/png,image/webp"
-        >
-
-        <div class="upload-icon">🖼️</div>
-
-        <div class="upload-text">
-            Click to select an image
-        </div>
-
-        <div class="supported">
-            JPG, PNG or WebP
-        </div>
-
-    </label>
-
-
-    <div class="preview" id="preview">
-
-        <img
-            id="previewImage"
-            alt="Selected image preview"
-        >
-
-        <div
-            class="file-info"
-            id="fileInfo">
         </div>
 
     </div>
 
+</nav>
 
-    <div class="controls" id="controls">
 
-        <div class="control-group">
+<div class="container">
 
-            <label for="quality">
-                Compression Quality
-            </label>
+    <!-- BACK -->
+
+    <a
+        class="back"
+        href="https://www.gettoolly.com/index.html#tools">
+        ← Back to Tools
+    </a>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>
+            Image Compressor
+        </h1>
+
+        <p>
+            Compress JPG, PNG and WebP images online for free.
+        </p>
+
+    </div>
+
+
+    <!-- TOOL -->
+
+    <div class="tool-box">
+
+
+        <!-- UPLOAD -->
+
+        <label
+            class="upload-area"
+            id="uploadArea">
 
             <input
-                type="range"
-                id="quality"
-                min="10"
-                max="100"
-                value="80"
+                type="file"
+                id="fileInput"
+                accept="image/jpeg,image/png,image/webp"
             >
 
-            <div class="quality-value">
+            <div class="upload-icon">
+                🖼️
+            </div>
 
-                <span id="qualityValue">
-                    80
-                </span>%
+            <div class="upload-text">
+                Click to select an image
+            </div>
 
+            <div class="supported">
+                JPG, PNG or WebP
+            </div>
+
+        </label>
+
+
+        <!-- PREVIEW -->
+
+        <div
+            class="preview"
+            id="preview">
+
+            <img
+                id="previewImage"
+                alt="Selected image preview"
+            >
+
+            <div
+                class="file-info"
+                id="fileInfo">
             </div>
 
         </div>
 
 
-        <div class="control-group">
-
-            <label for="format">
-                Output Format
-            </label>
-
-            <select id="format">
-
-                <option value="image/webp">
-                    WebP
-                </option>
-
-                <option value="image/jpeg">
-                    JPG
-                </option>
-
-                <option value="image/png">
-                    PNG
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <button
-            class="compress-btn"
-            id="compressBtn">
-
-            Compress Image
-
-        </button>
-
-    </div>
-
-
-    <div class="result" id="result">
-
-        <h2>
-            Compression Complete
-        </h2>
+        <!-- CONTROLS -->
 
         <div
-            class="result-info"
-            id="resultInfo">
+            class="controls"
+            id="controls">
+
+
+            <div class="control-group">
+
+                <label for="quality">
+                    Compression Quality
+                </label>
+
+                <input
+                    type="range"
+                    id="quality"
+                    min="10"
+                    max="100"
+                    value="80"
+                >
+
+                <div class="quality-value">
+
+                    <span id="qualityValue">
+                        80
+                    </span>%
+
+                </div>
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label for="format">
+                    Output Format
+                </label>
+
+                <select id="format">
+
+                    <option value="image/webp">
+                        WebP
+                    </option>
+
+                    <option value="image/jpeg">
+                        JPG
+                    </option>
+
+                    <option value="image/png">
+                        PNG
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="compress-btn"
+                id="compressBtn">
+
+                Compress Image
+
+            </button>
+
         </div>
 
 
-        <a
-            id="downloadBtn"
-            class="download-btn"
-            href="#"
-            download="compressed-image.webp">
+        <!-- RESULT -->
 
-            Download Compressed Image
+        <div
+            class="result"
+            id="result">
 
+            <h2>
+                Compression Complete
+            </h2>
+
+            <div
+                class="result-info"
+                id="resultInfo">
+            </div>
+
+
+            <a
+                id="downloadBtn"
+                class="download-btn"
+                href="#"
+                download="compressed-image.webp">
+
+                Download Compressed Image
+
+            </a>
+
+
+            <button
+                class="reset-btn"
+                id="resetBtn">
+
+                Compress Another
+
+            </button>
+
+        </div>
+
+
+        <!-- PRIVACY -->
+
+        <div class="privacy">
+
+            🔒 <strong>
+                Your image stays on your device.
+            </strong>
+
+            <br>
+
+            This tool processes your image directly
+            in your browser. No image is uploaded
+            to our server.
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="info-section">
+
+            <h2>
+                About Image Compressor
+            </h2>
+
+            <p>
+                GetToolly's Image Compressor is a free online tool
+                that helps you reduce the file size of JPG, PNG and
+                WebP images quickly and easily.
+            </p>
+
+            <p>
+                The tool processes images directly in your browser,
+                allowing you to compress images without uploading
+                them to a server.
+            </p>
+
+
+            <h2>
+                How to Compress an Image
+            </h2>
+
+            <p>
+                Click the upload area and select an image from your
+                device. The tool supports JPG, PNG and WebP images.
+            </p>
+
+            <p>
+                Choose your preferred compression quality and output
+                format, then click "Compress Image".
+            </p>
+
+            <p>
+                When compression is complete, you can see the original
+                file size, the compressed file size and the percentage
+                of size reduction.
+            </p>
+
+            <p>
+                Click "Download Compressed Image" to save the
+                compressed image to your device.
+            </p>
+
+
+            <h2>
+                Why Use GetToolly Image Compressor?
+            </h2>
+
+            <p>
+                Image Compressor is designed to be fast, simple and
+                easy to use. It does not require registration or
+                additional software.
+            </p>
+
+            <p>
+                You can choose between WebP, JPG and PNG output
+                formats depending on your needs.
+            </p>
+
+            <p>
+                Because the image is processed directly in your
+                browser, your original image does not need to be
+                uploaded to our server.
+            </p>
+
+
+            <h2>
+                Is Image Compressor Free?
+            </h2>
+
+            <p>
+                Yes. GetToolly Image Compressor is free to use and
+                does not require an account or registration.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 GetToolly. All rights reserved.
+
+        ·
+
+        <a href="https://www.gettoolly.com/privacy.html">
+            Privacy Policy
         </a>
 
-
-        <button
-            class="reset-btn"
-            id="resetBtn">
-
-            Compress Another
-
-        </button>
-
-    </div>
-
-
-    <div class="privacy">
-
-        🔒 <strong>
-            Your image stays on your device.
-        </strong>
-
-        <br>
-
-        This tool processes your image directly
-        in your browser. No image is uploaded
-        to our server.
-
-    </div>
-
-</div>
-
-
-<footer>
-
-    © 2026 GetToolly. All rights reserved.
-
-</footer>
+    </footer>
 
 </div>
 
@@ -651,16 +938,6 @@ function compressImage() {
             const outputFormat =
                 format.value;
 
-
-            /*
-
-            JPG does not support
-            transparent backgrounds.
-
-            Use white background
-            when converting to JPG.
-
-            */
 
             if (
                 outputFormat ===
