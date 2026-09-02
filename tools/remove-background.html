@@ -2,12 +2,18 @@
 
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remove Background - Free AI Background Remover | GetToolly</title>
+<meta name="viewport"
+   content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Remove image backgrounds online for free with GetToolly AI Background Remover. Create transparent PNG images directly in your browser.">
+<title>
+Remove Background - Free AI Background Remover | GetToolly
+</title>
+
+<meta name="description"
+   content="Remove image backgrounds online for free with GetToolly. Create transparent PNG images using AI directly in your browser.">
 
 <style>
 
@@ -22,8 +28,10 @@ body {
     color: #111827;
 }
 
+/* HEADER */
+
 header {
-    background: white;
+    background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     padding: 18px 20px;
     position: sticky;
@@ -34,6 +42,7 @@ header {
 .header-inner {
     max-width: 1100px;
     margin: auto;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +66,8 @@ nav a:hover {
     color: #2563eb;
 }
 
+/* MAIN */
+
 .container {
     max-width: 950px;
     margin: 45px auto;
@@ -74,24 +85,40 @@ nav a:hover {
 }
 
 .hero p {
-    color: #6b7280;
     font-size: 18px;
+    color: #6b7280;
     line-height: 1.6;
 }
 
+/* TOOL */
+
 .tool-box {
-    background: white;
+    background: #ffffff;
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 8px 35px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 8px 35px rgba(0,0,0,.07);
 }
+
+/* UPLOAD */
 
 .upload-area {
     border: 2px dashed #cbd5e1;
     border-radius: 16px;
+
     padding: 50px 20px;
+
     text-align: center;
+
     background: #f8fafc;
+
+    transition: .2s;
+}
+
+.upload-area:hover {
+    border-color: #2563eb;
+    background: #f1f5ff;
 }
 
 .upload-icon {
@@ -112,19 +139,32 @@ nav a:hover {
     display: none;
 }
 
+/* BUTTONS */
+
 .button {
-    border: 0;
+    border: none;
+
     border-radius: 10px;
+
     padding: 13px 22px;
+
     font-size: 16px;
+
     font-weight: 700;
+
     cursor: pointer;
+
     transition: .2s;
+}
+
+.button:disabled {
+    opacity: .6;
+    cursor: wait;
 }
 
 .choose-button {
     background: #2563eb;
-    color: white;
+    color: #ffffff;
 }
 
 .choose-button:hover {
@@ -133,22 +173,17 @@ nav a:hover {
 
 .remove-button {
     background: #111827;
-    color: white;
+    color: #ffffff;
     margin-top: 18px;
 }
 
 .remove-button:hover {
-    background: #000;
-}
-
-.remove-button:disabled {
-    opacity: .6;
-    cursor: wait;
+    background: #000000;
 }
 
 .download-button {
     background: #16a34a;
-    color: white;
+    color: #ffffff;
 }
 
 .download-button:hover {
@@ -160,6 +195,24 @@ nav a:hover {
     color: #111827;
     margin-left: 8px;
 }
+
+.reset-button:hover {
+    background: #d1d5db;
+}
+
+/* FILE INFO */
+
+.file-info {
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin-top: 12px;
+}
+
+/* PREVIEWS */
 
 .preview-section {
     display: none;
@@ -173,12 +226,19 @@ nav a:hover {
 
 .preview-box {
     min-height: 300px;
+
     border-radius: 15px;
+
     border: 1px solid #e5e7eb;
+
     padding: 20px;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     overflow: hidden;
 }
 
@@ -188,13 +248,33 @@ nav a:hover {
 
 .transparent-box {
 
-    background-color: white;
+    background-color: #ffffff;
 
     background-image:
-        linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
-        linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
-        linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+
+        linear-gradient(
+            45deg,
+            #e5e7eb 25%,
+            transparent 25%
+        ),
+
+        linear-gradient(
+            -45deg,
+            #e5e7eb 25%,
+            transparent 25%
+        ),
+
+        linear-gradient(
+            45deg,
+            transparent 75%,
+            #e5e7eb 75%
+        ),
+
+        linear-gradient(
+            -45deg,
+            transparent 75%,
+            #e5e7eb 75%
+        );
 
     background-size: 24px 24px;
 
@@ -207,32 +287,42 @@ nav a:hover {
 
 .preview-box img {
     max-width: 100%;
-    max-height: 600px;
+    max-height: 650px;
     object-fit: contain;
+    display: block;
 }
 
-.file-info {
-    text-align: center;
-    color: #6b7280;
-    font-size: 14px;
-    margin-top: 12px;
-}
+/* ACTION */
 
 .action-area {
     text-align: center;
     margin-top: 20px;
 }
 
+/* STATUS */
+
 .status {
+
     display: none;
+
     margin-top: 22px;
+
     padding: 16px;
+
     text-align: center;
+
     background: #eff6ff;
+
     color: #1d4ed8;
+
     border-radius: 10px;
+
     font-weight: 700;
+
+    line-height: 1.5;
 }
+
+/* PROGRESS */
 
 .progress-container {
     display: none;
@@ -240,44 +330,79 @@ nav a:hover {
 }
 
 .progress-bar {
+
     height: 10px;
+
     background: #e5e7eb;
+
     border-radius: 20px;
+
     overflow: hidden;
 }
 
 .progress-fill {
+
     width: 0%;
+
     height: 100%;
+
     background: #2563eb;
+
     transition: width .3s;
 }
 
+/* ERROR */
+
 .error {
+
     display: none;
+
     margin-top: 18px;
+
     padding: 15px;
+
     background: #fef2f2;
+
     color: #b91c1c;
+
     border-radius: 10px;
+
     text-align: center;
+
+    line-height: 1.5;
 }
 
+/* INFO */
+
 .info-box {
+
     margin-top: 25px;
+
     padding: 18px;
+
     background: #f8fafc;
+
     border-radius: 12px;
+
     color: #4b5563;
+
     font-size: 14px;
+
     line-height: 1.6;
 }
 
+/* TIPS */
+
 .tips {
-    background: white;
+
+    background: #ffffff;
+
     margin-top: 30px;
+
     padding: 25px;
+
     border-radius: 16px;
+
     border: 1px solid #e5e7eb;
 }
 
@@ -286,16 +411,26 @@ nav a:hover {
 }
 
 .tips li {
+
     margin-bottom: 10px;
+
     line-height: 1.5;
 }
 
+/* FOOTER */
+
 footer {
+
     text-align: center;
+
     padding: 35px 20px;
+
     color: #6b7280;
+
     font-size: 14px;
 }
+
+/* MOBILE */
 
 @media(max-width:700px) {
 
@@ -320,6 +455,7 @@ footer {
         margin-left: 0;
         margin-top: 10px;
     }
+
 }
 
 </style>
@@ -328,50 +464,85 @@ footer {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
 <div class="header-inner">
 
-<a href="../index.html" class="logo">
+<a
+href="../index.html"
+class="logo"
+
+>
+
+```
 GetToolly
+```
+
 </a>
 
 <nav>
-<a href="../index.html">Home</a>
-<a href="../index.html#tools">Tools</a>
-<a href="../index.html#about">About</a>
-<a href="../index.html#contact">Contact</a>
+
+<a href="../index.html">
+    Home
+</a>
+
+<a href="../index.html#tools">
+    Tools
+</a>
+
+<a href="../index.html#about">
+    About
+</a>
+
+<a href="../index.html#contact">
+    Contact
+</a>
+
 </nav>
 
 </div>
 
 </header>
 
+<!-- MAIN -->
+
 <main class="container">
+
+<!-- HERO -->
 
 <section class="hero">
 
-<h1>AI Background Remover</h1>
+<h1>
+    AI Background Remover
+</h1>
 
 <p>
-Remove image backgrounds automatically with powerful AI.
-Create transparent PNG images directly in your browser.
+    Remove image backgrounds automatically and create
+    high-quality transparent PNG images.
 </p>
 
 </section>
 
+<!-- TOOL -->
+
 <section class="tool-box">
+
+<!-- UPLOAD -->
 
 <div class="upload-area">
 
 <div class="upload-icon">
-🖼️
+    🖼️
 </div>
 
-<h2>Select Your Image</h2>
+<h2>
+    Select Your Image
+</h2>
 
 <p>
-JPG, PNG or WebP
+    JPG, PNG or WebP
 </p>
 
 <input
@@ -383,28 +554,40 @@ accept="image/jpeg,image/png,image/webp"
 
 <button
 type="button"
-class="button choose-button"
 id="chooseButton"
+class="button choose-button"
 
 >
 
-Choose Image </button>
+```
+Choose Image
+```
+
+</button>
 
 </div>
 
+<!-- FILE INFO -->
+
 <div
-id="fileInfo"
-class="file-info"
+    id="fileInfo"
+    class="file-info"
 ></div>
 
+<!-- ORIGINAL -->
+
 <div
-id="originalSection"
-class="preview-section"
+    id="originalSection"
+    class="preview-section"
 >
 
-<h2>Original Image</h2>
+<h2>
+    Original Image
+</h2>
 
-<div class="preview-box original-box">
+<div
+    class="preview-box original-box"
+>
 
 <img
 id="originalImage"
@@ -418,59 +601,73 @@ alt="Original image"
 
 <button
 type="button"
-class="button remove-button"
 id="removeButton"
+class="button remove-button"
 
 >
 
-✨ Remove Background </button>
+```
+✨ Remove Background
+```
+
+</button>
 
 </div>
 
 </div>
+
+<!-- STATUS -->
 
 <div
-id="status"
-class="status"
+    id="status"
+    class="status"
 >
-Preparing AI engine...
+    Preparing AI...
 </div>
 
+<!-- PROGRESS -->
+
 <div
-id="progressContainer"
-class="progress-container"
+    id="progressContainer"
+    class="progress-container"
 >
 
 <div class="progress-bar">
 
 <div
-id="progressFill"
-class="progress-fill"
+    id="progressFill"
+    class="progress-fill"
 ></div>
 
 </div>
 
 </div>
 
-<div
-id="error"
-class="error"
-></div>
+<!-- ERROR -->
 
 <div
-id="resultSection"
-class="preview-section"
+    id="error"
+    class="error"
+></div>
+
+<!-- RESULT -->
+
+<div
+    id="resultSection"
+    class="preview-section"
 >
 
-<h2>Transparent Result</h2>
+<h2>
+    Transparent Result
+</h2>
 
 <div
-class="preview-box transparent-box"
+    class="preview-box transparent-box"
 >
 
 <img
 id="resultImage"
-alt="Background removed image"
+alt="Background removed result"
 
 >
 
@@ -480,60 +677,79 @@ alt="Background removed image"
 
 <button
 type="button"
-class="button download-button"
 id="downloadButton"
+class="button download-button"
 
 >
 
-⬇ Download PNG </button>
+```
+⬇ Download PNG
+```
+
+</button>
 
 <button
 type="button"
-class="button reset-button"
 id="resetButton"
+class="button reset-button"
 
 >
 
-Choose Another Image </button>
+```
+Choose Another Image
+```
+
+</button>
 
 </div>
 
 </div>
+
+<!-- PRIVACY -->
 
 <div class="info-box">
 
-<strong>🔒 Privacy:</strong>
+<strong>
+    🔒 Privacy:
+</strong>
+
 Your image is processed directly in your browser.
-The image is not uploaded to our server.
+It is not uploaded to our server.
 
 </div>
 
 </section>
 
+<!-- TIPS -->
+
 <section class="tips">
 
-<h2>Tips for Best Results</h2>
+<h2>
+    Tips for Better Results
+</h2>
 
 <ul>
 
 <li>
-Use a high-resolution image whenever possible.
+    Use a high-resolution image for better details.
 </li>
 
 <li>
-Images with a clear subject usually produce the best results.
+    Clear separation between the subject and background
+    usually produces the best results.
 </li>
 
 <li>
-The AI is designed to handle people, products, animals and complex objects.
+    The AI works with people, products, animals and objects.
 </li>
 
 <li>
-Hair, fur and fine edges may require more processing time.
+    Hair and fur may require more processing time.
 </li>
 
 <li>
-The first processing may take longer because the AI model needs to load.
+    The first processing can take longer because the AI
+    model needs to download and cache.
 </li>
 
 </ul>
@@ -542,25 +758,49 @@ The first processing may take longer because the AI model needs to load.
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
 
 © 2026 GetToolly. All rights reserved.
 
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script type="module">
 
-import {
-    pipeline,
-    RawImage
-} from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.2";
 
+/*
+====================================================
+IMPORT IMG.LY
+====================================================
+*/
+
+import removeBackground from
+"https://esm.sh/@imgly/background-removal@1.7.0";
+
+
+/*
+====================================================
+ELEMENTS
+====================================================
+*/
 
 const fileInput =
 document.getElementById("fileInput");
 
 const chooseButton =
 document.getElementById("chooseButton");
+
+const removeButton =
+document.getElementById("removeButton");
+
+const downloadButton =
+document.getElementById("downloadButton");
+
+const resetButton =
+document.getElementById("resetButton");
 
 const originalSection =
 document.getElementById("originalSection");
@@ -573,15 +813,6 @@ document.getElementById("resultSection");
 
 const resultImage =
 document.getElementById("resultImage");
-
-const removeButton =
-document.getElementById("removeButton");
-
-const downloadButton =
-document.getElementById("downloadButton");
-
-const resetButton =
-document.getElementById("resetButton");
 
 const fileInfo =
 document.getElementById("fileInfo");
@@ -599,896 +830,718 @@ const progressFill =
 document.getElementById("progressFill");
 
 
+/*
+====================================================
+STATE
+====================================================
+*/
+
 let selectedFile = null;
 
 let originalUrl = null;
 
 let resultUrl = null;
 
-let segmenter = null;
-
-let modelLoading = false;
-
 
 /*
-========================================
-OPEN FILE PICKER
-========================================
+====================================================
+CHOOSE IMAGE
+====================================================
 */
 
 chooseButton.addEventListener(
 "click",
-() => {
+function() {
 
-fileInput.click();
+    fileInput.click();
 
 });
 
 
 /*
-========================================
-IMAGE SELECTED
-========================================
+====================================================
+FILE SELECTED
+====================================================
 */
 
 fileInput.addEventListener(
 "change",
-() => {
+function() {
 
-const file =
-fileInput.files[0];
+    const file =
+    fileInput.files[0];
 
-if (!file) return;
-
-
-if (!file.type.startsWith("image/")) {
-
-showError(
-"Please select a valid image."
-);
-
-return;
-
-}
+    if (!file) {
+        return;
+    }
 
 
-selectedFile = file;
+    if (
+        ![
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+        ].includes(file.type)
+    ) {
 
-hideError();
+        showError(
+            "Please select a JPG, PNG or WebP image."
+        );
 
-
-if (originalUrl) {
-
-URL.revokeObjectURL(
-originalUrl
-);
-
-}
-
-if (resultUrl) {
-
-URL.revokeObjectURL(
-resultUrl
-);
-
-resultUrl = null;
-
-}
+        return;
+    }
 
 
-originalUrl =
-URL.createObjectURL(file);
-
-originalImage.src =
-originalUrl;
+    selectedFile = file;
 
 
-originalSection.style.display =
-"block";
-
-resultSection.style.display =
-"none";
+    hideError();
 
 
-fileInfo.textContent =
-file.name +
-" • " +
-formatBytes(file.size);
+    /*
+    Revoke old URLs
+    */
+
+    if (originalUrl) {
+
+        URL.revokeObjectURL(
+            originalUrl
+        );
+
+    }
+
+    if (resultUrl) {
+
+        URL.revokeObjectURL(
+            resultUrl
+        );
+
+        resultUrl = null;
+
+    }
+
+
+    /*
+    Create preview
+    */
+
+    originalUrl =
+    URL.createObjectURL(file);
+
+    originalImage.src =
+    originalUrl;
+
+
+    /*
+    Show original
+    */
+
+    originalSection.style.display =
+    "block";
+
+    resultSection.style.display =
+    "none";
+
+
+    /*
+    File information
+    */
+
+    fileInfo.textContent =
+        file.name +
+        " • " +
+        formatBytes(file.size);
 
 });
 
 
 /*
-========================================
-LOAD BIREfNET
-========================================
-*/
-
-async function loadModel() {
-
-if (segmenter) {
-
-return segmenter;
-
-}
-
-
-if (modelLoading) {
-
-while (modelLoading) {
-
-await new Promise(
-resolve => setTimeout(resolve, 300)
-);
-
-}
-
-return segmenter;
-
-}
-
-
-modelLoading = true;
-
-
-try {
-
-status.style.display =
-"block";
-
-progressContainer.style.display =
-"block";
-
-status.textContent =
-"Loading AI model...";
-
-progressFill.style.width =
-"5%";
-
-
-/*
-BiRefNet Lite 1024
-
-Designed for image segmentation
-and background removal.
-*/
-
-let device =
-"webgpu";
-
-
-if (!navigator.gpu) {
-
-device = "wasm";
-
-status.textContent =
-"WebGPU unavailable. Using CPU mode...";
-
-}
-
-
-/*
-Create segmentation pipeline.
-*/
-
-segmenter =
-await pipeline(
-"image-segmentation",
-"jiabins0303/birefnet-lite-1024-webgpu",
-{
-device: device,
-dtype: "fp32"
-}
-);
-
-
-progressFill.style.width =
-"30%";
-
-
-return segmenter;
-
-
-} catch (error) {
-
-console.error(error);
-
-
-/*
-Fallback to standard BiRefNet Lite
-if WebGPU version cannot load.
-*/
-
-try {
-
-status.textContent =
-"Trying compatibility mode...";
-
-segmenter =
-await pipeline(
-"image-segmentation",
-"onnx-community/BiRefNet_lite-ONNX",
-{
-device: "wasm",
-dtype: "q8"
-}
-);
-
-return segmenter;
-
-
-} catch (fallbackError) {
-
-console.error(fallbackError);
-
-throw fallbackError;
-
-}
-
-} finally {
-
-modelLoading = false;
-
-}
-
-}
-
-
-/*
-========================================
+====================================================
 REMOVE BACKGROUND
-========================================
+====================================================
 */
 
 removeButton.addEventListener(
 "click",
-async () => {
+async function() {
 
-if (!selectedFile) {
 
-showError(
-"Please choose an image first."
-);
+    if (!selectedFile) {
 
-return;
+        showError(
+            "Please choose an image first."
+        );
 
-}
+        return;
 
+    }
 
-removeButton.disabled =
-true;
 
-hideError();
+    removeButton.disabled =
+    true;
 
 
-status.style.display =
-"block";
+    chooseButton.disabled =
+    true;
 
-progressContainer.style.display =
-"block";
 
-progressFill.style.width =
-"2%";
+    hideError();
 
-status.textContent =
-"Preparing your image...";
 
+    status.style.display =
+    "block";
 
-try {
 
+    progressContainer.style.display =
+    "block";
 
-/*
-Load AI model
-*/
 
-const model =
-await loadModel();
+    progressFill.style.width =
+    "1%";
 
 
-progressFill.style.width =
-"35%";
+    status.textContent =
+    "Starting high-quality AI background removal...";
 
-status.textContent =
-"AI is analyzing the image...";
 
+    try {
 
-/*
-Create image URL
-*/
 
-const imageUrl =
-URL.createObjectURL(
-selectedFile
-);
+        /*
+        ==============================================
+        HIGH QUALITY MODEL
+        ==============================================
 
+        isnet = highest quality option
 
-/*
-Run segmentation
-*/
+        If it cannot run, we automatically
+        try isnet_fp16.
 
-const output =
-await model(imageUrl);
+        Finally we use isnet_quint8.
+        */
 
 
-URL.revokeObjectURL(
-imageUrl
-);
+        let result;
 
 
-progressFill.style.width =
-"70%";
+        /*
+        ==============================================
+        TRY ISNET
+        ==============================================
+        */
 
-status.textContent =
-"Creating transparent image...";
+        try {
 
+            status.textContent =
+            "Loading high-quality AI model...";
 
-/*
-Find the segmentation mask.
-*/
 
-let mask = null;
+            result =
+            await removeBackground(
+                selectedFile,
+                {
 
+                    model: "isnet",
 
-if (Array.isArray(output)) {
+                    /*
+                    Use GPU when possible.
+                    The library handles WebGPU.
+                    */
 
-if (output[0]) {
+                    device:
+                    navigator.gpu
+                    ? "gpu"
+                    : "cpu",
 
-mask =
-output[0].mask ||
-output[0];
+                    /*
+                    Keep processing in the page.
+                    This avoids worker loading problems
+                    on some static hosting environments.
+                    */
 
-}
+                    proxyToWorker: false,
 
-} else {
+                    /*
+                    Use the official model/data location.
+                    */
 
-mask =
-output.mask ||
-output;
+                    publicPath:
+                    "https://staticimgly.com/@imgly/background-removal-data/1.7.0/dist/",
 
-}
+                    /*
+                    Maximum PNG quality.
+                    */
 
+                    output: {
 
-if (!mask) {
+                        format:
+                        "image/png",
 
-throw new Error(
-"No segmentation mask returned."
-);
+                        quality:
+                        1,
 
-}
+                        type:
+                        "foreground"
 
+                    },
 
-/*
-Load original image
-*/
+                    /*
+                    Progress callback.
+                    */
 
-const img =
-await loadImage(
-originalUrl
-);
+                    progress:
+                    function(
+                        key,
+                        current,
+                        total
+                    ) {
 
+                        if (
+                            total &&
+                            total > 0
+                        ) {
 
-/*
-Create canvas at original resolution.
-*/
+                            let percent =
+                            Math.round(
+                                (
+                                    current /
+                                    total
+                                ) * 100
+                            );
 
-const canvas =
-document.createElement("canvas");
+                            percent =
+                            Math.max(
+                                1,
+                                Math.min(
+                                    99,
+                                    percent
+                                )
+                            );
 
-canvas.width =
-img.naturalWidth;
+                            progressFill.style.width =
+                            percent + "%";
 
-canvas.height =
-img.naturalHeight;
+                        }
 
 
-const ctx =
-canvas.getContext(
-"2d",
-{
-willReadFrequently: true
-}
-);
+                        if (
+                            key &&
+                            String(key)
+                            .toLowerCase()
+                            .includes("model")
+                        ) {
 
+                            status.textContent =
+                            "Downloading AI model...";
 
-ctx.drawImage(
-img,
-0,
-0
-);
+                        } else {
 
+                            status.textContent =
+                            "Removing background...";
 
-/*
-Get original pixels.
-*/
+                        }
 
-const imageData =
-ctx.getImageData(
-0,
-0,
-canvas.width,
-canvas.height
-);
+                    }
 
+                }
+            );
 
-/*
-Convert mask to image.
 
-RawImage supports conversion
-from model output.
-*/
+        }
 
-let maskImage;
 
+        /*
+        ==============================================
+        FALLBACK 1
+        ==============================================
+        */
 
-try {
+        catch (firstError) {
 
-maskImage =
-await RawImage.fromURL(
-mask
-);
+            console.warn(
+                "ISNet failed. Trying FP16 model.",
+                firstError
+            );
 
-} catch {
 
-maskImage =
-mask;
+            status.textContent =
+            "Switching to compatibility mode...";
 
-}
 
+            result =
+            await removeBackground(
+                selectedFile,
+                {
 
-/*
-Create temporary mask canvas.
-*/
+                    model:
+                    "isnet_fp16",
 
-const maskCanvas =
-document.createElement(
-"canvas"
-);
+                    device:
+                    navigator.gpu
+                    ? "gpu"
+                    : "cpu",
 
-maskCanvas.width =
-canvas.width;
+                    proxyToWorker:
+                    false,
 
-maskCanvas.height =
-canvas.height;
+                    publicPath:
+                    "https://staticimgly.com/@imgly/background-removal-data/1.7.0/dist/",
 
+                    output: {
 
-const maskCtx =
-maskCanvas.getContext(
-"2d",
-{
-willReadFrequently: true
-}
-);
+                        format:
+                        "image/png",
 
+                        quality:
+                        1,
 
-/*
-Draw / resize mask.
-*/
+                        type:
+                        "foreground"
 
-if (
-maskImage &&
-maskImage.toCanvas
-) {
+                    },
 
-const tempCanvas =
-maskImage.toCanvas();
+                    progress:
+                    function(
+                        key,
+                        current,
+                        total
+                    ) {
 
-maskCtx.drawImage(
-tempCanvas,
-0,
-0,
-canvas.width,
-canvas.height
-);
+                        if (
+                            total &&
+                            total > 0
+                        ) {
 
-} else if (
-mask instanceof HTMLCanvasElement
-) {
+                            let percent =
+                            Math.round(
+                                (
+                                    current /
+                                    total
+                                ) * 100
+                            );
 
-maskCtx.drawImage(
-mask,
-0,
-0,
-canvas.width,
-canvas.height
-);
+                            progressFill.style.width =
+                            percent + "%";
 
-} else if (
-mask instanceof ImageBitmap
-) {
+                        }
 
-maskCtx.drawImage(
-mask,
-0,
-0,
-canvas.width,
-canvas.height
-);
+                        status.textContent =
+                        "Removing background...";
 
-} else {
+                    }
 
-throw new Error(
-"Unable to process AI mask."
-);
+                }
+            );
 
-}
+        }
 
 
-/*
-Read mask pixels.
-*/
+        /*
+        ==============================================
+        RESULT
+        ==============================================
+        */
 
-const maskData =
-maskCtx.getImageData(
-0,
-0,
-canvas.width,
-canvas.height
-).data;
+        if (!result) {
 
+            throw new Error(
+                "No result was returned."
+            );
 
-/*
-Apply mask to alpha channel.
+        }
 
-Use the mask luminance.
-*/
 
-for (
-let i = 0, p = 0;
-i < imageData.data.length;
-i += 4, p += 4
-) {
+        progressFill.style.width =
+        "100%";
 
-const r =
-maskData[p];
 
-const g =
-maskData[p + 1];
+        status.textContent =
+        "✓ Background removed successfully!";
 
-const b =
-maskData[p + 2];
 
-const a =
-maskData[p + 3];
+        /*
+        Create result URL
+        */
 
+        if (resultUrl) {
 
-/*
-Use strongest available
-mask information.
-*/
+            URL.revokeObjectURL(
+                resultUrl
+            );
 
-let alpha;
+        }
 
-if (a > 0) {
 
-alpha = a;
+        resultUrl =
+        URL.createObjectURL(result);
 
-} else {
 
-alpha =
-Math.round(
-(r + g + b) / 3
-);
+        resultImage.src =
+        resultUrl;
 
-}
 
+        /*
+        Show result
+        */
 
-/*
-Slight edge smoothing.
+        resultSection.style.display =
+        "block";
 
-This helps reduce harsh
-jagged edges.
-*/
 
-alpha =
-Math.max(
-0,
-Math.min(
-255,
-alpha
-)
-);
+        /*
+        Scroll to result
+        */
 
+        setTimeout(
+        function() {
 
-imageData.data[i + 3] =
-alpha;
+            resultSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
-}
+        },
+        300
+        );
 
 
-/*
-Put processed pixels back.
-*/
+    }
 
-ctx.putImageData(
-imageData,
-0,
-0
-);
 
+    /*
+    ==============================================
+    ERROR
+    ==============================================
+    */
 
-progressFill.style.width =
-"90%";
+    catch (error) {
 
-status.textContent =
-"Finalizing high-quality PNG...";
+        console.error(
+            "Background removal error:",
+            error
+        );
 
 
-/*
-Export PNG.
-*/
+        status.style.display =
+        "none";
 
-canvas.toBlob(
-(blob) => {
 
-if (!blob) {
+        progressContainer.style.display =
+        "none";
 
-throw new Error(
-"PNG creation failed."
-);
 
-}
+        showError(
+            "The AI could not process this image. " +
+            "Please try a smaller image or refresh the page."
+        );
 
+    }
 
-if (resultUrl) {
 
-URL.revokeObjectURL(
-resultUrl
-);
+    /*
+    ==============================================
+    ENABLE BUTTONS
+    ==============================================
+    */
 
-}
+    removeButton.disabled =
+    false;
 
-
-resultUrl =
-URL.createObjectURL(
-blob
-);
-
-resultImage.src =
-resultUrl;
-
-
-resultSection.style.display =
-"block";
-
-
-progressFill.style.width =
-"100%";
-
-status.textContent =
-"✓ Background removed successfully!";
-
-
-setTimeout(
-() => {
-
-resultSection.scrollIntoView({
-behavior: "smooth",
-block: "start"
-});
-
-},
-300
-);
-
-},
-"image/png"
-);
-
-
-} catch (error) {
-
-console.error(
-"Remove background error:",
-error
-);
-
-
-status.style.display =
-"none";
-
-progressContainer.style.display =
-"none";
-
-
-showError(
-"Unable to remove the background. " +
-"Please try another image or refresh the page."
-);
-
-}
-
-
-removeButton.disabled =
-false;
+    chooseButton.disabled =
+    false;
 
 });
 
 
 /*
-========================================
-DOWNLOAD
-========================================
+====================================================
+DOWNLOAD PNG
+====================================================
 */
 
 downloadButton.addEventListener(
 "click",
-() => {
-
-if (!resultUrl) return;
+function() {
 
 
-const link =
-document.createElement("a");
-
-link.href =
-resultUrl;
-
-link.download =
-"gettoolly-background-removed.png";
+    if (!resultUrl) {
+        return;
+    }
 
 
-document.body.appendChild(
-link
-);
+    const link =
+    document.createElement("a");
 
-link.click();
 
-document.body.removeChild(
-link
-);
+    link.href =
+    resultUrl;
+
+
+    link.download =
+    "gettoolly-background-removed.png";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
 
 });
 
 
 /*
-========================================
+====================================================
 RESET
-========================================
+====================================================
 */
 
 resetButton.addEventListener(
 "click",
-() => {
-
-if (originalUrl) {
-
-URL.revokeObjectURL(
-originalUrl
-);
-
-originalUrl = null;
-
-}
+function() {
 
 
-if (resultUrl) {
+    if (originalUrl) {
 
-URL.revokeObjectURL(
-resultUrl
-);
+        URL.revokeObjectURL(
+            originalUrl
+        );
 
-resultUrl = null;
+        originalUrl = null;
 
-}
-
-
-selectedFile = null;
-
-fileInput.value = "";
-
-originalImage.src = "";
-
-resultImage.src = "";
-
-fileInfo.textContent = "";
-
-originalSection.style.display =
-"none";
-
-resultSection.style.display =
-"none";
-
-status.style.display =
-"none";
-
-progressContainer.style.display =
-"none";
-
-progressFill.style.width =
-"0%";
-
-hideError();
+    }
 
 
-window.scrollTo({
-top: 0,
-behavior: "smooth"
-});
+    if (resultUrl) {
+
+        URL.revokeObjectURL(
+            resultUrl
+        );
+
+        resultUrl = null;
+
+    }
+
+
+    selectedFile =
+    null;
+
+
+    fileInput.value =
+    "";
+
+
+    originalImage.src =
+    "";
+
+
+    resultImage.src =
+    "";
+
+
+    fileInfo.textContent =
+    "";
+
+
+    originalSection.style.display =
+    "none";
+
+
+    resultSection.style.display =
+    "none";
+
+
+    status.style.display =
+    "none";
+
+
+    progressContainer.style.display =
+    "none";
+
+
+    progressFill.style.width =
+    "0%";
+
+
+    hideError();
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 });
 
 
 /*
-========================================
-HELPER FUNCTIONS
-========================================
+====================================================
+HELPERS
+====================================================
 */
-
-function loadImage(src) {
-
-return new Promise(
-(resolve, reject) => {
-
-const img =
-new Image();
-
-img.onload =
-() => resolve(img);
-
-img.onerror =
-reject;
-
-img.src =
-src;
-
-});
-
-}
-
 
 function formatBytes(bytes) {
 
-if (bytes === 0) {
-return "0 Bytes";
-}
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
 
-const sizes = [
-"Bytes",
-"KB",
-"MB",
-"GB"
-];
 
-const i =
-Math.floor(
-Math.log(bytes) /
-Math.log(1024)
-);
+    const sizes = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
 
-return (
-parseFloat(
-(
-bytes /
-Math.pow(1024, i)
-).toFixed(2)
-)
-+
-" "
-+
-sizes[i]
-);
+
+    const i =
+    Math.floor(
+        Math.log(bytes) /
+        Math.log(1024)
+    );
+
+
+    return (
+        parseFloat(
+            (
+                bytes /
+                Math.pow(1024, i)
+            ).toFixed(2)
+        )
+        +
+        " "
+        +
+        sizes[i]
+    );
 
 }
 
 
 function showError(message) {
 
-errorBox.textContent =
-message;
+    errorBox.textContent =
+    message;
 
-errorBox.style.display =
-"block";
+    errorBox.style.display =
+    "block";
 
 }
 
 
 function hideError() {
 
-errorBox.textContent =
-"";
+    errorBox.textContent =
+    "";
 
-errorBox.style.display =
-"none";
+    errorBox.style.display =
+    "none";
 
 }
 
