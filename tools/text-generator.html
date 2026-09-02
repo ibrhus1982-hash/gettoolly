@@ -1,17 +1,22 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Text Generator - Free Online Text Generator | GetToolly</title>
+  <title>Free Text Generator Online - Paragraph & Sentence Generator | GetToolly</title>
 
-  <meta name="description" content="Generate useful text instantly with GetToolly's free online text generator. Create paragraphs, sentences and custom text quickly.">
+  <meta name="description" content="Use GetToolly's free online text generator to create random paragraphs, sentences, and Lorem Ipsum text instantly. Simple, fast, and easy to copy.">
 
-  <meta name="keywords" content="text generator, random text generator, paragraph generator, sentence generator, free text generator">
+  <meta name="keywords" content="text generator, free text generator, random text generator, paragraph generator, sentence generator, Lorem Ipsum generator, online text generator">
 
-  <link rel="canonical" href="https://gettoolly.vercel.app/tools/text-generator.html">
+  <link rel="canonical" href="https://www.gettoolly.com/tools/text-generator.html">
+
+  <meta property="og:title" content="Free Text Generator Online | GetToolly">
+  <meta property="og:description" content="Generate random paragraphs, sentences, and Lorem Ipsum text instantly with GetToolly's free online text generator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gettoolly.com/tools/text-generator.html">
 
   <style>
     * {
@@ -181,13 +186,46 @@
 
     .info {
       max-width: 700px;
-      margin: 50px auto 0;
+      margin: 55px auto 0;
       color: #475569;
     }
 
     .info h2 {
       color: #111827;
       margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .info h3 {
+      color: #111827;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .info p {
+      margin-bottom: 16px;
+    }
+
+    .info ul {
+      margin: 10px 0 20px 22px;
+    }
+
+    .info li {
+      margin-bottom: 8px;
+    }
+
+    .faq {
+      margin-top: 35px;
+    }
+
+    .faq-item {
+      margin-bottom: 22px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+      margin-bottom: 7px;
     }
 
     footer {
@@ -225,6 +263,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -232,14 +271,16 @@
 <header>
   <div class="navbar">
 
-    <a href="../index.html" class="logo">
-      <span>◆</span> GetToolly
-    </a>
+```
+<a href="../index.html" class="logo">
+  <span>◆</span> GetToolly
+</a>
 
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../index.html#tools">Tools</a>
-    </nav>
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../index.html#tools">Tools</a>
+</nav>
+```
 
   </div>
 </header>
@@ -247,86 +288,168 @@
 <main class="page">
 
   <div class="intro">
-    <h1>Text Generator</h1>
+    <h1>Free Text Generator</h1>
 
-    <p>
-      Generate useful text instantly with our free online text generator.
-    </p>
+```
+<p>
+  Generate random paragraphs, sentences, and Lorem Ipsum text instantly with our free online text generator.
+</p>
+```
+
   </div>
 
   <section class="generator">
 
-    <div class="field">
+```
+<div class="field">
 
-      <label for="type">
-        Text Type
-      </label>
+  <label for="type">
+    Text Type
+  </label>
 
-      <select id="type">
-        <option value="paragraph">Paragraphs</option>
-        <option value="sentences">Sentences</option>
-        <option value="lorem">Lorem Ipsum</option>
-      </select>
+  <select id="type">
+    <option value="paragraph">Paragraphs</option>
+    <option value="sentences">Sentences</option>
+    <option value="lorem">Lorem Ipsum</option>
+  </select>
 
-    </div>
+</div>
 
-    <div class="field">
+<div class="field">
 
-      <label for="amount">
-        Number of Text Blocks
-      </label>
+  <label for="amount">
+    Number of Text Blocks
+  </label>
 
-      <input
-        type="number"
-        id="amount"
-        value="3"
-        min="1"
-        max="20"
-      >
+  <input
+    type="number"
+    id="amount"
+    value="3"
+    min="1"
+    max="20"
+    aria-label="Number of text blocks"
+  >
 
-    </div>
+</div>
 
-    <div class="field">
+<div class="field">
 
-      <label for="output">
-        Generated Text
-      </label>
+  <label for="output">
+    Generated Text
+  </label>
 
-      <textarea
-        id="output"
-        placeholder="Your generated text will appear here..."
-        readonly
-      ></textarea>
+  <textarea
+    id="output"
+    placeholder="Your generated text will appear here..."
+    readonly
+    aria-label="Generated text"
+  ></textarea>
 
-    </div>
+</div>
 
-    <div class="button-row">
+<div class="button-row">
 
-      <button
-        class="generate-btn"
-        onclick="generateText()">
-        Generate Text
-      </button>
+  <button
+    class="generate-btn"
+    onclick="generateText()">
+    Generate Text
+  </button>
 
-      <button
-        class="copy-btn"
-        onclick="copyText()">
-        Copy Text
-      </button>
+  <button
+    class="copy-btn"
+    onclick="copyText()">
+    Copy Text
+  </button>
 
-    </div>
+</div>
+```
 
   </section>
 
   <section class="info">
 
-    <h2>About the Text Generator</h2>
+```
+<h2>About the Free Text Generator</h2>
 
+<p>
+  GetToolly's free text generator helps you create sample text quickly and easily. Choose between paragraphs, individual sentences, or Lorem Ipsum text, select the amount you need, and generate your content instantly.
+</p>
+
+<p>
+  The generated text can be useful when testing website layouts, designing documents, creating mockups, preparing presentations, or checking how text looks on a page.
+</p>
+
+<h3>How to Use the Text Generator</h3>
+
+<ul>
+  <li>Choose the type of text you want to generate.</li>
+  <li>Select the number of text blocks you need.</li>
+  <li>Click the <strong>Generate Text</strong> button.</li>
+  <li>Review the generated text in the output box.</li>
+  <li>Click <strong>Copy Text</strong> to copy the result.</li>
+</ul>
+
+<h3>What Types of Text Can You Generate?</h3>
+
+<p>
+  <strong>Paragraphs:</strong> Generate general-purpose sample paragraphs for website designs, documents, and mockups.
+</p>
+
+<p>
+  <strong>Sentences:</strong> Generate short sample sentences when you need simple text for testing layouts or examples.
+</p>
+
+<p>
+  <strong>Lorem Ipsum:</strong> Generate traditional placeholder text commonly used in web design, graphic design, and publishing.
+</p>
+
+<h3>Common Uses</h3>
+
+<p>
+  A text generator can be useful for designers, developers, students, writers, and anyone who needs temporary text quickly. It can help test page layouts, forms, typography, spacing, and other design elements before final content is available.
+</p>
+
+<div class="faq">
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>What is a text generator?</h3>
     <p>
-      GetToolly's free text generator helps you quickly create
-      sample paragraphs, sentences and Lorem Ipsum text for
-      websites, designs, documents and other projects.
+      A text generator is an online tool that creates sample text automatically. It can generate paragraphs, sentences, or placeholder text for different projects.
     </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Is this text generator free?</h3>
+    <p>
+      Yes. The GetToolly text generator is free to use and does not require an account.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I copy the generated text?</h3>
+    <p>
+      Yes. After generating your text, click the Copy Text button to copy the result to your clipboard.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What is Lorem Ipsum used for?</h3>
+    <p>
+      Lorem Ipsum is commonly used as placeholder text in website designs, applications, layouts, and publishing projects when final content is not yet available.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Is my text sent to a server?</h3>
+    <p>
+      No. The text generation on this page is performed directly in your browser. The tool does not need to send your generated text to a server.
+    </p>
+  </div>
+
+</div>
+```
 
   </section>
 
@@ -431,30 +554,54 @@
       generateText();
     }
 
+    if (navigator.clipboard && window.isSecureContext) {
+
+      navigator.clipboard.writeText(output.value)
+        .then(function() {
+
+          showCopied();
+
+        })
+        .catch(function() {
+
+          fallbackCopy(output);
+
+        });
+
+    } else {
+
+      fallbackCopy(output);
+
+    }
+  }
+
+  function fallbackCopy(output) {
+
     output.select();
     output.setSelectionRange(0, 99999);
 
-    navigator.clipboard.writeText(output.value)
-      .then(function() {
+    try {
+      document.execCommand("copy");
+      showCopied();
+    } catch (error) {
+      alert("Please select the generated text and copy it manually.");
+    }
+  }
 
-        const button =
-          document.querySelector(".copy-btn");
+  function showCopied() {
 
-        const original =
-          button.textContent;
+    const button =
+      document.querySelector(".copy-btn");
 
-        button.textContent = "Copied!";
+    const original =
+      button.textContent;
 
-        setTimeout(function() {
-          button.textContent = original;
-        }, 1500);
+    button.textContent = "Copied!";
 
-      })
-      .catch(function() {
+    setTimeout(function() {
+      button.textContent = original;
+    }, 1500);
 
-        document.execCommand("copy");
-
-      });
   }
 
   generateText();
@@ -463,4 +610,3 @@
 
 </body>
 </html>
-
