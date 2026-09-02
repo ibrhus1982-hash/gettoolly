@@ -1,17 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Time Calculator - Add and Subtract Time | GetToolly</title>
+  <title>Time Calculator Online - Add Hours and Minutes | GetToolly</title>
 
-  <meta name="description" content="Calculate time durations easily with GetToolly's free online time calculator. Add or subtract hours and minutes instantly.">
+  <meta name="description" content="Free online time calculator to add hours and minutes quickly. Calculate total time and convert time durations into minutes with GetToolly.">
 
-  <meta name="keywords" content="time calculator, time duration calculator, add time, subtract time, hours calculator, minutes calculator">
+  <meta name="keywords" content="time calculator, time duration calculator, add time, add hours and minutes, hours calculator, minutes calculator, calculate time duration">
 
-  <link rel="canonical" href="https://gettoolly.vercel.app/tools/time-calculator.html">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://www.gettoolly.com/tools/time-calculator.html">
+
+  <meta property="og:title" content="Time Calculator Online - Add Hours and Minutes">
+  <meta property="og:description" content="Calculate time durations by adding hours and minutes with GetToolly's free online time calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gettoolly.com/tools/time-calculator.html">
 
   <style>
     * {
@@ -201,11 +207,50 @@
 
     .info h2 {
       color: #111827;
-      margin-bottom: 12px;
+      margin: 35px 0 12px;
+    }
+
+    .info h2:first-child {
+      margin-top: 0;
+    }
+
+    .info h3 {
+      color: #111827;
+      margin: 25px 0 8px;
     }
 
     .info p {
       margin-bottom: 15px;
+    }
+
+    .info ul {
+      margin: 10px 0 20px 22px;
+    }
+
+    .info li {
+      margin-bottom: 8px;
+    }
+
+    .example {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px;
+      margin: 15px 0 25px;
+    }
+
+    .faq {
+      margin-top: 15px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 5px;
     }
 
     footer {
@@ -221,6 +266,10 @@
       color: #64748b;
       text-decoration: none;
       margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: #2563eb;
     }
 
     @media (max-width: 600px) {
@@ -250,11 +299,11 @@
 <header>
   <div class="navbar">
 
-    <a href="../index.html" class="logo">
+    <a href="../index.html" class="logo" aria-label="GetToolly Home">
       <span>◆</span> GetToolly
     </a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="../index.html">Home</a>
       <a href="../index.html#tools">Tools</a>
     </nav>
@@ -269,12 +318,12 @@
     <h1>Time Calculator</h1>
 
     <p>
-      Add or subtract hours and minutes quickly and easily.
+      Add hours and minutes quickly and calculate the total time instantly.
     </p>
 
   </div>
 
-  <section class="calculator">
+  <section class="calculator" aria-label="Time calculator">
 
     <div class="operation">
 
@@ -296,6 +345,8 @@
             value="0"
             min="0"
             step="1"
+            inputmode="numeric"
+            aria-label="First time hours"
           >
 
         </div>
@@ -312,6 +363,8 @@
             value="0"
             min="0"
             step="1"
+            inputmode="numeric"
+            aria-label="First time minutes"
           >
 
         </div>
@@ -320,11 +373,9 @@
 
     </div>
 
-
-    <div class="operator">
+    <div class="operator" aria-hidden="true">
       +
     </div>
-
 
     <div class="operation">
 
@@ -346,6 +397,8 @@
             value="0"
             min="0"
             step="1"
+            inputmode="numeric"
+            aria-label="Second time hours"
           >
 
         </div>
@@ -362,6 +415,8 @@
             value="0"
             min="0"
             step="1"
+            inputmode="numeric"
+            aria-label="Second time minutes"
           >
 
         </div>
@@ -370,15 +425,14 @@
 
     </div>
 
-
     <button
       class="calculate-btn"
+      type="button"
       onclick="calculateTime()">
       Calculate Time
     </button>
 
-
-    <div class="result">
+    <div class="result" aria-live="polite">
 
       <div class="result-label">
         Result
@@ -396,23 +450,143 @@
 
   </section>
 
-
   <section class="info">
 
-    <h2>How to use the Time Calculator</h2>
+    <h2>What Is a Time Calculator?</h2>
 
     <p>
-      Enter the hours and minutes for the first and second
-      time values, then click Calculate Time. The calculator
-      will add the two durations and show the total time.
+      A time calculator is a simple tool for adding time durations
+      expressed in hours and minutes. Instead of converting everything
+      manually into minutes, you can enter two time values and instantly
+      calculate their combined duration.
     </p>
 
-    <h2>Example</h2>
+    <h2>How to Use the Time Calculator</h2>
 
     <p>
-      If the first time is 2 hours 30 minutes and the second
-      time is 1 hour 45 minutes, the result is 4 hours 15 minutes.
+      Enter the hours and minutes for the first time value, then enter
+      the hours and minutes for the second value. Click the Calculate Time
+      button to see the total duration.
     </p>
+
+    <ul>
+      <li>Enter the hours for the first time.</li>
+      <li>Enter the minutes for the first time.</li>
+      <li>Enter the hours for the second time.</li>
+      <li>Enter the minutes for the second time.</li>
+      <li>Click Calculate Time.</li>
+      <li>View the total hours, minutes and total minutes.</li>
+    </ul>
+
+    <h2>Time Calculation Example</h2>
+
+    <div class="example">
+
+      <p>
+        <strong>2 hours 30 minutes + 1 hour 45 minutes = 4 hours 15 minutes</strong>
+      </p>
+
+      <p>
+        The two durations equal 150 minutes and 105 minutes.
+        Together they make 255 minutes, which is 4 hours and 15 minutes.
+      </p>
+
+    </div>
+
+    <h2>How Time Is Converted to Minutes</h2>
+
+    <p>
+      One hour contains 60 minutes. To calculate the total number of
+      minutes in a duration, multiply the number of hours by 60 and
+      then add the remaining minutes.
+    </p>
+
+    <h3>Formula</h3>
+
+    <p>
+      Total minutes = (Hours × 60) + Minutes
+    </p>
+
+    <div class="example">
+
+      <p>
+        <strong>3 hours 20 minutes</strong>
+      </p>
+
+      <p>
+        (3 × 60) + 20 = 200 minutes
+      </p>
+
+    </div>
+
+    <h2>Common Uses for a Time Calculator</h2>
+
+    <p>
+      A time calculator can be useful for many everyday tasks, including
+      tracking work hours, calculating study time, planning projects,
+      adding exercise durations, calculating travel durations and
+      combining multiple time intervals.
+    </p>
+
+    <ul>
+      <li>Calculate total working hours.</li>
+      <li>Add study or training sessions.</li>
+      <li>Calculate project or task durations.</li>
+      <li>Add travel and activity times.</li>
+      <li>Convert hours and minutes into total minutes.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <strong>How do I add hours and minutes?</strong>
+        <p>
+          Enter both time durations into the calculator and click
+          Calculate Time. The calculator automatically combines the
+          hours and minutes and displays the total.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How many minutes are in one hour?</strong>
+        <p>
+          One hour contains 60 minutes.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How many minutes are in 2 hours?</strong>
+        <p>
+          Two hours contain 120 minutes because 2 × 60 = 120.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>What is 2 hours 30 minutes plus 1 hour 45 minutes?</strong>
+        <p>
+          The result is 4 hours and 15 minutes.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Can I use the calculator on my phone?</strong>
+        <p>
+          Yes. The GetToolly Time Calculator is designed to work on
+          smartphones, tablets and desktop computers.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Is the GetToolly Time Calculator free?</strong>
+        <p>
+          Yes. The calculator is free to use and does not require
+          registration or software installation.
+        </p>
+      </div>
+
+    </div>
 
   </section>
 
@@ -448,12 +622,10 @@
     let minutes2 =
       Number(document.getElementById("minutes2").value) || 0;
 
-
     if (hours1 < 0) hours1 = 0;
     if (minutes1 < 0) minutes1 = 0;
     if (hours2 < 0) hours2 = 0;
     if (minutes2 < 0) minutes2 = 0;
-
 
     const totalMinutes =
       (hours1 * 60) +
@@ -461,23 +633,19 @@
       (hours2 * 60) +
       minutes2;
 
-
     const hours =
       Math.floor(totalMinutes / 60);
 
     const minutes =
       totalMinutes % 60;
 
-
     document.getElementById("result").textContent =
       hours + " hours " + minutes + " minutes";
-
 
     document.getElementById("detail").textContent =
       "Total: " + totalMinutes + " minutes";
 
   }
-
 
   calculateTime();
 
@@ -485,4 +653,3 @@
 
 </body>
 </html>
-
