@@ -6,11 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Image Compressor - Compress Images Online | GetToolly</title>
+
 <meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size directly in your browser without uploading your files.">
+
 <meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://www.gettoolly.com/tools/image-compressor.html">
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -50,39 +54,57 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
+/* Upload area */
+
 .upload-area {
-   
+    display: block;
+    width: 100%;
+    border: 2px dashed #bbb;
     border-radius: 12px;
     padding: 45px 20px;
     text-align: center;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    outline: none;
 }
 
 .upload-area:hover {
     border-color: #555;
     background: #fafafa;
+    outline: none;
 }
 
-.upload-area input {
-    display: none;
+.upload-area:focus,
+.upload-area:focus-visible,
+.upload-area:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.upload-area input[type="file"] {
+    display: none !important;
 }
 
 .upload-icon {
     font-size: 45px;
     margin-bottom: 10px;
+    pointer-events: none;
 }
 
 .upload-text {
     font-size: 18px;
     font-weight: bold;
+    pointer-events: none;
 }
 
 .supported {
     color: #777;
     margin-top: 8px;
     font-size: 14px;
+    pointer-events: none;
 }
+
+/* Preview */
 
 .preview {
     display: none;
@@ -100,6 +122,8 @@ body {
     margin-top: 15px;
     color: #555;
 }
+
+/* Controls */
 
 .controls {
     display: none;
@@ -135,6 +159,8 @@ select {
     margin-top: 5px;
 }
 
+/* Compress button */
+
 .compress-btn {
     width: 100%;
     border: none;
@@ -151,6 +177,13 @@ select {
     opacity: 0.9;
 }
 
+.compress-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Result */
+
 .result {
     display: none;
     margin-top: 30px;
@@ -165,6 +198,7 @@ select {
 
 .result-info {
     margin-bottom: 15px;
+    line-height: 1.8;
 }
 
 .download-btn {
@@ -177,6 +211,10 @@ select {
     font-weight: bold;
 }
 
+.download-btn:hover {
+    opacity: 0.9;
+}
+
 .reset-btn {
     margin-left: 10px;
     padding: 13px 22px;
@@ -186,6 +224,12 @@ select {
     cursor: pointer;
 }
 
+.reset-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Privacy */
+
 .privacy {
     margin-top: 25px;
     padding: 15px;
@@ -194,7 +238,10 @@ select {
     font-size: 14px;
     color: #555;
     text-align: center;
+    line-height: 1.6;
 }
+
+/* Back link */
 
 .back {
     display: inline-block;
@@ -203,6 +250,12 @@ select {
     text-decoration: none;
 }
 
+.back:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+
 footer {
     text-align: center;
     margin-top: 40px;
@@ -210,7 +263,10 @@ footer {
     font-size: 14px;
 }
 
+/* Mobile */
+
 @media (max-width: 600px) {
+
     .header h1 {
         font-size: 28px;
     }
@@ -218,7 +274,16 @@ footer {
     .tool-box {
         padding: 20px;
     }
+
+    .download-btn,
+    .reset-btn {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+
 }
+
 </style>
 </head>
 
@@ -229,28 +294,60 @@ footer {
 <a class="back" href="../index.html">← Back to GetToolly</a>
 
 <div class="header">
+
     <h1>Image Compressor</h1>
-    <p>Compress JPG, PNG and WebP images online for free.</p>
+
+    <p>
+        Compress JPG, PNG and WebP images online for free.
+    </p>
+
 </div>
 
 <div class="tool-box">
 
     <label class="upload-area" id="uploadArea">
-        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+
+        <input
+            type="file"
+            id="fileInput"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
         <div class="upload-icon">🖼️</div>
-        <div class="upload-text">Click to select an image</div>
-        <div class="supported">JPG, PNG or WebP</div>
+
+        <div class="upload-text">
+            Click to select an image
+        </div>
+
+        <div class="supported">
+            JPG, PNG or WebP
+        </div>
+
     </label>
 
+
     <div class="preview" id="preview">
-        <img id="previewImage" alt="Image preview">
-        <div class="file-info" id="fileInfo"></div>
+
+        <img
+            id="previewImage"
+            alt="Selected image preview"
+        >
+
+        <div
+            class="file-info"
+            id="fileInfo">
+        </div>
+
     </div>
+
 
     <div class="controls" id="controls">
 
         <div class="control-group">
-            <label for="quality">Compression Quality</label>
+
+            <label for="quality">
+                Compression Quality
+            </label>
 
             <input
                 type="range"
@@ -261,298 +358,577 @@ footer {
             >
 
             <div class="quality-value">
-                <span id="qualityValue">80</span>%
+
+                <span id="qualityValue">
+                    80
+                </span>%
+
             </div>
+
         </div>
+
 
         <div class="control-group">
-            <label for="format">Output Format</label>
+
+            <label for="format">
+                Output Format
+            </label>
 
             <select id="format">
-                <option value="image/webp">WebP</option>
-                <option value="image/jpeg">JPG</option>
-                <option value="image/png">PNG</option>
+
+                <option value="image/webp">
+                    WebP
+                </option>
+
+                <option value="image/jpeg">
+                    JPG
+                </option>
+
+                <option value="image/png">
+                    PNG
+                </option>
+
             </select>
+
         </div>
 
-        <button class="compress-btn" id="compressBtn">
+
+        <button
+            class="compress-btn"
+            id="compressBtn">
+
             Compress Image
+
         </button>
 
     </div>
 
+
     <div class="result" id="result">
 
-        <h2>Compression Complete</h2>
+        <h2>
+            Compression Complete
+        </h2>
 
-        <div class="result-info" id="resultInfo"></div>
+        <div
+            class="result-info"
+            id="resultInfo">
+        </div>
+
 
         <a
             id="downloadBtn"
             class="download-btn"
             href="#"
-            download="compressed-image.webp"
-        >
+            download="compressed-image.webp">
+
             Download Compressed Image
+
         </a>
 
-        <button class="reset-btn" id="resetBtn">
+
+        <button
+            class="reset-btn"
+            id="resetBtn">
+
             Compress Another
+
         </button>
 
     </div>
 
+
     <div class="privacy">
-        🔒 <strong>Your image stays on your device.</strong><br>
-        This tool processes your image directly in your browser.
-        No image is uploaded to our server.
+
+        🔒 <strong>
+            Your image stays on your device.
+        </strong>
+
+        <br>
+
+        This tool processes your image directly
+        in your browser. No image is uploaded
+        to our server.
+
     </div>
 
 </div>
 
+
 <footer>
+
     © 2026 GetToolly. All rights reserved.
+
 </footer>
 
 </div>
 
+
 <script>
 
-const fileInput = document.getElementById("fileInput");
-const uploadArea = document.getElementById("uploadArea");
-const preview = document.getElementById("preview");
-const previewImage = document.getElementById("previewImage");
-const fileInfo = document.getElementById("fileInfo");
+const fileInput =
+    document.getElementById("fileInput");
 
-const controls = document.getElementById("controls");
-const quality = document.getElementById("quality");
-const qualityValue = document.getElementById("qualityValue");
-const format = document.getElementById("format");
+const preview =
+    document.getElementById("preview");
 
-const compressBtn = document.getElementById("compressBtn");
+const previewImage =
+    document.getElementById("previewImage");
 
-const result = document.getElementById("result");
-const resultInfo = document.getElementById("resultInfo");
-const downloadBtn = document.getElementById("downloadBtn");
-const resetBtn = document.getElementById("resetBtn");
+const fileInfo =
+    document.getElementById("fileInfo");
+
+const controls =
+    document.getElementById("controls");
+
+const quality =
+    document.getElementById("quality");
+
+const qualityValue =
+    document.getElementById("qualityValue");
+
+const format =
+    document.getElementById("format");
+
+const compressBtn =
+    document.getElementById("compressBtn");
+
+const result =
+    document.getElementById("result");
+
+const resultInfo =
+    document.getElementById("resultInfo");
+
+const downloadBtn =
+    document.getElementById("downloadBtn");
+
+const resetBtn =
+    document.getElementById("resetBtn");
+
 
 let selectedFile = null;
+
 let originalUrl = null;
+
 let compressedUrl = null;
 
-quality.addEventListener("input", () => {
-    qualityValue.textContent = quality.value;
-});
 
-fileInput.addEventListener("change", handleFile);
+/* Quality slider */
+
+quality.addEventListener(
+    "input",
+    function() {
+
+        qualityValue.textContent =
+            quality.value;
+
+    }
+);
+
+
+/* Select file */
+
+fileInput.addEventListener(
+    "change",
+    handleFile
+);
+
 
 function handleFile() {
 
-    const file = fileInput.files[0];
+    const file =
+        fileInput.files[0];
 
     if (!file) {
         return;
     }
 
+
     if (!file.type.startsWith("image/")) {
-        alert("Please select a valid image file.");
+
+        alert(
+            "Please select a valid image file."
+        );
+
         return;
     }
 
+
     selectedFile = file;
 
+
     if (originalUrl) {
-        URL.revokeObjectURL(originalUrl);
+
+        URL.revokeObjectURL(
+            originalUrl
+        );
+
     }
 
-    originalUrl = URL.createObjectURL(file);
 
-    previewImage.src = originalUrl;
+    originalUrl =
+        URL.createObjectURL(file);
+
+
+    previewImage.src =
+        originalUrl;
+
 
     fileInfo.textContent =
-        "Original size: " + formatBytes(file.size);
+        "Original size: " +
+        formatBytes(file.size);
 
-    preview.style.display = "block";
-    controls.style.display = "block";
-    result.style.display = "none";
 
-    if (file.type === "image/jpeg") {
-        format.value = "image/webp";
-    }
+    preview.style.display =
+        "block";
 
-    if (file.type === "image/png") {
-        format.value = "image/webp";
-    }
+    controls.style.display =
+        "block";
 
-    if (file.type === "image/webp") {
-        format.value = "image/webp";
-    }
+    result.style.display =
+        "none";
+
+
+    format.value =
+        "image/webp";
+
 }
 
-compressBtn.addEventListener("click", compressImage);
+
+/* Compress */
+
+compressBtn.addEventListener(
+    "click",
+    compressImage
+);
+
 
 function compressImage() {
 
     if (!selectedFile) {
-        alert("Please select an image first.");
+
+        alert(
+            "Please select an image first."
+        );
+
         return;
     }
 
-    compressBtn.disabled = true;
-    compressBtn.textContent = "Compressing...";
 
-    const img = new Image();
+    compressBtn.disabled =
+        true;
 
-    img.onload = function() {
+    compressBtn.textContent =
+        "Compressing...";
 
-        const canvas = document.createElement("canvas");
 
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
+    const img =
+        new Image();
 
-        const ctx = canvas.getContext("2d");
 
-        const outputFormat = format.value;
+    img.onload =
+        function() {
 
-        /*
-         JPEG does not support transparency.
-         Use a white background when converting
-         transparent images to JPG.
-        */
+            const canvas =
+                document.createElement(
+                    "canvas"
+                );
 
-        if (outputFormat === "image/jpeg") {
-            ctx.fillStyle = "#ffffff";
-            ctx.fillRect(
+
+            canvas.width =
+                img.naturalWidth;
+
+            canvas.height =
+                img.naturalHeight;
+
+
+            const ctx =
+                canvas.getContext(
+                    "2d"
+                );
+
+
+            const outputFormat =
+                format.value;
+
+
+            /*
+
+            JPG does not support
+            transparent backgrounds.
+
+            Use white background
+            when converting to JPG.
+
+            */
+
+            if (
+                outputFormat ===
+                "image/jpeg"
+            ) {
+
+                ctx.fillStyle =
+                    "#ffffff";
+
+                ctx.fillRect(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+
+            }
+
+
+            ctx.drawImage(
+                img,
                 0,
                 0,
                 canvas.width,
                 canvas.height
             );
-        }
 
-        ctx.drawImage(
-            img,
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
 
-        canvas.toBlob(
-            function(blob) {
+            canvas.toBlob(
 
-                if (!blob) {
+                function(blob) {
 
-                    alert(
-                        "Compression failed. Please try another image."
-                    );
+                    if (!blob) {
 
-                    compressBtn.disabled = false;
-                    compressBtn.textContent = "Compress Image";
+                        alert(
+                            "Compression failed. Please try another image."
+                        );
 
-                    return;
-                }
+                        compressBtn.disabled =
+                            false;
 
-                if (compressedUrl) {
-                    URL.revokeObjectURL(compressedUrl);
-                }
+                        compressBtn.textContent =
+                            "Compress Image";
 
-                compressedUrl = URL.createObjectURL(blob);
+                        return;
+                    }
 
-                const extension =
-                    outputFormat === "image/jpeg"
-                    ? "jpg"
-                    : outputFormat === "image/png"
-                    ? "png"
-                    : "webp";
 
-                downloadBtn.href = compressedUrl;
+                    if (compressedUrl) {
 
-                downloadBtn.download =
-                    "gettoolly-compressed-image." + extension;
+                        URL.revokeObjectURL(
+                            compressedUrl
+                        );
 
-                const originalSize = selectedFile.size;
-                const newSize = blob.size;
+                    }
 
-                const saved =
-                    originalSize > 0
-                    ? Math.max(
-                        0,
-                        ((originalSize - newSize) /
-                        originalSize) * 100
-                    )
-                    : 0;
 
-                resultInfo.innerHTML =
-                    "<strong>Original:</strong> " +
-                    formatBytes(originalSize) +
-                    "<br>" +
-                    "<strong>Compressed:</strong> " +
-                    formatBytes(newSize) +
-                    "<br>" +
-                    "<strong>Size reduction:</strong> " +
-                    saved.toFixed(1) +
-                    "%";
+                    compressedUrl =
+                        URL.createObjectURL(
+                            blob
+                        );
 
-                result.style.display = "block";
 
-                compressBtn.disabled = false;
-                compressBtn.textContent = "Compress Image";
+                    let extension;
 
-            },
-            outputFormat,
-            Number(quality.value) / 100
-        );
 
-        URL.revokeObjectURL(img.src);
-    };
+                    if (
+                        outputFormat ===
+                        "image/jpeg"
+                    ) {
 
-    img.onerror = function() {
+                        extension =
+                            "jpg";
 
-        alert(
-            "The image could not be processed. Please try another image."
-        );
+                    }
+                    else if (
+                        outputFormat ===
+                        "image/png"
+                    ) {
 
-        compressBtn.disabled = false;
-        compressBtn.textContent = "Compress Image";
-    };
+                        extension =
+                            "png";
 
-    img.src = originalUrl;
+                    }
+                    else {
+
+                        extension =
+                            "webp";
+
+                    }
+
+
+                    downloadBtn.href =
+                        compressedUrl;
+
+
+                    downloadBtn.download =
+                        "gettoolly-compressed-image." +
+                        extension;
+
+
+                    const originalSize =
+                        selectedFile.size;
+
+                    const newSize =
+                        blob.size;
+
+
+                    const saved =
+                        originalSize > 0
+                        ? Math.max(
+                            0,
+                            (
+                                (
+                                    originalSize -
+                                    newSize
+                                )
+                                /
+                                originalSize
+                            ) * 100
+                        )
+                        : 0;
+
+
+                    resultInfo.innerHTML =
+
+                        "<strong>Original:</strong> " +
+                        formatBytes(
+                            originalSize
+                        ) +
+
+                        "<br>" +
+
+                        "<strong>Compressed:</strong> " +
+                        formatBytes(
+                            newSize
+                        ) +
+
+                        "<br>" +
+
+                        "<strong>Size reduction:</strong> " +
+                        saved.toFixed(1) +
+                        "%";
+
+
+                    result.style.display =
+                        "block";
+
+
+                    compressBtn.disabled =
+                        false;
+
+                    compressBtn.textContent =
+                        "Compress Image";
+
+                },
+
+                outputFormat,
+
+                Number(
+                    quality.value
+                ) / 100
+
+            );
+
+
+            URL.revokeObjectURL(
+                img.src
+            );
+
+        };
+
+
+    img.onerror =
+        function() {
+
+            alert(
+                "The image could not be processed. Please try another image."
+            );
+
+
+            compressBtn.disabled =
+                false;
+
+            compressBtn.textContent =
+                "Compress Image";
+
+        };
+
+
+    img.src =
+        originalUrl;
+
 }
 
-resetBtn.addEventListener("click", resetTool);
+
+/* Reset */
+
+resetBtn.addEventListener(
+    "click",
+    resetTool
+);
+
 
 function resetTool() {
 
     if (originalUrl) {
-        URL.revokeObjectURL(originalUrl);
+
+        URL.revokeObjectURL(
+            originalUrl
+        );
+
         originalUrl = null;
+
     }
 
+
     if (compressedUrl) {
-        URL.revokeObjectURL(compressedUrl);
+
+        URL.revokeObjectURL(
+            compressedUrl
+        );
+
         compressedUrl = null;
+
     }
+
 
     selectedFile = null;
 
+
     fileInput.value = "";
 
-    preview.style.display = "none";
-    controls.style.display = "none";
-    result.style.display = "none";
 
-    quality.value = 80;
-    qualityValue.textContent = "80";
+    preview.style.display =
+        "none";
 
-    compressBtn.textContent = "Compress Image";
+    controls.style.display =
+        "none";
+
+    result.style.display =
+        "none";
+
+
+    quality.value =
+        80;
+
+    qualityValue.textContent =
+        "80";
+
+
+    compressBtn.disabled =
+        false;
+
+    compressBtn.textContent =
+        "Compress Image";
+
 }
+
+
+/* File size */
 
 function formatBytes(bytes) {
 
     if (bytes === 0) {
         return "0 Bytes";
     }
+
 
     const units = [
         "Bytes",
@@ -561,22 +937,41 @@ function formatBytes(bytes) {
         "GB"
     ];
 
+
     const i =
         Math.floor(
-            Math.log(bytes) / Math.log(1024)
+            Math.log(bytes) /
+            Math.log(1024)
         );
 
+
     return (
+
         parseFloat(
-            (bytes / Math.pow(1024, i)).toFixed(2)
-        ) +
+
+            (
+                bytes /
+                Math.pow(
+                    1024,
+                    i
+                )
+
+            ).toFixed(2)
+
+        )
+
+        +
+
         " " +
+
         units[i]
+
     );
+
 }
 
 </script>
 
 </body>
 </html>
-```
+
