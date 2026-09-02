@@ -1,17 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Temperature Converter - Free Celsius Fahrenheit Kelvin Converter | GetToolly</title>
+  <title>Temperature Converter Online - Celsius, Fahrenheit & Kelvin | GetToolly</title>
 
-  <meta name="description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin instantly with GetToolly's free online temperature converter.">
+  <meta name="description" content="Free online temperature converter. Convert Celsius to Fahrenheit, Fahrenheit to Celsius, Celsius to Kelvin and more instantly with accurate results.">
 
-  <meta name="keywords" content="temperature converter, Celsius to Fahrenheit, Fahrenheit to Celsius, Celsius to Kelvin, temperature conversion">
+  <meta name="keywords" content="temperature converter, Celsius to Fahrenheit, Fahrenheit to Celsius, Celsius to Kelvin, Kelvin to Celsius, Fahrenheit to Kelvin, Kelvin to Fahrenheit, temperature conversion">
 
-  <link rel="canonical" href="https://gettoolly.vercel.app/tools/temperature-converter.html">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://www.gettoolly.com/tools/temperature-converter.html">
+
+  <meta property="og:title" content="Temperature Converter Online - Celsius, Fahrenheit & Kelvin">
+  <meta property="og:description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin quickly and accurately with GetToolly's free online temperature converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gettoolly.com/tools/temperature-converter.html">
 
   <style>
     * {
@@ -202,11 +208,50 @@
 
     .info h2 {
       color: #111827;
-      margin-bottom: 12px;
+      margin: 35px 0 12px;
+    }
+
+    .info h2:first-child {
+      margin-top: 0;
+    }
+
+    .info h3 {
+      color: #111827;
+      margin: 25px 0 8px;
     }
 
     .info p {
       margin-bottom: 12px;
+    }
+
+    .info ul {
+      margin: 10px 0 20px 22px;
+    }
+
+    .info li {
+      margin-bottom: 7px;
+    }
+
+    .example {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px;
+      margin: 15px 0 25px;
+    }
+
+    .faq {
+      margin-top: 15px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 5px;
     }
 
     footer {
@@ -222,6 +267,10 @@
       color: #64748b;
       text-decoration: none;
       margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: #2563eb;
     }
 
     @media (max-width: 600px) {
@@ -251,11 +300,11 @@
 <header>
   <div class="navbar">
 
-    <a href="../index.html" class="logo">
+    <a href="../index.html" class="logo" aria-label="GetToolly Home">
       <span>◆</span> GetToolly
     </a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="../index.html">Home</a>
       <a href="../index.html#tools">Tools</a>
     </nav>
@@ -275,7 +324,7 @@
 
   </div>
 
-  <section class="converter">
+  <section class="converter" aria-label="Temperature conversion tool">
 
     <div class="field">
 
@@ -288,6 +337,8 @@
         id="temperature"
         placeholder="Enter temperature"
         step="any"
+        inputmode="decimal"
+        aria-label="Temperature value"
         oninput="convertTemperature()"
       >
 
@@ -321,11 +372,15 @@
 
     </div>
 
-    <button class="convert-btn" onclick="convertTemperature()">
+    <button
+      class="convert-btn"
+      type="button"
+      onclick="convertTemperature()"
+    >
       Convert Temperature
     </button>
 
-    <div class="result">
+    <div class="result" aria-live="polite">
 
       <div class="result-label">
         Result
@@ -360,27 +415,179 @@
 
   <section class="info">
 
-    <h2>How to use the Temperature Converter</h2>
+    <h2>What is a Temperature Converter?</h2>
 
     <p>
-      Enter a temperature, choose the original unit and select
-      the unit you want to convert to. The converter will instantly
-      calculate the result.
+      A temperature converter is an online tool that changes a temperature
+      from one measurement unit to another. GetToolly's free temperature
+      converter supports Celsius, Fahrenheit and Kelvin, making it easy to
+      convert temperatures without performing the calculations manually.
     </p>
+
+    <h2>How to Use the Temperature Converter</h2>
+
+    <p>
+      Enter the temperature you want to convert, choose the original unit
+      in the "From" field, and select the target unit in the "To" field.
+      Click "Convert Temperature" or enter a value to see the result.
+    </p>
+
+    <ul>
+      <li>Enter a temperature value.</li>
+      <li>Select Celsius, Fahrenheit or Kelvin.</li>
+      <li>Choose the unit you want to convert to.</li>
+      <li>View the converted temperature instantly.</li>
+      <li>See the equivalent value in all three temperature scales.</li>
+    </ul>
 
     <h2>Temperature Conversion Formulas</h2>
 
     <p>
-      Celsius to Fahrenheit: °F = (°C × 9/5) + 32
+      Temperature conversion uses mathematical formulas to convert between
+      Celsius, Fahrenheit and Kelvin.
+    </p>
+
+    <h3>Celsius to Fahrenheit</h3>
+
+    <p>
+      °F = (°C × 9/5) + 32
+    </p>
+
+    <h3>Fahrenheit to Celsius</h3>
+
+    <p>
+      °C = (°F − 32) × 5/9
+    </p>
+
+    <h3>Celsius to Kelvin</h3>
+
+    <p>
+      K = °C + 273.15
+    </p>
+
+    <h3>Kelvin to Celsius</h3>
+
+    <p>
+      °C = K − 273.15
+    </p>
+
+    <h3>Fahrenheit to Kelvin</h3>
+
+    <p>
+      K = (°F − 32) × 5/9 + 273.15
+    </p>
+
+    <h3>Kelvin to Fahrenheit</h3>
+
+    <p>
+      °F = (K − 273.15) × 9/5 + 32
+    </p>
+
+    <h2>Temperature Conversion Examples</h2>
+
+    <div class="example">
+
+      <p>
+        <strong>0°C = 32°F = 273.15 K</strong>
+      </p>
+
+      <p>
+        The freezing point of water is 0 degrees Celsius,
+        which equals 32 degrees Fahrenheit and 273.15 Kelvin.
+      </p>
+
+    </div>
+
+    <div class="example">
+
+      <p>
+        <strong>100°C = 212°F = 373.15 K</strong>
+      </p>
+
+      <p>
+        The boiling point of water at standard atmospheric pressure
+        is 100 degrees Celsius, equal to 212 degrees Fahrenheit
+        and 373.15 Kelvin.
+      </p>
+
+    </div>
+
+    <h2>Celsius, Fahrenheit and Kelvin Explained</h2>
+
+    <p>
+      <strong>Celsius (°C)</strong> is commonly used for everyday
+      temperature measurements in most countries around the world.
     </p>
 
     <p>
-      Fahrenheit to Celsius: °C = (°F − 32) × 5/9
+      <strong>Fahrenheit (°F)</strong> is mainly used for everyday
+      temperature measurements in the United States.
     </p>
 
     <p>
-      Celsius to Kelvin: K = °C + 273.15
+      <strong>Kelvin (K)</strong> is widely used in science and physics.
+      Unlike Celsius and Fahrenheit, Kelvin does not use a degree symbol.
     </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <strong>How do I convert Celsius to Fahrenheit?</strong>
+        <p>
+          Multiply the Celsius temperature by 9/5 and then add 32.
+          For example, 20°C is equal to 68°F.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How do I convert Fahrenheit to Celsius?</strong>
+        <p>
+          Subtract 32 from the Fahrenheit temperature and multiply
+          the result by 5/9. For example, 68°F is equal to 20°C.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>How do I convert Celsius to Kelvin?</strong>
+        <p>
+          Add 273.15 to the Celsius temperature. For example,
+          25°C is equal to 298.15 K.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>What is 0°C in Fahrenheit?</strong>
+        <p>
+          0°C is equal to 32°F.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>What is 100°C in Fahrenheit?</strong>
+        <p>
+          100°C is equal to 212°F.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Is the GetToolly temperature converter free?</strong>
+        <p>
+          Yes. The temperature converter is free to use and does not
+          require registration or installation.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Does the converter work on mobile devices?</strong>
+        <p>
+          Yes. The converter is designed to work on smartphones,
+          tablets and desktop computers.
+        </p>
+      </div>
+
+    </div>
 
   </section>
 
@@ -466,6 +673,16 @@
 
     const value = Number(input);
 
+    if (!Number.isFinite(value)) {
+
+      document.getElementById("result").textContent = "Invalid value";
+      document.getElementById("celsiusResult").textContent = "—";
+      document.getElementById("fahrenheitResult").textContent = "—";
+      document.getElementById("kelvinResult").textContent = "—";
+
+      return;
+    }
+
     const celsius =
       toCelsius(value, from);
 
@@ -491,4 +708,3 @@
 
 </body>
 </html>
-
