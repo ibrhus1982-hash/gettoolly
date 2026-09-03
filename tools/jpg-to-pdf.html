@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>JPG to PDF Converter Online Free | GetToolly</title>
-  <meta name="description" content="Convert JPG, JPEG, PNG and WebP images to PDF online for free. Combine multiple images into one PDF directly in your browser with GetToolly.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.gettoolly.com/tools/jpg-to-pdf.html">
 
-  <meta property="og:title" content="JPG to PDF Converter Online Free | GetToolly">
-  <meta property="og:description" content="Convert JPG, PNG and WebP images to PDF online for free.">
-  <meta property="og:url" content="https://www.gettoolly.com/tools/jpg-to-pdf.html">
+  <meta
+    name="description"
+    content="Convert JPG, JPEG, PNG and WebP images to PDF online for free. Combine multiple images into one PDF directly in your browser with GetToolly."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://www.gettoolly.com/tools/jpg-to-pdf.html"
+  >
+
+  <meta
+    property="og:title"
+    content="JPG to PDF Converter Online Free | GetToolly"
+  >
+
+  <meta
+    property="og:description"
+    content="Convert JPG, PNG and WebP images to PDF online for free."
+  >
+
+  <meta
+    property="og:url"
+    content="https://www.gettoolly.com/tools/jpg-to-pdf.html"
+  >
+
   <meta property="og:type" content="website">
 
   <link rel="icon" href="../favicon.ico">
 
   <style>
+
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -27,6 +54,8 @@
       background: #f7f9fc;
       color: #1f2937;
     }
+
+    /* HEADER */
 
     header {
       background: #ffffff;
@@ -64,11 +93,15 @@
       color: #2563eb;
     }
 
+    /* MAIN */
+
     main {
       max-width: 1000px;
       margin: 0 auto;
       padding: 55px 20px 80px;
     }
+
+    /* HERO */
 
     .hero {
       text-align: center;
@@ -89,44 +122,70 @@
       color: #6b7280;
     }
 
+    /* TOOL CARD */
+
     .tool-card {
       background: #ffffff;
       border-radius: 18px;
       padding: 30px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
       border: 1px solid #e5e7eb;
     }
 
+    /* UPLOAD AREA */
+
     .upload-area {
+      display: block;
+      width: 100%;
       border: 2px dashed #cbd5e1;
       border-radius: 16px;
       padding: 45px 20px;
       text-align: center;
       cursor: pointer;
-      transition: 0.2s;
       background: #fafcff;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .upload-area:hover,
+    .upload-area:hover {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+
     .upload-area.dragover {
       border-color: #2563eb;
       background: #eff6ff;
     }
 
+    .upload-area:focus,
+    .upload-area:focus-visible {
+      outline: none;
+    }
+
+    .upload-area * {
+      outline: none;
+    }
+
     .upload-icon {
       font-size: 48px;
       margin-bottom: 12px;
+      pointer-events: none;
     }
 
     .upload-area h2 {
       margin: 8px 0;
       font-size: 22px;
+      pointer-events: none;
     }
 
     .upload-area p {
       color: #6b7280;
       margin: 8px 0 20px;
+      pointer-events: none;
     }
+
+    /* BUTTONS */
 
     .btn {
       border: none;
@@ -135,16 +194,25 @@
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.2s;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
     }
 
     .btn-primary {
       background: #2563eb;
-      color: white;
+      color: #ffffff;
     }
 
     .btn-primary:hover {
       background: #1d4ed8;
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: wait;
     }
 
     .btn-secondary {
@@ -160,6 +228,8 @@
       display: none;
     }
 
+    /* SETTINGS */
+
     .settings {
       display: none;
       margin-top: 28px;
@@ -171,6 +241,8 @@
 
     .settings h3 {
       margin-top: 0;
+      margin-bottom: 20px;
+      color: #111827;
     }
 
     .settings-grid {
@@ -191,9 +263,18 @@
       padding: 11px 12px;
       border: 1px solid #d1d5db;
       border-radius: 9px;
-      background: white;
+      background: #ffffff;
       font-size: 15px;
+      color: #111827;
     }
+
+    .setting select:focus,
+    .setting input[type="text"]:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+
+    /* PREVIEW */
 
     .preview-section {
       display: none;
@@ -205,6 +286,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 15px;
+      gap: 15px;
     }
 
     .preview-header h2 {
@@ -214,13 +296,16 @@
 
     #imageList {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      grid-template-columns: repeat(
+        auto-fill,
+        minmax(170px, 1fr)
+      );
       gap: 18px;
     }
 
     .image-item {
       position: relative;
-      background: white;
+      background: #ffffff;
       border: 1px solid #e5e7eb;
       border-radius: 12px;
       padding: 10px;
@@ -228,6 +313,7 @@
     }
 
     .image-item img {
+      display: block;
       width: 100%;
       height: 170px;
       object-fit: contain;
@@ -251,10 +337,20 @@
       border: none;
       border-radius: 50%;
       background: #ef4444;
-      color: white;
+      color: #ffffff;
       font-weight: bold;
+      font-size: 18px;
+      line-height: 30px;
+      padding: 0;
       cursor: pointer;
+      z-index: 2;
     }
+
+    .remove-image:hover {
+      background: #dc2626;
+    }
+
+    /* ACTIONS */
 
     .actions {
       display: none;
@@ -266,16 +362,19 @@
       margin: 5px;
     }
 
+    /* STATUS */
+
     .status {
       display: none;
       margin-top: 20px;
       padding: 14px;
       border-radius: 10px;
       text-align: center;
-      background: #eff6ff;
-      color: #1d4ed8;
       font-weight: 600;
+      line-height: 1.5;
     }
+
+    /* PRIVACY */
 
     .privacy {
       margin-top: 25px;
@@ -287,9 +386,11 @@
       font-size: 14px;
     }
 
+    /* CONTENT */
+
     .content {
       margin-top: 55px;
-      background: white;
+      background: #ffffff;
       padding: 30px;
       border-radius: 16px;
       border: 1px solid #e5e7eb;
@@ -302,6 +403,7 @@
 
     .content h3 {
       margin-top: 28px;
+      color: #111827;
     }
 
     .content p,
@@ -309,6 +411,8 @@
       line-height: 1.8;
       color: #4b5563;
     }
+
+    /* FOOTER */
 
     footer {
       background: #111827;
@@ -323,9 +427,20 @@
       margin: 0 8px;
     }
 
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 700px) {
+
       .hero h1 {
         font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
       }
 
       .tool-card {
@@ -336,607 +451,1337 @@
         grid-template-columns: 1fr;
       }
 
+      .preview-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       nav a {
         margin-left: 10px;
         font-size: 14px;
       }
+
+      .nav {
+        gap: 15px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <a class="logo" href="../index.html">Get<span>Toolly</span></a>
+  <!-- HEADER -->
 
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../tools.html">Tools</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+  <header>
 
-<main>
+    <div class="nav">
 
-  <section class="hero">
-    <h1>JPG to PDF Converter</h1>
+      <a class="logo" href="../index.html">
+        Get<span>Toolly</span>
+      </a>
 
-    <p>
-      Convert JPG, JPEG, PNG and WebP images to PDF online for free.
-      Combine multiple images into a single PDF directly in your browser.
-    </p>
-  </section>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../tools.html">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
 
-  <section class="tool-card">
+    </div>
 
-    <label class="upload-area" id="uploadArea" for="fileInput">
-      <div class="upload-icon">📄</div>
+  </header>
 
-      <h2>Upload Your Images</h2>
+
+  <!-- MAIN -->
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <h1>JPG to PDF Converter</h1>
 
       <p>
-        Drag & drop your images here or choose files from your device.
+        Convert JPG, JPEG, PNG and WebP images to PDF online for free.
+        Combine multiple images into a single PDF directly in your browser.
       </p>
-
-      <button type="button" class="btn btn-primary"
-        onclick="document.getElementById('fileInput').click()">
-        Choose Images
-      </button>
-
-      <p>JPG · JPEG · PNG · WebP</p>
-    </label>
-
-    <input
-      type="file"
-      id="fileInput"
-      accept="image/jpeg,image/png,image/webp"
-      multiple
-    >
-
-    <section class="settings" id="settings">
-
-      <h3>PDF Settings</h3>
-
-      <div class="settings-grid">
-
-        <div class="setting">
-          <label for="pageSize">Page Size</label>
-
-          <select id="pageSize">
-            <option value="a4">A4</option>
-            <option value="a3">A3</option>
-            <option value="letter">Letter</option>
-            <option value="legal">Legal</option>
-          </select>
-        </div>
-
-        <div class="setting">
-          <label for="orientation">Orientation</label>
-
-          <select id="orientation">
-            <option value="auto">Auto</option>
-            <option value="portrait">Portrait</option>
-            <option value="landscape">Landscape</option>
-          </select>
-        </div>
-
-        <div class="setting">
-          <label for="fitMode">Image Size</label>
-
-          <select id="fitMode">
-            <option value="fit">Fit to page</option>
-            <option value="original">Original proportion</option>
-          </select>
-        </div>
-
-        <div class="setting">
-          <label for="fileName">PDF File Name</label>
-
-          <input
-            type="text"
-            id="fileName"
-            value="gettoolly-images"
-            maxlength="80"
-          >
-        </div>
-
-      </div>
 
     </section>
 
-    <section class="preview-section" id="previewSection">
 
-      <div class="preview-header">
-        <h2>Preview</h2>
+    <!-- TOOL -->
+
+    <section class="tool-card">
+
+      <!-- UPLOAD -->
+
+      <label
+        class="upload-area"
+        id="uploadArea"
+        for="fileInput"
+      >
+
+        <div class="upload-icon">
+          📄
+        </div>
+
+        <h2>
+          Upload Your Images
+        </h2>
+
+        <p>
+          Drag &amp; drop your images here or choose files from your device.
+        </p>
+
+        <span
+          class="btn btn-primary"
+          role="button"
+        >
+          Choose Images
+        </span>
+
+        <p>
+          JPG · JPEG · PNG · WebP
+        </p>
+
+      </label>
+
+
+      <input
+        type="file"
+        id="fileInput"
+        accept="image/jpeg,image/png,image/webp"
+        multiple
+      >
+
+
+      <!-- SETTINGS -->
+
+      <section
+        class="settings"
+        id="settings"
+      >
+
+        <h3>
+          PDF Settings
+        </h3>
+
+        <div class="settings-grid">
+
+          <div class="setting">
+
+            <label for="pageSize">
+              Page Size
+            </label>
+
+            <select id="pageSize">
+
+              <option value="a4">
+                A4
+              </option>
+
+              <option value="a3">
+                A3
+              </option>
+
+              <option value="letter">
+                Letter
+              </option>
+
+              <option value="legal">
+                Legal
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="setting">
+
+            <label for="orientation">
+              Orientation
+            </label>
+
+            <select id="orientation">
+
+              <option value="auto">
+                Auto
+              </option>
+
+              <option value="portrait">
+                Portrait
+              </option>
+
+              <option value="landscape">
+                Landscape
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="setting">
+
+            <label for="fitMode">
+              Image Size
+            </label>
+
+            <select id="fitMode">
+
+              <option value="fit">
+                Fit to page
+              </option>
+
+              <option value="original">
+                Original proportion
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="setting">
+
+            <label for="fileName">
+              PDF File Name
+            </label>
+
+            <input
+              type="text"
+              id="fileName"
+              value="gettoolly-images"
+              maxlength="80"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PREVIEW -->
+
+      <section
+        class="preview-section"
+        id="previewSection"
+      >
+
+        <div class="preview-header">
+
+          <h2>
+            Preview
+          </h2>
+
+          <button
+            class="btn btn-secondary"
+            type="button"
+            id="addImagesBtn"
+          >
+            + Add Images
+          </button>
+
+        </div>
+
+        <div id="imageList"></div>
+
+      </section>
+
+
+      <!-- ACTIONS -->
+
+      <div
+        class="actions"
+        id="actions"
+      >
+
+        <button
+          class="btn btn-primary"
+          id="convertBtn"
+          type="button"
+        >
+          ⬇ Convert to PDF
+        </button>
 
         <button
           class="btn btn-secondary"
+          id="clearBtn"
           type="button"
-          onclick="document.getElementById('fileInput').click()">
-          + Add Images
+        >
+          Clear All
         </button>
+
       </div>
 
-      <div id="imageList"></div>
+
+      <!-- STATUS -->
+
+      <div
+        class="status"
+        id="status"
+      ></div>
+
+
+      <!-- PRIVACY -->
+
+      <div class="privacy">
+
+        🔒
+        <strong>
+          Privacy-friendly processing:
+        </strong>
+
+        Your images are processed directly in your browser.
+        GetToolly does not intentionally upload your selected images to a server.
+
+      </div>
 
     </section>
 
-    <div class="actions" id="actions">
 
-      <button
-        class="btn btn-primary"
-        id="convertBtn"
-        type="button">
-        ⬇ Convert to PDF
-      </button>
+    <!-- SEO CONTENT -->
 
-      <button
-        class="btn btn-secondary"
-        id="clearBtn"
-        type="button">
-        Clear All
-      </button>
+    <section class="content">
+
+      <h2>
+        Free JPG to PDF Converter Online
+      </h2>
+
+      <p>
+        GetToolly's JPG to PDF converter lets you turn images into
+        PDF documents quickly and easily. You can select one image
+        or combine multiple images into a single PDF file.
+      </p>
+
+
+      <h3>
+        How to Convert JPG to PDF
+      </h3>
+
+      <ol>
+
+        <li>
+          Choose or drag and drop your JPG, JPEG, PNG or WebP images.
+        </li>
+
+        <li>
+          Review the images in the preview area.
+        </li>
+
+        <li>
+          Choose the PDF page size and orientation.
+        </li>
+
+        <li>
+          Enter a name for your PDF file.
+        </li>
+
+        <li>
+          Click "Convert to PDF".
+        </li>
+
+        <li>
+          Your PDF will be generated and downloaded.
+        </li>
+
+      </ol>
+
+
+      <h3>
+        Why Use GetToolly JPG to PDF?
+      </h3>
+
+      <ul>
+
+        <li>
+          Free to use.
+        </li>
+
+        <li>
+          No software installation required.
+        </li>
+
+        <li>
+          Supports multiple images.
+        </li>
+
+        <li>
+          Works on desktop and mobile browsers.
+        </li>
+
+        <li>
+          Images are processed directly in your browser.
+        </li>
+
+      </ul>
+
+
+      <h3>
+        Frequently Asked Questions
+      </h3>
+
+
+      <h3>
+        Can I convert multiple JPG images to one PDF?
+      </h3>
+
+      <p>
+        Yes. Select multiple images and GetToolly will place each
+        image on its own PDF page.
+      </p>
+
+
+      <h3>
+        Does this tool upload my images?
+      </h3>
+
+      <p>
+        No. The conversion is performed directly inside your browser.
+      </p>
+
+
+      <h3>
+        Which image formats are supported?
+      </h3>
+
+      <p>
+        JPG, JPEG, PNG and WebP images are supported.
+      </p>
+
+
+      <h3>
+        Is the JPG to PDF converter free?
+      </h3>
+
+      <p>
+        Yes. You can use the converter for free without installing
+        desktop software.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+
+      <a href="../index.html">
+        Home
+      </a>
+
+      <a href="../tools.html">
+        Tools
+      </a>
+
+      <a href="../about.html">
+        About
+      </a>
+
+      <a href="../contact.html">
+        Contact
+      </a>
 
     </div>
 
-    <div class="status" id="status"></div>
-
-    <div class="privacy">
-      🔒 <strong>Privacy-friendly processing:</strong>
-      Your images are processed directly in your browser.
-      GetToolly does not intentionally upload your selected images to a server.
-    </div>
-
-  </section>
-
-  <section class="content">
-
-    <h2>Free JPG to PDF Converter Online</h2>
-
     <p>
-      GetToolly's JPG to PDF converter lets you turn images into PDF documents
-      quickly and easily. You can select one image or combine multiple images
-      into a single PDF file.
+      © 2026 GetToolly. All rights reserved.
     </p>
 
-    <h3>How to Convert JPG to PDF</h3>
+  </footer>
 
-    <ol>
-      <li>Choose or drag and drop your JPG, JPEG, PNG or WebP images.</li>
-      <li>Review the images in the preview area.</li>
-      <li>Choose the PDF page size and orientation.</li>
-      <li>Enter a name for your PDF file.</li>
-      <li>Click "Convert to PDF".</li>
-      <li>Your PDF will be generated and downloaded.</li>
-    </ol>
 
-    <h3>Why Use GetToolly JPG to PDF?</h3>
+  <!-- jsPDF -->
 
-    <ul>
-      <li>Free to use.</li>
-      <li>No software installation required.</li>
-      <li>Supports multiple images.</li>
-      <li>Works on desktop and mobile browsers.</li>
-      <li>Images are processed directly in your browser.</li>
-    </ul>
+  <script
+    src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js">
+  </script>
 
-    <h3>Frequently Asked Questions</h3>
 
-    <h3>Can I convert multiple JPG images to one PDF?</h3>
+  <!-- TOOL JAVASCRIPT -->
 
-    <p>
-      Yes. Select multiple images and GetToolly will place each image on its
-      own PDF page.
-    </p>
+  <script>
 
-    <h3>Does this tool upload my images?</h3>
+    const fileInput =
+      document.getElementById("fileInput");
 
-    <p>
-      No. The conversion is performed directly inside your browser.
-    </p>
+    const uploadArea =
+      document.getElementById("uploadArea");
 
-    <h3>Which image formats are supported?</h3>
+    const addImagesBtn =
+      document.getElementById("addImagesBtn");
 
-    <p>
-      JPG, JPEG, PNG and WebP images are supported.
-    </p>
+    const imageList =
+      document.getElementById("imageList");
 
-    <h3>Is the JPG to PDF converter free?</h3>
+    const previewSection =
+      document.getElementById("previewSection");
 
-    <p>
-      Yes. You can use the converter for free without installing desktop
-      software.
-    </p>
+    const settings =
+      document.getElementById("settings");
 
-  </section>
+    const actions =
+      document.getElementById("actions");
 
-</main>
+    const statusBox =
+      document.getElementById("status");
 
-<footer>
+    const convertBtn =
+      document.getElementById("convertBtn");
 
-  <div>
-    <a href="../index.html">Home</a>
-    <a href="../tools.html">Tools</a>
-    <a href="../about.html">About</a>
-    <a href="../contact.html">Contact</a>
-  </div>
+    const clearBtn =
+      document.getElementById("clearBtn");
 
-  <p>© 2026 GetToolly. All rights reserved.</p>
 
-</footer>
+    let images = [];
 
-<!-- jsPDF -->
-<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 
-<script>
+    /* OPEN FILE SELECTOR */
 
-  const fileInput = document.getElementById("fileInput");
-  const uploadArea = document.getElementById("uploadArea");
-  const imageList = document.getElementById("imageList");
-  const previewSection = document.getElementById("previewSection");
-  const settings = document.getElementById("settings");
-  const actions = document.getElementById("actions");
-  const statusBox = document.getElementById("status");
+    addImagesBtn.addEventListener(
+      "click",
+      function () {
 
-  let images = [];
+        fileInput.click();
 
-  fileInput.addEventListener("change", function () {
-    addFiles(Array.from(this.files));
-    this.value = "";
-  });
-
-  uploadArea.addEventListener("dragover", function (event) {
-    event.preventDefault();
-    uploadArea.classList.add("dragover");
-  });
-
-  uploadArea.addEventListener("dragleave", function () {
-    uploadArea.classList.remove("dragover");
-  });
-
-  uploadArea.addEventListener("drop", function (event) {
-    event.preventDefault();
-
-    uploadArea.classList.remove("dragover");
-
-    addFiles(Array.from(event.dataTransfer.files));
-  });
-
-  function addFiles(files) {
-
-    const validFiles = files.filter(file => {
-
-      return [
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-      ].includes(file.type);
-
-    });
-
-    validFiles.forEach(file => {
-
-      images.push({
-        file: file,
-        url: URL.createObjectURL(file)
-      });
-
-    });
-
-    renderImages();
-  }
-
-  function renderImages() {
-
-    imageList.innerHTML = "";
-
-    if (images.length === 0) {
-
-      previewSection.style.display = "none";
-      settings.style.display = "none";
-      actions.style.display = "none";
-
-      return;
-    }
-
-    previewSection.style.display = "block";
-    settings.style.display = "block";
-    actions.style.display = "block";
-
-    images.forEach((image, index) => {
-
-      const item = document.createElement("div");
-
-      item.className = "image-item";
-
-      item.innerHTML = `
-        <button
-          class="remove-image"
-          type="button"
-          onclick="removeImage(${index})">
-          ×
-        </button>
-
-        <img
-          src="${image.url}"
-          alt="Image ${index + 1}"
-        >
-
-        <div class="image-number">
-          Page ${index + 1}
-        </div>
-      `;
-
-      imageList.appendChild(item);
-
-    });
-  }
-
-  function removeImage(index) {
-
-    URL.revokeObjectURL(images[index].url);
-
-    images.splice(index, 1);
-
-    renderImages();
-  }
-
-  document.getElementById("clearBtn").addEventListener("click", function () {
-
-    images.forEach(image => {
-      URL.revokeObjectURL(image.url);
-    });
-
-    images = [];
-
-    renderImages();
-
-    statusBox.style.display = "none";
-  });
-
-  document.getElementById("convertBtn").addEventListener("click", async function () {
-
-    if (images.length === 0) {
-      showStatus("Please choose at least one image.", true);
-      return;
-    }
-
-    const button = this;
-
-    button.disabled = true;
-    button.textContent = "Creating PDF...";
-
-    showStatus("Preparing your PDF...");
-
-    try {
-
-      const { jsPDF } = window.jspdf;
-
-      const pageSize =
-        document.getElementById("pageSize").value;
-
-      const orientationSetting =
-        document.getElementById("orientation").value;
-
-      const fitMode =
-        document.getElementById("fitMode").value;
-
-      let fileName =
-        document.getElementById("fileName").value.trim();
-
-      if (!fileName) {
-        fileName = "gettoolly-images";
       }
+    );
 
-      fileName = fileName.replace(/[\\/:*?"<>|]+/g, "-");
 
-      let firstImage = await loadImage(images[0].file);
+    /* FILE INPUT */
 
-      let orientation = orientationSetting;
+    fileInput.addEventListener(
+      "change",
+      function () {
 
-      if (orientation === "auto") {
+        addFiles(
+          Array.from(this.files)
+        );
 
-        orientation =
-          firstImage.width >= firstImage.height
-            ? "landscape"
-            : "portrait";
+        this.value = "";
+
+      }
+    );
+
+
+    /* DRAG OVER */
+
+    uploadArea.addEventListener(
+      "dragover",
+      function (event) {
+
+        event.preventDefault();
+
+        uploadArea.classList.add(
+          "dragover"
+        );
+
+      }
+    );
+
+
+    /* DRAG LEAVE */
+
+    uploadArea.addEventListener(
+      "dragleave",
+      function () {
+
+        uploadArea.classList.remove(
+          "dragover"
+        );
+
+      }
+    );
+
+
+    /* DROP */
+
+    uploadArea.addEventListener(
+      "drop",
+      function (event) {
+
+        event.preventDefault();
+
+        uploadArea.classList.remove(
+          "dragover"
+        );
+
+        addFiles(
+          Array.from(
+            event.dataTransfer.files
+          )
+        );
+
+      }
+    );
+
+
+    /* ADD FILES */
+
+    function addFiles(files) {
+
+      const validFiles =
+        files.filter(
+          function (file) {
+
+            return [
+              "image/jpeg",
+              "image/png",
+              "image/webp"
+            ].includes(file.type);
+
+          }
+        );
+
+
+      if (validFiles.length === 0) {
+
+        showStatus(
+          "Please select JPG, JPEG, PNG or WebP images.",
+          true
+        );
+
+        return;
 
       }
 
-      const doc = new jsPDF({
-        orientation: orientation,
-        unit: "mm",
-        format: pageSize,
-        compress: true
-      });
 
-      for (let i = 0; i < images.length; i++) {
+      validFiles.forEach(
+        function (file) {
 
-        if (i > 0) {
+          images.push({
 
-          let currentImage =
-            await loadImage(images[i].file);
+            file: file,
 
-          let currentOrientation = orientation;
+            url: URL.createObjectURL(
+              file
+            )
 
-          if (orientationSetting === "auto") {
+          });
 
-            currentOrientation =
-              currentImage.width >= currentImage.height
+        }
+      );
+
+
+      renderImages();
+
+    }
+
+
+    /* RENDER IMAGES */
+
+    function renderImages() {
+
+      imageList.innerHTML = "";
+
+
+      if (images.length === 0) {
+
+        previewSection.style.display =
+          "none";
+
+        settings.style.display =
+          "none";
+
+        actions.style.display =
+          "none";
+
+        return;
+
+      }
+
+
+      previewSection.style.display =
+        "block";
+
+      settings.style.display =
+        "block";
+
+      actions.style.display =
+        "block";
+
+
+      images.forEach(
+        function (image, index) {
+
+          const item =
+            document.createElement(
+              "div"
+            );
+
+          item.className =
+            "image-item";
+
+
+          const removeButton =
+            document.createElement(
+              "button"
+            );
+
+          removeButton.className =
+            "remove-image";
+
+          removeButton.type =
+            "button";
+
+          removeButton.textContent =
+            "×";
+
+          removeButton.setAttribute(
+            "aria-label",
+            "Remove image"
+          );
+
+
+          removeButton.addEventListener(
+            "click",
+            function () {
+
+              removeImage(index);
+
+            }
+          );
+
+
+          const imageElement =
+            document.createElement(
+              "img"
+            );
+
+          imageElement.src =
+            image.url;
+
+          imageElement.alt =
+            "Image " + (index + 1);
+
+
+          const number =
+            document.createElement(
+              "div"
+            );
+
+          number.className =
+            "image-number";
+
+          number.textContent =
+            "Page " + (index + 1);
+
+
+          item.appendChild(
+            removeButton
+          );
+
+          item.appendChild(
+            imageElement
+          );
+
+          item.appendChild(
+            number
+          );
+
+
+          imageList.appendChild(
+            item
+          );
+
+        }
+      );
+
+    }
+
+
+    /* REMOVE IMAGE */
+
+    function removeImage(index) {
+
+      if (!images[index]) {
+        return;
+      }
+
+
+      URL.revokeObjectURL(
+        images[index].url
+      );
+
+
+      images.splice(
+        index,
+        1
+      );
+
+
+      renderImages();
+
+    }
+
+
+    /* CLEAR ALL */
+
+    clearBtn.addEventListener(
+      "click",
+      function () {
+
+        images.forEach(
+          function (image) {
+
+            URL.revokeObjectURL(
+              image.url
+            );
+
+          }
+        );
+
+
+        images = [];
+
+
+        renderImages();
+
+
+        statusBox.style.display =
+          "none";
+
+      }
+    );
+
+
+    /* CONVERT */
+
+    convertBtn.addEventListener(
+      "click",
+      async function () {
+
+        if (images.length === 0) {
+
+          showStatus(
+            "Please choose at least one image.",
+            true
+          );
+
+          return;
+
+        }
+
+
+        const button = this;
+
+
+        button.disabled = true;
+
+        button.textContent =
+          "Creating PDF...";
+
+
+        showStatus(
+          "Preparing your PDF..."
+        );
+
+
+        try {
+
+          if (
+            !window.jspdf ||
+            !window.jspdf.jsPDF
+          ) {
+
+            throw new Error(
+              "PDF library failed to load."
+            );
+
+          }
+
+
+          const {
+            jsPDF
+          } = window.jspdf;
+
+
+          const pageSize =
+            document.getElementById(
+              "pageSize"
+            ).value;
+
+
+          const orientationSetting =
+            document.getElementById(
+              "orientation"
+            ).value;
+
+
+          const fitMode =
+            document.getElementById(
+              "fitMode"
+            ).value;
+
+
+          let fileName =
+            document.getElementById(
+              "fileName"
+            ).value.trim();
+
+
+          if (!fileName) {
+
+            fileName =
+              "gettoolly-images";
+
+          }
+
+
+          fileName =
+            fileName.replace(
+              /[\\/:*?"<>|]+/g,
+              "-"
+            );
+
+
+          const firstImage =
+            await loadImage(
+              images[0].file
+            );
+
+
+          let orientation =
+            orientationSetting;
+
+
+          if (
+            orientation === "auto"
+          ) {
+
+            orientation =
+              firstImage.width >=
+              firstImage.height
                 ? "landscape"
                 : "portrait";
 
           }
 
-          doc.addPage(pageSize, currentOrientation);
 
-        }
+          const doc =
+            new jsPDF({
 
-        const img =
-          await loadImage(images[i].file);
+              orientation:
+                orientation,
 
-        const pageWidth =
-          doc.internal.pageSize.getWidth();
+              unit:
+                "mm",
 
-        const pageHeight =
-          doc.internal.pageSize.getHeight();
+              format:
+                pageSize,
 
-        const margin = 10;
+              compress:
+                true
 
-        const maxWidth =
-          pageWidth - margin * 2;
+            });
 
-        const maxHeight =
-          pageHeight - margin * 2;
 
-        let imgWidth;
-        let imgHeight;
-
-        const ratio =
-          img.width / img.height;
-
-        if (fitMode === "fit") {
-
-          imgWidth = maxWidth;
-          imgHeight = imgWidth / ratio;
-
-          if (imgHeight > maxHeight) {
-
-            imgHeight = maxHeight;
-            imgWidth = imgHeight * ratio;
-
-          }
-
-        } else {
-
-          const pxToMm = 0.264583;
-
-          imgWidth = img.width * pxToMm;
-          imgHeight = img.height * pxToMm;
-
-          if (
-            imgWidth > maxWidth ||
-            imgHeight > maxHeight
+          for (
+            let i = 0;
+            i < images.length;
+            i++
           ) {
 
-            const scale = Math.min(
-              maxWidth / imgWidth,
-              maxHeight / imgHeight
+            const img =
+              await loadImage(
+                images[i].file
+              );
+
+
+            if (i > 0) {
+
+              let currentOrientation =
+                orientation;
+
+
+              if (
+                orientationSetting ===
+                "auto"
+              ) {
+
+                currentOrientation =
+                  img.width >=
+                  img.height
+                    ? "landscape"
+                    : "portrait";
+
+              }
+
+
+              doc.addPage(
+                pageSize,
+                currentOrientation
+              );
+
+            }
+
+
+            const pageWidth =
+              doc.internal.pageSize
+                .getWidth();
+
+
+            const pageHeight =
+              doc.internal.pageSize
+                .getHeight();
+
+
+            const margin = 10;
+
+
+            const maxWidth =
+              pageWidth -
+              margin * 2;
+
+
+            const maxHeight =
+              pageHeight -
+              margin * 2;
+
+
+            let imgWidth;
+            let imgHeight;
+
+
+            const ratio =
+              img.width /
+              img.height;
+
+
+            if (
+              fitMode === "fit"
+            ) {
+
+              imgWidth =
+                maxWidth;
+
+              imgHeight =
+                imgWidth /
+                ratio;
+
+
+              if (
+                imgHeight >
+                maxHeight
+              ) {
+
+                imgHeight =
+                  maxHeight;
+
+                imgWidth =
+                  imgHeight *
+                  ratio;
+
+              }
+
+            } else {
+
+              const pxToMm =
+                0.264583;
+
+
+              imgWidth =
+                img.width *
+                pxToMm;
+
+
+              imgHeight =
+                img.height *
+                pxToMm;
+
+
+              if (
+                imgWidth >
+                  maxWidth ||
+                imgHeight >
+                  maxHeight
+              ) {
+
+                const scale =
+                  Math.min(
+                    maxWidth /
+                      imgWidth,
+                    maxHeight /
+                      imgHeight
+                  );
+
+
+                imgWidth *=
+                  scale;
+
+                imgHeight *=
+                  scale;
+
+              }
+
+            }
+
+
+            const x =
+              (
+                pageWidth -
+                imgWidth
+              ) / 2;
+
+
+            const y =
+              (
+                pageHeight -
+                imgHeight
+              ) / 2;
+
+
+            /*
+              jsPDF handles JPEG and PNG
+              directly. WebP is converted
+              to JPEG through canvas below.
+            */
+
+            let imageData;
+            let imageFormat;
+
+
+            if (
+              images[i].file.type ===
+              "image/webp"
+            ) {
+
+              const canvas =
+                document.createElement(
+                  "canvas"
+                );
+
+
+              canvas.width =
+                img.width;
+
+              canvas.height =
+                img.height;
+
+
+              const ctx =
+                canvas.getContext(
+                  "2d"
+                );
+
+
+              ctx.drawImage(
+                img,
+                0,
+                0
+              );
+
+
+              imageData =
+                canvas.toDataURL(
+                  "image/jpeg",
+                  0.92
+                );
+
+
+              imageFormat =
+                "JPEG";
+
+            } else {
+
+              imageData =
+                img.src;
+
+              imageFormat =
+                images[i].file.type ===
+                "image/png"
+                  ? "PNG"
+                  : "JPEG";
+
+            }
+
+
+            doc.addImage(
+
+              imageData,
+
+              imageFormat,
+
+              x,
+
+              y,
+
+              imgWidth,
+
+              imgHeight,
+
+              undefined,
+
+              "FAST"
+
             );
 
-            imgWidth *= scale;
-            imgHeight *= scale;
+
+            showStatus(
+              "Creating PDF... " +
+              (i + 1) +
+              " / " +
+              images.length
+            );
 
           }
 
+
+          doc.save(
+            fileName +
+            ".pdf"
+          );
+
+
+          showStatus(
+            "✓ Your PDF has been created successfully."
+          );
+
+
+        } catch (error) {
+
+          console.error(
+            error
+          );
+
+
+          showStatus(
+            "Something went wrong while creating the PDF. Please try again.",
+            true
+          );
+
         }
 
-        const x =
-          (pageWidth - imgWidth) / 2;
 
-        const y =
-          (pageHeight - imgHeight) / 2;
+        button.disabled =
+          false;
 
-        let format = "JPEG";
 
-        if (images[i].file.type === "image/png") {
-          format = "PNG";
+        button.textContent =
+          "⬇ Convert to PDF";
+
+      }
+    );
+
+
+    /* LOAD IMAGE */
+
+    function loadImage(file) {
+
+      return new Promise(
+        function (resolve, reject) {
+
+          const reader =
+            new FileReader();
+
+
+          reader.onload =
+            function (event) {
+
+              const img =
+                new Image();
+
+
+              img.onload =
+                function () {
+
+                  resolve(
+                    img
+                  );
+
+                };
+
+
+              img.onerror =
+                function () {
+
+                  reject(
+                    new Error(
+                      "Unable to load image."
+                    )
+                  );
+
+                };
+
+
+              img.src =
+                event.target.result;
+
+            };
+
+
+          reader.onerror =
+            function () {
+
+              reject(
+                new Error(
+                  "Unable to read file."
+                )
+              );
+
+            };
+
+
+          reader.readAsDataURL(
+            file
+          );
+
         }
+      );
 
-        if (images[i].file.type === "image/webp") {
-          format = "WEBP";
-        }
+    }
 
-        doc.addImage(
-          img,
-          format,
-          x,
-          y,
-          imgWidth,
-          imgHeight,
-          undefined,
-          "FAST"
-        );
 
-        showStatus(
-          `Creating PDF... ${i + 1} / ${images.length}`
-        );
+    /* STATUS */
+
+    function showStatus(
+      message,
+      error = false
+    ) {
+
+      statusBox.textContent =
+        message;
+
+
+      statusBox.style.display =
+        "block";
+
+
+      if (error) {
+
+        statusBox.style.background =
+          "#fef2f2";
+
+        statusBox.style.color =
+          "#b91c1c";
+
+      } else {
+
+        statusBox.style.background =
+          "#eff6ff";
+
+        statusBox.style.color =
+          "#1d4ed8";
+
       }
 
-      doc.save(fileName + ".pdf");
-
-      showStatus(
-        "✓ Your PDF has been created successfully."
-      );
-
-    } catch (error) {
-
-      console.error(error);
-
-      showStatus(
-        "Something went wrong while creating the PDF. Please try again.",
-        true
-      );
-
     }
 
-    button.disabled = false;
-    button.textContent = "⬇ Convert to PDF";
-
-  });
-
-  function loadImage(file) {
-
-    return new Promise((resolve, reject) => {
-
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-
-        const img = new Image();
-
-        img.onload = function () {
-          resolve(img);
-        };
-
-        img.onerror = reject;
-
-        img.src = event.target.result;
-
-      };
-
-      reader.onerror = reject;
-
-      reader.readAsDataURL(file);
-
-    });
-
-  }
-
-  function showStatus(message, error = false) {
-
-    statusBox.textContent = message;
-
-    statusBox.style.display = "block";
-
-    if (error) {
-
-      statusBox.style.background = "#fef2f2";
-      statusBox.style.color = "#b91c1c";
-
-    } else {
-
-      statusBox.style.background = "#eff6ff";
-      statusBox.style.color = "#1d4ed8";
-
-    }
-
-  }
-
-</script>
+  </script>
 
 </body>
 </html>
+
