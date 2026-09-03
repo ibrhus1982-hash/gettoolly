@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,7 +138,7 @@
       width: 100%;
       border: 2px dashed #cbd5e1;
       border-radius: 16px;
-      padding: 45px 20px;
+      padding: 40px 20px;
       text-align: center;
       cursor: pointer;
       background: #fafcff;
@@ -168,8 +167,8 @@
     }
 
     .upload-icon {
-      font-size: 48px;
-      margin-bottom: 12px;
+      font-size: 46px;
+      margin-bottom: 10px;
       pointer-events: none;
     }
 
@@ -181,8 +180,18 @@
 
     .upload-area p {
       color: #6b7280;
-      margin: 8px 0 20px;
+      margin: 8px 0 14px;
       pointer-events: none;
+    }
+
+    /* FILE TYPES */
+
+    .file-types {
+      margin-top: 12px !important;
+      margin-bottom: 0 !important;
+      font-size: 14px;
+      color: #64748b !important;
+      letter-spacing: 0.2px;
     }
 
     /* BUTTONS */
@@ -222,6 +231,19 @@
 
     .btn-secondary:hover {
       background: #d1d5db;
+    }
+
+    /* CHOOSE IMAGES BUTTON */
+
+    .choose-btn {
+      display: inline-block;
+      width: auto;
+      min-width: 145px;
+      padding: 11px 20px;
+      font-size: 15px;
+      line-height: 1.2;
+      margin: 4px auto 0;
+      pointer-events: none;
     }
 
     input[type="file"] {
@@ -447,6 +469,28 @@
         padding: 18px;
       }
 
+      .upload-area {
+        padding: 32px 15px;
+      }
+
+      .upload-icon {
+        font-size: 40px;
+      }
+
+      .upload-area h2 {
+        font-size: 20px;
+      }
+
+      .upload-area p {
+        font-size: 14px;
+      }
+
+      .choose-btn {
+        min-width: 135px;
+        padding: 10px 17px;
+        font-size: 14px;
+      }
+
       .settings-grid {
         grid-template-columns: 1fr;
       }
@@ -541,13 +585,13 @@
         </p>
 
         <span
-          class="btn btn-primary"
+          class="btn btn-primary choose-btn"
           role="button"
         >
           Choose Images
         </span>
 
-        <p>
+        <p class="file-types">
           JPG · JPEG · PNG · WebP
         </p>
 
@@ -1544,12 +1588,6 @@
               ) / 2;
 
 
-            /*
-              jsPDF handles JPEG and PNG
-              directly. WebP is converted
-              to JPEG through canvas below.
-            */
-
             let imageData;
             let imageFormat;
 
@@ -1784,4 +1822,3 @@
 
 </body>
 </html>
-
