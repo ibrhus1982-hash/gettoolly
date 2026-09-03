@@ -1,0 +1,19 @@
+{
+  "name": "gettoolly",
+  "version": "1.0.0",
+  "description": "GetToolly - Free Online Tools",
+  "scripts": {
+    "postinstall": "echo 'Vercel Web Analytics installed successfully'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "keywords": [
+    "tools",
+    "online-tools",
+    "calculators",
+    "converters"
+  ],
+  "author": "GetToolly",
+  "license": "MIT"
+}
