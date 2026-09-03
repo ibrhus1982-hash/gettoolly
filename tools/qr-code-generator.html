@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Free QR Code Generator - Create QR Codes Online | GetToolly</title>
+
+  <meta name="description"
+    content="Create a free QR code online with GetToolly. Generate QR codes for websites, text, contact information and more. No signup required.">
+
+  <meta name="keywords"
+    content="QR code generator, free QR code generator, online QR code, create QR code, QR generator">
+
+  <meta name="robots"
+    content="index, follow">
+
+  <link rel="canonical"
+    href="https://www.gettoolly.com/tools/qr-code-generator.html">
+
+  <link rel="stylesheet"
+    href="../style.css">
+
+  <style>
+
+    .qr-tool-box {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #f5f7fa;
+      border-radius: 16px;
+    }
+
+    .qr-tool-box label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .qr-tool-box textarea {
+      width: 100%;
+      min-height: 120px;
+      box-sizing: border-box;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: white;
+      font-size: 16px;
+      resize: vertical;
+      margin-bottom: 15px;
+    }
+
+    .qr-option {
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .qr-option label {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .qr-option select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      background: white;
+    }
+
+    .qr-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .qr-buttons button {
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .generate-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .download-btn {
+      background: #172033;
+      color: white;
+    }
+
+    .clear-btn {
+      background: white;
+      border: 1px solid #ddd !important;
+    }
+
+    .qr-buttons button:hover {
+      opacity: 0.85;
+    }
+
+    .qr-result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #qrcode canvas,
+    #qrcode img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .qr-message {
+      text-align: center;
+      color: #666;
+    }
+
+    .content-section {
+      margin-top: 50px;
+      line-height: 1.8;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 600px) {
+
+      .qr-tool-box {
+        padding: 18px;
+      }
+
+      .qr-buttons {
+        flex-direction: column;
+      }
+
+      .qr-buttons button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="container nav">
+
+      <a href="../index.html"
+        class="logo">
+        GetToolly
+      </a>
+
+
+      <nav class="navigation">
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="../index.html#tools">
+          Tools
+        </a>
+
+        <a href="../privacy.html">
+          Privacy
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- MAIN -->
+
+  <main>
+
+    <section class="tools-section">
+
+      <div class="container">
+
+        <a href="../index.html#tools">
+          ← Back to Tools
+        </a>
+
+
+        <h1>
+          Free QR Code Generator
+        </h1>
+
+
+        <p>
+          Create a free QR code online for websites,
+          text, contact information and more.
+          No signup or registration required.
+        </p>
+
+
+
+        <!-- QR TOOL -->
+
+        <div class="qr-tool-box">
+
+          <label for="qrText">
+            Enter text or URL
+          </label>
+
+          <textarea
+            id="qrText"
+            placeholder="https://www.example.com"
+            aria-label="Text or URL for QR code"
+          ></textarea>
+
+
+          <div class="qr-option">
+
+            <label for="qrSize">
+              QR Code Size
+            </label>
+
+            <select id="qrSize">
+
+              <option value="200">
+                200 × 200
+              </option>
+
+              <option value="300" selected>
+                300 × 300
+              </option>
+
+              <option value="400">
+                400 × 400
+              </option>
+
+              <option value="500">
+                500 × 500
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="qr-buttons">
+
+            <button
+              class="generate-btn"
+              onclick="generateQRCode()"
+            >
+              Generate QR Code
+            </button>
+
+
+            <button
+              class="download-btn"
+              onclick="downloadQRCode()"
+            >
+              Download PNG
+            </button>
+
+
+            <button
+              class="clear-btn"
+              onclick="clearQRCode()"
+            >
+              Clear
+            </button>
+
+          </div>
+
+
+          <div class="qr-result">
+
+            <div id="qrcode">
+
+              <div class="qr-message">
+                Your QR code will appear here.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ABOUT -->
+
+        <div class="content-section">
+
+          <h2>
+            What Is a QR Code?
+          </h2>
+
+          <p>
+            A QR code is a type of two-dimensional barcode
+            that can store information such as website URLs,
+            text, contact details and other data.
+          </p>
+
+          <p>
+            QR codes can be scanned using most modern
+            smartphones without installing a special
+            application.
+          </p>
+
+
+          <h2>
+            How to Create a QR Code
+          </h2>
+
+          <p>
+            Enter your text or website URL in the box above,
+            choose the desired size and click
+            <strong>Generate QR Code</strong>.
+            You can then download the generated QR code
+            as a PNG image.
+          </p>
+
+
+          <h2>
+            What Can You Use a QR Code For?
+          </h2>
+
+          <p>
+            QR codes can be used for websites, online menus,
+            business information, contact details, social
+            media profiles, Wi-Fi information, digital
+            invitations and many other purposes.
+          </p>
+
+
+          <h2>
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Is this QR code generator free?
+            </h3>
+
+            <p>
+              Yes. GetToolly's QR Code Generator is free
+              to use and does not require registration.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I create a QR code for a website?
+            </h3>
+
+            <p>
+              Yes. Enter the complete website URL,
+              such as https://www.example.com,
+              and generate your QR code.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Can I download the QR code?
+            </h3>
+
+            <p>
+              Yes. After generating the QR code,
+              click the Download PNG button to save
+              it as an image.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does the QR code expire?
+            </h3>
+
+            <p>
+              A QR code generated from information stored
+              directly in the code does not normally expire.
+              However, if it contains a website URL,
+              the QR code will only work while that URL
+              remains available.
+            </p>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <h3>
+              Does GetToolly store my QR code data?
+            </h3>
+
+            <p>
+              The QR code is generated directly in your
+              browser. The tool does not require an account
+              or registration.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-logo">
+        GetToolly
+      </div>
+
+      <p>
+        Free online tools for everyone.
+      </p>
+
+
+      <div class="footer-links">
+
+        <a href="../privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="../terms.html">
+          Terms of Use
+        </a>
+
+        <a href="../contact.html">
+          Contact
+        </a>
+
+      </div>
+
+
+      <p class="copyright">
+        © 2026 GetToolly. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- QR CODE LIBRARY -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+  </script>
+
+
+
+  <!-- QR CODE SCRIPT -->
+
+  <script>
+
+    let qrCode = null;
+
+
+    function generateQRCode() {
+
+      const text =
+        document.getElementById("qrText").value.trim();
+
+      const size =
+        parseInt(
+          document.getElementById("qrSize").value
+        );
+
+
+      const container =
+        document.getElementById("qrcode");
+
+
+      if (!text) {
+
+        container.innerHTML =
+          '<div class="qr-message">Please enter text or a URL first.</div>';
+
+        return;
+
+      }
+
+
+      container.innerHTML = "";
+
+
+      qrCode = new QRCode(container, {
+
+        text: text,
+
+        width: size,
+
+        height: size,
+
+        correctLevel:
+          QRCode.CorrectLevel.H
+
+      });
+
+    }
+
+
+
+    function downloadQRCode() {
+
+      const canvas =
+        document.querySelector("#qrcode canvas");
+
+
+      const image =
+        document.querySelector("#qrcode img");
+
+
+      if (!canvas && !image) {
+
+        alert(
+          "Please generate a QR code first."
+        );
+
+        return;
+
+      }
+
+
+      let downloadURL;
+
+
+      if (canvas) {
+
+        downloadURL =
+          canvas.toDataURL("image/png");
+
+      }
+      else {
+
+        downloadURL =
+          image.src;
+
+      }
+
+
+      const link =
+        document.createElement("a");
+
+
+      link.href =
+        downloadURL;
+
+
+      link.download =
+        "gettoolly-qr-code.png";
+
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+
+    }
+
+
+
+    function clearQRCode() {
+
+      document.getElementById("qrText").value = "";
+
+      document.getElementById("qrcode").innerHTML =
+        '<div class="qr-message">Your QR code will appear here.</div>';
+
+      qrCode = null;
+
+    }
+
+
+    document
+      .getElementById("qrText")
+      .addEventListener(
+        "keydown",
+        function(event) {
+
+          if (
+            event.ctrlKey &&
+            event.key === "Enter"
+          ) {
+
+            generateQRCode();
+
+          }
+
+        }
+      );
+
+  </script>
+
+
+</body>
+
+</html>
