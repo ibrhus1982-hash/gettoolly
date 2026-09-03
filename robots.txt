@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gettoolly.vercel.app/sitemap.xml
+Sitemap: https://www.gettoolly.com/sitemap.xml
