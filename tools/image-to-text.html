@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +25,7 @@
     rel="canonical"
     href="https://www.gettoolly.com/tools/image-to-text.html">
 
+
   <style>
 
     * {
@@ -38,7 +40,10 @@
       line-height: 1.6;
     }
 
-    /* NAVBAR */
+
+    /* =========================
+       NAVBAR
+    ========================== */
 
     .navbar {
       background: #ffffff;
@@ -79,7 +84,10 @@
       text-decoration: underline;
     }
 
-    /* MAIN */
+
+    /* =========================
+       MAIN
+    ========================== */
 
     .container {
       max-width: 900px;
@@ -91,7 +99,7 @@
       background: #ffffff;
       border-radius: 14px;
       padding: 30px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
     }
 
     h1 {
@@ -108,21 +116,42 @@
       margin: 0 auto 30px;
     }
 
-    /* UPLOAD */
+
+    /* =========================
+       UPLOAD AREA
+    ========================== */
 
     .upload-area {
+      display: block;
+      width: 100%;
       border: 2px dashed #bfc5ce;
       border-radius: 12px;
       padding: 35px 20px;
       text-align: center;
       cursor: pointer;
       background: #fafbfc;
-      transition: 0.2s;
+
+      /*
+        No hover border effect.
+        This keeps the frame completely stable.
+      */
+
+      transition: none;
+      outline: none;
     }
 
-    .upload-area:hover {
-      border-color: #111;
-      background: #f4f5f7;
+    /*
+      Keep the upload frame identical
+      when the mouse moves over it.
+    */
+
+    .upload-area:hover,
+    .upload-area:focus,
+    .upload-area:active {
+      border-color: #bfc5ce;
+      background: #fafbfc;
+      outline: none;
+      box-shadow: none;
     }
 
     .upload-icon {
@@ -145,7 +174,10 @@
       display: none;
     }
 
-    /* CONTROLS */
+
+    /* =========================
+       CONTROLS
+    ========================== */
 
     .controls {
       margin-top: 25px;
@@ -166,11 +198,22 @@
       padding: 12px;
       border: 1px solid #d1d5db;
       border-radius: 8px;
-      background: white;
+      background: #ffffff;
       font-size: 15px;
+      cursor: pointer;
+      outline: none;
     }
 
-    /* PREVIEW */
+    select:focus {
+      border-color: #bfc5ce;
+      outline: none;
+      box-shadow: none;
+    }
+
+
+    /* =========================
+       PREVIEW
+    ========================== */
 
     .preview-container {
       display: none;
@@ -185,7 +228,10 @@
       border: 1px solid #ddd;
     }
 
-    /* BUTTONS */
+
+    /* =========================
+       BUTTONS
+    ========================== */
 
     .button {
       width: 100%;
@@ -193,7 +239,7 @@
       padding: 13px 18px;
       border-radius: 8px;
       background: #111;
-      color: #fff;
+      color: #ffffff;
       font-size: 16px;
       cursor: pointer;
       margin-top: 10px;
@@ -217,7 +263,10 @@
       cursor: not-allowed;
     }
 
-    /* PROGRESS */
+
+    /* =========================
+       PROGRESS
+    ========================== */
 
     .progress-container {
       display: none;
@@ -246,7 +295,10 @@
       transition: width 0.2s ease;
     }
 
-    /* RESULT */
+
+    /* =========================
+       RESULT
+    ========================== */
 
     .result-container {
       display: none;
@@ -268,8 +320,15 @@
       font-size: 17px;
       line-height: 1.8;
       font-family: Arial, sans-serif;
-      background: #fff;
+      background: #ffffff;
       color: #222;
+      outline: none;
+    }
+
+    #resultText:focus {
+      border-color: #bfc5ce;
+      outline: none;
+      box-shadow: none;
     }
 
     #resultText.rtl {
@@ -288,7 +347,10 @@
       color: #666;
     }
 
-    /* PRIVACY */
+
+    /* =========================
+       PRIVACY
+    ========================== */
 
     .privacy-note {
       margin-top: 25px;
@@ -300,14 +362,17 @@
       text-align: center;
     }
 
-    /* SEO CONTENT */
+
+    /* =========================
+       SEO CONTENT
+    ========================== */
 
     .info-section {
       margin-top: 40px;
-      background: #fff;
+      background: #ffffff;
       padding: 28px;
       border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
     }
 
     .info-section h2 {
@@ -330,11 +395,14 @@
       padding-left: 22px;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
       margin-top: 50px;
-      background: #fff;
+      background: #ffffff;
       border-top: 1px solid #e5e7eb;
       padding: 25px 20px;
       text-align: center;
@@ -352,7 +420,10 @@
       text-decoration: underline;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================== */
 
     @media (max-width: 700px) {
 
@@ -389,9 +460,13 @@
 
 </head>
 
+
 <body>
 
-  <!-- NAVBAR -->
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
 
   <header class="navbar">
 
@@ -424,15 +499,19 @@
   </header>
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN
+  ========================== -->
 
   <main class="container">
 
     <div class="tool-box">
 
+
       <h1>
         Image to Text Converter
       </h1>
+
 
       <p class="intro">
         Extract text from images online for free using OCR.
@@ -459,6 +538,7 @@
         </span>
 
       </label>
+
 
       <input
         type="file"
@@ -558,11 +638,12 @@
           Extracted Text
         </h2>
 
+
         <textarea
           id="resultText"
           spellcheck="false"
-          placeholder="Extracted text will appear here...">
-        </textarea>
+          placeholder="Extracted text will appear here..."></textarea>
+
 
         <div
           class="confidence"
@@ -599,6 +680,8 @@
       </div>
 
 
+      <!-- PRIVACY -->
+
       <div class="privacy-note">
 
         🔒 Your selected image is processed in your browser.
@@ -609,19 +692,24 @@
     </div>
 
 
-    <!-- SEO CONTENT -->
+    <!-- =========================
+         SEO CONTENT
+    ========================== -->
 
     <section class="info-section">
+
 
       <h2>
         About Image to Text Converter
       </h2>
+
 
       <p>
         GetToolly's Image to Text Converter is a free online OCR tool
         that extracts readable text from images. You can use it to
         convert text inside JPG, PNG and WebP images into editable text.
       </p>
+
 
       <p>
         The tool supports both Arabic and English OCR and is useful for
@@ -633,6 +721,7 @@
       <h3>
         How to Extract Text from an Image
       </h3>
+
 
       <ol>
 
@@ -663,6 +752,7 @@
         What is OCR?
       </h3>
 
+
       <p>
         OCR stands for Optical Character Recognition.
         It is a technology that detects characters and words inside
@@ -674,11 +764,13 @@
         Arabic OCR
       </h3>
 
+
       <p>
         The converter includes an Arabic OCR model designed to recognize
         Arabic characters and words. For the best results, use a clear
         image with high resolution, good contrast and a simple background.
       </p>
+
 
       <p>
         Arabic text can be more difficult to recognize when the image
@@ -690,6 +782,7 @@
       <h3>
         Tips for Better OCR Results
       </h3>
+
 
       <ul>
 
@@ -724,6 +817,7 @@
         Is the Image to Text Converter Free?
       </h3>
 
+
       <p>
         Yes. GetToolly's Image to Text Converter is free to use.
         There is no need to install desktop software or create an account.
@@ -733,6 +827,7 @@
       <h3>
         Is My Image Uploaded to GetToolly?
       </h3>
+
 
       <p>
         The OCR process is performed in your browser using
@@ -745,7 +840,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -772,12 +869,19 @@
   </footer>
 
 
-  <!-- TESSERACT OCR -->
+  <!-- =========================
+       TESSERACT OCR
+  ========================== -->
 
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 
 
   <script>
+
+
+    /* =========================
+       ELEMENTS
+    ========================== */
 
     const fileInput =
       document.getElementById("fileInput");
@@ -826,302 +930,387 @@
 
 
     let selectedFile = null;
+
     let previewUrl = null;
 
 
-    /* ================================
+    /* =========================
        FILE SELECTION
-    ================================= */
+    ========================== */
 
-    fileInput.addEventListener("change", function () {
+    fileInput.addEventListener(
+      "change",
+      function () {
 
-      const file = this.files[0];
-
-      if (!file) {
-        return;
-      }
-
-      const allowedTypes = [
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-      ];
-
-      if (!allowedTypes.includes(file.type)) {
-
-        alert(
-          "Please select a JPG, PNG or WebP image."
-        );
-
-        fileInput.value = "";
-        return;
-      }
+        const file =
+          this.files[0];
 
 
-      /* Maximum 15 MB */
-
-      if (file.size > 15 * 1024 * 1024) {
-
-        alert(
-          "The maximum image size is 15 MB."
-        );
-
-        fileInput.value = "";
-        return;
-      }
+        if (!file) {
+          return;
+        }
 
 
-      selectedFile = file;
+        const allowedTypes = [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ];
 
 
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl);
-      }
+        if (
+          !allowedTypes.includes(file.type)
+        ) {
+
+          alert(
+            "Please select a JPG, PNG or WebP image."
+          );
+
+          fileInput.value = "";
+
+          return;
+        }
 
 
-      previewUrl =
-        URL.createObjectURL(file);
+        /* Maximum 15 MB */
+
+        if (
+          file.size >
+          15 * 1024 * 1024
+        ) {
+
+          alert(
+            "The maximum image size is 15 MB."
+          );
+
+          fileInput.value = "";
+
+          return;
+        }
 
 
-      previewImage.src =
-        previewUrl;
+        selectedFile =
+          file;
 
 
-      previewContainer.style.display =
-        "block";
+        if (previewUrl) {
 
-      controls.style.display =
-        "block";
+          URL.revokeObjectURL(
+            previewUrl
+          );
 
-      resultContainer.style.display =
-        "none";
-
-      progressContainer.style.display =
-        "none";
-
-      progressFill.style.width =
-        "0%";
-
-      resultText.value =
-        "";
-
-    });
+        }
 
 
-    /* ================================
-       IMAGE PREPROCESSING
-    ================================= */
-
-    function preprocessImage(file, mode = "normal") {
-
-      return new Promise((resolve, reject) => {
-
-        const img = new Image();
-
-        const objectUrl =
+        previewUrl =
           URL.createObjectURL(file);
 
 
-        img.onload = function () {
-
-          URL.revokeObjectURL(objectUrl);
-
-
-          /*
-            Upscale the image.
-
-            Arabic OCR benefits significantly
-            from larger characters.
-          */
-
-          const scale =
-            Math.min(
-              3,
-              Math.max(
-                1.5,
-                2400 / Math.max(img.width, img.height)
-              )
-            );
+        previewImage.src =
+          previewUrl;
 
 
-          const width =
-            Math.round(img.width * scale);
-
-          const height =
-            Math.round(img.height * scale);
+        previewContainer.style.display =
+          "block";
 
 
-          const canvas =
-            document.createElement("canvas");
-
-          canvas.width =
-            width + 40;
-
-          canvas.height =
-            height + 40;
+        controls.style.display =
+          "block";
 
 
-          const ctx =
-            canvas.getContext("2d", {
-              willReadFrequently: true
-            });
+        resultContainer.style.display =
+          "none";
 
 
-          /* White background */
-
-          ctx.fillStyle =
-            "#ffffff";
-
-          ctx.fillRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-          );
+        progressContainer.style.display =
+          "none";
 
 
-          ctx.drawImage(
-            img,
-            20,
-            20,
-            width,
-            height
-          );
+        progressFill.style.width =
+          "0%";
 
 
-          const imageData =
-            ctx.getImageData(
-              0,
-              0,
-              canvas.width,
-              canvas.height
-            );
+        resultText.value =
+          "";
+
+      }
+    );
 
 
-          const data =
-            imageData.data;
+    /* =========================
+       PREPROCESS IMAGE
+    ========================== */
+
+    function preprocessImage(
+      file,
+      mode = "normal"
+    ) {
+
+      return new Promise(
+        (resolve, reject) => {
+
+          const img =
+            new Image();
 
 
-          /*
-            Grayscale + contrast enhancement
-          */
-
-          for (
-            let i = 0;
-            i < data.length;
-            i += 4
-          ) {
-
-            const r = data[i];
-            const g = data[i + 1];
-            const b = data[i + 2];
+          const objectUrl =
+            URL.createObjectURL(file);
 
 
-            let gray =
-              0.299 * r +
-              0.587 * g +
-              0.114 * b;
+          img.onload =
+            function () {
 
-
-            /*
-              Contrast enhancement
-            */
-
-            gray =
-              ((gray - 128) * 1.35) + 128;
-
-
-            gray =
-              Math.max(
-                0,
-                Math.min(
-                  255,
-                  gray
-                )
+              URL.revokeObjectURL(
+                objectUrl
               );
 
 
-            if (mode === "threshold") {
-
               /*
-                Strong black/white mode.
-                Useful for scanned documents.
+                Upscale image.
+
+                This is especially useful
+                for small Arabic characters.
               */
 
-              gray =
-                gray < 165
-                  ? 0
-                  : 255;
-
-            }
-
-
-            data[i] =
-              gray;
-
-            data[i + 1] =
-              gray;
-
-            data[i + 2] =
-              gray;
-
-          }
-
-
-          ctx.putImageData(
-            imageData,
-            0,
-            0
-          );
-
-
-          canvas.toBlob(
-            function (blob) {
-
-              if (!blob) {
-
-                reject(
-                  new Error(
-                    "Could not process image."
+              const scale =
+                Math.min(
+                  3,
+                  Math.max(
+                    1.5,
+                    2400 /
+                    Math.max(
+                      img.width,
+                      img.height
+                    )
                   )
                 );
 
-                return;
+
+              const width =
+                Math.round(
+                  img.width * scale
+                );
+
+
+              const height =
+                Math.round(
+                  img.height * scale
+                );
+
+
+              const canvas =
+                document.createElement(
+                  "canvas"
+                );
+
+
+              /*
+                Add white margin around
+                the image.
+              */
+
+              canvas.width =
+                width + 40;
+
+              canvas.height =
+                height + 40;
+
+
+              const ctx =
+                canvas.getContext(
+                  "2d",
+                  {
+                    willReadFrequently:
+                      true
+                  }
+                );
+
+
+              /*
+                White background.
+              */
+
+              ctx.fillStyle =
+                "#ffffff";
+
+
+              ctx.fillRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+              );
+
+
+              /*
+                Draw enlarged image.
+              */
+
+              ctx.drawImage(
+                img,
+                20,
+                20,
+                width,
+                height
+              );
+
+
+              /*
+                Read pixels.
+              */
+
+              const imageData =
+                ctx.getImageData(
+                  0,
+                  0,
+                  canvas.width,
+                  canvas.height
+                );
+
+
+              const data =
+                imageData.data;
+
+
+              /*
+                Grayscale +
+                contrast enhancement.
+              */
+
+              for (
+                let i = 0;
+                i < data.length;
+                i += 4
+              ) {
+
+                const r =
+                  data[i];
+
+                const g =
+                  data[i + 1];
+
+                const b =
+                  data[i + 2];
+
+
+                let gray =
+                  0.299 * r +
+                  0.587 * g +
+                  0.114 * b;
+
+
+                /*
+                  Increase contrast.
+                */
+
+                gray =
+                  (
+                    (gray - 128) *
+                    1.35
+                  ) + 128;
+
+
+                gray =
+                  Math.max(
+                    0,
+                    Math.min(
+                      255,
+                      gray
+                    )
+                  );
+
+
+                /*
+                  Threshold mode.
+
+                  Useful for scanned
+                  documents.
+                */
+
+                if (
+                  mode === "threshold"
+                ) {
+
+                  gray =
+                    gray < 165
+                      ? 0
+                      : 255;
+
+                }
+
+
+                data[i] =
+                  gray;
+
+                data[i + 1] =
+                  gray;
+
+                data[i + 2] =
+                  gray;
+
               }
 
-              resolve(blob);
 
-            },
-            "image/png"
-          );
-
-        };
-
-
-        img.onerror = function () {
-
-          URL.revokeObjectURL(objectUrl);
-
-          reject(
-            new Error(
-              "Could not load image."
-            )
-          );
-
-        };
+              ctx.putImageData(
+                imageData,
+                0,
+                0
+              );
 
 
-        img.src =
-          objectUrl;
+              canvas.toBlob(
+                function (blob) {
 
-      });
+                  if (!blob) {
+
+                    reject(
+                      new Error(
+                        "Could not process image."
+                      )
+                    );
+
+                    return;
+                  }
+
+
+                  resolve(blob);
+
+                },
+                "image/png"
+              );
+
+            };
+
+
+          img.onerror =
+            function () {
+
+              URL.revokeObjectURL(
+                objectUrl
+              );
+
+
+              reject(
+                new Error(
+                  "Could not load image."
+                )
+              );
+
+            };
+
+
+          img.src =
+            objectUrl;
+
+        }
+      );
 
     }
 
 
-    /* ================================
-       OCR
-    ================================= */
+    /* =========================
+       RUN OCR
+    ========================== */
 
     async function runOCR(
       imageBlob,
@@ -1137,65 +1326,65 @@
           selectedLanguage,
           {
 
-            logger: function (message) {
+            logger:
+              function (message) {
 
-              if (
-                message.status ===
-                "recognizing text"
-              ) {
+                if (
+                  message.status ===
+                  "recognizing text"
+                ) {
 
-                const localProgress =
-                  message.progress || 0;
+                  const localProgress =
+                    message.progress || 0;
 
 
-                const percentage =
-                  progressStart +
-                  (
-                    localProgress *
+                  const percentage =
+                    progressStart +
                     (
-                      progressEnd -
-                      progressStart
-                    )
-                  );
+                      localProgress *
+                      (
+                        progressEnd -
+                        progressStart
+                      )
+                    );
 
 
-                progressFill.style.width =
-                  percentage + "%";
+                  progressFill.style.width =
+                    percentage + "%";
 
 
-                progressText.textContent =
-                  "Recognizing text... " +
-                  Math.round(
-                    localProgress * 100
-                  ) +
-                  "%";
+                  progressText.textContent =
+                    "Recognizing text... " +
+                    Math.round(
+                      localProgress * 100
+                    ) +
+                    "%";
+
+                }
+                else if (
+                  message.status
+                ) {
+
+                  progressText.textContent =
+                    message.status;
+
+                }
 
               }
-
-              else if (
-                message.status
-              ) {
-
-                progressText.textContent =
-                  message.status;
-
-              }
-
-            }
 
           },
 
           {
             /*
-              Page Segmentation Mode 6:
-              Assume a single uniform block of text.
+              PSM 6:
+              A uniform block of text.
             */
 
             tessedit_pageseg_mode:
               String(pageMode),
 
             /*
-              Preserve spaces where possible.
+              Preserve spaces.
             */
 
             preserve_interword_spaces:
@@ -1211,9 +1400,9 @@
     }
 
 
-    /* ================================
-       EXTRACT BUTTON
-    ================================= */
+    /* =========================
+       EXTRACT TEXT
+    ========================== */
 
     extractButton.addEventListener(
       "click",
@@ -1226,12 +1415,12 @@
           );
 
           return;
-
         }
 
 
         extractButton.disabled =
           true;
+
 
         extractButton.textContent =
           "Processing...";
@@ -1239,6 +1428,7 @@
 
         progressContainer.style.display =
           "block";
+
 
         resultContainer.style.display =
           "none";
@@ -1259,8 +1449,8 @@
 
 
           /*
-            First preprocessing:
-            grayscale + enhanced contrast
+            First OCR version:
+            Enhanced grayscale.
           */
 
           const normalImage =
@@ -1274,11 +1464,6 @@
             "10%";
 
 
-          /*
-            First OCR pass.
-            PSM 6 works well for blocks of text.
-          */
-
           const firstResult =
             await runOCR(
               normalImage,
@@ -1290,11 +1475,8 @@
 
 
           /*
-            Second preprocessing:
-            strong black/white threshold.
-
-            This is especially useful for
-            scanned Arabic documents.
+            Second OCR version:
+            Strong black/white.
           */
 
           progressText.textContent =
@@ -1319,21 +1501,20 @@
 
 
           /*
-            Compare OCR confidence.
-
-            Select the result with the
-            highest confidence.
+            Compare confidence.
           */
 
           const firstConfidence =
             Number(
-              firstResult.data.confidence || 0
+              firstResult.data.confidence ||
+              0
             );
 
 
           const secondConfidence =
             Number(
-              secondResult.data.confidence || 0
+              secondResult.data.confidence ||
+              0
             );
 
 
@@ -1348,7 +1529,8 @@
             bestResult =
               secondResult;
 
-          } else {
+          }
+          else {
 
             bestResult =
               firstResult;
@@ -1356,14 +1538,14 @@
           }
 
 
-          let extractedText =
-            bestResult.data.text || "";
-
-
           /*
-            Clean unnecessary spaces while
-            keeping the original line structure.
+            Clean OCR result.
           */
+
+          let extractedText =
+            bestResult.data.text ||
+            "";
+
 
           extractedText =
             cleanOCRText(
@@ -1376,7 +1558,8 @@
 
 
           /*
-            Set RTL for Arabic mode.
+            Arabic / mixed language
+            uses RTL.
           */
 
           if (
@@ -1384,20 +1567,32 @@
             selectedLanguage === "eng+ara"
           ) {
 
-            resultText.classList.add("rtl");
-            resultText.classList.remove("ltr");
+            resultText.classList.add(
+              "rtl"
+            );
 
-          } else {
+            resultText.classList.remove(
+              "ltr"
+            );
 
-            resultText.classList.add("ltr");
-            resultText.classList.remove("rtl");
+          }
+          else {
+
+            resultText.classList.add(
+              "ltr"
+            );
+
+            resultText.classList.remove(
+              "rtl"
+            );
 
           }
 
 
           const confidence =
             Number(
-              bestResult.data.confidence || 0
+              bestResult.data.confidence ||
+              0
             );
 
 
@@ -1419,21 +1614,23 @@
             "block";
 
 
-          /*
-            Scroll to result
-          */
+          setTimeout(
+            function () {
 
-          setTimeout(() => {
+              resultContainer.scrollIntoView(
+                {
+                  behavior: "smooth",
+                  block: "start"
+                }
+              );
 
-            resultContainer.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-
-          }, 200);
+            },
+            200
+          );
 
 
-        } catch (error) {
+        }
+        catch (error) {
 
           console.error(
             "OCR Error:",
@@ -1449,11 +1646,12 @@
           progressText.textContent =
             "OCR failed. Please try again.";
 
-
-        } finally {
+        }
+        finally {
 
           extractButton.disabled =
             false;
+
 
           extractButton.textContent =
             "Extract Text";
@@ -1464,9 +1662,9 @@
     );
 
 
-    /* ================================
+    /* =========================
        CLEAN OCR TEXT
-    ================================= */
+    ========================== */
 
     function cleanOCRText(text) {
 
@@ -1476,8 +1674,8 @@
 
 
       /*
-        Remove invisible control characters
-        while keeping Arabic Unicode characters.
+        Remove control characters
+        but keep Arabic Unicode.
       */
 
       text =
@@ -1489,9 +1687,6 @@
 
       /*
         Normalize Unicode.
-
-        This is useful for Arabic characters
-        and diacritics.
       */
 
       try {
@@ -1499,19 +1694,16 @@
         text =
           text.normalize("NFC");
 
-      } catch (error) {
+      }
+      catch (error) {
 
-        /* Ignore if unsupported */
+        /* Ignore */
 
       }
 
 
       /*
-        Remove excessive spaces.
-
-        Do NOT reverse Arabic text.
-        OCR already returns Unicode text
-        and reversing it would damage words.
+        Normalize spaces.
       */
 
       text =
@@ -1522,19 +1714,20 @@
 
 
       /*
-        Remove spaces at the beginning/end
-        of each line.
+        Trim each line.
       */
 
       text =
         text
           .split("\n")
-          .map(line => line.trim())
+          .map(
+            line => line.trim()
+          )
           .join("\n");
 
 
       /*
-        Reduce excessive blank lines.
+        Remove excessive blank lines.
       */
 
       text =
@@ -1549,9 +1742,9 @@
     }
 
 
-    /* ================================
+    /* =========================
        COPY
-    ================================= */
+    ========================== */
 
     copyButton.addEventListener(
       "click",
@@ -1568,7 +1761,6 @@
           );
 
           return;
-
         }
 
 
@@ -1587,21 +1779,27 @@
             "Copied!";
 
 
-          setTimeout(() => {
+          setTimeout(
+            function () {
 
-            copyButton.textContent =
-              originalText;
+              copyButton.textContent =
+                originalText;
 
-          }, 1500);
+            },
+            1500
+          );
 
 
-        } catch (error) {
+        }
+        catch (error) {
 
           resultText.select();
+
 
           document.execCommand(
             "copy"
           );
+
 
           alert(
             "Text copied."
@@ -1613,9 +1811,9 @@
     );
 
 
-    /* ================================
+    /* =========================
        DOWNLOAD TXT
-    ================================= */
+    ========================== */
 
     downloadButton.addEventListener(
       "click",
@@ -1632,13 +1830,12 @@
           );
 
           return;
-
         }
 
 
         /*
-          UTF-8 BOM helps Windows programs
-          correctly detect Arabic text.
+          UTF-8 BOM helps Windows
+          display Arabic correctly.
         */
 
         const blob =
@@ -1655,15 +1852,20 @@
 
 
         const url =
-          URL.createObjectURL(blob);
+          URL.createObjectURL(
+            blob
+          );
 
 
         const link =
-          document.createElement("a");
+          document.createElement(
+            "a"
+          );
 
 
         link.href =
           url;
+
 
         link.download =
           "gettoolly-extracted-text.txt";
@@ -1688,9 +1890,9 @@
     );
 
 
-    /* ================================
+    /* =========================
        RESET
-    ================================= */
+    ========================== */
 
     resetButton.addEventListener(
       "click",
@@ -1754,8 +1956,10 @@
       }
     );
 
+
   </script>
 
 </body>
 
 </html>
+
