@@ -15,11 +15,11 @@
 
   <meta
     name="description"
-    content="Extract text from JPG, PNG and WebP images online for free using OCR. Supports English and Arabic text directly in your browser.">
+    content="Extract text from JPG, PNG and WebP images online for free using OCR. Supports English and Arabic text.">
 
   <meta
     name="keywords"
-    content="image to text, image to text converter, OCR, extract text from image, JPG to text, PNG to text, Arabic OCR, English OCR">
+    content="image to text, OCR, image to text converter, JPG to text, PNG to text, Arabic OCR, English OCR">
 
   <meta
     name="robots"
@@ -29,328 +29,340 @@
     rel="canonical"
     href="https://www.gettoolly.com/tools/image-to-text.html">
 
-  <style>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f8fb;
-      color: #111;
-      line-height: 1.6;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f8fb;
+  color: #111;
+  line-height: 1.6;
+}
 
-    .navbar {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 16px 20px;
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    .nav-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 20px;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-    }
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
 
-    .nav-links a:hover {
-      text-decoration: underline;
-    }
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-    .tool-box {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
-    }
+.tool-box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
 
-    h1 {
-      margin-top: 0;
-      text-align: center;
-      font-size: 32px;
-    }
+h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 32px;
+}
 
-    .intro {
-      text-align: center;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
+.intro {
+  text-align: center;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
 
-    .upload-area {
-      border: 2px dashed #bfc5ce;
-      border-radius: 14px;
-      padding: 35px 20px;
-      text-align: center;
-      background: #fafbfc;
-      cursor: pointer;
-      outline: none;
-    }
+.upload-area {
+  display: block;
+  border: 2px dashed #bfc5ce;
+  border-radius: 14px;
+  padding: 35px 20px;
+  text-align: center;
+  background: #fafbfc;
+  cursor: pointer;
+}
 
-    /* No visual hover effect */
-    .upload-area:hover,
-    .upload-area:focus,
-    .upload-area:active {
-      border: 2px dashed #bfc5ce;
-      background: #fafbfc;
-      outline: none;
-      box-shadow: none;
-      transform: none;
-    }
+.upload-area:hover,
+.upload-area:focus,
+.upload-area:active {
+  border: 2px dashed #bfc5ce;
+  background: #fafbfc;
+  outline: none;
+  box-shadow: none;
+}
 
-    .upload-area input {
-      display: none;
-    }
+.upload-area input {
+  display: none;
+}
 
-    .upload-icon {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.upload-icon {
+  font-size: 42px;
+}
 
-    .upload-title {
-      font-weight: 700;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
+.upload-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 8px;
+}
 
-    .upload-subtitle {
-      color: #777;
-      font-size: 14px;
-    }
+.upload-subtitle {
+  color: #777;
+  font-size: 14px;
+}
 
-    .settings {
-      margin-top: 25px;
-    }
+.settings {
+  margin-top: 25px;
+}
 
-    label {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
 
-    select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #d5d9df;
-      border-radius: 9px;
-      background: #fff;
-      font-size: 15px;
-    }
+select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d5d9df;
+  border-radius: 9px;
+  background: white;
+  font-size: 15px;
+}
 
-    .preview-box {
-      display: none;
-      margin-top: 25px;
-      text-align: center;
-    }
+.preview-box {
+  display: none;
+  margin-top: 25px;
+  text-align: center;
+}
 
-    .preview-box img {
-      max-width: 100%;
-      max-height: 400px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-    }
+.preview-box img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
 
-    .file-info {
-      margin-top: 10px;
-      color: #666;
-      font-size: 14px;
-    }
+.file-info {
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+}
 
-    .button-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
 
-    button {
-      border: none;
-      border-radius: 9px;
-      padding: 13px 18px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      background: #111;
-      color: #fff;
-    }
+button {
+  border: none;
+  border-radius: 9px;
+  padding: 13px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+button:hover {
+  opacity: .9;
+}
 
-    button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
 
-    .secondary {
-      background: #e9edf2;
-      color: #111;
-    }
+.secondary {
+  background: #e9edf2;
+  color: #111;
+}
 
-    .progress-area {
-      display: none;
-      margin-top: 25px;
-    }
+.progress-area {
+  display: none;
+  margin-top: 25px;
+}
 
-    .progress-text {
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: #555;
-    }
+.progress-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
 
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #e7e9ed;
-      border-radius: 20px;
-      overflow: hidden;
-    }
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e7e9ed;
+  border-radius: 20px;
+  overflow: hidden;
+}
 
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: #111;
-      transition: width 0.2s ease;
-    }
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #111;
+  transition: width .2s ease;
+}
 
-    .status {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #555;
-    }
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
 
-    .result-box {
-      display: none;
-      margin-top: 30px;
-    }
+.result-box {
+  display: none;
+  margin-top: 30px;
+}
 
-    .result-box textarea {
-      width: 100%;
-      min-height: 280px;
-      resize: vertical;
-      border: 1px solid #d5d9df;
-      border-radius: 10px;
-      padding: 15px;
-      font-size: 16px;
-      line-height: 1.8;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+.result-box textarea {
+  width: 100%;
+  min-height: 300px;
+  resize: vertical;
+  border: 1px solid #d5d9df;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.8;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    .result-box textarea.rtl {
-      direction: rtl;
-      text-align: right;
-    }
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
 
-    .privacy {
-      margin-top: 25px;
-      padding: 15px;
-      border-radius: 10px;
-      background: #f4f6f8;
-      font-size: 14px;
-      color: #555;
-    }
+.error {
+  display: none;
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #a00000;
+  font-size: 14px;
+}
 
-    .content-section {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 30px;
-      margin-top: 25px;
-    }
+.success {
+  display: none;
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #f1f8f3;
+  color: #256b35;
+  font-size: 14px;
+}
 
-    .content-section h2 {
-      margin-top: 0;
-      font-size: 24px;
-    }
+.engine-status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f4f6f8;
+  color: #555;
+  font-size: 14px;
+  text-align: center;
+}
 
-    .content-section h3 {
-      margin-top: 25px;
-      font-size: 19px;
-    }
+.privacy {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f4f6f8;
+  font-size: 14px;
+  color: #555;
+}
 
-    footer {
-      margin-top: 50px;
-      background: #fff;
-      border-top: 1px solid #e5e7eb;
-      padding: 25px 20px;
-      text-align: center;
-      color: #666;
-      font-size: 14px;
-    }
+.content-section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 25px;
+}
 
-    footer a {
-      margin: 0 8px;
-    }
+.content-section h2 {
+  margin-top: 0;
+}
 
-    .error {
-      display: none;
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 8px;
-      background: #fff0f0;
-      color: #a00000;
-      font-size: 14px;
-    }
+.content-section h3 {
+  margin-top: 25px;
+}
 
-    @media (max-width: 700px) {
+footer {
+  margin-top: 50px;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 25px 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
 
-      .nav-inner {
-        flex-direction: column;
-      }
+footer a {
+  margin: 0 8px;
+}
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+@media (max-width: 700px) {
 
-      .tool-box {
-        padding: 20px;
-      }
+  .nav-inner {
+    flex-direction: column;
+  }
 
-      h1 {
-        font-size: 26px;
-      }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-      .button-row {
-        flex-direction: column;
-      }
+  .tool-box {
+    padding: 20px;
+  }
 
-      button {
-        width: 100%;
-      }
+  h1 {
+    font-size: 26px;
+  }
 
-    }
+  .button-row {
+    flex-direction: column;
+  }
 
-  </style>
+  button {
+    width: 100%;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -358,495 +370,581 @@
 <body>
 
 
-  <!-- NAVBAR -->
+<nav class="navbar">
 
-  <nav class="navbar">
+  <div class="nav-inner">
 
-    <div class="nav-inner">
+    <a
+      href="https://www.gettoolly.com/index.html"
+      class="logo">
+      GetToolly
+    </a>
 
-      <a
-        href="https://www.gettoolly.com/index.html"
-        class="logo">
-        GetToolly
+    <div class="nav-links">
+
+      <a href="https://www.gettoolly.com/index.html">
+        Home
       </a>
 
-      <div class="nav-links">
-
-        <a href="https://www.gettoolly.com/index.html">
-          Home
-        </a>
-
-        <a href="https://www.gettoolly.com/index.html#tools">
-          Tools
-        </a>
-
-        <a href="https://www.gettoolly.com/privacy.html">
-          Privacy
-        </a>
-
-      </div>
-
-    </div>
-
-  </nav>
-
-
-  <main class="container">
-
-
-    <!-- TOOL -->
-
-    <div class="tool-box">
-
-      <h1>
-        Image to Text Converter
-      </h1>
-
-      <p class="intro">
-        Extract text from images using OCR.
-        Supports English and Arabic text directly in your browser.
-      </p>
-
-
-      <!-- UPLOAD -->
-
-      <label
-        class="upload-area"
-        for="imageInput">
-
-        <div class="upload-icon">
-          🖼️
-        </div>
-
-        <div class="upload-title">
-          Click to upload an image
-        </div>
-
-        <div class="upload-subtitle">
-          JPG, PNG or WebP — up to 15 MB
-        </div>
-
-        <input
-          type="file"
-          id="imageInput"
-          accept="image/jpeg,image/png,image/webp">
-
-      </label>
-
-
-      <!-- SETTINGS -->
-
-      <div class="settings">
-
-        <label for="language">
-          OCR Language
-        </label>
-
-        <select id="language">
-
-          <option value="eng">
-            English
-          </option>
-
-          <option value="ara">
-            Arabic
-          </option>
-
-          <option value="eng+ara">
-            English + Arabic
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <!-- PREVIEW -->
-
-      <div
-        class="preview-box"
-        id="previewBox">
-
-        <img
-          id="previewImage"
-          alt="Selected image preview">
-
-        <div
-          class="file-info"
-          id="fileInfo">
-        </div>
-
-      </div>
-
-
-      <!-- BUTTONS -->
-
-      <div class="button-row">
-
-        <button
-          id="extractBtn"
-          disabled>
-          Extract Text
-        </button>
-
-        <button
-          id="resetBtn"
-          class="secondary">
-          Reset
-        </button>
-
-      </div>
-
-
-      <!-- ERROR -->
-
-      <div
-        class="error"
-        id="errorBox">
-      </div>
-
-
-      <!-- PROGRESS -->
-
-      <div
-        class="progress-area"
-        id="progressArea">
-
-        <div
-          class="progress-text"
-          id="progressText">
-          Preparing OCR...
-        </div>
-
-        <div class="progress-bar">
-
-          <div
-            class="progress-fill"
-            id="progressFill">
-          </div>
-
-        </div>
-
-        <div
-          class="status"
-          id="status">
-        </div>
-
-      </div>
-
-
-      <!-- RESULT -->
-
-      <div
-        class="result-box"
-        id="resultBox">
-
-        <label for="resultText">
-          Extracted Text
-        </label>
-
-        <textarea
-          id="resultText"
-          spellcheck="false">
-        </textarea>
-
-        <div class="button-row">
-
-          <button id="copyBtn">
-            Copy Text
-          </button>
-
-          <button id="downloadBtn">
-            Download TXT
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="privacy">
-
-        🔒
-        Your selected image is processed in your browser
-        using OCR technology. GetToolly does not upload your
-        image to a GetToolly server.
-
-      </div>
-
-    </div>
-
-
-    <!-- SEO CONTENT -->
-
-    <section class="content-section">
-
-      <h2>
-        Image to Text Converter
-      </h2>
-
-      <p>
-        GetToolly Image to Text Converter lets you extract
-        editable text from images using Optical Character
-        Recognition (OCR).
-      </p>
-
-      <p>
-        You can convert screenshots, scanned documents,
-        photos of printed text and other supported images
-        into editable text.
-      </p>
-
-
-      <h3>
-        How to Extract Text from an Image
-      </h3>
-
-      <p>
-        Select an image from your device, choose the OCR
-        language, and click the Extract Text button.
-        The extracted text will appear in the result box.
-      </p>
-
-
-      <h3>
-        Supported Languages
-      </h3>
-
-      <p>
-        This tool supports English, Arabic, and mixed
-        English and Arabic text.
-      </p>
-
-
-      <h3>
-        What is OCR?
-      </h3>
-
-      <p>
-        OCR stands for Optical Character Recognition.
-        It is a technology that identifies characters
-        inside an image and converts them into editable
-        digital text.
-      </p>
-
-
-      <h3>
-        Is the Image to Text Converter Free?
-      </h3>
-
-      <p>
-        Yes. GetToolly provides this image to text converter
-        free of charge.
-      </p>
-
-
-      <h3>
-        Is My Image Uploaded?
-      </h3>
-
-      <p>
-        The OCR processing in this tool is performed
-        client-side in your browser. The selected image
-        is passed to the OCR engine running in the browser
-        rather than being uploaded to a GetToolly application
-        server.
-      </p>
-
-    </section>
-
-
-  </main>
-
-
-  <footer>
-
-    <div>
-      © 2026 GetToolly. All rights reserved.
-    </div>
-
-    <div style="margin-top:10px;">
+      <a href="https://www.gettoolly.com/index.html#tools">
+        Tools
+      </a>
 
       <a href="https://www.gettoolly.com/privacy.html">
         Privacy
       </a>
 
-      <a href="https://www.gettoolly.com/terms.html">
-        Terms
-      </a>
+    </div>
 
-      <a href="https://www.gettoolly.com/contact.html">
-        Contact
-      </a>
+  </div>
+
+</nav>
+
+
+<main class="container">
+
+
+<div class="tool-box">
+
+  <h1>
+    Image to Text Converter
+  </h1>
+
+  <p class="intro">
+    Extract editable text from images using OCR.
+    Supports English and Arabic.
+  </p>
+
+
+  <!-- UPLOAD -->
+
+  <label
+    class="upload-area"
+    for="imageInput">
+
+    <div class="upload-icon">
+      🖼️
+    </div>
+
+    <div class="upload-title">
+      Click to upload an image
+    </div>
+
+    <div class="upload-subtitle">
+      JPG, PNG or WebP — up to 15 MB
+    </div>
+
+    <input
+      type="file"
+      id="imageInput"
+      accept="image/jpeg,image/png,image/webp">
+
+  </label>
+
+
+  <!-- LANGUAGE -->
+
+  <div class="settings">
+
+    <label for="language">
+      OCR Language
+    </label>
+
+    <select id="language">
+
+      <option value="eng">
+        English
+      </option>
+
+      <option value="ara">
+        Arabic
+      </option>
+
+      <option value="mixed">
+        English + Arabic
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- ENGINE STATUS -->
+
+  <div
+    class="engine-status"
+    id="engineStatus">
+
+    OCR engine is ready to start when you select an image.
+
+  </div>
+
+
+  <!-- PREVIEW -->
+
+  <div
+    class="preview-box"
+    id="previewBox">
+
+    <img
+      id="previewImage"
+      alt="Selected image preview">
+
+    <div
+      class="file-info"
+      id="fileInfo">
+    </div>
+
+  </div>
+
+
+  <!-- BUTTONS -->
+
+  <div class="button-row">
+
+    <button
+      id="extractBtn">
+
+      Extract Text
+
+    </button>
+
+
+    <button
+      id="resetBtn"
+      class="secondary">
+
+      Reset
+
+    </button>
+
+  </div>
+
+
+  <div
+    class="error"
+    id="errorBox">
+  </div>
+
+
+  <div
+    class="success"
+    id="successBox">
+  </div>
+
+
+  <!-- PROGRESS -->
+
+  <div
+    class="progress-area"
+    id="progressArea">
+
+    <div
+      class="progress-text"
+      id="progressText">
+
+      Preparing OCR...
 
     </div>
 
-  </footer>
+    <div class="progress-bar">
+
+      <div
+        class="progress-fill"
+        id="progressFill">
+      </div>
+
+    </div>
+
+    <div
+      class="status"
+      id="status">
+    </div>
+
+  </div>
 
 
-  <!-- TESSERACT.JS -->
+  <!-- RESULT -->
 
-  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <div
+    class="result-box"
+    id="resultBox">
 
+    <label for="resultText">
+      Extracted Text
+    </label>
 
-  <script>
+    <textarea
+      id="resultText"
+      spellcheck="false">
+    </textarea>
 
-    const imageInput =
-      document.getElementById("imageInput");
+    <div class="button-row">
 
-    const languageSelect =
-      document.getElementById("language");
+      <button id="copyBtn">
+        Copy Text
+      </button>
 
-    const previewBox =
-      document.getElementById("previewBox");
+      <button id="downloadBtn">
+        Download TXT
+      </button>
 
-    const previewImage =
-      document.getElementById("previewImage");
+    </div>
 
-    const fileInfo =
-      document.getElementById("fileInfo");
-
-    const extractBtn =
-      document.getElementById("extractBtn");
-
-    const resetBtn =
-      document.getElementById("resetBtn");
-
-    const progressArea =
-      document.getElementById("progressArea");
-
-    const progressFill =
-      document.getElementById("progressFill");
-
-    const progressText =
-      document.getElementById("progressText");
-
-    const status =
-      document.getElementById("status");
-
-    const resultBox =
-      document.getElementById("resultBox");
-
-    const resultText =
-      document.getElementById("resultText");
-
-    const copyBtn =
-      document.getElementById("copyBtn");
-
-    const downloadBtn =
-      document.getElementById("downloadBtn");
-
-    const errorBox =
-      document.getElementById("errorBox");
+  </div>
 
 
-    let selectedFile = null;
+  <div class="privacy">
+
+    🔒 Your image is processed in your browser.
+    GetToolly does not upload your image to a GetToolly server.
+
+  </div>
+
+</div>
 
 
-    /* --------------------------------
-       FILE SIZE
-    -------------------------------- */
+<section class="content-section">
 
-    function formatBytes(bytes) {
+  <h2>
+    Image to Text Converter
+  </h2>
 
-      if (bytes < 1024) {
-        return bytes + " B";
-      }
+  <p>
+    GetToolly Image to Text Converter allows you to
+    extract editable text from JPG, PNG and WebP images
+    using Optical Character Recognition (OCR).
+  </p>
 
-      if (bytes < 1024 * 1024) {
-        return (bytes / 1024).toFixed(1) + " KB";
-      }
+  <h3>
+    How to Extract Text from an Image
+  </h3>
 
-      return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+  <p>
+    Upload an image, choose English or Arabic,
+    then click Extract Text. The recognized text
+    will appear below the image.
+  </p>
+
+  <h3>
+    Arabic OCR
+  </h3>
+
+  <p>
+    Arabic OCR is supported for printed Arabic text.
+    For mixed Arabic and English images, GetToolly
+    processes the two languages separately to improve
+    recognition.
+  </p>
+
+  <h3>
+    What is OCR?
+  </h3>
+
+  <p>
+    OCR stands for Optical Character Recognition.
+    It converts text contained inside an image into
+    editable digital text.
+  </p>
+
+  <h3>
+    Is this tool free?
+  </h3>
+
+  <p>
+    Yes. The GetToolly Image to Text Converter is free
+    to use.
+  </p>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <div>
+    © 2026 GetToolly. All rights reserved.
+  </div>
+
+  <div style="margin-top:10px;">
+
+    <a href="https://www.gettoolly.com/privacy.html">
+      Privacy
+    </a>
+
+    <a href="https://www.gettoolly.com/terms.html">
+      Terms
+    </a>
+
+    <a href="https://www.gettoolly.com/contact.html">
+      Contact
+    </a>
+
+  </div>
+
+</footer>
+
+
+<!-- TESSERACT -->
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+
+<script>
+
+
+/* ==========================================
+   ELEMENTS
+========================================== */
+
+const imageInput =
+  document.getElementById("imageInput");
+
+const language =
+  document.getElementById("language");
+
+const previewBox =
+  document.getElementById("previewBox");
+
+const previewImage =
+  document.getElementById("previewImage");
+
+const fileInfo =
+  document.getElementById("fileInfo");
+
+const extractBtn =
+  document.getElementById("extractBtn");
+
+const resetBtn =
+  document.getElementById("resetBtn");
+
+const progressArea =
+  document.getElementById("progressArea");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const progressText =
+  document.getElementById("progressText");
+
+const status =
+  document.getElementById("status");
+
+const resultBox =
+  document.getElementById("resultBox");
+
+const resultText =
+  document.getElementById("resultText");
+
+const copyBtn =
+  document.getElementById("copyBtn");
+
+const downloadBtn =
+  document.getElementById("downloadBtn");
+
+const errorBox =
+  document.getElementById("errorBox");
+
+const successBox =
+  document.getElementById("successBox");
+
+const engineStatus =
+  document.getElementById("engineStatus");
+
+
+let selectedFile = null;
+
+
+/* ==========================================
+   HELPERS
+========================================== */
+
+function showError(message) {
+
+  errorBox.textContent = message;
+
+  errorBox.style.display = "block";
+
+}
+
+
+function hideError() {
+
+  errorBox.textContent = "";
+
+  errorBox.style.display = "none";
+
+}
+
+
+function showSuccess(message) {
+
+  successBox.textContent = message;
+
+  successBox.style.display = "block";
+
+}
+
+
+function hideSuccess() {
+
+  successBox.textContent = "";
+
+  successBox.style.display = "none";
+
+}
+
+
+function formatBytes(bytes) {
+
+  if (bytes < 1024) {
+
+    return bytes + " B";
+
+  }
+
+  if (bytes < 1024 * 1024) {
+
+    return (
+      (bytes / 1024).toFixed(1)
+      + " KB"
+    );
+
+  }
+
+  return (
+    (bytes / (1024 * 1024)).toFixed(2)
+    + " MB"
+  );
+
+}
+
+
+/* ==========================================
+   CHECK TESSERACT
+========================================== */
+
+window.addEventListener(
+  "load",
+  function () {
+
+    if (
+      typeof Tesseract === "undefined"
+    ) {
+
+      engineStatus.textContent =
+        "OCR engine could not be loaded. Please refresh the page.";
+
+      engineStatus.style.color =
+        "#a00000";
+
+      showError(
+        "The OCR engine failed to load. Please refresh the page and try again."
+      );
+
+      return;
 
     }
 
 
-    /* --------------------------------
-       SHOW ERROR
-    -------------------------------- */
+    engineStatus.textContent =
+      "✓ OCR engine loaded successfully. Select an image to begin.";
 
-    function showError(message) {
-
-      errorBox.textContent = message;
-      errorBox.style.display = "block";
-
-    }
+  }
+);
 
 
-    function hideError() {
+/* ==========================================
+   IMAGE PREPROCESSING
+========================================== */
 
-      errorBox.style.display = "none";
-      errorBox.textContent = "";
+function preprocessImage(file) {
 
-    }
+  return new Promise(
+    function(resolve, reject) {
+
+      const img =
+        new Image();
+
+      const url =
+        URL.createObjectURL(file);
 
 
-    /* --------------------------------
-       IMAGE PREPROCESSING
-    -------------------------------- */
+      img.onload =
+        function() {
 
-    function preprocessImage(file) {
+          URL.revokeObjectURL(url);
 
-      return new Promise((resolve, reject) => {
 
-        const img = new Image();
+          let width =
+            img.naturalWidth;
 
-        const objectUrl =
-          URL.createObjectURL(file);
+          let height =
+            img.naturalHeight;
 
-        img.onload = function () {
-
-          URL.revokeObjectURL(objectUrl);
-
-          let width = img.naturalWidth;
-          let height = img.naturalHeight;
 
           /*
-            Upscale smaller images.
-            Limit very large images to prevent
-            excessive browser memory usage.
+            OCR works better with sufficiently
+            large text.
           */
 
-          const targetMin =
-            1800;
-
-          const maxDimension =
+          const maxSize =
             2600;
 
-          let scale = 1;
+          const minSize =
+            1600;
+
+
+          let scale =
+            1;
+
+
+          const largest =
+            Math.max(
+              width,
+              height
+            );
+
 
           if (
-            Math.max(width, height)
-            < targetMin
+            largest < minSize
           ) {
 
             scale =
-              targetMin /
-              Math.max(width, height);
+              minSize / largest;
 
           }
 
+
           if (
-            Math.max(width, height) * scale
-            > maxDimension
+            largest * scale > maxSize
           ) {
 
             scale =
-              maxDimension /
-              Math.max(width, height);
+              maxSize / largest;
 
           }
+
 
           width =
-            Math.round(width * scale);
+            Math.round(
+              width * scale
+            );
+
 
           height =
-            Math.round(height * scale);
+            Math.round(
+              height * scale
+            );
 
 
           const canvas =
-            document.createElement("canvas");
+            document.createElement(
+              "canvas"
+            );
+
 
           canvas.width =
             width;
@@ -856,17 +954,20 @@
 
 
           const ctx =
-            canvas.getContext("2d", {
-              willReadFrequently: true
-            });
+            canvas.getContext(
+              "2d",
+              {
+                willReadFrequently: true
+              }
+            );
 
 
           /*
-            White background helps scanned
-            documents and transparent PNGs.
+            White background.
           */
 
-          ctx.fillStyle = "#ffffff";
+          ctx.fillStyle =
+            "#ffffff";
 
           ctx.fillRect(
             0,
@@ -886,7 +987,7 @@
 
 
           /*
-            Grayscale + contrast enhancement
+            Grayscale.
           */
 
           const imageData =
@@ -896,6 +997,7 @@
               width,
               height
             );
+
 
           const data =
             imageData.data;
@@ -907,33 +1009,21 @@
             i += 4
           ) {
 
-            const r = data[i];
-            const g = data[i + 1];
-            const b = data[i + 2];
+            const r =
+              data[i];
 
-            let gray =
-              0.299 * r +
-              0.587 * g +
-              0.114 * b;
+            const g =
+              data[i + 1];
 
-
-            /*
-              Moderate contrast enhancement.
-              Avoid aggressive thresholding because
-              it can damage Arabic characters.
-            */
-
-            gray =
-              ((gray - 128) * 1.25) + 128;
+            const b =
+              data[i + 2];
 
 
-            gray =
-              Math.max(
-                0,
-                Math.min(
-                  255,
-                  gray
-                )
+            const gray =
+              Math.round(
+                0.299 * r +
+                0.587 * g +
+                0.114 * b
               );
 
 
@@ -957,7 +1047,7 @@
 
 
           canvas.toBlob(
-            function (blob) {
+            function(blob) {
 
               if (!blob) {
 
@@ -968,7 +1058,9 @@
                 );
 
                 return;
+
               }
+
 
               resolve(blob);
 
@@ -979,615 +1071,745 @@
         };
 
 
-        img.onerror = function () {
+      img.onerror =
+        function() {
 
-          URL.revokeObjectURL(objectUrl);
+          URL.revokeObjectURL(url);
 
           reject(
             new Error(
-              "Could not read the image."
+              "Unable to read this image."
             )
           );
 
         };
 
 
-        img.src =
-          objectUrl;
+      img.src =
+        url;
 
-      });
+    }
+  );
+
+}
+
+
+/* ==========================================
+   FILE SELECTION
+========================================== */
+
+imageInput.addEventListener(
+  "change",
+  function() {
+
+    hideError();
+    hideSuccess();
+
+
+    const file =
+      imageInput.files[0];
+
+
+    if (!file) {
+
+      selectedFile =
+        null;
+
+      return;
 
     }
 
 
-    /* --------------------------------
-       FILE SELECTION
-    -------------------------------- */
+    const allowed =
+      [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+      ];
 
-    imageInput.addEventListener(
-      "change",
-      function () {
 
-        hideError();
+    if (
+      !allowed.includes(
+        file.type
+      )
+    ) {
 
-        const file =
-          this.files[0];
+      showError(
+        "Please select a JPG, PNG or WebP image."
+      );
 
-        if (!file) {
-          return;
-        }
+      imageInput.value =
+        "";
 
+      selectedFile =
+        null;
 
-        const allowedTypes = [
-          "image/jpeg",
-          "image/png",
-          "image/webp"
-        ];
+      return;
 
+    }
 
-        if (
-          !allowedTypes.includes(
-            file.type
-          )
-        ) {
 
-          showError(
-            "Please select a JPG, PNG or WebP image."
-          );
+    if (
+      file.size >
+      15 * 1024 * 1024
+    ) {
 
-          this.value = "";
+      showError(
+        "The maximum image size is 15 MB."
+      );
 
-          return;
-        }
+      imageInput.value =
+        "";
 
+      selectedFile =
+        null;
 
-        if (
-          file.size >
-          15 * 1024 * 1024
-        ) {
+      return;
 
-          showError(
-            "The image must be smaller than 15 MB."
-          );
+    }
 
-          this.value = "";
 
-          return;
-        }
+    selectedFile =
+      file;
 
 
-        selectedFile =
-          file;
+    const url =
+      URL.createObjectURL(file);
 
 
-        const objectUrl =
-          URL.createObjectURL(file);
+    previewImage.src =
+      url;
 
 
-        previewImage.src =
-          objectUrl;
+    previewImage.onload =
+      function() {
 
+        URL.revokeObjectURL(url);
 
-        previewImage.onload =
-          function () {
+      };
 
-            URL.revokeObjectURL(
-              objectUrl
-            );
 
-          };
+    fileInfo.textContent =
+      file.name
+      + " • "
+      + formatBytes(file.size);
 
 
-        fileInfo.textContent =
-          file.name +
-          " • " +
-          formatBytes(file.size);
+    previewBox.style.display =
+      "block";
 
 
-        previewBox.style.display =
-          "block";
+    engineStatus.textContent =
+      "✓ Image selected. Click Extract Text.";
 
+  }
+);
 
-        extractBtn.disabled =
-          false;
 
+/* ==========================================
+   OCR FUNCTION
+========================================== */
 
-        resultBox.style.display =
-          "none";
+async function runOCR(
+  image,
+  lang,
+  progressStart,
+  progressEnd
+) {
 
-        progressArea.style.display =
-          "none";
-
-        resultText.value =
-          "";
-
-      }
-    );
-
-
-    /* --------------------------------
-       EXTRACT TEXT
-    -------------------------------- */
-
-    extractBtn.addEventListener(
-      "click",
-      async function () {
-
-        if (!selectedFile) {
-
-          showError(
-            "Please select an image first."
-          );
-
-          return;
-        }
-
-
-        hideError();
-
-        extractBtn.disabled =
-          true;
-
-        resetBtn.disabled =
-          true;
-
-
-        progressArea.style.display =
-          "block";
-
-        resultBox.style.display =
-          "none";
-
-
-        progressFill.style.width =
-          "0%";
-
-
-        progressText.textContent =
-          "Preparing image...";
-
-
-        status.textContent =
-          "";
-
-
-        let worker = null;
-
-
-        try {
-
-          /*
-            Prepare the image before OCR.
-          */
-
-          const processedImage =
-            await preprocessImage(
-              selectedFile
-            );
-
-
-          progressFill.style.width =
-            "10%";
-
-
-          progressText.textContent =
-            "Loading OCR engine...";
-
-
-          const selectedLanguage =
-            languageSelect.value;
-
-
-          /*
-            IMPORTANT:
-            Tesseract.js v5 uses createWorker()
-            with the language passed directly.
-          */
-
-          worker =
-            await Tesseract.createWorker(
-              selectedLanguage,
-              1,
-              {
-                logger: function (message) {
-
-                  if (
-                    typeof message.progress ===
-                    "number"
-                  ) {
-
-                    const percent =
-                      Math.round(
-                        message.progress * 100
-                      );
-
-
-                    /*
-                      Keep some space for
-                      preparation/loading.
-                    */
-
-                    const finalPercent =
-                      Math.min(
-                        95,
-                        10 +
-                        Math.round(
-                          percent * 0.85
-                        )
-                      );
-
-
-                    progressFill.style.width =
-                      finalPercent + "%";
-
-                  }
-
-
-                  if (message.status) {
-
-                    progressText.textContent =
-                      message.status;
-
-                  }
-
-                }
-
-              }
-            );
-
-
-          progressFill.style.width =
-            "20%";
-
-
-          progressText.textContent =
-            "Recognizing text...";
-
-
-          /*
-            Set page segmentation to a
-            single uniform block.
-
-            This is generally suitable for
-            screenshots and document images.
-          */
-
-          await worker.setParameters({
-
-            tessedit_pageseg_mode:
-              "6",
-
-            preserve_interword_spaces:
-              "1"
-
-          });
-
-
-          const result =
-            await worker.recognize(
-              processedImage
-            );
-
-
-          let text =
-            result.data.text || "";
-
-
-          /*
-            Clean unnecessary whitespace
-            without damaging Arabic text.
-          */
-
-          text =
-            text
-              .normalize("NFC")
-              .replace(/\r/g, "")
-              .replace(/[ \t]+\n/g, "\n")
-              .replace(/\n{3,}/g, "\n\n")
-              .trim();
-
-
-          progressFill.style.width =
-            "100%";
-
-
-          progressText.textContent =
-            "Completed";
-
-
-          status.textContent =
-            "OCR finished successfully.";
-
-
-          resultText.value =
-            text;
-
-
-          /*
-            Set RTL direction for Arabic.
-          */
-
-          if (
-            selectedLanguage === "ara" ||
-            selectedLanguage === "eng+ara"
-          ) {
-
-            resultText.classList.add(
-              "rtl"
-            );
-
-          } else {
-
-            resultText.classList.remove(
-              "rtl"
-            );
-
-          }
-
-
-          resultBox.style.display =
-            "block";
-
-
-          /*
-            If nothing was recognized,
-            tell the user instead of showing
-            an apparently broken result.
-          */
-
-          if (!text) {
-
-            status.textContent =
-              "No readable text was detected. Try a clearer image.";
-
-          }
-
-
-        } catch (error) {
-
-          console.error(
-            "OCR Error:",
-            error
-          );
-
-
-          showError(
-            "OCR could not process this image. Please try another clear image."
-          );
-
-
-          progressText.textContent =
-            "OCR failed.";
-
-          status.textContent =
-            error.message || "";
-
-
-        } finally {
-
-          /*
-            Always release the OCR worker.
-          */
-
-          if (worker) {
-
-            try {
-
-              await worker.terminate();
-
-            } catch (e) {
-
-              console.warn(
-                "Worker termination error:",
-                e
-              );
+  const worker =
+    await Tesseract.createWorker(
+      lang,
+      1,
+      {
+        logger:
+          function(message) {
+
+            if (
+              typeof message.progress ===
+              "number"
+            ) {
+
+              const value =
+                progressStart +
+                (
+                  message.progress *
+                  (
+                    progressEnd -
+                    progressStart
+                  )
+                );
+
+
+              progressFill.style.width =
+                Math.round(value) +
+                "%";
+
+            }
+
+
+            if (
+              message.status
+            ) {
+
+              progressText.textContent =
+                message.status;
 
             }
 
           }
-
-
-          extractBtn.disabled =
-            false;
-
-          resetBtn.disabled =
-            false;
-
-        }
-
       }
     );
 
 
-    /* --------------------------------
-       COPY
-    -------------------------------- */
+  try {
 
-    copyBtn.addEventListener(
-      "click",
-      async function () {
+    await worker.setParameters({
 
-        const text =
-          resultText.value;
+      tessedit_pageseg_mode:
+        "6",
 
-        if (!text) {
-          return;
-        }
+      preserve_interword_spaces:
+        "1"
+
+    });
 
 
-        try {
+    const result =
+      await worker.recognize(
+        image
+      );
 
-          await navigator.clipboard.writeText(
-            text
-          );
 
-          copyBtn.textContent =
-            "Copied!";
-
-          setTimeout(
-            function () {
-
-              copyBtn.textContent =
-                "Copy Text";
-
-            },
-            1500
-          );
-
-        } catch (error) {
-
-          resultText.select();
-
-          document.execCommand(
-            "copy"
-          );
-
-          copyBtn.textContent =
-            "Copied!";
-
-          setTimeout(
-            function () {
-
-              copyBtn.textContent =
-                "Copy Text";
-
-            },
-            1500
-          );
-
-        }
-
-      }
+    return (
+      result.data.text || ""
     );
 
 
-    /* --------------------------------
-       DOWNLOAD TXT
-    -------------------------------- */
+  } finally {
 
-    downloadBtn.addEventListener(
-      "click",
-      function () {
+    await worker.terminate();
 
-        const text =
-          resultText.value;
+  }
 
-        if (!text) {
-          return;
-        }
+}
+
+
+/* ==========================================
+   CLEAN TEXT
+========================================== */
+
+function cleanText(text) {
+
+  return text
+    .normalize("NFC")
+    .replace(/\r/g, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+}
+
+
+/* ==========================================
+   EXTRACT
+========================================== */
+
+extractBtn.addEventListener(
+  "click",
+  async function() {
+
+    hideError();
+    hideSuccess();
+
+
+    if (!selectedFile) {
+
+      showError(
+        "Please select an image first."
+      );
+
+      return;
+
+    }
+
+
+    if (
+      typeof Tesseract ===
+      "undefined"
+    ) {
+
+      showError(
+        "OCR engine is not available. Please refresh the page."
+      );
+
+      return;
+
+    }
+
+
+    extractBtn.disabled =
+      true;
+
+    resetBtn.disabled =
+      true;
+
+
+    progressArea.style.display =
+      "block";
+
+
+    resultBox.style.display =
+      "none";
+
+
+    progressFill.style.width =
+      "5%";
+
+
+    progressText.textContent =
+      "Preparing image...";
+
+
+    status.textContent =
+      "";
+
+
+    try {
+
+      /*
+        Prepare image.
+      */
+
+      const processed =
+        await preprocessImage(
+          selectedFile
+        );
+
+
+      progressFill.style.width =
+        "10%";
+
+
+      const selectedLanguage =
+        language.value;
+
+
+      let text =
+        "";
+
+
+      /*
+        ENGLISH
+      */
+
+      if (
+        selectedLanguage ===
+        "eng"
+      ) {
+
+        progressText.textContent =
+          "Recognizing English text...";
+
+
+        text =
+          await runOCR(
+            processed,
+            "eng",
+            10,
+            95
+          );
+
+      }
+
+
+      /*
+        ARABIC
+      */
+
+      else if (
+        selectedLanguage ===
+        "ara"
+      ) {
+
+        progressText.textContent =
+          "Recognizing Arabic text...";
+
+
+        text =
+          await runOCR(
+            processed,
+            "ara",
+            10,
+            95
+          );
+
+      }
+
+
+      /*
+        MIXED:
+        Run Arabic and English separately.
+
+        This avoids relying entirely on
+        eng+ara language selection.
+      */
+
+      else {
+
+        progressText.textContent =
+          "Recognizing Arabic and English text...";
+
+
+        const arabicText =
+          await runOCR(
+            processed,
+            "ara",
+            10,
+            50
+          );
+
+
+        const englishText =
+          await runOCR(
+            processed,
+            "eng",
+            50,
+            95
+          );
 
 
         /*
-          UTF-8 BOM improves Arabic
-          compatibility with Windows apps.
+          If Arabic result exists,
+          prefer it for Arabic content.
+
+          If English exists too,
+          combine both results.
         */
 
-        const blob =
-          new Blob(
-            [
-              "\uFEFF",
-              text
-            ],
-            {
-              type:
-                "text/plain;charset=utf-8"
-            }
+        const ar =
+          cleanText(
+            arabicText
+          );
+
+        const en =
+          cleanText(
+            englishText
           );
 
 
-        const url =
-          URL.createObjectURL(
-            blob
-          );
+        if (
+          ar &&
+          en
+        ) {
+
+          text =
+            ar +
+            "\n\n" +
+            en;
+
+        }
+
+        else {
+
+          text =
+            ar ||
+            en;
+
+        }
+
+      }
 
 
-        const link =
-          document.createElement(
-            "a"
-          );
-
-
-        link.href =
-          url;
-
-        link.download =
-          "gettoolly-extracted-text.txt";
-
-
-        document.body.appendChild(
-          link
+      text =
+        cleanText(
+          text
         );
 
-        link.click();
 
-        link.remove();
+      progressFill.style.width =
+        "100%";
 
 
-        URL.revokeObjectURL(
-          url
+      progressText.textContent =
+        "Completed";
+
+
+      status.textContent =
+        "OCR completed successfully.";
+
+
+      resultText.value =
+        text;
+
+
+      /*
+        RTL for Arabic.
+      */
+
+      if (
+        selectedLanguage === "ara"
+      ) {
+
+        resultText.classList.add(
+          "rtl"
         );
 
       }
-    );
 
-
-    /* --------------------------------
-       RESET
-    -------------------------------- */
-
-    resetBtn.addEventListener(
-      "click",
-      function () {
-
-        selectedFile =
-          null;
-
-
-        imageInput.value =
-          "";
-
-
-        previewImage.src =
-          "";
-
-
-        previewBox.style.display =
-          "none";
-
-
-        resultBox.style.display =
-          "none";
-
-
-        progressArea.style.display =
-          "none";
-
-
-        progressFill.style.width =
-          "0%";
-
-
-        resultText.value =
-          "";
-
+      else {
 
         resultText.classList.remove(
           "rtl"
         );
 
-
-        extractBtn.disabled =
-          true;
+      }
 
 
-        hideError();
+      resultBox.style.display =
+        "block";
+
+
+      if (!text) {
+
+        showError(
+          "No readable text was detected. Please try a clearer image."
+        );
 
       }
+
+      else {
+
+        showSuccess(
+          "Text extracted successfully."
+        );
+
+      }
+
+
+    }
+
+    catch(error) {
+
+      console.error(
+        "GetToolly OCR error:",
+        error
+      );
+
+
+      progressText.textContent =
+        "OCR failed";
+
+
+      status.textContent =
+        "";
+
+
+      showError(
+        "OCR could not process this image. Please try another image."
+      );
+
+
+    }
+
+    finally {
+
+      extractBtn.disabled =
+        false;
+
+      resetBtn.disabled =
+        false;
+
+    }
+
+  }
+);
+
+
+/* ==========================================
+   COPY
+========================================== */
+
+copyBtn.addEventListener(
+  "click",
+  async function() {
+
+    const text =
+      resultText.value;
+
+
+    if (!text) {
+
+      return;
+
+    }
+
+
+    try {
+
+      await navigator.clipboard.writeText(
+        text
+      );
+
+    }
+
+    catch(error) {
+
+      resultText.select();
+
+      document.execCommand(
+        "copy"
+      );
+
+    }
+
+
+    copyBtn.textContent =
+      "Copied!";
+
+
+    setTimeout(
+      function() {
+
+        copyBtn.textContent =
+          "Copy Text";
+
+      },
+      1500
     );
 
-  </script>
+  }
+);
 
+
+/* ==========================================
+   DOWNLOAD
+========================================== */
+
+downloadBtn.addEventListener(
+  "click",
+  function() {
+
+    const text =
+      resultText.value;
+
+
+    if (!text) {
+
+      return;
+
+    }
+
+
+    const blob =
+      new Blob(
+        [
+          "\uFEFF",
+          text
+        ],
+        {
+          type:
+            "text/plain;charset=utf-8"
+        }
+      );
+
+
+    const url =
+      URL.createObjectURL(
+        blob
+      );
+
+
+    const link =
+      document.createElement(
+        "a"
+      );
+
+
+    link.href =
+      url;
+
+
+    link.download =
+      "gettoolly-extracted-text.txt";
+
+
+    document.body.appendChild(
+      link
+    );
+
+
+    link.click();
+
+
+    link.remove();
+
+
+    URL.revokeObjectURL(
+      url
+    );
+
+  }
+);
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+resetBtn.addEventListener(
+  "click",
+  function() {
+
+    selectedFile =
+      null;
+
+
+    imageInput.value =
+      "";
+
+
+    previewImage.src =
+      "";
+
+
+    previewBox.style.display =
+      "none";
+
+
+    resultBox.style.display =
+      "none";
+
+
+    progressArea.style.display =
+      "none";
+
+
+    progressFill.style.width =
+      "0%";
+
+
+    resultText.value =
+      "";
+
+
+    resultText.classList.remove(
+      "rtl"
+    );
+
+
+    hideError();
+    hideSuccess();
+
+
+    engineStatus.textContent =
+      "OCR engine is ready to start when you select an image.";
+
+  }
+);
+
+
+</script>
 
 </body>
-
 </html>
