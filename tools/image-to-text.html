@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to Text Converter - Extract Text from Images | GetToolly</title>
+
+<meta name="description" content="Extract text from JPG, PNG and WebP images online for free. Use our OCR image to text converter to copy and download text directly in your browser.">
+
+<meta name="keywords" content="image to text, image to text converter, OCR online, extract text from image, JPG to text, PNG to text, image OCR">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://www.gettoolly.com/tools/image-to-text.html">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f8fb;
+    color: #222;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 20px;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.back:hover {
+    color: #000;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.header p {
+    color: #666;
+    font-size: 17px;
+}
+
+/* =========================
+   TOOL BOX
+========================= */
+
+.tool-box {
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   UPLOAD AREA
+========================= */
+
+.upload-area {
+    display: block;
+    width: 100%;
+    border: 2px dashed #bbb;
+    border-radius: 12px;
+    padding: 45px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    outline: none;
+}
+
+.upload-area:hover {
+    border-color: #555;
+    background: #fafafa;
+}
+
+.upload-area:focus,
+.upload-area:focus-visible,
+.upload-area:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.upload-area input[type="file"] {
+    display: none !important;
+}
+
+.upload-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+    pointer-events: none;
+}
+
+.upload-text {
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.supported {
+    color: #777;
+    margin-top: 8px;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* =========================
+   PREVIEW
+========================= */
+
+.preview {
+    display: none;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 8px;
+}
+
+.file-info {
+    margin-top: 15px;
+    color: #555;
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    display: none;
+    margin-top: 30px;
+}
+
+.control-group {
+    margin-bottom: 22px;
+}
+
+.control-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+}
+
+/* =========================
+   EXTRACT BUTTON
+========================= */
+
+.extract-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #222;
+    color: white;
+}
+
+.extract-btn:hover {
+    opacity: 0.9;
+}
+
+.extract-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-box {
+    display: none;
+    margin-top: 25px;
+}
+
+.progress-text {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #222;
+    transition: width 0.2s ease;
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f1f7f1;
+    border-radius: 10px;
+}
+
+.result h2 {
+    margin-top: 0;
+}
+
+.result textarea {
+    width: 100%;
+    min-height: 260px;
+    resize: vertical;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.result-buttons {
+    margin-top: 15px;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+.reset-btn {
+    margin-left: 10px;
+    padding: 13px 22px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.reset-btn:hover {
+    background: #f5f5f5;
+}
+
+/* =========================
+   PRIVACY
+========================= */
+
+.privacy {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.info-section {
+    margin-top: 40px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.info-section h2 {
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.info-section h2:first-child {
+    margin-top: 0;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    padding-left: 25px;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 14px;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 14px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .tool-box {
+        padding: 20px;
+    }
+
+    .action-btn,
+    .reset-btn {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+```
+<div class="nav-container">
+
+    <a
+        href="https://www.gettoolly.com/index.html"
+        class="brand">
+        GetToolly
+    </a>
+
+    <div class="nav-links">
+
+        <a href="https://www.gettoolly.com/index.html">
+            Home
+        </a>
+
+        <a href="https://www.gettoolly.com/index.html#tools">
+            Tools
+        </a>
+
+        <a href="https://www.gettoolly.com/privacy.html">
+            Privacy
+        </a>
+
+    </div>
+
+</div>
+```
+
+</nav>
+
+<div class="container">
+
+```
+<!-- BACK -->
+
+<a
+    class="back"
+    href="https://www.gettoolly.com/index.html#tools">
+    ← Back to Tools
+</a>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h1>
+        Image to Text Converter
+    </h1>
+
+    <p>
+        Extract text from images online for free with OCR.
+    </p>
+
+</div>
+
+
+<!-- TOOL -->
+
+<div class="tool-box">
+
+    <!-- UPLOAD -->
+
+    <label
+        class="upload-area"
+        id="uploadArea">
+
+        <input
+            type="file"
+            id="fileInput"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
+        <div class="upload-icon">
+            🖼️
+        </div>
+
+        <div class="upload-text">
+            Click to select an image
+        </div>
+
+        <div class="supported">
+            JPG, PNG or WebP
+        </div>
+
+    </label>
+
+
+    <!-- PREVIEW -->
+
+    <div
+        class="preview"
+        id="preview">
+
+        <img
+            id="previewImage"
+            alt="Image selected for text extraction"
+        >
+
+        <div
+            class="file-info"
+            id="fileInfo">
+        </div>
+
+    </div>
+
+
+    <!-- CONTROLS -->
+
+    <div
+        class="controls"
+        id="controls">
+
+        <div class="control-group">
+
+            <label for="language">
+                Text Language
+            </label>
+
+            <select id="language">
+
+                <option value="eng">
+                    English
+                </option>
+
+                <option value="ara">
+                    Arabic
+                </option>
+
+                <option value="eng+ara">
+                    English + Arabic
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="extract-btn"
+            id="extractBtn">
+
+            Extract Text
+
+        </button>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div
+        class="progress-box"
+        id="progressBox">
+
+        <div
+            class="progress-text"
+            id="progressText">
+
+            Preparing OCR...
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="progressFill">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+        class="result"
+        id="result">
+
+        <h2>
+            Extracted Text
+        </h2>
+
+        <textarea
+            id="textResult"
+            placeholder="Extracted text will appear here...">
+        </textarea>
+
+        <div class="result-buttons">
+
+            <button
+                class="action-btn"
+                id="copyBtn">
+
+                Copy Text
+
+            </button>
+
+            <button
+                class="action-btn"
+                id="downloadBtn">
+
+                Download TXT
+
+            </button>
+
+            <button
+                class="reset-btn"
+                id="resetBtn">
+
+                Extract Another Image
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRIVACY -->
+
+    <div class="privacy">
+
+        🔒 <strong>
+            Your image stays on your device.
+        </strong>
+
+        <br>
+
+        OCR processing happens directly in your browser.
+        Your image is not uploaded to our server.
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <div class="info-section">
+
+        <h2>
+            About Image to Text Converter
+        </h2>
+
+        <p>
+            GetToolly's Image to Text Converter is a free online
+            OCR tool that extracts text from images quickly and
+            easily.
+        </p>
+
+        <p>
+            You can upload JPG, PNG or WebP images and convert
+            visible text into editable text that you can copy,
+            modify or download.
+        </p>
+
+
+        <h2>
+            How to Extract Text from an Image
+        </h2>
+
+        <p>
+            Click the upload area and select an image from your
+            device.
+        </p>
+
+        <p>
+            Choose the language of the text in your image. You can
+            select English, Arabic, or English and Arabic together.
+        </p>
+
+        <p>
+            Click "Extract Text" and wait while the OCR process
+            analyzes the image.
+        </p>
+
+        <p>
+            When processing is complete, the extracted text will
+            appear in the text box. You can then copy or download
+            the text.
+        </p>
+
+
+        <h2>
+            What Is OCR?
+        </h2>
+
+        <p>
+            OCR stands for Optical Character Recognition. It is a
+            technology used to recognize printed or typed text in
+            images and convert it into editable digital text.
+        </p>
+
+        <p>
+            OCR can be useful for extracting text from scanned
+            documents, screenshots, photographs, notes, receipts
+            and other images containing readable text.
+        </p>
+
+
+        <h2>
+            Why Use GetToolly Image to Text?
+        </h2>
+
+        <ul>
+
+            <li>
+                Free to use.
+            </li>
+
+            <li>
+                No registration required.
+            </li>
+
+            <li>
+                Supports English and Arabic.
+            </li>
+
+            <li>
+                Works with JPG, PNG and WebP images.
+            </li>
+
+            <li>
+                Copy extracted text instantly.
+            </li>
+
+            <li>
+                Download extracted text as a TXT file.
+            </li>
+
+            <li>
+                Image processing happens directly in your browser.
+            </li>
+
+        </ul>
+
+
+        <h2>
+            Is Image to Text Converter Free?
+        </h2>
+
+        <p>
+            Yes. GetToolly Image to Text Converter is free to use
+            and does not require an account or registration.
+        </p>
+
+
+        <h2>
+            Is My Image Uploaded?
+        </h2>
+
+        <p>
+            No. OCR processing is performed in your browser.
+            Your selected image does not need to be uploaded to
+            the GetToolly server.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 GetToolly. All rights reserved.
+
+    ·
+
+    <a href="https://www.gettoolly.com/privacy.html">
+        Privacy Policy
+    </a>
+
+</footer>
+```
+
+</div>
+
+<!-- Tesseract.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script>
+
+const fileInput =
+    document.getElementById("fileInput");
+
+const preview =
+    document.getElementById("preview");
+
+const previewImage =
+    document.getElementById("previewImage");
+
+const fileInfo =
+    document.getElementById("fileInfo");
+
+const controls =
+    document.getElementById("controls");
+
+const language =
+    document.getElementById("language");
+
+const extractBtn =
+    document.getElementById("extractBtn");
+
+const progressBox =
+    document.getElementById("progressBox");
+
+const progressText =
+    document.getElementById("progressText");
+
+const progressFill =
+    document.getElementById("progressFill");
+
+const result =
+    document.getElementById("result");
+
+const textResult =
+    document.getElementById("textResult");
+
+const copyBtn =
+    document.getElementById("copyBtn");
+
+const downloadBtn =
+    document.getElementById("downloadBtn");
+
+const resetBtn =
+    document.getElementById("resetBtn");
+
+
+let selectedFile = null;
+
+let imageUrl = null;
+
+
+/* =========================
+   SELECT FILE
+========================= */
+
+fileInput.addEventListener(
+    "change",
+    handleFile
+);
+
+
+function handleFile() {
+
+    const file =
+        fileInput.files[0];
+
+    if (!file) {
+        return;
+    }
+
+
+    if (!file.type.startsWith("image/")) {
+
+        alert(
+            "Please select a valid image file."
+        );
+
+        fileInput.value = "";
+
+        return;
+    }
+
+
+    selectedFile = file;
+
+
+    if (imageUrl) {
+
+        URL.revokeObjectURL(
+            imageUrl
+        );
+
+    }
+
+
+    imageUrl =
+        URL.createObjectURL(file);
+
+
+    previewImage.src =
+        imageUrl;
+
+
+    fileInfo.textContent =
+        "Image: " +
+        file.name +
+        " • Size: " +
+        formatBytes(file.size);
+
+
+    preview.style.display =
+        "block";
+
+    controls.style.display =
+        "block";
+
+    progressBox.style.display =
+        "none";
+
+    result.style.display =
+        "none";
+
+    textResult.value =
+        "";
+
+}
+
+
+/* =========================
+   EXTRACT TEXT
+========================= */
+
+extractBtn.addEventListener(
+    "click",
+    extractText
+);
+
+
+async function extractText() {
+
+    if (!selectedFile) {
+
+        alert(
+            "Please select an image first."
+        );
+
+        return;
+    }
+
+
+    extractBtn.disabled =
+        true;
+
+    extractBtn.textContent =
+        "Processing...";
+
+
+    progressBox.style.display =
+        "block";
+
+    result.style.display =
+        "none";
+
+
+    progressFill.style.width =
+        "0%";
+
+    progressText.textContent =
+        "Preparing OCR...";
+
+
+    try {
+
+        const selectedLanguage =
+            language.value;
+
+
+        const resultData =
+            await Tesseract.recognize(
+
+                selectedFile,
+
+                selectedLanguage,
+
+                {
+
+                    logger:
+                        function(message) {
+
+                            if (
+                                message.status
+                            ) {
+
+                                progressText.textContent =
+                                    message.status;
+                            }
+
+
+                            if (
+                                typeof message.progress ===
+                                "number"
+                            ) {
+
+                                const percent =
+                                    Math.round(
+                                        message.progress *
+                                        100
+                                    );
+
+
+                                progressFill.style.width =
+                                    percent +
+                                    "%";
+
+
+                                progressText.textContent =
+                                    message.status +
+                                    " " +
+                                    percent +
+                                    "%";
+
+                            }
+
+                        }
+
+                }
+
+            );
+
+
+        const extractedText =
+            resultData.data.text.trim();
+
+
+        progressFill.style.width =
+            "100%";
+
+
+        progressText.textContent =
+            "OCR completed";
+
+
+        if (!extractedText) {
+
+            textResult.value =
+                "No readable text was found in this image.";
+
+        }
+        else {
+
+            textResult.value =
+                extractedText;
+
+        }
+
+
+        result.style.display =
+            "block";
+
+
+    }
+    catch (error) {
+
+        console.error(
+            error
+        );
+
+
+        alert(
+            "Text extraction failed. Please try another image or check your internet connection."
+        );
+
+        progressBox.style.display =
+            "none";
+
+    }
+
+
+    extractBtn.disabled =
+        false;
+
+    extractBtn.textContent =
+        "Extract Text";
+
+}
+
+
+/* =========================
+   COPY TEXT
+========================= */
+
+copyBtn.addEventListener(
+    "click",
+    async function() {
+
+        const text =
+            textResult.value;
+
+        if (!text) {
+
+            alert(
+                "There is no text to copy."
+            );
+
+            return;
+        }
+
+
+        try {
+
+            await navigator.clipboard.writeText(
+                text
+            );
+
+            copyBtn.textContent =
+                "Copied!";
+
+
+            setTimeout(
+                function() {
+
+                    copyBtn.textContent =
+                        "Copy Text";
+
+                },
+                1500
+            );
+
+        }
+        catch (error) {
+
+            textResult.select();
+
+            document.execCommand(
+                "copy"
+            );
+
+            copyBtn.textContent =
+                "Copied!";
+
+
+            setTimeout(
+                function() {
+
+                    copyBtn.textContent =
+                        "Copy Text";
+
+                },
+                1500
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   DOWNLOAD TEXT
+========================= */
+
+downloadBtn.addEventListener(
+    "click",
+    function() {
+
+        const text =
+            textResult.value;
+
+        if (!text) {
+
+            alert(
+                "There is no text to download."
+            );
+
+            return;
+        }
+
+
+        const blob =
+            new Blob(
+                [text],
+                {
+                    type: "text/plain;charset=utf-8"
+                }
+            );
+
+
+        const url =
+            URL.createObjectURL(blob);
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.href =
+            url;
+
+        link.download =
+            "gettoolly-extracted-text.txt";
+
+
+        document.body.appendChild(
+            link
+        );
+
+
+        link.click();
+
+
+        document.body.removeChild(
+            link
+        );
+
+
+        URL.revokeObjectURL(
+            url
+        );
+
+    }
+);
+
+
+/* =========================
+   RESET
+========================= */
+
+resetBtn.addEventListener(
+    "click",
+    resetTool
+);
+
+
+function resetTool() {
+
+    if (imageUrl) {
+
+        URL.revokeObjectURL(
+            imageUrl
+        );
+
+        imageUrl = null;
+
+    }
+
+
+    selectedFile = null;
+
+
+    fileInput.value =
+        "";
+
+
+    preview.style.display =
+        "none";
+
+    controls.style.display =
+        "none";
+
+    progressBox.style.display =
+        "none";
+
+    result.style.display =
+        "none";
+
+
+    textResult.value =
+        "";
+
+
+    progressFill.style.width =
+        "0%";
+
+
+    progressText.textContent =
+        "Preparing OCR";
+
+
+    extractBtn.disabled =
+        false;
+
+    extractBtn.textContent =
+        "Extract Text";
+
+
+    copyBtn.textContent =
+        "Copy Text";
+
+}
+
+
+/* =========================
+   FILE SIZE
+========================= */
+
+function formatBytes(bytes) {
+
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
+
+
+    const units = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    const i =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+
+        parseFloat(
+
+            (
+                bytes /
+                Math.pow(
+                    1024,
+                    i
+                )
+
+            ).toFixed(2)
+
+        )
+
+        +
+
+        " " +
+
+        units[i]
+
+    );
+
+}
+
+</script>
+
+</body>
+</html>
