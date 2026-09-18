@@ -32,6 +32,40 @@ button,.button{border:0;border-radius:10px;padding:13px 20px;font-size:15px;font
 .content{margin-top:30px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:30px}.content h2{margin-top:0}.content h3{margin-top:25px}.content p,.content li{color:#475569;line-height:1.8}
 footer{text-align:center;padding:30px 20px;background:#0f172a;color:#cbd5e1;font-size:14px}footer a{margin:0 9px;color:#cbd5e1}footer a:hover{color:#fff}
 @media(max-width:700px){.nav-inner{flex-direction:column}.nav-links{flex-wrap:wrap;justify-content:center;gap:15px}.tool-box{padding:20px}.control-grid{grid-template-columns:1fr}.container{padding-top:35px}}
+
+/* Clean upload/preview interaction: no hover/focus outlines or extra frames */
+.upload-area,
+.upload-area:hover,
+.upload-area:focus,
+.upload-area:focus-visible,
+.upload-area:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.preview,
+.preview:hover,
+.preview:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.preview img,
+.preview img:hover,
+.preview img:focus {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.pdf-preview,
+.pdf-preview:hover,
+.pdf-preview:focus,
+.pdf-preview iframe,
+.pdf-preview iframe:hover,
+.pdf-preview iframe:focus {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 </style>
 
 </head><body>
@@ -47,7 +81,7 @@ footer{text-align:center;padding:30px 20px;background:#0f172a;color:#cbd5e1;font
 <div class="controls" id="controls"><div class="control-group"><label for="format">Convert to</label><select id="format"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select></div>
 <div class="control-group"><label for="quality">Quality (JPG/WebP)</label><input id="quality" type="range" min="40" max="100" value="90"><div class="info" id="qval">90%</div></div>
 <div class="button-row"><button class="primary" id="convertBtn">Convert & Download</button><button class="secondary" id="resetBtn">Reset</button></div><div class="status" id="status"></div></div>
-<div class="preview" id="preview"><img id="imagePreview" alt="Image preview"><div class="info" id="fileInfo"></div></div>
+<div class="preview image-preview" id="preview"><img id="imagePreview" alt="Image preview"><div class="info" id="fileInfo"></div></div>
 </div>
 <div class="content"><h2>Image Format Converter</h2><p>Convert images between JPG, PNG and WebP without installing software. Multiple images can be selected and processed locally in your browser.</p><h3>Which format should you use?</h3><p>JPG is useful for photographs and smaller files. PNG preserves transparency. WebP often provides a smaller modern web image.</p><h3>Privacy</h3><p>Images are processed in your browser and are not uploaded to GetToolly.</p></div>
 </main><footer><p><strong>GetToolly</strong> — Free online tools for everyday tasks.</p><p><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../contact.html">Contact</a></p><p>© 2026 GetToolly. All rights reserved.</p></footer>

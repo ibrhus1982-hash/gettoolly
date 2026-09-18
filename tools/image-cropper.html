@@ -32,6 +32,40 @@ button,.button{border:0;border-radius:10px;padding:13px 20px;font-size:15px;font
 .content{margin-top:30px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:30px}.content h2{margin-top:0}.content h3{margin-top:25px}.content p,.content li{color:#475569;line-height:1.8}
 footer{text-align:center;padding:30px 20px;background:#0f172a;color:#cbd5e1;font-size:14px}footer a{margin:0 9px;color:#cbd5e1}footer a:hover{color:#fff}
 @media(max-width:700px){.nav-inner{flex-direction:column}.nav-links{flex-wrap:wrap;justify-content:center;gap:15px}.tool-box{padding:20px}.control-grid{grid-template-columns:1fr}.container{padding-top:35px}}
+
+/* Clean upload/preview interaction: no hover/focus outlines or extra frames */
+.upload-area,
+.upload-area:hover,
+.upload-area:focus,
+.upload-area:focus-visible,
+.upload-area:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.preview,
+.preview:hover,
+.preview:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.preview img,
+.preview img:hover,
+.preview img:focus {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.pdf-preview,
+.pdf-preview:hover,
+.pdf-preview:focus,
+.pdf-preview iframe,
+.pdf-preview iframe:hover,
+.pdf-preview iframe:focus {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 </style>
 
 </head><body>
@@ -46,7 +80,7 @@ footer{text-align:center;padding:30px 20px;background:#0f172a;color:#cbd5e1;font
 <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp">
 <div class="upload-icon">✂️</div><div class="upload-title">Choose an image</div>
 <div class="upload-subtitle">JPG, PNG or WebP • processed in your browser</div></label>
-<div class="preview" id="preview"><img id="imagePreview" alt="Selected image preview"><div class="info" id="dimensions"></div></div>
+<div class="preview image-preview" id="preview"><img id="imagePreview" alt="Selected image preview"><div class="info" id="dimensions"></div></div>
 <div class="controls" id="controls">
 <div class="control-grid">
 <div class="control-group"><label for="ratio">Crop ratio</label><select id="ratio"><option value="free">Free crop</option><option value="1">Square (1:1)</option><option value="1.7777778">Landscape (16:9)</option><option value="1.3333333">Landscape (4:3)</option><option value=".5625">Portrait (9:16)</option></select></div>
