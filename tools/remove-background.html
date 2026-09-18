@@ -586,7 +586,16 @@ footer {
 
 }
 
-</style>
+
+    /* Prevent unwanted hover/focus lines around image upload and preview frames */
+    .upload-area:hover, .upload-area:focus, .upload-area:focus-visible, .upload-area:active {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .preview img, .preview-box img, .preview-card img, .image-preview, canvas {
+      outline: none !important;
+    }
+    </style>
 
 <!-- Structured Data -->
 

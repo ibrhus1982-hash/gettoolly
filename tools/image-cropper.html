@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Cropper Online - Crop Images Free | GetToolly</title><meta name="description" content="Crop JPG, PNG and WebP images online for free. Use exact dimensions and common aspect ratios directly in your browser.">
+<meta name="robots" content="index, follow">
+<!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-2G11Y8NJZ3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2G11Y8NJZ3');</script><link rel="canonical" href="https://www.gettoolly.com/tools/image-cropper.html">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;padding:16px 20px}
+.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:22px;font-weight:800;color:#0f172a}.nav-links{display:flex;gap:24px}.nav-links a{color:#475569;font-size:14px;font-weight:600}.nav-links a:hover{color:#2563eb}
+.container{max-width:950px;margin:0 auto;padding:55px 20px 70px}
+.back{display:inline-block;margin-bottom:22px;color:#475569;font-size:14px}.back:hover{color:#2563eb}
+.hero{text-align:center;max-width:780px;margin:0 auto 32px}.hero h1{font-size:clamp(34px,5vw,48px);line-height:1.1;letter-spacing:-1px;margin:0 0 14px}.hero p{color:#64748b;font-size:17px;margin:0}
+.tool-box{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:30px;box-shadow:0 12px 40px rgba(15,23,42,.07)}
+.upload-area{display:block;width:100%;border:2px dashed #cbd5e1;border-radius:16px;padding:48px 20px;text-align:center;background:#f8fafc;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.upload-area:hover{border-color:#cbd5e1;background:#f8fafc;outline:none;box-shadow:none}
+.upload-area:focus,.upload-area:focus-visible,.upload-area:active{outline:none;box-shadow:none}
+.upload-area input{display:none!important}.upload-icon{font-size:42px;margin-bottom:10px;pointer-events:none}.upload-title{font-size:19px;font-weight:700;pointer-events:none}.upload-subtitle{color:#64748b;font-size:14px;margin-top:5px;pointer-events:none}
+.controls{display:none;margin-top:25px}.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.control-group label{display:block;font-weight:700;margin-bottom:7px}.control-group input,.control-group select{width:100%;padding:12px;border:1px solid #d5dce5;border-radius:9px;font-size:15px;background:#fff}
+.checkbox{display:flex;align-items:center;gap:9px;margin-top:14px}.checkbox input{width:18px;height:18px}
+.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+button,.button{border:0;border-radius:10px;padding:13px 20px;font-size:15px;font-weight:700;cursor:pointer;background:#111827;color:#fff}.primary{background:#2563eb}.secondary{background:#e8edf3;color:#111827}.success{background:#16a34a}button:hover,.button:hover{opacity:.92}button:disabled{opacity:.55;cursor:not-allowed}
+.preview{display:none;margin-top:28px;text-align:center}.preview img{max-width:100%;max-height:380px;border-radius:10px;border:1px solid #e2e8f0;outline:none;box-shadow:none;pointer-events:none}
+.info{margin-top:14px;color:#64748b;font-size:14px}.result{display:none;margin-top:25px;padding:20px;background:#f0fdf4;border:1px solid #dcfce7;border-radius:12px}.result h2{margin-top:0}.status{margin-top:15px;padding:12px;border-radius:9px;background:#f1f5f9;color:#475569;font-size:14px}
+.drop-active{border-color:#2563eb!important;background:#eff6ff!important}
+.privacy{margin-top:25px;padding:15px;background:#f1f5f9;border-radius:10px;text-align:center;color:#64748b;font-size:14px}
+.content{margin-top:30px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:30px}.content h2{margin-top:0}.content h3{margin-top:25px}.content p,.content li{color:#475569;line-height:1.8}
+footer{text-align:center;padding:30px 20px;background:#0f172a;color:#cbd5e1;font-size:14px}footer a{margin:0 9px;color:#cbd5e1}footer a:hover{color:#fff}
+@media(max-width:700px){.nav-inner{flex-direction:column}.nav-links{flex-wrap:wrap;justify-content:center;gap:15px}.tool-box{padding:20px}.control-grid{grid-template-columns:1fr}.container{padding-top:35px}}
+</style>
+
+</head><body>
+<header class="navbar"><div class="nav-inner">
+<a class="logo" href="../index.html">GetToolly</a>
+<nav class="nav-links"><a href="../index.html#tools">Tools</a><a href="../index.html#about">About</a><a href="../contact.html">Contact</a></nav>
+</div></header>
+<main class="container"><a class="back" href="../index.html#tools">← All Tools</a>
+<section class="hero"><h1>Image Cropper Online</h1><p>Crop images to exact dimensions with common aspect ratios. Fast, free and browser-based.</p></section>
+<div class="tool-box">
+<label class="upload-area" id="dropArea" tabindex="0">
+<input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp">
+<div class="upload-icon">✂️</div><div class="upload-title">Choose an image</div>
+<div class="upload-subtitle">JPG, PNG or WebP • processed in your browser</div></label>
+<div class="preview" id="preview"><img id="imagePreview" alt="Selected image preview"><div class="info" id="dimensions"></div></div>
+<div class="controls" id="controls">
+<div class="control-grid">
+<div class="control-group"><label for="ratio">Crop ratio</label><select id="ratio"><option value="free">Free crop</option><option value="1">Square (1:1)</option><option value="1.7777778">Landscape (16:9)</option><option value="1.3333333">Landscape (4:3)</option><option value=".5625">Portrait (9:16)</option></select></div>
+<div class="control-group"><label for="format">Output format</label><select id="format"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select></div>
+</div>
+<div class="control-grid" style="margin-top:18px">
+<div class="control-group"><label for="x">X position</label><input id="x" type="number" min="0" value="0"></div>
+<div class="control-group"><label for="y">Y position</label><input id="y" type="number" min="0" value="0"></div>
+<div class="control-group"><label for="w">Crop width</label><input id="w" type="number" min="1" value="0"></div>
+<div class="control-group"><label for="h">Crop height</label><input id="h" type="number" min="1" value="0"></div>
+</div>
+<div class="button-row"><button class="primary" id="cropBtn">Crop & Download</button><button class="secondary" id="resetBtn">Reset</button></div>
+<div class="status" id="status">Select an image to begin. You can enter an exact crop area using the fields above.</div>
+</div>
+</div>
+<div class="content"><h2>Free Image Cropper</h2><p>Crop JPG, PNG and WebP images to exact dimensions directly in your browser. Choose common social-media ratios or enter a precise crop area.</p><h3>Private and browser-based</h3><p>Your selected image is processed locally in your browser and is not uploaded to GetToolly.</p></div>
+</main><footer><p><strong>GetToolly</strong> — Free online tools for everyday tasks.</p><p><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../contact.html">Contact</a></p><p>© 2026 GetToolly. All rights reserved.</p></footer>
+<script>
+const input=document.getElementById('fileInput'),drop=document.getElementById('dropArea'),img=document.getElementById('imagePreview'),preview=document.getElementById('preview'),controls=document.getElementById('controls'),w=document.getElementById('w'),h=document.getElementById('h'),x=document.getElementById('x'),y=document.getElementById('y'),ratio=document.getElementById('ratio'),status=document.getElementById('status');
+let image=new Image(),file=null;
+function load(f){if(!f||!f.type.startsWith('image/'))return;file=f;const url=URL.createObjectURL(f);image.onload=()=>{img.src=url;preview.style.display='block';controls.style.display='block';w.value=image.naturalWidth;h.value=image.naturalHeight;x.value=0;y.value=0;document.getElementById('dimensions').textContent=`Original: ${image.naturalWidth} × ${image.naturalHeight}px`;status.textContent='Set your crop area, then click Crop & Download.';applyRatio();};image.src=url;}
+input.onchange=e=>load(e.target.files[0]);drop.onclick=()=>input.click();drop.ondragover=e=>{e.preventDefault();drop.classList.add('drop-active')};drop.ondragleave=()=>drop.classList.remove('drop-active');drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drop-active');load(e.dataTransfer.files[0])};
+function applyRatio(){if(ratio.value==='free'||!image.naturalWidth)return;const r=Number(ratio.value);let nw=image.naturalWidth,nh=Math.round(nw/r);if(nh>image.naturalHeight){nh=image.naturalHeight;nw=Math.round(nh*r)}w.value=nw;h.value=nh;x.value=Math.max(0,Math.floor((image.naturalWidth-nw)/2));y.value=Math.max(0,Math.floor((image.naturalHeight-nh)/2));}
+ratio.onchange=applyRatio;
+document.getElementById('cropBtn').onclick=()=>{if(!image.naturalWidth)return;let X=Math.max(0,Math.min(Number(x.value)||0,image.naturalWidth-1)),Y=Math.max(0,Math.min(Number(y.value)||0,image.naturalHeight-1));let W=Math.max(1,Math.min(Number(w.value)||image.naturalWidth-X,image.naturalWidth-X)),H=Math.max(1,Math.min(Number(h.value)||image.naturalHeight-Y,image.naturalHeight-Y));const c=document.createElement('canvas');c.width=W;c.height=H;c.getContext('2d').drawImage(image,X,Y,W,H,0,0,W,H);const type=document.getElementById('format').value;c.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gettoolly-cropped.'+(type==='image/png'?'png':type==='image/webp'?'webp':'jpg');a.click();status.textContent=`Done — cropped image: ${W} × ${H}px.`},type,.92)};
+document.getElementById('resetBtn').onclick=()=>{input.value='';preview.style.display='none';controls.style.display='none';status.textContent='Select an image to begin.'};
+</script></body></html>
