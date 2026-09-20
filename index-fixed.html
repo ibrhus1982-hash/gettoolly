@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GetToolly - Free Online Tools</title>
+
+<meta name="description"
+content="GetToolly offers free online tools for everyday tasks, including calculators, PDF tools, image tools, text tools, converters, generators and more.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://www.gettoolly.com/">
+
+<!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2G11Y8NJZ3"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'G-2G11Y8NJZ3');
+</script>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f8fafc;
+  color:#0f172a;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px 6%;
+
+  background:rgba(255,255,255,.92);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  border-bottom:1px solid #e2e8f0;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  font-size:22px;
+  font-weight:800;
+
+  color:#0f172a;
+}
+
+.logo-mark{
+  width:38px;
+  height:38px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:11px;
+
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  color:white;
+
+  font-size:17px;
+
+  box-shadow:
+    0 8px 20px rgba(37,99,235,.2);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav-links a{
+  color:#475569;
+  font-size:15px;
+  font-weight:600;
+
+  transition:color .2s ease;
+}
+
+.nav-links a:hover{
+  color:#2563eb;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  padding:90px 20px 75px;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(37,99,235,.12),
+      transparent 45%
+    ),
+    #ffffff;
+}
+
+.hero-content{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,72px);
+  line-height:1.05;
+
+  letter-spacing:-2.5px;
+
+  font-weight:800;
+
+  color:#0f172a;
+
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  color:#2563eb;
+}
+
+.hero p{
+  max-width:680px;
+
+  margin:0 auto 35px;
+
+  color:#64748b;
+
+  font-size:18px;
+
+  line-height:1.7;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container{
+  position:relative;
+
+  max-width:650px;
+
+  margin:0 auto 28px;
+}
+
+.search-container input{
+  width:100%;
+
+  height:60px;
+
+  padding:0 22px 0 58px;
+
+  border:1px solid #dbe3ef;
+
+  border-radius:16px;
+
+  background:#ffffff;
+
+  color:#0f172a;
+
+  font-size:16px;
+
+  outline:none;
+
+  box-shadow:
+    0 10px 35px rgba(15,23,42,.07);
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.search-container input:focus{
+  border-color:#2563eb;
+
+  box-shadow:
+    0 0 0 4px rgba(37,99,235,.1),
+    0 10px 35px rgba(15,23,42,.07);
+}
+
+.search-container input::placeholder{
+  color:#94a3b8;
+}
+
+.search-icon{
+  position:absolute;
+
+  left:20px;
+  top:50%;
+
+  width:21px;
+  height:21px;
+
+  transform:translateY(-50%);
+
+  color:#94a3b8;
+
+  pointer-events:none;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.category-btn{
+  border:1px solid #e2e8f0;
+
+  background:#ffffff;
+
+  color:#475569;
+
+  padding:9px 17px;
+
+  border-radius:999px;
+
+  font-size:14px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.category-btn:hover{
+  transform:translateY(-1px);
+
+  border-color:#bfdbfe;
+
+  color:#2563eb;
+}
+
+.category-btn.active{
+  background:#2563eb;
+
+  border-color:#2563eb;
+
+  color:#ffffff;
+}
+
+/* =========================
+   MAIN SECTIONS
+========================= */
+
+section{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding:80px 20px;
+}
+
+.all-tools{
+  max-width:1200px;
+
+  margin:0 auto;
+
+  padding-top:40px;
+}
+
+.section-heading{
+  margin-bottom:30px;
+}
+
+.section-heading h2{
+  font-size:32px;
+
+  letter-spacing:-.8px;
+
+  margin-bottom:8px;
+
+  color:#0f172a;
+}
+
+.section-heading p{
+  color:#64748b;
+
+  font-size:16px;
+}
+
+/* =========================
+   TOOLS GRID
+========================= */
+
+.tools-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:20px;
+}
+
+/* =========================
+   TOOL CARD
+========================= */
+
+.tool-card{
+  position:relative;
+
+  display:flex;
+
+  flex-direction:column;
+
+  min-height:270px;
+
+  padding:26px;
+
+  background:#ffffff;
+
+  border:1px solid #e2e8f0;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.tool-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:3px;
+
+  background:linear-gradient(
+    90deg,
+    #2563eb,
+    #6366f1
+  );
+
+  opacity:0;
+
+  transition:opacity .25s ease;
+
+  pointer-events:none;
+}
+
+.tool-card:hover{
+  transform:translateY(-5px);
+
+  border-color:#cbd5e1;
+
+  box-shadow:
+    0 18px 40px rgba(15,23,42,.09);
+}
+
+.tool-card:hover::before{
+  opacity:1;
+}
+
+.tool-icon{
+  width:50px;
+  height:50px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:20px;
+
+  border-radius:14px;
+
+  background:#eff6ff;
+
+  color:#2563eb;
+
+  font-size:23px;
+
+  font-weight:700;
+}
+
+.tool-card h3{
+  font-size:19px;
+
+  line-height:1.35;
+
+  margin-bottom:10px;
+
+  color:#0f172a;
+}
+
+.tool-card p{
+  color:#64748b;
+
+  font-size:14px;
+
+  line-height:1.65;
+
+  margin-bottom:20px;
+}
+
+.tool-link{
+  margin-top:auto;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  color:#2563eb;
+
+  font-size:14px;
+
+  font-weight:700;
+
+  transition:color .2s ease;
+}
+
+.tool-link:hover{
+  color:#1d4ed8;
+}
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+  display:none;
+
+  padding:40px 20px;
+
+  text-align:center;
+
+  color:#64748b;
+
+  font-size:16px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+#about{
+  max-width:900px;
+
+  margin:40px auto 80px;
+
+  padding:60px 30px;
+
+  text-align:center;
+
+  background:#ffffff;
+
+  border:1px solid #e2e8f0;
+
+  border-radius:24px;
+
+  box-shadow:
+    0 12px 35px rgba(15,23,42,.05);
+}
+
+#about h2{
+  font-size:32px;
+
+  margin-bottom:15px;
+
+  color:#0f172a;
+}
+
+#about p{
+  max-width:700px;
+
+  margin:0 auto;
+
+  color:#64748b;
+
+  font-size:16px;
+
+  line-height:1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#0f172a;
+
+  color:#cbd5e1;
+
+  padding:45px 20px;
+
+  text-align:center;
+}
+
+.footer-logo{
+  margin-bottom:18px;
+
+  color:#ffffff;
+
+  font-size:24px;
+
+  font-weight:800;
+}
+
+footer > div:nth-child(2){
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:22px;
+
+  margin-bottom:20px;
+}
+
+footer a{
+  color:#cbd5e1;
+
+  font-size:14px;
+
+  transition:color .2s ease;
+}
+
+footer a:hover{
+  color:#ffffff;
+}
+
+footer p{
+  color:#94a3b8;
+
+  font-size:13px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+  .tools-grid{
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:750px){
+
+  .navbar{
+    padding:15px 20px;
+  }
+
+  .nav-links{
+    gap:15px;
+  }
+
+  .nav-links a{
+    font-size:13px;
+  }
+
+  .hero{
+    padding:70px 20px 60px;
+  }
+
+  .hero h1{
+    letter-spacing:-1.5px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .tools-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  section{
+    padding:60px 20px;
+  }
+
+}
+
+@media(max-width:520px){
+
+  .navbar{
+    align-items:flex-start;
+  }
+
+  .logo{
+    font-size:19px;
+  }
+
+  .logo-mark{
+    width:34px;
+    height:34px;
+
+    border-radius:9px;
+  }
+
+  .nav-links{
+    gap:11px;
+  }
+
+  .nav-links a{
+    font-size:12px;
+  }
+
+  .hero{
+    padding-top:55px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .search-container input{
+    height:56px;
+
+    padding-left:52px;
+  }
+
+  .categories{
+    gap:7px;
+  }
+
+  .category-btn{
+    padding:8px 13px;
+
+    font-size:13px;
+  }
+
+  .tools-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tool-card{
+    min-height:245px;
+  }
+
+  .section-heading h2{
+    font-size:28px;
+  }
+
+  #about{
+    margin:20px;
+
+    padding:45px 22px;
+  }
+
+  #about h2{
+    font-size:28px;
+  }
+
+  footer > div:nth-child(2){
+    gap:15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+<div class="navbar">
+
+<a
+href="index.html"
+class="logo"
+aria-label="GetToolly Home">
+
+<span class="logo-mark">◆</span>
+
+<span>GetToolly</span>
+
+</a>
+
+<nav
+  class="nav-links"
+  aria-label="Main navigation">
+
+  <a href="index.html">
+    Home
+  </a>
+
+  <a href="#tools">
+    Tools
+  </a>
+
+  <a href="#about">
+    About
+  </a>
+
+  <a href="contact.html">
+    Contact
+  </a>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+<span>Free Online Tools</span><br>
+for Everyday Tasks
+</h1>
+
+<p>
+Simple, fast, and reliable tools to calculate, convert,
+edit, and manage your files and text — all in one place.
+</p>
+
+<!-- SEARCH -->
+
+<div class="search-container">
+
+<svg
+class="search-icon"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+aria-hidden="true">
+
+<circle
+ cx="11"
+ cy="11"
+ r="7"> </circle>
+
+<path
+ d="m20 20-3.5-3.5"> </path>
+
+</svg>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search for a tool..."
+autocomplete="off"
+aria-label="Search free online tools">
+
+</div>
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+<button
+class="category-btn active"
+data-category="all">
+All </button>
+
+<button
+class="category-btn"
+data-category="calculator">
+Calculators </button>
+
+<button
+class="category-btn"
+data-category="text">
+Text </button>
+
+<button
+class="category-btn"
+data-category="generator">
+Generators </button>
+
+<button
+class="category-btn"
+data-category="converter">
+Converters </button>
+
+<button
+class="category-btn"
+data-category="image">
+Images </button>
+
+<button
+class="category-btn"
+data-category="pdf">
+PDF </button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     POPULAR TOOLS
+========================= -->
+
+<section id="tools">
+
+<div class="section-heading">
+
+<h2>
+Popular Tools
+</h2>
+
+<p>
+Quick access to some of our most useful free online tools.
+</p>
+
+</div>
+
+<div
+  class="tools-grid"
+  id="popularTools">
+
+<!-- Calculator -->
+
+<article
+  class="tool-card"
+  data-name="calculator"
+  data-category="calculator">
+
+<div class="tool-icon">🧮</div>
+
+<h3>Calculator</h3>
+
+<p>
+Perform quick and simple calculations online.
+</p>
+
+<a
+href="tools/calculator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- QR Code Generator -->
+
+<article
+  class="tool-card"
+  data-name="qr code generator"
+  data-category="generator">
+
+<div class="tool-icon">▣</div>
+
+<h3>QR Code Generator</h3>
+
+<p>
+Create QR codes for websites, text and more.
+</p>
+
+<a
+href="tools/qr-code-generator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Image Compressor -->
+
+<article
+  class="tool-card"
+  data-name="image compressor"
+  data-category="image">
+
+<div class="tool-icon">🖼️</div>
+
+<h3>Image Compressor</h3>
+
+<p>
+Compress images and reduce file size quickly.
+</p>
+
+<a
+href="tools/image-compressor.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Image to Text -->
+
+<article
+  class="tool-card"
+  data-name="image to text image to text converter OCR extract text from image JPG to text PNG to text"
+  data-category="image">
+
+<div class="tool-icon">🔤</div>
+
+<h3>Image to Text</h3>
+
+<p>
+Extract text from images online using OCR.
+</p>
+
+<a
+href="tools/image-to-text.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Image Resizer -->
+
+<article
+  class="tool-card"
+  data-name="image resizer"
+  data-category="image">
+
+<div class="tool-icon">📐</div>
+
+<h3>Image Resizer</h3>
+
+<p>
+Resize JPG, PNG and WebP images online for free.
+</p>
+
+<a
+href="tools/image-resizer.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- JPG to PDF -->
+
+<article
+  class="tool-card"
+  data-name="jpg to pdf jpg jpeg png webp to pdf image to pdf"
+  data-category="pdf">
+
+<div class="tool-icon">📄</div>
+
+<h3>JPG to PDF</h3>
+
+<p>
+Convert JPG, JPEG, PNG and WebP images to PDF online for free.
+</p>
+
+<a
+href="tools/jpg-to-pdf.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- PDF to Image -->
+
+<article
+  class="tool-card"
+  data-name="pdf to image pdf to jpg pdf to png convert pdf pages to images pdf image converter"
+  data-category="pdf">
+
+<div class="tool-icon">🖼️</div>
+
+<h3>PDF to Image</h3>
+
+<p>
+Convert PDF pages to JPG or PNG images online for free.
+</p>
+
+<a
+href="tools/pdf-to-image.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Merge PDF -->
+
+<article
+  class="tool-card"
+  data-name="merge pdf"
+  data-category="pdf">
+
+<div class="tool-icon">📑</div>
+
+<h3>Merge PDF</h3>
+
+<p>
+Combine multiple PDF files into one document quickly and easily.
+</p>
+
+<a
+href="tools/merge-pdf.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Percentage Calculator -->
+
+<article
+  class="tool-card"
+  data-name="percentage calculator"
+  data-category="calculator">
+
+<div class="tool-icon">%</div>
+
+<h3>Percentage Calculator</h3>
+
+<p>
+Calculate percentages quickly and easily.
+</p>
+
+<a
+href="tools/percentage-calculator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Word Counter -->
+
+<article
+  class="tool-card"
+  data-name="word counter"
+  data-category="text">
+
+<div class="tool-icon">Aa</div>
+
+<h3>Word Counter</h3>
+
+<p>
+Count words and characters in your text online.
+</p>
+
+<a
+href="tools/word-counter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Password Generator -->
+
+<article
+  class="tool-card"
+  data-name="password generator"
+  data-category="generator">
+
+<div class="tool-icon">🔐</div>
+
+<h3>Password Generator</h3>
+
+<p>
+Create strong and secure passwords online.
+</p>
+
+<a
+href="tools/password-generator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ALL TOOLS
+========================= -->
+
+<section class="all-tools">
+
+<div class="section-heading">
+
+<h2>
+All Tools
+</h2>
+
+<p>
+Explore all of our free online tools for everyday tasks.
+</p>
+
+</div>
+
+<div
+  class="tools-grid"
+  id="allTools">
+
+<!-- Age Calculator -->
+
+<article
+  class="tool-card"
+  data-name="age calculator"
+  data-category="calculator">
+
+<div class="tool-icon">🎂</div>
+
+<h3>Age Calculator</h3>
+
+<p>
+Calculate your exact age online.
+</p>
+
+<a
+href="tools/age-calculator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Tip Calculator -->
+
+<article
+  class="tool-card"
+  data-name="tip calculator"
+  data-category="calculator">
+
+<div class="tool-icon">💰</div>
+
+<h3>Tip Calculator</h3>
+
+<p>
+Calculate tips and split bills quickly.
+</p>
+
+<a
+href="tools/tip-calculator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Case Converter -->
+
+<article
+  class="tool-card"
+  data-name="case converter"
+  data-category="text">
+
+<div class="tool-icon">Aa</div>
+
+<h3>Case Converter</h3>
+
+<p>
+Convert text to uppercase or lowercase.
+</p>
+
+<a
+href="tools/case-converter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Text Generator -->
+
+<article
+  class="tool-card"
+  data-name="text generator"
+  data-category="generator">
+
+<div class="tool-icon">✍️</div>
+
+<h3>Text Generator</h3>
+
+<p>
+Generate useful text instantly online.
+</p>
+
+<a
+href="tools/text-generator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Unit Converter -->
+
+<article
+  class="tool-card"
+  data-name="unit converter"
+  data-category="converter">
+
+<div class="tool-icon">📏</div>
+
+<h3>Unit Converter</h3>
+
+<p>
+Convert common units quickly and easily.
+</p>
+
+<a
+href="tools/unit-converter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Temperature Converter -->
+
+<article
+  class="tool-card"
+  data-name="temperature converter"
+  data-category="converter">
+
+<div class="tool-icon">🌡️</div>
+
+<h3>Temperature Converter</h3>
+
+<p>
+Convert Celsius, Fahrenheit and Kelvin.
+</p>
+
+<a
+href="tools/temperature-converter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Time Calculator -->
+
+<article
+  class="tool-card"
+  data-name="time calculator"
+  data-category="calculator">
+
+<div class="tool-icon">⏱️</div>
+
+<h3>Time Calculator</h3>
+
+<p>
+Calculate time and durations easily.
+</p>
+
+<a
+href="tools/time-calculator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Random Number Generator -->
+
+<article
+  class="tool-card"
+  data-name="random number generator"
+  data-category="generator">
+
+<div class="tool-icon">🎲</div>
+
+<h3>Random Number Generator</h3>
+
+<p>
+Generate random numbers quickly and easily.
+</p>
+
+<a
+href="tools/random-number.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- JSON Formatter -->
+
+<article
+  class="tool-card"
+  data-name="json formatter"
+  data-category="text">
+
+<div class="tool-icon">{ }</div>
+
+<h3>JSON Formatter</h3>
+
+<p>
+Format, validate and beautify JSON data online.
+</p>
+
+<a
+href="tools/json-formatter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Lorem Ipsum Generator -->
+
+<article
+  class="tool-card"
+  data-name="lorem ipsum generator"
+  data-category="generator">
+
+<div class="tool-icon">Aa</div>
+
+<h3>Lorem Ipsum Generator</h3>
+
+<p>
+Generate Lorem Ipsum placeholder text quickly.
+</p>
+
+<a
+href="tools/lorem-ipsum.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Remove Background -->
+
+<article
+  class="tool-card"
+  data-name="remove background"
+  data-category="image">
+
+<div class="tool-icon">✂️</div>
+
+<h3>Remove Background</h3>
+
+<p>
+Remove image backgrounds and create transparent PNG images online.
+</p>
+
+<a
+href="tools/remove-background.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Image Cropper -->
+
+<article
+  class="tool-card"
+  data-name="image cropper crop image crop photos"
+  data-category="image">
+
+<div class="tool-icon">✂</div>
+
+<h3>Image Cropper</h3>
+
+<p>
+Crop JPG, PNG and WebP images to exact dimensions and ratios.
+</p>
+
+<a
+href="tools/image-cropper.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- Image Format Converter -->
+
+<article
+  class="tool-card"
+  data-name="image format converter jpg png webp converter"
+  data-category="image">
+
+<div class="tool-icon">🔄</div>
+
+<h3>Image Format Converter</h3>
+
+<p>
+Convert images between JPG, PNG and WebP directly in your browser.
+</p>
+
+<a
+href="tools/image-format-converter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- JPG to WebP -->
+
+<article
+  class="tool-card"
+  data-name="jpg to webp png to webp webp converter image converter"
+  data-category="image">
+
+<div class="tool-icon">⚡</div>
+
+<h3>JPG to WebP</h3>
+
+<p>
+Convert JPG and PNG images to modern WebP format with adjustable quality.
+</p>
+
+<a
+href="tools/jpg-to-webp.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- PDF Splitter -->
+
+<article
+  class="tool-card"
+  data-name="pdf splitter split pdf extract pages pdf pages"
+  data-category="pdf">
+
+<div class="tool-icon">📑</div>
+
+<h3>PDF Splitter</h3>
+
+<p>
+Extract selected PDF pages and create a new PDF instantly.
+</p>
+
+<a
+href="tools/pdf-splitter.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+<!-- PDF Rotator -->
+
+<article
+  class="tool-card"
+  data-name="pdf rotator rotate pdf rotate pages"
+  data-category="pdf">
+
+<div class="tool-icon">🔄</div>
+
+<h3>PDF Rotator</h3>
+
+<p>
+Rotate PDF pages by 90, 180 or 270 degrees and download.
+</p>
+
+<a
+href="tools/pdf-rotator.html"
+class="tool-link">
+Use Tool → </a>
+
+</article>
+
+
+
+</div>
+
+<!-- NO RESULTS -->
+
+<div
+  class="no-results"
+  id="noResults">
+
+No tools found. Try another search.
+
+</div>
+
+</section>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<h2>
+About GetToolly
+</h2>
+
+<p>
+GetToolly provides simple, useful, and free online tools
+designed to make everyday digital tasks faster, easier,
+and more convenient.
+</p>
+
+</section>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-logo">
+GetToolly
+</div>
+
+<div>
+
+<a href="privacy.html">
+Privacy Policy
+</a>
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+<p>
+© 2026 GetToolly. All rights reserved.
+</p>
+
+</footer>
+
+<!-- =========================
+     SEARCH & FILTER
+========================= -->
+
+<script>
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const categoryButtons =
+  document.querySelectorAll(".category-btn");
+
+const toolCards =
+  document.querySelectorAll(".tool-card");
+
+const noResults =
+  document.getElementById("noResults");
+
+let selectedCategory = "all";
+
+
+function filterTools(){
+
+  const searchText =
+    searchInput.value
+      .toLowerCase()
+      .trim();
+
+  let visibleTools = 0;
+
+  toolCards.forEach(function(card){
+
+    const name =
+      card.dataset.name.toLowerCase();
+
+    const category =
+      card.dataset.category;
+
+    const matchesSearch =
+      name.includes(searchText);
+
+    const matchesCategory =
+      selectedCategory === "all" ||
+      category === selectedCategory;
+
+    if(matchesSearch && matchesCategory){
+
+      card.style.display = "flex";
+
+      visibleTools++;
+
+    }else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+  if(visibleTools === 0){
+
+    noResults.style.display = "block";
+
+  }else{
+
+    noResults.style.display = "none";
+
+  }
+
+}
+
+
+searchInput.addEventListener(
+  "input",
+  filterTools
+);
+
+
+categoryButtons.forEach(function(button){
+
+  button.addEventListener(
+    "click",
+    function(){
+
+      categoryButtons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+      });
+
+      this.classList.add("active");
+
+      selectedCategory =
+        this.dataset.category;
+
+      filterTools();
+
+    }
+  );
+
+});
+
+
+</script>
+
+</body>
+
+</html>
